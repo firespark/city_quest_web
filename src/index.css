@@ -1,0 +1,28 @@
+
+:root {
+  font-family: Roboto, "Segoe UI", Arial, sans-serif;
+  color: #2C3E50;
+  background-color: #FFFFFF;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}

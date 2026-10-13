@@ -1,0 +1,35 @@
+
+/* Footer */
+
+.footerPanel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #FFFFFF;
+  padding-top: 12px;
+  padding-bottom: 25px;
+  border-top: 1px solid #F1F5F9;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.05);
+}
+
+.footerBlock {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.footerMenuText {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
