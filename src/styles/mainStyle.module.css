@@ -1,3 +1,23 @@
+
+/* Web Screen Layout */
+
+.mainScreen {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+}
+
+.mainScreenScroll {
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.mainScreenScroll::-webkit-scrollbar {
+    display: none;
+}
+
+
 /* Colors */
 
 .blue {
