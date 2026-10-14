@@ -1,0 +1,157 @@
+/* Web CSS Module converted from profileStyle.js. */
+
+.card {
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    /* React Native elevation: 4 (browser uses CSS box-shadow). */
+    --rn-shadow-rgb: 0, 0, 0;
+    --rn-shadow-offset-x: 0px;
+    --rn-shadow-offset-y: 6px;
+    --rn-shadow-radius: 10px;
+    --rn-shadow-opacity: 0.08;
+    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+}
+
+.editContainer {
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    padding: 24px;
+    margin-top: 20px;
+    /* React Native elevation: 4 (browser uses CSS box-shadow). */
+    --rn-shadow-rgb: 0, 0, 0;
+    --rn-shadow-offset-x: 0px;
+    --rn-shadow-offset-y: 6px;
+    --rn-shadow-radius: 10px;
+    --rn-shadow-opacity: 0.08;
+    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+}
+
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1F5F9;
+    border-radius: 24px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-width: 1px;
+    border-color: #F1F5F9;
+    align-items: center;
+    border-style: solid;
+}
+
+.profileHeaderCard {
+    padding-top: 25px;
+    padding-bottom: 20px;
+    background-color: #FFFFFF;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-bottom-width: 1px;
+    border-bottom-color: #F1F5F9;
+    border-bottom-style: solid;
+}
+
+.rowLast {
+    border-bottom-width: 0px;
+    border-bottom-style: solid;
+}
+
+.valueBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.profileNameRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.inputModern {
+    width: 100%;
+    background-color: #F1F5F9;
+    border-width: 1px;
+    border-color: #F1F5F9;
+    border-radius: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 16px;
+    color: #2C3E50;
+    margin-bottom: 15px;
+    border-style: solid;
+}
+
+.inputError {
+    border-color: #E74C3C;
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+.logoutButton {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 56px;
+    background-color: #FFF0F0;
+    border-radius: 28px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.settingsIcon {
+    width: 37px;
+    height: 36px;
+}
+
+.profileUserName {
+    flex: 1;
+    font-size: 28px;
+    font-weight: 900;
+    color: #2C3E50;
+    letter-spacing: -0.5px;
+}
+
+.label {
+    font-size: 16px;
+    color: #5A6A7A;
+    font-weight: 500;
+}
+
+.value {
+    font-size: 16px;
+    color: #2C3E50;
+    font-weight: 700;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.actionText {
+    font-size: 14px;
+    color: #17A2B8;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.logoutText {
+    color: #E74C3C;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

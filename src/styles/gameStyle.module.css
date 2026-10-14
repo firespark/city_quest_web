@@ -1,0 +1,836 @@
+/* Web CSS Module converted from gameStyle.js. */
+
+/* Containers */
+.modalTemplateWrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 40px;
+}
+
+.modalTemplateHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-color: #FFFFFF;
+}
+
+.playTemplateContainer {
+    flex: 1;
+    padding-bottom: 40px;
+}
+
+.playTemplateTaskContainer {
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin-top: 25px;
+    /* React Native elevation: 4 (browser uses CSS box-shadow). */
+    --rn-shadow-rgb: 0, 0, 0;
+    --rn-shadow-offset-x: 0px;
+    --rn-shadow-offset-y: 6px;
+    --rn-shadow-radius: 10px;
+    --rn-shadow-opacity: 0.08;
+    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+}
+
+.playTemplateProgressContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.playTemplateSignsRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.finishContainer {
+    padding-bottom: 40px;
+    padding-top: 10px;
+}
+
+.finishProgressWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    align-items: center;
+}
+
+.modeTemplateContainer {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.modeListContainer {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.gameInfoCard {
+    background-color: #F1F5F9;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    border-width: 1px;
+    border-color: #F1F5F9;
+    border-style: solid;
+}
+
+.gameDetailsBlock {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.gameDetailRow {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 6px;
+}
+
+.taskBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.taskSignWrapper {
+    margin-top: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.gameHintSection {
+    background-color: #F1F5F9;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: #E67E22;
+}
+
+.sightTitleWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.templateTextContent {
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+.gameActions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+/* Forms */
+.inputsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 100%;
+    align-items: center;
+}
+
+.inputContainer {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.inputWrapper {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.questionWrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+}
+
+.hintContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.modeRadioContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+    justify-content: center;
+}
+
+.modeTextContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+}
+
+/* Titles and Texts */
+.gameMainTitle {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2C3E50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gameSuccessTitle {
+    font-size: 22px;
+    font-weight: 900;
+    color: #4CAF50;
+    text-align: center;
+}
+
+.gameTitle {
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #17A2B8;
+}
+
+.answerTitle {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #2C3E50;
+    text-align: center;
+}
+
+/*
+    questionText: {
+        fontWeight: '400',
+        fontSize: 16,
+        lineHeight: 20,
+        textAlign: 'center',
+        color: '#17A2B8',
+    },
+    */
+.questionText {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2C3E50;
+    text-align: center;
+    line-height: 24px;
+}
+
+.gameAnswerText {
+    font-size: 20px;
+    font-weight: 900;
+    color: #2C3E50;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.answerText {
+    font-size: 13px;
+    line-height: 15px;
+    color: #5A6A7A;
+}
+
+.gameText {
+    font-size: 16px;
+    line-height: 24px;
+    color: #2C3E50;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.taskText {
+    width: 92px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #5A6A7A;
+    margin-top: 4px;
+}
+
+.gameDetailValue {
+    flex: 1;
+    font-size: 14px;
+    color: #5A6A7A;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.gameLink {
+    flex: 1;
+    font-size: 14px;
+    color: #17A2B8;
+    font-weight: 500;
+    text-decoration-line: underline;
+    line-height: 20px;
+}
+
+.gameLinkText {
+    font-size: 15px;
+    color: #7F8C8D;
+    font-weight: 600;
+}
+
+.gameSectionLabel {
+    font-size: 12px;
+    color: #E67E22;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.gameAnswerLabel {
+    font-size: 13px;
+    color: #7F8C8D;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.modeTitleActive {
+    color: #17A2B8;
+}
+
+.hintTextActive {
+    font-size: 14px;
+    font-weight: 600;
+    color: #E67E22;
+}
+
+.skipTextActive {
+    font-size: 14px;
+    font-weight: 600;
+    color: #17A2B8;
+}
+
+.hintTextDisabled {
+    font-size: 14px;
+    font-weight: 800;
+    color: #BDC3C7;
+}
+
+.progressTextLight {
+    font-weight: 800;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.progressTextDisabled {
+    font-weight: 700;
+    font-size: 18px;
+    color: #BDC3C7;
+}
+
+/* Images */
+.gameImage {
+    width: 100%;
+    aspect-ratio: 1.33;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.sightImageWrapper {
+    width: 100%;
+    background-color: #F1F5F9;
+    border-radius: 16px;
+    aspect-ratio: 1.33;
+    overflow: hidden;
+    /* React Native elevation: 3 (browser uses CSS box-shadow). */
+    --rn-shadow-rgb: 0, 0, 0;
+    --rn-shadow-offset-x: 0px;
+    --rn-shadow-offset-y: 4px;
+    --rn-shadow-radius: 6px;
+    --rn-shadow-opacity: 0.1;
+    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+}
+
+.sightImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.templateImageWrapper {
+    background-color: #FFFFFF;
+    border-bottom-width: 1px;
+    border-bottom-color: #F1F5F9;
+    border-bottom-style: solid;
+}
+
+.templateImage {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/*
+    taskImage: {
+        width: 100,
+        height: 100,
+        borderRadius: 10,
+    },
+    */
+.taskImage {
+    width: 12px;
+    height: 20px;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+.zoomImage {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+.closeIcon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    /* React Native tintColor: #BDC3C7; for HTML img, tint requires a separate icon-specific technique. */
+}
+
+.gameBackIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.progressFinishIcon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+.hintIcon {
+    width: 14px;
+    height: 20px;
+    object-fit: contain;
+    margin-right: 6px;
+}
+
+.formatIcon {
+    text-align: center;
+}
+
+.gameIconWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 22px;
+    align-items: center;
+    margin-right: 6px;
+    margin-top: 1px;
+}
+
+/* Buttons */
+.closeButton {
+    display: flex;
+    flex-direction: column;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.gameBackButton {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.gameCancelLink {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sightTouchable {
+    width: 100%;
+}
+
+/* Badges */
+.pill {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 20px;
+    border-width: 1px;
+    position: relative;
+    border-style: solid;
+}
+
+.formatPill {
+    display: flex;
+    flex-direction: column;
+    width: 56px;
+    justify-content: center;
+}
+
+.pillActive {
+    background-color: #F1F5F9;
+    border-color: #17A2B8;
+}
+
+.pillActiveOrange {
+    background-color: #F1F5F9;
+    border-color: #E67E22;
+}
+
+.pillActiveGreen {
+    background-color: #F1F5F9;
+    border-color: #027900;
+}
+
+.pillDisabled {
+    background-color: #F1F5F9;
+    border-color: #F1F5F9;
+}
+
+.pillPremiumSign {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #8E44AD;
+    border-radius: 10px;
+    padding: 3px;
+    border-width: 1.5px;
+    border-color: #FFFFFF;
+    border-style: solid;
+}
+
+.hintPill {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F1F5F9;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: #E67E22;
+    border-style: solid;
+}
+
+.gameAnswerCard {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 25px;
+    align-items: center;
+    border-width: 2px;
+    border-color: #4CAF50;
+    /* React Native elevation: 5 (browser uses CSS box-shadow). */
+    margin-top: 10px;
+    border-style: solid;
+    --rn-shadow-rgb: 76, 175, 80;
+    --rn-shadow-offset-x: 0px;
+    --rn-shadow-offset-y: 10px;
+    --rn-shadow-radius: 15px;
+    --rn-shadow-opacity: 0.1;
+    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+}
+
+.gameSuccessBadge {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #4CAF50;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -15px;
+}
+
+.gameSuccessIcon {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+/* Progress */
+.progressGrid {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.progressMedal {
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 8px;
+    justify-content: center;
+    align-items: center;
+    /* React Native elevation: 2 (browser uses CSS box-shadow). */
+    --rn-shadow-rgb: 0, 0, 0;
+    --rn-shadow-offset-x: 0px;
+    --rn-shadow-offset-y: 2px;
+    --rn-shadow-radius: 4px;
+    --rn-shadow-opacity: 0.08;
+    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+}
+
+.progressMedalCurrent {
+    background-color: #2C3E50;
+    transform: scale(1.15);
+    /* React Native elevation: 6 (browser uses CSS box-shadow). */
+    z-index: 10;
+    --rn-shadow-rgb: 44, 62, 80;
+    --rn-shadow-radius: 6px;
+    --rn-shadow-opacity: 0.3;
+    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+}
+
+.progressMedalDisabled {
+    background-color: #F1F5F9;
+    --rn-shadow-opacity: 0;
+    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+}
+
+.progressMedalDone {
+    background-color: #81C7D4;
+}
+
+.progressMedalInProgress {
+    background-color: #17A2B8;
+}
+
+.progressMedalFinish {
+    background-color: #F1F5F9;
+}
+
+.progressMedalFinishDone {
+    background-color: #E67E22;
+}
+
+.barContainer {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 14px;
+    background-color: #F1F5F9;
+    border-radius: 7px;
+    overflow: hidden;
+    align-self: center;
+}
+
+.progressPoint {
+    flex: 1;
+    height: 100%;
+    border-right-width: 1px;
+    border-right-color: #FFFFFF;
+    border-right-style: solid;
+}
+
+.progressDisabled {
+    background-color: transparent;
+}
+
+.progressDone {
+    background-color: #17A2B8;
+}
+
+.progressInProgress {
+    background-color: #4CAF50;
+}
+
+.progressFinish {
+    background-color: #E74C3C;
+}
+
+.progressFinishDone {
+    background-color: #E67E22;
+}
+
+.progressCurrent {
+    background-color: #2C3E50;
+}
+
+/* Task */
+.taskGridWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.taskTextPreviewContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+}
+
+.taskCardGridItem {
+    width: 31%;
+    margin-bottom: 15px;
+}
+
+.taskCard {
+    padding: 0px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.taskNumber {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #E67E22;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    /* React Native elevation: 4 (browser uses CSS box-shadow). */
+    --rn-shadow-rgb: 0, 0, 0;
+    --rn-shadow-offset-x: 0px;
+    --rn-shadow-offset-y: 2px;
+    --rn-shadow-radius: 3px;
+    --rn-shadow-opacity: 0.3;
+    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+}
+
+.taskNumberText {
+    font-size: 12px;
+    font-weight: 900;
+    color: #FFFFFF;
+}
+
+.taskImageThumbWrapper {
+    width: 100%;
+    aspect-ratio: 1.33;
+}
+
+.taskImageThumb {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.taskLoupeWrapper {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.taskLoupe {
+    width: 16px;
+    height: 16px;
+    /* React Native tintColor: #2C3E50; for HTML img, tint requires a separate icon-specific technique. */
+    object-fit: contain;
+}
+
+.taskTextWrapper {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.taskTextPreview {
+    font-size: 11px;
+    line-height: 14px;
+    margin-bottom: 0px;
+}
+
+.hintImageWrapper {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+
+.hintImageLoader {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modalAnswerImageBg {
+    width: 100%;
+    aspect-ratio: 1.33;
+    background-color: #F1F5F9;
+}
+
+.fullWidthImageBg {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.fullWidthImageLoader {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}

@@ -1,0 +1,22 @@
+/* Web CSS Module converted from city_quest_app/google-play/src/styles/searchStyle.js. */
+
+.searchBlock {
+    width: 243px;
+    border-bottom-color: #F1F5F9;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.searchText {
+    color: #F1F5F9;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.searchImage {
+    width: 28px;
+    height: 29px;
+    margin-left: 5px;
+}

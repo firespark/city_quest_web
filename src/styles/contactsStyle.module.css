@@ -1,0 +1,80 @@
+/* Web CSS Module converted from contactsStyle.js. */
+
+.contactsCard {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    /* React Native elevation: 4 (browser uses CSS box-shadow). */
+    --rn-shadow-rgb: 0, 0, 0;
+    --rn-shadow-offset-x: 0px;
+    --rn-shadow-offset-y: 6px;
+    --rn-shadow-radius: 10px;
+    --rn-shadow-opacity: 0.08;
+    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+}
+
+.contactsFormWrapper {
+    width: 100%;
+}
+
+.contactsEmailBlock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 35px;
+    align-items: center;
+}
+
+.emailButton {
+    background-color: #F1F5F9;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: #F1F5F9;
+    border-style: solid;
+}
+
+.socialIconBtn {
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    /* React Native elevation: 5 (browser uses CSS box-shadow). */
+    --rn-shadow-rgb: 0, 0, 0;
+    --rn-shadow-offset-x: 0px;
+    --rn-shadow-offset-y: 4px;
+    --rn-shadow-radius: 5px;
+    --rn-shadow-opacity: 0.15;
+    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+}
+
+.contactsTitle {
+    font-size: 15px;
+    font-weight: 700;
+    color: #7F8C8D;
+    margin-bottom: 10px;
+}
+
+.emailText {
+    font-size: 18px;
+    font-weight: 800;
+    color: #17A2B8;
+}
+
+.socialIconText {
+    color: #FFFFFF;
+    font-weight: 900;
+    font-size: 16px;
+}
