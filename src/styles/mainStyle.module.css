@@ -1,20 +1,19 @@
-
 /* Web Screen Layout */
 
 .mainScreen {
-    display: flex;
-    flex-direction: column;
-    height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
 }
 
 .mainScreenScroll {
-    min-height: 0;
-    overflow-y: auto;
-    scrollbar-width: none;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .mainScreenScroll::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 
@@ -390,6 +389,14 @@
   padding-bottom: 16px;
   border-radius: 28px;
   align-items: center;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+
+.primaryButton:active {
+    opacity: 0.7;
 }
 
 .secondButton {
@@ -832,7 +839,7 @@
   flex-direction: column;
   flex: 1;
   justify-content: center;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
 }
 
@@ -890,4 +897,22 @@
   color: #E74C3C;
   text-align: center;
   font-size: 14px;
+}
+
+
+/* Web Loader */
+
+.loaderSpinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(23, 162, 184, 0.2);
+  border-top-color: #17A2B8;
+  border-radius: 50%;
+  animation: loaderSpin 0.8s linear infinite;
+}
+
+@keyframes loaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
 }
