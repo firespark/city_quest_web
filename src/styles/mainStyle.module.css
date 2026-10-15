@@ -416,6 +416,14 @@
 
 .secondButton {
   padding: 10px;
+  border: none;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.secondButton:active {
+  opacity: 0.7;
 }
 
 .dangerButton {
@@ -649,6 +657,11 @@
   text-align: center;
 }
 
+.input::placeholder {
+  color: #BDC3C7;
+  opacity: 1;
+}
+
 .modernInput {
   width: 100%;
   height: 54px;
@@ -666,8 +679,8 @@
 
 
 .modernInput::placeholder {
-    color: #BDC3C7;
-    opacity: 1;
+  color: #BDC3C7;
+  opacity: 1;
 }
 
 .textarea {
