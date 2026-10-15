@@ -1,5 +1,3 @@
-/* Web CSS Module converted from gameStyle.js. */
-
 /* Containers */
 .modalTemplateWrapper {
     padding-left: 10px;
@@ -32,7 +30,6 @@
     padding-top: 20px;
     padding-bottom: 30px;
     margin-top: 25px;
-    /* React Native elevation: 4 (browser uses CSS box-shadow). */
     --rn-shadow-rgb: 0, 0, 0;
     --rn-shadow-offset-x: 0px;
     --rn-shadow-offset-y: 6px;
@@ -228,14 +225,14 @@
 }
 
 /*
-    questionText: {
-        fontWeight: '400',
-        fontSize: 16,
-        lineHeight: 20,
-        textAlign: 'center',
-        color: '#17A2B8',
-    },
-    */
+questionText: {
+    fontWeight: '400',
+    fontSize: 16,
+    lineHeight: 20,
+    textAlign: 'center',
+    color: '#17A2B8',
+},
+*/
 .questionText {
     font-size: 18px;
     font-weight: 700;
@@ -365,7 +362,6 @@
     border-radius: 16px;
     aspect-ratio: 1.33;
     overflow: hidden;
-    /* React Native elevation: 3 (browser uses CSS box-shadow). */
     --rn-shadow-rgb: 0, 0, 0;
     --rn-shadow-offset-x: 0px;
     --rn-shadow-offset-y: 4px;
@@ -394,12 +390,13 @@
 }
 
 /*
-    taskImage: {
-        width: 100,
-        height: 100,
-        borderRadius: 10,
-    },
-    */
+taskImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 10,
+},
+*/
+
 .taskImage {
     width: 12px;
     height: 20px;
@@ -419,7 +416,6 @@
     width: 30px;
     height: 30px;
     object-fit: contain;
-    /* React Native tintColor: #BDC3C7; for HTML img, tint requires a separate icon-specific technique. */
 }
 
 .gameBackIcon {
@@ -462,6 +458,14 @@
     height: 44px;
     justify-content: center;
     align-items: flex-end;
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.closeButton:active {
+    opacity: 0.7;
 }
 
 .gameBackButton {
@@ -476,6 +480,36 @@
 .gameCancelLink {
     padding-top: 10px;
     padding-bottom: 10px;
+    border: none;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+}
+
+.gameCancelLink:active {
+    opacity: 0.7;
+}
+
+.answerBackButton {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+.answerBackButton:active {
+    opacity: 0.7;
+}
+
+button.barContainer {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+button.barContainer:active {
+    opacity: 0.7;
 }
 
 .sightTouchable {
@@ -502,6 +536,31 @@
     flex-direction: column;
     width: 56px;
     justify-content: center;
+}
+
+
+button.formatPill {
+    cursor: pointer;
+}
+
+button.formatPill:active {
+    opacity: 0.7;
+}
+
+
+button.pill {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+button.pill:active:not(:disabled) {
+    opacity: 0.7;
+}
+
+button.pill:disabled {
+    opacity: 1;
+    cursor: default;
 }
 
 .pillActive {
@@ -560,7 +619,6 @@
     align-items: center;
     border-width: 2px;
     border-color: #4CAF50;
-    /* React Native elevation: 5 (browser uses CSS box-shadow). */
     margin-top: 10px;
     border-style: solid;
     --rn-shadow-rgb: 76, 175, 80;
@@ -574,6 +632,7 @@
 .gameSuccessBadge {
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 30px;
     height: 30px;
     border-radius: 15px;
@@ -610,7 +669,6 @@
     margin: 8px;
     justify-content: center;
     align-items: center;
-    /* React Native elevation: 2 (browser uses CSS box-shadow). */
     --rn-shadow-rgb: 0, 0, 0;
     --rn-shadow-offset-x: 0px;
     --rn-shadow-offset-y: 2px;
@@ -619,10 +677,9 @@
     box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
 }
 
-.progressMedalCurrent {
+.progressMedal.progressMedalCurrent {
     background-color: #2C3E50;
     transform: scale(1.15);
-    /* React Native elevation: 6 (browser uses CSS box-shadow). */
     z-index: 10;
     --rn-shadow-rgb: 44, 62, 80;
     --rn-shadow-radius: 6px;
@@ -650,6 +707,17 @@
 
 .progressMedalFinishDone {
     background-color: #E67E22;
+}
+
+button.progressMedal {
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+button.progressMedal:active {
+    opacity: 0.7;
 }
 
 .barContainer {
@@ -695,6 +763,10 @@
     background-color: #2C3E50;
 }
 
+.progressPoint.progressCurrent.progressFinishDone {
+    background-color: #E67E22;
+}
+
 /* Task */
 .taskGridWrapper {
     display: flex;
@@ -720,6 +792,20 @@
     overflow: hidden;
     margin-bottom: 20px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+button.taskCard {
+    border: none;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+button.taskCard:active {
+    opacity: 0.8;
 }
 
 .taskNumber {
@@ -735,7 +821,6 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
-    /* React Native elevation: 4 (browser uses CSS box-shadow). */
     --rn-shadow-rgb: 0, 0, 0;
     --rn-shadow-offset-x: 0px;
     --rn-shadow-offset-y: 2px;
@@ -773,7 +858,6 @@
 .taskLoupe {
     width: 16px;
     height: 16px;
-    /* React Native tintColor: #2C3E50; for HTML img, tint requires a separate icon-specific technique. */
     object-fit: contain;
 }
 
@@ -785,6 +869,9 @@
 }
 
 .taskTextPreview {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     font-size: 11px;
     line-height: 14px;
     margin-bottom: 0px;

@@ -349,6 +349,13 @@
   padding-top: 12px;
   padding-bottom: 12px;
   box-shadow: 0px 6px 8px rgba(23, 162, 184, 0.35);
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button:active {
+  opacity: 0.7;
 }
 
 .buttonBuy {
@@ -486,6 +493,19 @@
   font-size: 16px;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.plainButton {
+  border: none;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.plainButton:active {
+  opacity: 0.7;
 }
 
 .backIcon {
@@ -644,6 +664,12 @@
   margin-bottom: 10px;
 }
 
+
+.modernInput::placeholder {
+    color: #BDC3C7;
+    opacity: 1;
+}
+
 .textarea {
   width: 319px;
   border-color: #F1F5F9;
@@ -670,6 +696,11 @@
   color: #2C3E50;
   min-height: 100px;
   margin-bottom: 15px;
+}
+
+.modernTextarea::placeholder {
+  color: #BDC3C7;
+  opacity: 1;
 }
 
 .inputError {
@@ -709,6 +740,14 @@
   border-style: solid;
   border-color: #F1F5F9;
   margin-bottom: 10px;
+  width: 100%;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.radioCard:active {
+  opacity: 0.7;
 }
 
 .radioCardActive {

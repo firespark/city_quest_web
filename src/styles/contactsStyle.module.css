@@ -1,5 +1,3 @@
-/* Web CSS Module converted from contactsStyle.js. */
-
 .contactsCard {
     width: 100%;
     background-color: #FFFFFF;
@@ -10,7 +8,6 @@
     padding-bottom: 30px;
     margin-top: 30px;
     margin-bottom: 20px;
-    /* React Native elevation: 4 (browser uses CSS box-shadow). */
     --rn-shadow-rgb: 0, 0, 0;
     --rn-shadow-offset-x: 0px;
     --rn-shadow-offset-y: 6px;
@@ -51,7 +48,6 @@
     border-radius: 25px;
     justify-content: center;
     align-items: center;
-    /* React Native elevation: 5 (browser uses CSS box-shadow). */
     --rn-shadow-rgb: 0, 0, 0;
     --rn-shadow-offset-x: 0px;
     --rn-shadow-offset-y: 4px;

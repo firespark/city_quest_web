@@ -1,5 +1,3 @@
-/* Web CSS Module converted from howPlayStyle.js. */
-
 .card {
     width: 100%;
     border-radius: 20px;
@@ -8,7 +6,6 @@
     padding-left: 15px;
     padding-right: 15px;
     margin-bottom: 20px;
-    /* React Native elevation: 5 (browser uses CSS box-shadow). */
     --rn-shadow-rgb: 0, 0, 0;
     --rn-shadow-offset-x: 0px;
     --rn-shadow-offset-y: 6px;
@@ -117,7 +114,6 @@
     padding-left: 15px;
     padding-right: 15px;
     margin-bottom: 40px;
-    /* React Native elevation: 3 (browser uses CSS box-shadow). */
     --rn-shadow-rgb: 0, 0, 0;
     --rn-shadow-offset-x: 0px;
     --rn-shadow-offset-y: 4px;

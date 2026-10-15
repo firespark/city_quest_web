@@ -1,6 +1,3 @@
-/* Port of src/styles/questsStyle.js from city_quest_app (google-play). */
-/* Class names and effective property values are retained. */
-
 /* Containers */
 .questCardWrapper {
     background-color: #FFFFFF;
@@ -107,7 +104,6 @@
 }
 
 .questImagePadding {
-    /* Original also declares paddingBottom: 15, overridden by paddingBottom: 8. */
     padding-bottom: 8px;
 }
 
@@ -232,6 +228,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     overflow: hidden;
 }
 
@@ -261,7 +258,6 @@
 .cityText {
     margin-left: 4px;
     margin-bottom: 0px;
-    /* includeFontPadding: false (React Native only; no CSS equivalent) */
     line-height: 16px;
 }
 
@@ -514,7 +510,6 @@
     color: #FFFFFF;
 }
 
-/* Browser equivalents for React Native horizontal ScrollView and activeOpacity */
 .filterScroll::-webkit-scrollbar {
     display: none;
 }
