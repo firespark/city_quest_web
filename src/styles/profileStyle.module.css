@@ -121,6 +121,10 @@
     font-weight: 900;
     color: #2C3E50;
     letter-spacing: -0.5px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .label {

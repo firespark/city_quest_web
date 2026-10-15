@@ -27,6 +27,18 @@
     border-color: #F1F5F9;
 }
 
+button.itemWrapper {
+    width: 100%;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+button.itemWrapper:active {
+    opacity: 0.7;
+}
+
 .bottomSheet {
     background-color: #FFFFFF;
     border-top-left-radius: 32px;
@@ -101,6 +113,7 @@
     width: 70px;
     height: 70px;
     border-radius: 12px;
+    object-fit: cover;
 }
 
 .questImagePadding {
