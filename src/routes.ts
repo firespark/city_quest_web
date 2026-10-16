@@ -1,45 +1,29 @@
 
-import {
-    MAIN_SCREEN,
-    ABOUT_SCREEN,
-    HOWPLAY_SCREEN,
-    PROFILE_SCREEN,
-    CONTACTS_SCREEN,
-    PROFILESETTINGS_SCREEN,
-    AUTH_SCREEN,
-    PASSWORDRESET_SCREEN
-} from './context/types'
+import { PAGES } from './config/pages'
 
-export const ROUTES = {
-    HOME: '/',
-    ABOUT: '/about',
-    HOW_PLAY: '/how-play',
-    PROFILE: '/profile',
-    CONTACTS: '/contacts',
-    SETTINGS: '/settings',
-    AUTH: '/auth',
-    PASSWORD_RESET: '/password-reset'
-} as const
+export const ROUTES = Object.fromEntries(
+    Object.entries(PAGES).map(([key, page]) => [
+        key,
+        page.path
+    ])
+) as {
+    [K in keyof typeof PAGES]: typeof PAGES[K]['path']
+}
 
-const screenPaths: Record<string, string> = {
-    [MAIN_SCREEN]: ROUTES.HOME,
-    [ABOUT_SCREEN]: ROUTES.ABOUT,
-    [HOWPLAY_SCREEN]: ROUTES.HOW_PLAY,
-    [PROFILE_SCREEN]: ROUTES.PROFILE,
-    [CONTACTS_SCREEN]: ROUTES.CONTACTS,
-    [PROFILESETTINGS_SCREEN]: ROUTES.SETTINGS,
-    [AUTH_SCREEN]: ROUTES.AUTH,
-    [PASSWORDRESET_SCREEN]: ROUTES.PASSWORD_RESET
+export const getPageByPath = (pathname: string) => {
+    const path = pathname.replace(/\/+$/, '') || '/'
+
+    return Object.values(PAGES).find(
+        page => page.path === path
+    ) ?? null
 }
 
 export const getPathByScreen = (screen: string): string | null => {
-    return screenPaths[screen] ?? null
+    return Object.values(PAGES).find(
+        page => page.screen === screen
+    )?.path ?? null
 }
 
 export const getScreenByPath = (pathname: string): string | null => {
-    const path = pathname.replace(/\/+$/, '') || '/'
-
-    return Object.keys(screenPaths).find(
-        screen => screenPaths[screen] === path
-    ) ?? null
+    return getPageByPath(pathname)?.screen ?? null
 }
