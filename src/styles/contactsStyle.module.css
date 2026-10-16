@@ -38,6 +38,15 @@
     border-width: 1px;
     border-color: #F1F5F9;
     border-style: solid;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.emailButton:active {
+    opacity: 0.7;
 }
 
 .socialIconBtn {
@@ -54,6 +63,10 @@
     --rn-shadow-radius: 5px;
     --rn-shadow-opacity: 0.15;
     box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+}
+
+.socialIconBtn:active {
+    opacity: 0.7;
 }
 
 .contactsTitle {

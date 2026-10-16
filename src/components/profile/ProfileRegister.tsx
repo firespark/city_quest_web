@@ -1,15 +1,12 @@
 
-import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 import profileStyle from '../../styles/profileStyle.module.css'
 
-import { AUTH_SCREEN } from '../../context/types'
-import { MainContext } from '../../context/mainContext'
+import { ROUTES } from '../../routes'
 
 export const ProfileRegister = () => {
-
-    const { changeScreen } = useContext(MainContext)
 
     return (
         <div className={profileStyle.profileContainer}>
@@ -19,15 +16,14 @@ export const ProfileRegister = () => {
                 </div>
             </div>
 
-            <button
-                type="button"
+            <Link
+                to={ROUTES.AUTH}
                 className={mainStyle.primaryButton}
-                onClick={() => changeScreen(AUTH_SCREEN)}
             >
                 <span className={mainStyle.primaryButtonText}>
                     Войти / Зарегистрироваться
                 </span>
-            </button>
+            </Link>
         </div>
     )
 }

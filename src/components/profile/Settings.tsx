@@ -1,32 +1,26 @@
 
-import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 import profileStyle from '../../styles/profileStyle.module.css'
 
-import { PROFILESETTINGS_SCREEN } from '../../context/types'
-import { MainContext } from '../../context/mainContext'
+import { ROUTES } from '../../routes'
 
 import settingsImage from '../../../assets/img/settings.png'
 
 export const Settings = () => {
 
-    const { changeScreen } = useContext(MainContext)
-
     return (
-        <button
-            type="button"
+        <Link
+            to={ROUTES.SETTINGS}
             className={mainStyle.plainButton}
             aria-label="Настройки профиля"
-            onClick={() => {
-                changeScreen(PROFILESETTINGS_SCREEN)
-            }}
         >
             <img
                 src={settingsImage}
                 className={profileStyle.settingsIcon}
                 alt=""
             />
-        </button>
+        </Link>
     )
 }

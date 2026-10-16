@@ -1,4 +1,6 @@
 
+export const SET_ROUTE_SCREEN = 'SET_ROUTE_SCREEN'
+
 export const ABOUT_SCREEN = 'ABOUT_SCREEN'
 export const AUTH_SCREEN = 'AUTH_SCREEN'
 export const CITIES_SCREEN = 'CITIES_SCREEN'

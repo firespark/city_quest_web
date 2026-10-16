@@ -1,21 +1,22 @@
 
 import { useContext } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
+
 import { MainContext } from './context/mainContext'
+import { ROUTES, getPathByScreen } from './routes'
+
 import {
-    ABOUT_SCREEN,
     AUTH_SCREEN,
     CITIES_SCREEN,
     CONTACTS_SCREEN,
     GAME_SCREEN,
-    HOWPLAY_SCREEN,
     MAIN_SCREEN,
     MENU_SCREEN,
     PASSWORDRESET_SCREEN,
-    PROFILE_SCREEN,
     PROFILESETTINGS_SCREEN,
     QUEST_SCREEN,
     QUESTS_SCREEN,
-    SEARCH_SCREEN,
+    SEARCH_SCREEN
 } from './context/types'
 
 import { AboutScreen } from './screens/AboutScreen'
@@ -37,41 +38,37 @@ export const Layout = () => {
 
     const { screens } = useContext(MainContext)
 
-    const screen = screens[screens.length - 1]
+    const screen = screens[screens.length - 1] ?? MAIN_SCREEN
+
+    if (getPathByScreen(screen) !== null) {
+        return (
+            <Routes>
+                <Route path={ROUTES.HOME} element={<MainScreen />} />
+                <Route path={ROUTES.ABOUT} element={<AboutScreen />} />
+                <Route path={ROUTES.HOW_PLAY} element={<HowPlayScreen />} />
+                <Route path={ROUTES.PROFILE} element={<ProfileScreen />} />
+                <Route path={ROUTES.CONTACTS} element={<ContactsScreen />} />
+                <Route path={ROUTES.SETTINGS} element={<ProfileSettingsScreen />} />
+                <Route path={ROUTES.AUTH} element={<AuthScreen />} />
+                <Route path={ROUTES.PASSWORD_RESET} element={<PasswordResetScreen />} />
+
+                <Route
+                    path="*"
+                    element={<Navigate to={ROUTES.HOME} replace />}
+                />
+            </Routes>
+        )
+    }
 
     switch (screen) {
-        case ABOUT_SCREEN:
-            return <AboutScreen />
-
-        case AUTH_SCREEN:
-            return <AuthScreen />
-
         case CITIES_SCREEN:
             return <CitiesScreen />
-
-        case CONTACTS_SCREEN:
-            return <ContactsScreen />
 
         case GAME_SCREEN:
             return <GameScreen />
 
-        case HOWPLAY_SCREEN:
-            return <HowPlayScreen />
-
-        case MAIN_SCREEN:
-            return <MainScreen />
-
         case MENU_SCREEN:
             return <MenuScreen />
-
-        case PASSWORDRESET_SCREEN:
-            return <PasswordResetScreen />
-
-        case PROFILE_SCREEN:
-            return <ProfileScreen />
-
-        case PROFILESETTINGS_SCREEN:
-            return <ProfileSettingsScreen />
 
         case QUEST_SCREEN:
             return <QuestScreen />

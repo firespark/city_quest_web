@@ -1,12 +1,15 @@
 
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 import headerStyle from '../../styles/headerStyle.module.css'
 
-import { ABOUT_SCREEN, CONTACTS_SCREEN } from '../../context/types'
+import { ROUTES } from '../../routes'
+import { CONTACTS_SCREEN } from '../../context/types'
 import { MainContext } from '../../context/mainContext'
 
 import infoImage from '../../../assets/img/info.png'
+import questionImage from '../../../assets/img/question.png'
 import envelopeImage from '../../../assets/img/envelope.png'
 
 export const MenuItems = () => {
@@ -15,10 +18,10 @@ export const MenuItems = () => {
 
     return (
         <div className={headerStyle.menuContainer}>
-            <button
-                type="button"
+
+            <Link
+                to={ROUTES.ABOUT}
                 className={headerStyle.menuButtonPanel}
-                onClick={() => changeScreen(ABOUT_SCREEN)}
             >
                 <div className={headerStyle.leftContent}>
                     <div className={headerStyle.iconWrapper}>
@@ -28,17 +31,40 @@ export const MenuItems = () => {
                             alt=""
                         />
                     </div>
+
                     <span className={headerStyle.buttonText}>
                         О проекте
                     </span>
                 </div>
-                <span className={headerStyle.chevron}>›</span>
-            </button>
 
-            <button
-                type="button"
+                <span className={headerStyle.chevron}>›</span>
+            </Link>
+
+            <Link
+                to={ROUTES.HOW_PLAY}
                 className={headerStyle.menuButtonPanel}
-                onClick={() => changeScreen(CONTACTS_SCREEN)}
+            >
+                <div className={headerStyle.leftContent}>
+                    <div className={headerStyle.iconWrapper}>
+                        <img
+                            src={questionImage}
+                            className={headerStyle.icon}
+                            alt=""
+                        />
+                    </div>
+
+                    <span className={headerStyle.buttonText}>
+                        Как играть
+                    </span>
+                </div>
+
+                <span className={headerStyle.chevron}>›</span>
+            </Link>
+
+
+            <Link
+                to={ROUTES.CONTACTS}
+                className={headerStyle.menuButtonPanel}
             >
                 <div className={headerStyle.leftContent}>
                     <div className={headerStyle.iconWrapper}>
@@ -53,7 +79,9 @@ export const MenuItems = () => {
                     </span>
                 </div>
                 <span className={headerStyle.chevron}>›</span>
-            </button>
+            </Link>
+
+
         </div>
     )
 }

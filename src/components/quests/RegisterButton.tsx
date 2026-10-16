@@ -1,13 +1,11 @@
 
-import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
-import { AUTH_SCREEN } from '../../context/types'
 import mainStyle from '../../styles/mainStyle.module.css'
-import { MainContext } from '../../context/mainContext'
+
+import { ROUTES } from '../../routes'
 
 export const RegisterButton = () => {
-
-    const { changeScreen } = useContext(MainContext)
 
     return (
         <div className={mainStyle.center}>
@@ -15,13 +13,15 @@ export const RegisterButton = () => {
                 Чтобы приобрести этот квест-тур, необходимо авторизоваться.
                 Иначе мы не сможем сохранить вашу покупку.
             </div>
-            <button
-                type="button"
+
+            <Link
+                to={ROUTES.AUTH}
                 className={mainStyle.buttonBuy}
-                onClick={() => changeScreen(AUTH_SCREEN)}
             >
-                <span className={mainStyle.buttonText}>Авторизоваться</span>
-            </button>
+                <span className={mainStyle.buttonText}>
+                    Авторизоваться
+                </span>
+            </Link>
         </div>
     )
 }

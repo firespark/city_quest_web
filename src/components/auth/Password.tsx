@@ -100,7 +100,7 @@ export const Password = ({ email, setError, changeScreen, token, screen, setLoad
                 </span>
             </button>
 
-            <PasswordForgot changeScreen={changeScreen} />
+            <PasswordForgot />
         </div>
     )
 }

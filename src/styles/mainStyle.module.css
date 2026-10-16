@@ -375,6 +375,7 @@
   border: none;
   font: inherit;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .buttonBuy:disabled {
@@ -407,6 +408,7 @@
   border: none;
   font: inherit;
   cursor: pointer;
+  text-decoration: none;
 }
 
 

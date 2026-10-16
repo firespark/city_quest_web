@@ -1,25 +1,21 @@
 
+import { Link } from 'react-router-dom'
+
 import mainStyle from '../../styles/mainStyle.module.css'
+import { ROUTES } from '../../routes'
 
-import { PASSWORDRESET_SCREEN } from '../../context/types'
-
-type PasswordForgotProps = {
-    changeScreen: (screen: string) => void
-}
-
-export const PasswordForgot = ({ changeScreen }: PasswordForgotProps) => {
+export const PasswordForgot = () => {
 
     return (
         <div className={`${mainStyle.center} ${mainStyle.mt30}`}>
-            <button
-                type="button"
+            <Link
+                to={ROUTES.PASSWORD_RESET}
                 className={mainStyle.plainButton}
-                onClick={() => changeScreen(PASSWORDRESET_SCREEN)}
             >
                 <span className={mainStyle.link}>
                     Не помню пароль
                 </span>
-            </button>
+            </Link>
         </div>
     )
 }

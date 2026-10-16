@@ -1,5 +1,6 @@
 
 import {
+  SET_ROUTE_SCREEN,
   CHANGE_SCREEN,
   PREVIOUS_SCREEN,
   SET_QUEST_ID,
@@ -34,6 +35,7 @@ export type MainStateData = {
 }
 
 export type MainAction =
+  | { type: typeof SET_ROUTE_SCREEN; screen: string }
   | { type: typeof CHANGE_SCREEN; screen: string }
   | { type: typeof PREVIOUS_SCREEN }
   | { type: typeof QUEST_CLEANUP }
@@ -49,6 +51,16 @@ export const mainReducer = (
 ): MainStateData => {
 
   switch (action.type) {
+
+    case SET_ROUTE_SCREEN:
+      if (state.screens.length === 1 && state.screens[0] === action.screen) {
+        return state
+      }
+
+      return {
+        ...state,
+        screens: [action.screen]
+      }
 
     case CHANGE_SCREEN: {
       let previousScreens = state.screens.slice()
