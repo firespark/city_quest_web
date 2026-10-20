@@ -1,5 +1,8 @@
 /* Containers */
 .questCardWrapper {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     background-color: #FFFFFF;
     border-radius: 28px;
     margin-bottom: 24px;
@@ -25,6 +28,9 @@
     border-width: 1px;
     border-style: solid;
     border-color: #F1F5F9;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 button.itemWrapper {

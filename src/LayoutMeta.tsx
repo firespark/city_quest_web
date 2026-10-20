@@ -2,6 +2,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
+import { SITE } from './config/site'
 import { PAGES } from './config/pages'
 import { getPageByPath } from './routes'
 
@@ -36,6 +37,17 @@ const setMeta = (
     element.content = content
 }
 
+
+export const setDynamicPageTitle = (title: string) => {
+    const fullTitle = `${title} | ${SITE.name}`
+
+    document.title = fullTitle
+
+    setMeta('property', 'og:title', fullTitle)
+    setMeta('name', 'twitter:title', fullTitle)
+}
+
+
 export const LayoutMeta = () => {
 
     const location = useLocation()
@@ -58,7 +70,11 @@ export const LayoutMeta = () => {
             ? new URL(meta.image, window.location.origin).href
             : null
 
-        document.title = meta.title
+        const title = page?.path === '/'
+            ? meta.title
+            : `${meta.title} | ${SITE.name}`
+
+        document.title = title
 
         setMeta('name', 'description', meta.description)
         setMeta('name', 'robots', meta.robots)

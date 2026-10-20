@@ -1,30 +1,24 @@
 
-import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 import citiesStyle from '../../styles/citiesStyle.module.css'
 
-import { QUESTS_SCREEN } from '../../context/types'
-import { MainContext } from '../../context/mainContext'
+import { slugUrl } from '../../routes'
 
 export type PopularCityData = {
     id: number
     title: string
     image: string
+    slug: string
 }
 
 export const PopularCity = ({ city }: { city: PopularCityData }) => {
 
-    const { changeScreen, setCityData } = useContext(MainContext)
-
     return (
-        <button
-            type="button"
+        <Link
+            to={slugUrl(city.slug)}
             className={citiesStyle.cityCardWrapper}
-            onClick={() => {
-                changeScreen(QUESTS_SCREEN)
-                setCityData({ id: city.id, title: city.title })
-            }}
         >
             <img
                 src={city.image}
@@ -41,6 +35,6 @@ export const PopularCity = ({ city }: { city: PopularCityData }) => {
                     <span className={mainStyle.pureArrow}>→</span>
                 </div>
             </div>
-        </button>
+        </Link>
     )
 }

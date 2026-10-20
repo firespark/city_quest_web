@@ -1,14 +1,12 @@
 
-import { useContext } from 'react'
 import { IoLibrary } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
+import { slugUrl } from '../../routes'
 
 import { StatusBadge, AccessBadge } from './QuestBadges'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 import questsStyle from '../../styles/questsStyle.module.css'
-
-import { QUEST_SCREEN } from '../../context/types'
-import { MainContext } from '../../context/mainContext'
 
 export type QuestData = {
     id: number
@@ -18,21 +16,18 @@ export type QuestData = {
     status: string | null
     title: string
     sights_count: number | string
+    slug: string
 }
 
 export const Quest = ({ quest }: { quest: QuestData }) => {
-    const { changeScreen, setQuestId, questScreenCleanup } = useContext(MainContext)
 
     return (
-        <button
-            type="button"
+
+        <Link
+            to={slugUrl(quest.slug)}
             className={questsStyle.questCardWrapper}
-            onClick={() => {
-                changeScreen(QUEST_SCREEN)
-                setQuestId(quest.id)
-                questScreenCleanup()
-            }}
         >
+
             <div className={questsStyle.questImagePadding}>
                 <div className={questsStyle.questImageContainer}>
                     <img
@@ -76,6 +71,6 @@ export const Quest = ({ quest }: { quest: QuestData }) => {
                     <span className={mainStyle.pureArrow}>→</span>
                 </div>
             </div>
-        </button>
+        </Link>
     )
 }

@@ -1,9 +1,10 @@
 
 import { useContext } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 
 import { MainContext } from './context/mainContext'
-import { ROUTES, getPathByScreen } from './routes'
+import { ROUTES, getScreenByPath } from './routes'
+import { SlugRoute } from './SlugRoute'
 
 import {
     AUTH_SCREEN,
@@ -37,10 +38,11 @@ import { SearchScreen } from './screens/SearchScreen'
 export const Layout = () => {
 
     const { screens } = useContext(MainContext)
+    const location = useLocation()
 
     const screen = screens[screens.length - 1] ?? MAIN_SCREEN
 
-    if (getPathByScreen(screen) !== null) {
+    if (getScreenByPath(location.pathname) === screen) {
         return (
             <Routes>
                 <Route path={ROUTES.HOME} element={<MainScreen />} />
@@ -53,9 +55,15 @@ export const Layout = () => {
                 <Route path={ROUTES.PASSWORD_RESET} element={<PasswordResetScreen />} />
 
                 <Route
+                    path={ROUTES.SLUG}
+                    element={<SlugRoute key={location.pathname} />}
+                />
+
+                <Route
                     path="*"
                     element={<Navigate to={ROUTES.HOME} replace />}
                 />
+
             </Routes>
         )
     }

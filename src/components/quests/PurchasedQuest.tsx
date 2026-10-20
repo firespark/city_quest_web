@@ -1,30 +1,24 @@
 
-import { useContext, type ReactNode } from 'react'
+import type { ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 import { IoCheckmarkSharp, IoLocationSharp } from 'react-icons/io5'
 
 import questsStyle from '../../styles/questsStyle.module.css'
 
-import { QUEST_SCREEN } from '../../context/types'
-import { MainContext } from '../../context/mainContext'
+import { slugUrl } from '../../routes'
 
 type PurchasedQuestData = {
     id: number
+    slug: string
     [key: string]: unknown
 }
 
 export const PurchasedQuest = ({ quest }: { quest: PurchasedQuestData }) => {
 
-    const { changeScreen, setQuestId, questScreenCleanup } = useContext(MainContext)
-
     return (
-        <button
-            type="button"
+        <Link
+            to={slugUrl(quest.slug)}
             className={questsStyle.itemWrapper}
-            onClick={() => {
-                changeScreen(QUEST_SCREEN)
-                setQuestId(quest.id)
-                questScreenCleanup()
-            }}
         >
             <div className={questsStyle.imageContainer}>
                 <img
@@ -55,6 +49,6 @@ export const PurchasedQuest = ({ quest }: { quest: PurchasedQuestData }) => {
                     </span>
                 </div>
             </div>
-        </button>
+        </Link>
     )
 }

@@ -89,7 +89,7 @@ export const MainState = ({ children }: { children: ReactNode }) => {
     const previousScreen = () => {
         const currentScreen = state.screens[state.screens.length - 1]
 
-        if (currentScreen && getPathByScreen(currentScreen) !== null) {
+        if (currentScreen && getScreenByPath(location.pathname) === currentScreen) {
             if ((window.history.state?.idx ?? 0) > 0) {
                 navigate(-1)
             } else {

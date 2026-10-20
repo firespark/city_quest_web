@@ -7,7 +7,8 @@ import {
     PROFILE_SCREEN,
     PROFILESETTINGS_SCREEN,
     AUTH_SCREEN,
-    PASSWORDRESET_SCREEN
+    PASSWORDRESET_SCREEN,
+    SLUG_SCREEN
 } from '../context/types'
 
 export const PAGES = {
@@ -25,7 +26,7 @@ export const PAGES = {
         path: '/about',
         screen: ABOUT_SCREEN,
         meta: {
-            title: 'О проекте | Гагара Тур',
+            title: 'О проекте',
             description: 'Узнайте больше о нашем проекте.',
             robots: 'index, follow'
         }
@@ -45,7 +46,7 @@ export const PAGES = {
         path: '/contacts',
         screen: CONTACTS_SCREEN,
         meta: {
-            title: 'Контакты | Гагара Тур',
+            title: 'Контакты',
             description: 'Свяжитесь с командой Гагара Тур.',
             robots: 'index, follow'
         }
@@ -55,7 +56,7 @@ export const PAGES = {
         path: '/profile',
         screen: PROFILE_SCREEN,
         meta: {
-            title: 'Профиль | Гагара Тур',
+            title: 'Профиль',
             description: 'Личный профиль пользователя.',
             robots: 'noindex, nofollow'
         }
@@ -65,7 +66,7 @@ export const PAGES = {
         path: '/settings',
         screen: PROFILESETTINGS_SCREEN,
         meta: {
-            title: 'Настройки профиля | Гагара Тур',
+            title: 'Настройки профиля',
             description: 'Настройки аккаунта.',
             robots: 'noindex, nofollow'
         }
@@ -75,7 +76,7 @@ export const PAGES = {
         path: '/auth',
         screen: AUTH_SCREEN,
         meta: {
-            title: 'Вход и регистрация | Гагара Тур',
+            title: 'Вход и регистрация',
             description: 'Вход и регистрация.',
             robots: 'noindex, nofollow'
         }
@@ -85,8 +86,18 @@ export const PAGES = {
         path: '/password-reset',
         screen: PASSWORDRESET_SCREEN,
         meta: {
-            title: 'Восстановление пароля | Гагара Тур',
+            title: 'Восстановление пароля',
             description: 'Восстановление доступа к аккаунту.',
+            robots: 'noindex, nofollow'
+        }
+    },
+
+    SLUG: {
+        path: '/:slug',
+        screen: SLUG_SCREEN,
+        meta: {
+            title: 'Гагара Тур',
+            description: '',
             robots: 'noindex, nofollow'
         }
     }

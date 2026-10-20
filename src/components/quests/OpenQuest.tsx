@@ -1,20 +1,19 @@
 
-import { useContext, type ReactNode } from 'react'
+import type { ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 import { IoLockClosed, IoCheckmarkSharp, IoLocationSharp } from 'react-icons/io5'
 
 import questsStyle from '../../styles/questsStyle.module.css'
 
-import { QUEST_SCREEN } from '../../context/types'
-import { MainContext } from '../../context/mainContext'
+import { slugUrl } from '../../routes'
 
 type OpenQuestData = {
     id?: number | string
+    slug: string
     [key: string]: unknown
 }
 
 export const OpenQuest = ({ quest }: { quest: OpenQuestData }) => {
-
-    const { changeScreen, setQuestId, questScreenCleanup } = useContext(MainContext)
 
     const renderAccessBadge = () => {
         if (quest.paid && !quest.available) {
@@ -41,14 +40,9 @@ export const OpenQuest = ({ quest }: { quest: OpenQuestData }) => {
     }
 
     return (
-        <button
-            type="button"
+        <Link
+            to={slugUrl(quest.slug)}
             className={questsStyle.itemWrapper}
-            onClick={() => {
-                changeScreen(QUEST_SCREEN)
-                setQuestId(quest.id as number)
-                questScreenCleanup()
-            }}
         >
             <div className={questsStyle.imageContainer}>
                 <img
@@ -83,6 +77,6 @@ export const OpenQuest = ({ quest }: { quest: OpenQuestData }) => {
                     </span>
                 </div>
             </div>
-        </button>
+        </Link>
     )
 }
