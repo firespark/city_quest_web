@@ -997,17 +997,22 @@
 /* Website styles */
 
 .siteLayout {
-    display: grid;
-    grid-template-rows: auto minmax(0, 1fr) auto;
-    height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
 }
 
 .siteContent {
-    min-height: 0;
-    overflow: hidden;
+  flex: 1 0 auto;
+  min-height: 0;
+  overflow: visible;
 }
 
 .siteContent .mainScreen {
-    height: 100%;
-    min-height: 0;
+  height: auto;
+  min-height: 0;
+}
+
+.siteContent .mainScreenScroll {
+  overflow-y: visible;
 }

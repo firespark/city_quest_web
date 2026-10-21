@@ -5,8 +5,8 @@ import { MainState } from './context/MainState'
 import { Layout } from './Layout'
 import { LayoutMeta } from './LayoutMeta'
 
-import { Header } from './components/common/Header'
-import { Footer } from './components/common/Footer'
+import { Header } from './components/header/Header'
+import { Footer } from './components/footer/Footer'
 
 import { ROUTES } from './routes'
 import mainStyle from './styles/mainStyle.module.css'

@@ -7,7 +7,6 @@ import profileStyle from '../../styles/profileStyle.module.css'
 
 import { Back } from '../common/Back'
 import { HeaderTitle } from '../common/HeaderTitle'
-import { Menu } from '../common/Menu'
 
 import { ProfileEmail } from './ProfileEmail'
 import { ProfileName } from './ProfileName'
@@ -46,12 +45,7 @@ export const SettingsTemplate = ({
                 minHeight: 0
             }}
         >
-            <header className={`${mainStyle.panelRow} ${headerStyle.panelHeader}`}>
-                <Back />
-                <HeaderTitle title="Настройки" />
-                <Menu />
-            </header>
-
+            
             <main className={`${mainStyle.flex} ${mainStyle.mainScreenScroll}`}>
                 <div className={mainStyle.container}>
 

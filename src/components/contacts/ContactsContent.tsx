@@ -1,5 +1,5 @@
 
-import { SocialButtons } from './SocialButtons'
+import { Socials } from '../common/Socials'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 import contactsStyle from '../../styles/contactsStyle.module.css'
@@ -10,7 +10,7 @@ export const ContactsContent = () => {
         <div className={`${mainStyle.card} ${mainStyle.mt20}`}>
             <div className={`${mainStyle.center} ${mainStyle.mb25}`}>
 
-                <SocialButtons />
+                <Socials />
 
                 <div className={contactsStyle.contactsEmailBlock}>
                     <div className={`${mainStyle.subtitle} ${mainStyle.textCenter} ${mainStyle.mt20}`}>

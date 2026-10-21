@@ -4,7 +4,6 @@ import headerStyle from '../styles/headerStyle.module.css'
 
 import { Close } from '../components/common/Close'
 import { MenuItems } from '../components/common/MenuItems'
-import { Footer } from '../components/common/Footer'
 
 export const MenuScreen = () => {
 
@@ -20,7 +19,6 @@ export const MenuScreen = () => {
                 </div>
             </main>
 
-            <Footer />
         </div>
     )
 }
