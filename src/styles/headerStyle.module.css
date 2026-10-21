@@ -1,13 +1,14 @@
+
 /* Header */
 
 .panelHeader {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  min-height: 72px;
+  padding: 12px max(20px, calc((100% - 1080px) / 2));
   background-color: #FFFFFF;
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1px solid #E7EFF2;
 }
 
 .headerActions {
@@ -28,8 +29,24 @@
 }
 
 .logoLink {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logoLink:hover,
+.logoLink:focus-visible {
+  text-decoration: none;
+}
+
+.logoLink:hover .logoTitle,
+.logoLink:focus-visible .logoTitle {
+  color: #17A2B8;
+}
+
+.logoLink:hover .logoImage,
+.logoLink:focus-visible .logoImage {
+  filter: brightness(0) invert(49.4%) sepia(57.3%) saturate(465%) hue-rotate(140.2deg) brightness(93.85%) contrast(124.82%);
 }
 
 /* Menu */
@@ -51,7 +68,6 @@
   text-decoration: none;
   text-align: left;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .menuButtonPanel:active {
@@ -82,6 +98,7 @@
   font-size: 18px;
   font-weight: 600;
   color: #2C3E50;
+  transition: color 0.2s ease;
 }
 
 .buttonText {
@@ -118,6 +135,7 @@
   height: 36px;
   object-fit: contain;
   margin-right: 10px;
+  transition: filter 0.2s ease;
 }
 
 .back {
@@ -163,4 +181,68 @@
 
 .menuLine3 {
   width: 12px;
+}
+
+/* Website styles */
+
+.headerNav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-left: auto;
+}
+
+.headerNav a {
+  color: #2C3E50;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.headerNav a:hover,
+.headerNav a[aria-current="page"] {
+  color: #17A2B8;
+}
+
+.headerMobileMenu {
+  display: none;
+}
+
+.headerLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  margin-left: 20px;
+  border-radius: 50%;
+  background-color: #E8F7FA;
+  transition: background-color 0.2s;
+}
+
+.headerLogin:hover {
+  background-color: #D2EEF3;
+}
+
+.headerLogin img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .headerNav {
+    display: none;
+  }
+
+  .headerMobileMenu {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .headerLogin {
+    margin-left: 0;
+  }
 }

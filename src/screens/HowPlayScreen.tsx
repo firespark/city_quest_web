@@ -3,16 +3,10 @@ import { useState, useEffect } from 'react'
 
 import mainStyle from '../styles/mainStyle.module.css'
 import howPlayStyle from '../styles/howPlayStyle.module.css'
-import headerStyle from '../styles/headerStyle.module.css'
-
-import { Back } from '../components/common/Back'
-import { HeaderTitle } from '../components/common/HeaderTitle'
-import { Menu } from '../components/common/Menu'
 
 import { ConnectionError } from '../components/common/ConnectionError'
 import { HowPlayBlockBlue } from '../components/howPlay/HowPlayBlockBlue'
 import { HowPlayBlock } from '../components/howPlay/HowPlayBlock'
-import { Footer } from '../components/common/Footer'
 import { Loader } from '../components/common/Loader'
 import { Error } from '../components/common/Error'
 
@@ -114,12 +108,7 @@ export const HowPlayScreen = () => {
 
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            <header className={`${mainStyle.panelRow} ${headerStyle.panelHeader}`}>
-                <Back />
-                <HeaderTitle title="Как играть" />
-                <Menu />
-            </header>
-
+            
             <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
                 <div className={mainStyle.container}>
 
@@ -178,7 +167,6 @@ export const HowPlayScreen = () => {
                 )}
             </main>
 
-            <Footer active="question" />
         </div>
     )
 }

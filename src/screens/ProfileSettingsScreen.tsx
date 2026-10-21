@@ -5,7 +5,6 @@ import mainStyle from '../styles/mainStyle.module.css'
 
 import { EditTemplate } from '../components/profile/EditTemplate'
 import { SettingsTemplate } from '../components/profile/SettingsTemplate'
-import { Footer } from '../components/common/Footer'
 
 import { Loader } from '../components/common/Loader'
 import { Error } from '../components/common/Error'
@@ -110,7 +109,6 @@ export const ProfileSettingsScreen = () => {
                 )}
             </main>
 
-            <Footer />
         </div>
     )
 }

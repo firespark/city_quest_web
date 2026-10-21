@@ -2,12 +2,7 @@
 import { useState, useContext, type ReactNode } from 'react'
 
 import mainStyle from '../styles/mainStyle.module.css'
-import headerStyle from '../styles/headerStyle.module.css'
 import authStyle from '../styles/authStyle.module.css'
-
-import { Back } from '../components/common/Back'
-import { HeaderTitle } from '../components/common/HeaderTitle'
-import { Menu } from '../components/common/Menu'
 
 import { Email } from '../components/auth/Email'
 import { Code } from '../components/auth/Code'
@@ -16,7 +11,6 @@ import { CreateProfile } from '../components/auth/CreateProfile'
 import { NewPassword } from '../components/auth/NewPassword'
 import { AuthGoogle } from '../components/auth/AuthGoogle'
 
-import { Footer } from '../components/common/Footer'
 import { Loader } from '../components/common/Loader'
 import { Error } from '../components/common/Error'
 
@@ -111,12 +105,7 @@ export const AuthScreen = () => {
 
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            <header className={headerStyle.panelHeader}>
-                <Back />
-                <HeaderTitle title="Авторизация" />
-                <Menu />
-            </header>
-
+            
             <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
                 <div className={authStyle.authScrollContent}>
                     {error && (
@@ -131,7 +120,6 @@ export const AuthScreen = () => {
                 </div>
             </main>
 
-            <Footer />
         </div>
     )
 }

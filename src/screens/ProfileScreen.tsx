@@ -2,17 +2,13 @@
 import { useState, useContext, useEffect } from 'react'
 
 import mainStyle from '../styles/mainStyle.module.css'
-import headerStyle from '../styles/headerStyle.module.css'
 import profileStyle from '../styles/profileStyle.module.css'
 
-import { Back } from '../components/common/Back'
-import { Menu } from '../components/common/Menu'
 import { Settings } from '../components/profile/Settings'
 import { ProfileRegister } from '../components/profile/ProfileRegister'
 import { OpenQuests } from '../components/quests/OpenQuests'
 import { DoneQuests } from '../components/quests/DoneQuests'
 import { PurchasedQuests } from '../components/quests/PurchasedQuests'
-import { Footer } from '../components/common/Footer'
 import { Loader } from '../components/common/Loader'
 import { Error } from '../components/common/Error'
 import { ConnectionError } from '../components/common/ConnectionError'
@@ -87,11 +83,7 @@ export const ProfileScreen = () => {
 
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            <header className={headerStyle.panelHeader}>
-                <Back />
-                <Menu />
-            </header>
-
+            
             <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
                 <div className={mainStyle.container}>
 
@@ -123,7 +115,6 @@ export const ProfileScreen = () => {
                 </div>
             </main>
 
-            <Footer active="profile" />
         </div>
     )
 }

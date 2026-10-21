@@ -2,12 +2,8 @@
 import { useContext, useState, useEffect } from 'react'
 
 import mainStyle from '../styles/mainStyle.module.css'
-import headerStyle from '../styles/headerStyle.module.css'
 import questsStyle from '../styles/questsStyle.module.css'
 
-import { Back } from '../components/common/Back'
-import { HeaderTitle } from '../components/common/HeaderTitle'
-import { Menu } from '../components/common/Menu'
 import { FormattedContent } from '../components/common/FormattedContent'
 import { QuestTitle } from '../components/quests/QuestTitle'
 import { QuestImage } from '../components/quests/QuestImage'
@@ -16,7 +12,6 @@ import { StartButton } from '../components/quests/StartButton'
 import { ResetButton } from '../components/quests/ResetButton'
 import { RegisterButton } from '../components/quests/RegisterButton'
 import { BuyButton } from '../components/quests/BuyButton'
-import { Footer } from '../components/common/Footer'
 import { Loader } from '../components/common/Loader'
 import { Error } from '../components/common/Error'
 import { ResetModal } from '../components/quests/ResetModal'
@@ -76,12 +71,7 @@ export const QuestScreen = () => {
 
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            <header className={`${mainStyle.panelRow} ${headerStyle.panelHeader}`}>
-                <Back />
-                <HeaderTitle title="Квест-Туры" />
-                <Menu />
-            </header>
-
+            
             <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
                 <QuestImage data={data} />
 
@@ -154,8 +144,6 @@ export const QuestScreen = () => {
 
                 </div>
             </main>
-
-            <Footer />
 
             <ResetModal
                 modalVisible={modalVisible}

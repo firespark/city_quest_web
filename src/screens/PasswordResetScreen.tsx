@@ -2,19 +2,13 @@
 import { useState, useContext, type ReactNode } from 'react'
 
 import mainStyle from '../styles/mainStyle.module.css'
-import headerStyle from '../styles/headerStyle.module.css'
 import authStyle from '../styles/authStyle.module.css'
-
-import { Back } from '../components/common/Back'
-import { HeaderTitle } from '../components/common/HeaderTitle'
-import { Menu } from '../components/common/Menu'
 
 import { EmailReset } from '../components/auth/EmailReset'
 import { Code } from '../components/auth/Code'
 import { NewPassword } from '../components/auth/NewPassword'
 
 import { Loader } from '../components/common/Loader'
-import { Footer } from '../components/common/Footer'
 import { Error } from '../components/common/Error'
 
 import { MainContext } from '../context/mainContext'
@@ -74,12 +68,7 @@ export const PasswordResetScreen = () => {
 
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            <header className={`${mainStyle.panelRow} ${headerStyle.panelHeader}`}>
-                <Back />
-                <HeaderTitle title="Восстановление пароля" />
-                <Menu />
-            </header>
-
+            
             <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
                 <div className={authStyle.authScrollContent}>
                     {error && (
@@ -94,7 +83,6 @@ export const PasswordResetScreen = () => {
                 </div>
             </main>
 
-            <Footer />
         </div>
     )
 }

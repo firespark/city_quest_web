@@ -992,3 +992,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Website styles */
+
+.siteLayout {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    height: 100dvh;
+}
+
+.siteContent {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.siteContent .mainScreen {
+    height: 100%;
+    min-height: 0;
+}

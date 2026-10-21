@@ -1,11 +1,7 @@
 
 import { useState, useEffect } from 'react'
 
-import { Back } from '../components/common/Back'
-import { HeaderTitle } from '../components/common/HeaderTitle'
-import { Menu } from '../components/common/Menu'
 import { FormattedContent } from '../components/common/FormattedContent'
-import { Footer } from '../components/common/Footer'
 import { Loader } from '../components/common/Loader'
 import { Error } from '../components/common/Error'
 import { ConnectionError } from '../components/common/ConnectionError'
@@ -66,12 +62,7 @@ export const AboutScreen = () => {
 
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            <header className={headerStyle.panelHeader}>
-                <Back />
-                <HeaderTitle title={data.title ?? ''} />
-                <Menu />
-            </header>
-
+            
             <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
                 <div className={mainStyle.scrollContent}>
                     {error === 'connection_error' ? (
@@ -86,7 +77,6 @@ export const AboutScreen = () => {
                 </div>
             </main>
 
-            <Footer />
         </div>
     )
 }
