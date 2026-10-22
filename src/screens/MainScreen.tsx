@@ -8,6 +8,7 @@ import {
     FeaturedQuestsProvider
 } from '../components/quests/FeaturedQuests'
 import { About } from '../components/main/About'
+import { ContactsBlock } from '../components/contacts/ContactsBlock'
 
 export const MainScreen = () => {
     return (
@@ -33,6 +34,8 @@ export const MainScreen = () => {
                         subtitle="Новые маршруты для новых впечатлений."
                     />
                 </FeaturedQuestsProvider>
+
+                <ContactsBlock /> 
 
             </main>
         </div>

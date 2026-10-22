@@ -87,3 +87,176 @@
     font-weight: 900;
     font-size: 16px;
 }
+
+
+/* Contacts Block */
+
+.blockSection {
+    padding: 76px 20px 84px;
+    background-color: #FFFFFF;
+}
+
+.blockCard {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 42px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px 46px;
+    border: 1px solid #BFE8EC;
+    border-radius: 22px;
+    background-color: #D8F4F7;
+    box-shadow: 0 12px 30px rgba(12, 50, 67, 0.09);
+}
+
+.blockIntro,
+.blockForm {
+    min-width: 0;
+}
+
+.blockEyebrow {
+    margin-bottom: 10px;
+    color: #1598AA;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.blockTitle {
+    margin: 0 0 14px;
+    color: #2C3E50;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 900;
+    line-height: 1.15;
+}
+
+.blockDescription {
+    max-width: 350px;
+    margin: 0;
+    color: #5A6A7A;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.blockFields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.blockInput,
+.blockTextarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #D7E9EC;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #2C3E50;
+    font: inherit;
+    font-size: 14px;
+}
+
+.blockInput {
+    height: 50px;
+    padding: 0 15px;
+}
+
+.blockTextarea {
+    grid-column: 1 / -1;
+    min-height: 105px;
+    padding: 14px 15px;
+    resize: vertical;
+}
+
+.blockInput:focus,
+.blockTextarea:focus {
+    border-color: #17A2B8;
+    outline: none;
+}
+
+.blockAgreement {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    color: #5A6A7A;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.blockCheckbox {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #17A2B8;
+    cursor: pointer;
+}
+
+.blockError {
+    margin-top: 12px;
+    color: #E74C3C;
+    font-size: 13px;
+}
+
+.blockSuccess {
+    color: #2C3E50;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.blockButtonRow {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 14px;
+}
+
+.blockButton {
+    min-height: 46px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #078D9D;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.blockButton:hover {
+    background-color: #087A89;
+}
+
+.blockButton:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+@media (max-width: 800px) {
+    .blockCard {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .blockSection {
+        padding: 44px 16px 56px;
+    }
+
+    .blockCard {
+        padding: 24px 18px;
+    }
+
+    .blockFields {
+        grid-template-columns: 1fr;
+    }
+
+    .blockButton {
+        width: 100%;
+    }
+}
