@@ -3,11 +3,11 @@ import mainStyle from '../styles/mainStyle.module.css'
 
 import { Hero } from '../components/main/Hero'
 import { Countries } from '../components/countries/Countries'
-
 import {
     FeaturedQuests,
     FeaturedQuestsProvider
 } from '../components/quests/FeaturedQuests'
+import { About } from '../components/main/About'
 
 export const MainScreen = () => {
     return (
@@ -24,6 +24,8 @@ export const MainScreen = () => {
                         title="Популярные квесты"
                         subtitle="Топ экскурсий в разных городах."
                     />
+
+                    <About />
 
                     <FeaturedQuests
                         offset={3}
