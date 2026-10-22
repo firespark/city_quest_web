@@ -540,3 +540,125 @@ button.itemWrapper:active {
 .questCardWrapper:active {
     opacity: 0.8;
 }
+
+/* Featured Quests */
+
+.featuredSection {
+    padding: 58px 20px 66px;
+    background-color: #FFFFFF;
+}
+
+.featuredInner {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.featuredInner>p {
+    margin: 8px 0 25px;
+}
+
+.featuredGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.featuredCard {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #E4EEF1;
+    border-radius: 16px;
+    background: #FFFFFF;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(12, 50, 67, 0.06);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.featuredCard:hover,
+.featuredCard:focus-visible {
+    border-color: #8BCFD9;
+    box-shadow: 0 8px 24px rgba(12, 50, 67, 0.12);
+}
+
+.featuredImageWrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.featuredImage {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.featuredCard:hover .featuredImage,
+.featuredCard:focus-visible .featuredImage {
+    transform: scale(1.06);
+}
+
+.featuredBody {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 9px;
+    padding: 17px;
+}
+
+.featuredCity {
+    color: #17A2B8;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.featuredTitle {
+    margin: 0;
+    color: #2C3E50;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.featuredBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 10px;
+    color: #5A6A7A;
+    font-size: 13px;
+}
+
+.featuredArrow {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #17A2B8;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+@media (max-width: 850px) {
+    .featuredGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .featuredSection {
+        padding: 44px 16px 52px;
+    }
+
+    .featuredGrid {
+        grid-template-columns: 1fr;
+    }
+}

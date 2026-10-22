@@ -1142,3 +1142,32 @@
     border-radius: 48px 18px 18px 18px;
   }
 }
+
+/* Main Screen - About */
+
+.mainAbout {
+  background-color: #EAF7F9;
+  padding: 64px 20px;
+}
+
+.mainAboutInner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.mainAboutInner > .welcomeTitle {
+  margin: 0 0 16px;
+  line-height: 1.25;
+}
+
+.mainAboutInner > .description {
+  max-width: 620px;
+  margin: 0 0 24px;
+  line-height: 1.65;
+}
+
+@media (max-width: 600px) {
+  .mainAbout {
+    padding: 44px 16px;
+  }
+}
