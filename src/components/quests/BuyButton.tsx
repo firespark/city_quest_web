@@ -10,11 +10,11 @@ export const BuyButton = (_props: {
         <div className={mainStyle.center}>
             <button
                 type="button"
-                className={mainStyle.buttonBuy}
+                className={`${mainStyle.siteButton} ${mainStyle.siteButtonPurchase}`}
                 disabled
                 title="Оплата на сайте пока недоступна"
             >
-                <span className={mainStyle.buttonText}>Купить тур</span>
+                Купить тур
             </button>
         </div>
     )

@@ -1,5 +1,3 @@
-/* Countries */
-
 .countriesSection {
   width: 100%;
   padding: 64px 20px;
@@ -54,7 +52,7 @@
 .countryCities a:visited,
 .countryCities span {
   color: #5A6A7A;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
   overflow-wrap: anywhere;
 }

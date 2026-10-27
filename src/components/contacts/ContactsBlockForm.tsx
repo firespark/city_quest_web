@@ -5,6 +5,7 @@ import { Http } from '../../scripts/http'
 
 import { Loader } from '../common/Loader'
 
+import mainStyle from '../../styles/mainStyle.module.css'
 import contactsStyle from '../../styles/contactsStyle.module.css'
 
 export const ContactsBlockForm = () => {
@@ -12,7 +13,7 @@ export const ContactsBlockForm = () => {
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
 
-    const [agree, setAgree] = useState(false)
+    const [agree, setAgree] = useState(true)
     const [loader, setLoader] = useState(false)
     const [error, setError] = useState<string | null>(null)
     const [sent, setSent] = useState(false)
@@ -129,7 +130,7 @@ export const ContactsBlockForm = () => {
             <div className={contactsStyle.blockButtonRow}>
                 <button
                     type="submit"
-                    className={contactsStyle.blockButton}
+                    className={mainStyle.siteButton}
                     disabled={loader}
                 >
                     Отправить сообщение

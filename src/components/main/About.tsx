@@ -22,14 +22,6 @@ export const About = () => {
                         решайте загадки и узнавайте новые истории в своём темпе.
                     </p>
 
-                    <div className={mainStyle.mainAboutTags}>
-                        <span className={mainStyle.mainAboutTag}>
-                            + Реальные места
-                        </span>
-                        <span className={mainStyle.mainAboutTag}>
-                            + Необычные маршруты
-                        </span>
-                    </div>
                 </div>
 
                 <div className={mainStyle.mainAboutVisual}>

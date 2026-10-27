@@ -26,10 +26,9 @@ export const Hero = () => {
 
                 <Link
                     to={slugUrl('tbilisi-trip1')}
-                    className={mainStyle.heroButton}
+                    className={mainStyle.siteButton}
                 >
                     Начать приключение
-                    <span aria-hidden="true">↗</span>
                 </Link>
 
             </div>

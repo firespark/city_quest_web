@@ -1,23 +1,25 @@
 
 import mainStyle from '../../styles/mainStyle.module.css'
-import questsStyle from '../../styles/questsStyle.module.css'
 
-export const ResetButton = ({ setModalVisible }: {
+type ResetButtonProps = {
     setModalVisible: (visible: boolean) => void
-}) => {
+}
+
+export const ResetButton = ({
+    setModalVisible
+}: ResetButtonProps) => {
+
     return (
-        <div className={mainStyle.mt20}>
-            <button
-                type="button"
-                className={questsStyle.buttonGhost}
-                onClick={() => {
-                    setModalVisible(true)
-                }}
-            >
-                <span className={questsStyle.buttonTextGhost}>
-                    Сбросить прогресс
-                </span>
-            </button>
-        </div>
+        <button
+            type="button"
+            className={`
+                ${mainStyle.siteButton}
+                ${mainStyle.siteButtonDanger}
+                ${mainStyle.siteButtonSmall}
+            `}
+            onClick={() => setModalVisible(true)}
+        >
+            Сбросить прогресс
+        </button>
     )
 }

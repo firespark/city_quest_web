@@ -11,10 +11,10 @@ export const StartButton = ({ changeScreen, progress }: {
         <div>
             <button
                 type="button"
-                className={mainStyle.primaryButton}
+                className={mainStyle.siteButton}
                 onClick={() => changeScreen(GAME_SCREEN)}
             >
-                <span className={mainStyle.primaryButtonText}>{progress}</span>
+                {progress}
             </button>
         </div>
     )

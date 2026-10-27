@@ -283,7 +283,7 @@ button.itemWrapper:active {
 .emptyText {
     text-align: center;
     color: #BDC3C7;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -466,7 +466,7 @@ button.itemWrapper:active {
 
 .buttonTextGhost {
     color: #E74C3C;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -474,7 +474,7 @@ button.itemWrapper:active {
 
 .cancelText {
     color: #5A6A7A;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .resetCancelLink {
@@ -520,7 +520,7 @@ button.itemWrapper:active {
 }
 
 .filterText {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     color: #5A6A7A;
 }
@@ -632,20 +632,22 @@ button.itemWrapper:active {
     margin-top: auto;
     padding-top: 10px;
     color: #5A6A7A;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .featuredArrow {
-    display: grid;
-    place-items: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: #17A2B8;
-    color: #FFFFFF;
-    font-size: 18px;
+    color: #17A2B8;
 }
+
+.featuredArrow svg {
+    display: block;
+}
+
+
 
 @media (max-width: 850px) {
     .featuredGrid {

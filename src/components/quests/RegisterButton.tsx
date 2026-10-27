@@ -16,11 +16,9 @@ export const RegisterButton = () => {
 
             <Link
                 to={ROUTES.AUTH}
-                className={mainStyle.buttonBuy}
+                className={`${mainStyle.siteButton} ${mainStyle.siteButtonPurchase}`}
             >
-                <span className={mainStyle.buttonText}>
-                    Авторизоваться
-                </span>
+                Авторизоваться
             </Link>
         </div>
     )

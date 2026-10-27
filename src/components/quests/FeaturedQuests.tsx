@@ -17,6 +17,9 @@ export type FeaturedQuestData = {
     city?: string | null
     sights_count: number
     slug: string | null
+    paid: boolean
+    available: boolean
+    status: 'finished' | 'in_progress' | null
 }
 
 type FeaturedQuestsProps = {
