@@ -1,9 +1,11 @@
+
 import type { ComponentProps } from 'react'
 
-import detailStyle from '../../styles/questDetailStyle.module.css'
+import detailStyle from '../../../styles/questDetailStyle.module.css'
 
-import { AccessBadge, StatusBadge } from './QuestBadges'
-import { StartButton } from './StartButton'
+import { AccessBadge, StatusBadge } from '../QuestBadges'
+import { StartButton } from '../StartButton'
+
 
 type QuestImageDetailProps = {
     image: string
@@ -16,6 +18,7 @@ type QuestImageDetailProps = {
     changeScreen: ComponentProps<typeof StartButton>['changeScreen']
 }
 
+
 export const QuestImageDetail = ({
     image,
     city,
@@ -26,6 +29,7 @@ export const QuestImageDetail = ({
     progress,
     changeScreen
 }: QuestImageDetailProps) => {
+
     return (
         <section
             className={detailStyle.hero}

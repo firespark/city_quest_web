@@ -7,11 +7,11 @@ import mainStyle from '../styles/mainStyle.module.css'
 import detailStyle from '../styles/questDetailStyle.module.css'
 
 import { Breadcrumbs } from '../components/common/Breadcrumbs'
-import { QuestImageDetail } from '../components/quests/QuestImageDetail'
+import { QuestImageDetail } from '../components/quests/quest_detail/QuestImageDetail'
+import { QuestDetailButton } from '../components/quests/quest_detail/QuestDetailButton'
 import { QuestStats } from '../components/quests/QuestStats'
 import { QuestContent } from '../components/quests/QuestContent'
 import { QuestContent2 } from '../components/quests/QuestContent2'
-import { QuestDetailButton } from '../components/quests/QuestDetailButton'
 
 import { Loader } from '../components/common/Loader'
 import { Error } from '../components/common/Error'

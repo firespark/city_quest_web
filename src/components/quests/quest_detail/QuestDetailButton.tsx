@@ -1,12 +1,13 @@
 
 import type { ComponentProps } from 'react'
 
-import detailStyle from '../../styles/questDetailStyle.module.css'
+import detailStyle from '../../../styles/questDetailStyle.module.css'
 
-import { StartButton } from './StartButton'
-import { ResetButton } from './ResetButton'
-import { RegisterButton } from './RegisterButton'
-import { BuyButton } from './BuyButton'
+import { StartButton } from '../StartButton'
+import { ResetButton } from '../ResetButton'
+import { RegisterButton } from '../RegisterButton'
+import { BuyButton } from '../BuyButton'
+
 
 type QuestDetailButtonProps = {
     questId: number
@@ -19,6 +20,7 @@ type QuestDetailButtonProps = {
     onPurchaseSuccess: ComponentProps<typeof BuyButton>['onSuccess']
     setModalVisible: ComponentProps<typeof ResetButton>['setModalVisible']
 }
+
 
 export const QuestDetailButton = ({
     questId,

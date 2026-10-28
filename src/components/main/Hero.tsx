@@ -14,8 +14,8 @@ export const Hero = () => {
                 </div>
 
                 <h1 className={mainStyle.heroTitle}>
-                    Город готовит
-                    <span> новую тайну.</span>
+                    Городской квест
+                    <span> Котики в Тбилиси</span>
                 </h1>
 
                 <p className={mainStyle.heroDescription}>
@@ -25,7 +25,7 @@ export const Hero = () => {
                 </p>
 
                 <Link
-                    to={slugUrl('tbilisi-trip1')}
+                    to={slugUrl('tbilisi-cats')}
                     className={mainStyle.siteButton}
                 >
                     Начать приключение

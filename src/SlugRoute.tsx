@@ -6,10 +6,15 @@ import { MainContext } from './context/mainContext'
 
 import { QuestsScreen } from './screens/QuestsScreen'
 import { QuestScreen } from './screens/QuestScreen'
+import {
+    ComingSoonScreen,
+    type ComingSoonQuestData
+} from './screens/ComingSoonScreen'
 
 import { Loader } from './components/common/Loader'
 
 import { setDynamicPageTitle } from './LayoutMeta'
+
 
 type CityData = {
     id: number
@@ -18,17 +23,19 @@ type CityData = {
     country_id: number
 }
 
-type QuestData = {
-    id: number
-    title: string
-    slug: string
-}
-
 type ApiResponse<T> = {
     success: number
     data?: T
     error?: string
 }
+
+type SlugPage =
+    | { type: 'city' }
+    | { type: 'quest' }
+    | { type: 'comingSoon'; quest: ComingSoonQuestData }
+    | { type: 'notFound' }
+    | null
+
 
 const getBySlug = async <T,>(
     type: 'cities' | 'quests',
@@ -70,6 +77,7 @@ const getBySlug = async <T,>(
     return output.data ?? null
 }
 
+
 export const SlugRoute = () => {
 
     const { slug } = useParams()
@@ -81,20 +89,22 @@ export const SlugRoute = () => {
         setQuestId
     } = useContext(MainContext)
 
-    const [page, setPage] = useState<'city' | 'quest' | 'notFound' | null>(null)
+    const [page, setPage] = useState<SlugPage>(null)
     const [fatalError, setFatalError] = useState<Error | null>(null)
 
+
     useEffect(() => {
+        setPage(null)
+        setFatalError(null)
+
         if (!slug) {
-            setPage('notFound')
+            setPage({ type: 'notFound' })
             return
         }
 
         const controller = new AbortController()
 
         const loadPage = async () => {
-
-            setPage(null)
 
             const city = await getBySlug<CityData>(
                 'cities',
@@ -115,11 +125,11 @@ export const SlugRoute = () => {
                 })
 
                 setDynamicPageTitle(city.title)
-                setPage('city')
+                setPage({ type: 'city' })
                 return
             }
 
-            const quest = await getBySlug<QuestData>(
+            const quest = await getBySlug<ComingSoonQuestData>(
                 'quests',
                 slug,
                 controller.signal,
@@ -132,11 +142,20 @@ export const SlugRoute = () => {
                 setQuestId(quest.id)
 
                 setDynamicPageTitle(quest.title)
-                setPage('quest')
+
+                if (quest.coming_soon) {
+                    setPage({
+                        type: 'comingSoon',
+                        quest
+                    })
+                } else {
+                    setPage({ type: 'quest' })
+                }
+
                 return
             }
 
-            setPage('notFound')
+            setPage({ type: 'notFound' })
         }
 
         void loadPage().catch((error: unknown) => {
@@ -155,19 +174,24 @@ export const SlugRoute = () => {
 
     }, [slug, token])
 
+
     if (fatalError) {
         throw fatalError
     }
 
-    if (page === 'notFound') {
+    if (page?.type === 'notFound') {
         return <div>Страница не найдена</div>
     }
 
-    if (page === 'city') {
+    if (page?.type === 'city') {
         return <QuestsScreen />
     }
 
-    if (page === 'quest') {
+    if (page?.type === 'comingSoon') {
+        return <ComingSoonScreen quest={page.quest} />
+    }
+
+    if (page?.type === 'quest') {
         return <QuestScreen />
     }
 
