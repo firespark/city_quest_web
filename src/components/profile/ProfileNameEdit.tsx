@@ -3,6 +3,7 @@ import { useState, useContext, type Dispatch, type SetStateAction } from 'react'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 import profileStyle from '../../styles/profileStyle.module.css'
+import formsStyle from '../../styles/formsStyle.module.css'
 
 import { Loader } from '../common/Loader'
 import { Error } from '../common/Error'
@@ -71,18 +72,34 @@ export const ProfileNameEdit = ({ user, setUser, setTemplate, setSuccess }: Prof
     if (loader) return <Loader />
 
     return (
-        <div className={profileStyle.editContainer}>
-            <div className={`${profileStyle.label} ${mainStyle.mb10}`}>
-                Ваше имя
-            </div>
+        <form
+            className={formsStyle.blockForm}
+            onSubmit={(event) => {
+                event.preventDefault()
+                void saveName()
+            }}
+        >
 
-            <input
-                type="text"
-                placeholder="Введите имя"
-                className={profileStyle.inputModern}
-                value={input ?? ''}
-                onChange={(event) => setInput(event.target.value)}
-            />
+            <div className={profileStyle.formField}>
+
+                <label
+                    htmlFor="profile-name"
+                    className={profileStyle.label}
+                >
+                    Ваше имя
+                </label>
+
+                <input
+                    id="profile-name"
+                    type="text"
+                    autoComplete="name"
+                    placeholder="Введите имя"
+                    className={formsStyle.blockInput}
+                    value={input ?? ''}
+                    onChange={(event) => setInput(event.target.value)}
+                />
+
+            </div>
 
             {error && (
                 <div className={`${mainStyle.mt10} ${mainStyle.mb10}`}>
@@ -90,15 +107,17 @@ export const ProfileNameEdit = ({ user, setUser, setTemplate, setSuccess }: Prof
                 </div>
             )}
 
-            <button
-                type="button"
-                className={`${mainStyle.button} ${mainStyle.mt10}`}
-                onClick={saveName}
-            >
-                <span className={mainStyle.buttonText}>
+            <div className={formsStyle.blockButtonRow}>
+
+                <button
+                    type="submit"
+                    className={mainStyle.siteButton}
+                >
                     Сохранить
-                </span>
-            </button>
-        </div>
+                </button>
+
+            </div>
+
+        </form>
     )
 }

@@ -21,15 +21,13 @@ export const ProfilePassword = ({ setTemplate, setSuccess }: ProfilePasswordProp
 
                 <button
                     type="button"
-                    className={mainStyle.plainButton}
+                    className={`${mainStyle.siteButton} ${mainStyle.siteButtonSmall}`}
                     onClick={() => {
                         setSuccess(null)
                         setTemplate('password')
                     }}
                 >
-                    <span className={profileStyle.actionText}>
-                        Изменить
-                    </span>
+                    Изменить
                 </button>
             </div>
         </div>

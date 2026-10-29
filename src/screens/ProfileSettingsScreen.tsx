@@ -1,17 +1,19 @@
-
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext, useEffect, useCallback } from 'react'
 
 import mainStyle from '../styles/mainStyle.module.css'
+import profileStyle from '../styles/profileStyle.module.css'
 
-import { EditTemplate } from '../components/profile/EditTemplate'
-import { SettingsTemplate } from '../components/profile/SettingsTemplate'
+import { ROUTES } from '../routes'
+import { MainContext } from '../context/mainContext'
+import { Http } from '../scripts/http'
 
+import { Breadcrumbs } from '../components/common/Breadcrumbs'
 import { Loader } from '../components/common/Loader'
 import { Error } from '../components/common/Error'
 import { ConnectionError } from '../components/common/ConnectionError'
 
-import { MainContext } from '../context/mainContext'
-import { Http } from '../scripts/http'
+import { EditTemplate } from '../components/profile/EditTemplate'
+import { SettingsTemplate } from '../components/profile/SettingsTemplate'
 
 type ProfileUserData = {
     name: string | null
@@ -22,10 +24,10 @@ type ProfileUserData = {
 
 export const ProfileSettingsScreen = () => {
 
+    const { token } = useContext(MainContext)
+
     const [loader, setLoader] = useState(true)
     const [loadError, setLoadError] = useState<string | null>(null)
-
-    const { token } = useContext(MainContext)
 
     const [template, setTemplate] = useState<string | null>(null)
     const [success, setSuccess] = useState<string | null>(null)
@@ -36,7 +38,7 @@ export const ProfileSettingsScreen = () => {
         notes: 0
     })
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         setLoadError(null)
         setLoader(true)
 
@@ -46,27 +48,29 @@ export const ProfileSettingsScreen = () => {
                 token
             )
 
-            if (output.success == 1) {
-                setUser(output.data!)
+            if (output.success === 1 && output.data) {
+                setUser(output.data)
+            } else if (output.error === 'connection_error') {
+                setLoadError('connection_error')
             } else {
-                if (output.error) {
-                    setLoadError(output.error)
-                } else {
-                    setLoadError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
-                }
+                setLoadError(
+                    'Возникли ошибки. Пожалуйста, сообщите разработчикам об этом'
+                )
             }
 
         } catch (e) {
             console.error('Error:', e)
-            setLoadError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+            setLoadError(
+                'Возникли ошибки. Пожалуйста, сообщите разработчикам об этом'
+            )
         } finally {
             setLoader(false)
         }
-    }
+    }, [token])
 
     useEffect(() => {
-        fetchData()
-    }, [])
+        void fetchData()
+    }, [fetchData])
 
     if (loader) {
         return <Loader />
@@ -82,31 +86,43 @@ export const ProfileSettingsScreen = () => {
 
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            <main
-                className={mainStyle.flex}
-                style={{
-                    minHeight: 0,
-                    display: 'flex',
-                    flexDirection: 'column'
-                }}
-            >
-                {template ? (
-                    <EditTemplate
-                        user={user}
-                        setUser={setUser}
-                        template={template}
-                        setTemplate={setTemplate}
-                        setSuccess={setSuccess}
+
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+
+                <div className={profileStyle.page}>
+
+                    <Breadcrumbs
+                        items={[
+                            { label: 'Главная', to: ROUTES.HOME },
+                            { label: 'Профиль', to: ROUTES.PROFILE },
+                            { label: 'Настройки профиля' }
+                        ]}
                     />
-                ) : (
-                    <SettingsTemplate
-                        user={user}
-                        setUser={setUser}
-                        setTemplate={setTemplate}
-                        success={success}
-                        setSuccess={setSuccess}
-                    />
-                )}
+
+                    <h1 className={profileStyle.pageTitle}>
+                        Настройки профиля
+                    </h1>
+
+                    {template ? (
+                        <EditTemplate
+                            user={user}
+                            setUser={setUser}
+                            template={template}
+                            setTemplate={setTemplate}
+                            setSuccess={setSuccess}
+                        />
+                    ) : (
+                        <SettingsTemplate
+                            user={user}
+                            setUser={setUser}
+                            setTemplate={setTemplate}
+                            success={success}
+                            setSuccess={setSuccess}
+                        />
+                    )}
+
+                </div>
+
             </main>
 
         </div>

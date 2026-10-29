@@ -3,6 +3,7 @@ import { useState, useContext, type Dispatch, type SetStateAction } from 'react'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 import profileStyle from '../../styles/profileStyle.module.css'
+import formsStyle from '../../styles/formsStyle.module.css'
 
 import { Loader } from '../common/Loader'
 import { Error } from '../common/Error'
@@ -34,20 +35,20 @@ export const ProfilePasswordEdit = ({ setTemplate, setSuccess }: ProfilePassword
         setConfirmStyle(null)
 
         if (!input || input.length < 8) {
-            setStyle(profileStyle.inputError)
+            setStyle(formsStyle.blockInputInvalid)
             setError('Пароль должен содержать минимум 8 символов')
             return
         }
 
         if (!confirmInput) {
-            setConfirmStyle(profileStyle.inputError)
+            setConfirmStyle(formsStyle.blockInputInvalid)
             setError('Пожалуйста, повторите пароль')
             return
         }
 
         if (input !== confirmInput) {
-            setStyle(profileStyle.inputError)
-            setConfirmStyle(profileStyle.inputError)
+            setStyle(formsStyle.blockInputInvalid)
+            setConfirmStyle(formsStyle.blockInputInvalid)
             setError('Пароли не совпадают')
             return
         }
@@ -67,8 +68,8 @@ export const ProfilePasswordEdit = ({ setTemplate, setSuccess }: ProfilePassword
                 setSuccess('Изменения сохранены')
                 setTemplate(null)
             } else {
-                setStyle(profileStyle.inputError)
-                setConfirmStyle(profileStyle.inputError)
+                setStyle(formsStyle.blockInputInvalid)
+                setConfirmStyle(formsStyle.blockInputInvalid)
 
                 if (output.error) {
                     setError(output.error)
@@ -89,30 +90,57 @@ export const ProfilePasswordEdit = ({ setTemplate, setSuccess }: ProfilePassword
     }
 
     return (
-        <div className={profileStyle.editContainer}>
-            <div className={`${profileStyle.label} ${mainStyle.mb10}`}>
-                Новый пароль
+        <form
+            className={formsStyle.blockForm}
+            onSubmit={(event) => {
+                event.preventDefault()
+                void savePassword()
+            }}
+        >
+
+            <div className={profileStyle.formField}>
+
+                <label
+                    htmlFor="profile-password"
+                    className={profileStyle.label}
+                >
+                    Новый пароль
+                </label>
+
+                <input
+                    id="profile-password"
+                    type="password"
+                    autoComplete="new-password"
+                    placeholder="Минимум 8 символов"
+                    className={`${formsStyle.blockInput} ${style || ''}`}
+                    value={input ?? ''}
+                    onChange={(event) => setInput(event.target.value)}
+                    autoCapitalize="none"
+                />
+
             </div>
 
-            <input
-                type="password"
-                placeholder="Минимум 8 символов"
-                className={`${profileStyle.inputModern} ${style || ''}`}
-                onChange={(event) => setInput(event.target.value)}
-                autoCapitalize="none"
-            />
+            <div className={profileStyle.formField}>
 
-            <div className={`${profileStyle.label} ${mainStyle.mb10} ${mainStyle.mt5}`}>
-                Повторите пароль
+                <label
+                    htmlFor="profile-password-confirm"
+                    className={profileStyle.label}
+                >
+                    Повторите пароль
+                </label>
+
+                <input
+                    id="profile-password-confirm"
+                    type="password"
+                    autoComplete="new-password"
+                    placeholder="Повторите пароль"
+                    className={`${formsStyle.blockInput} ${confirmStyle || ''}`}
+                    value={confirmInput ?? ''}
+                    onChange={(event) => setConfirmInput(event.target.value)}
+                    autoCapitalize="none"
+                />
+
             </div>
-
-            <input
-                type="password"
-                placeholder="Повторите пароль"
-                className={`${profileStyle.inputModern} ${confirmStyle || ''}`}
-                onChange={(event) => setConfirmInput(event.target.value)}
-                autoCapitalize="none"
-            />
 
             {error && (
                 <div className={mainStyle.mb15}>
@@ -120,15 +148,17 @@ export const ProfilePasswordEdit = ({ setTemplate, setSuccess }: ProfilePassword
                 </div>
             )}
 
-            <button
-                type="button"
-                className={`${mainStyle.button} ${mainStyle.mt10}`}
-                onClick={savePassword}
-            >
-                <span className={mainStyle.buttonText}>
+            <div className={formsStyle.blockButtonRow}>
+
+                <button
+                    type="submit"
+                    className={mainStyle.siteButton}
+                >
                     Сохранить
-                </span>
-            </button>
-        </div>
+                </button>
+
+            </div>
+
+        </form>
     )
 }

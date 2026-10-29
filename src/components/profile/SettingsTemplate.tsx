@@ -1,12 +1,7 @@
-
 import type { Dispatch, SetStateAction } from 'react'
 
-import mainStyle from '../../styles/mainStyle.module.css'
-import headerStyle from '../../styles/headerStyle.module.css'
 import profileStyle from '../../styles/profileStyle.module.css'
-
-import { Back } from '../common/Back'
-import { HeaderTitle } from '../common/HeaderTitle'
+import formsStyle from '../../styles/formsStyle.module.css'
 
 import { ProfileEmail } from './ProfileEmail'
 import { ProfileName } from './ProfileName'
@@ -37,41 +32,39 @@ export const SettingsTemplate = ({
 }: SettingsTemplateProps) => {
 
     return (
-        <div
-            className={mainStyle.flex}
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: 0
-            }}
-        >
-            
-            <main className={`${mainStyle.flex} ${mainStyle.mainScreenScroll}`}>
-                <div className={mainStyle.container}>
+        <div className={profileStyle.settingsContent}>
 
-                    {success && <ProfileSuccess text={success} />}
-
-                    {user.email != null && (
-                        <div className={profileStyle.card}>
-                            <ProfileEmail email={user.email} />
-
-                            <ProfileName
-                                name={user.name}
-                                setTemplate={setTemplate}
-                                setSuccess={setSuccess}
-                            />
-
-                            <ProfilePassword
-                                setTemplate={setTemplate}
-                                setSuccess={setSuccess}
-                            />
-                        </div>
-                    )}
-
-                    {user.email != null && <Logout />}
-
+            {success && (
+                <div className={profileStyle.settingsSuccess} role="status">
+                    <ProfileSuccess text={success} />
                 </div>
-            </main>
+            )}
+
+            {user.email != null && (
+                <>
+                    <section className={profileStyle.settingsCard}>
+
+                        <ProfileEmail email={user.email} />
+
+                        <ProfileName
+                            name={user.name}
+                            setTemplate={setTemplate}
+                            setSuccess={setSuccess}
+                        />
+
+                        <ProfilePassword
+                            setTemplate={setTemplate}
+                            setSuccess={setSuccess}
+                        />
+
+                    </section>
+
+                    <div className={formsStyle.blockButtonRow}>
+                        <Logout />
+                    </div>
+                </>
+            )}
+
         </div>
     )
 }

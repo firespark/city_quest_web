@@ -1,7 +1,6 @@
-
 import { useContext } from 'react'
 
-import profileStyle from '../../styles/profileStyle.module.css'
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import { MainContext } from '../../context/mainContext'
 import { MAIN_SCREEN } from '../../context/types'
@@ -13,15 +12,13 @@ export const Logout = () => {
     return (
         <button
             type="button"
-            className={profileStyle.logoutButton}
+            className={`${mainStyle.siteButton} ${mainStyle.siteButtonDanger}`}
             onClick={() => {
                 changeScreen(MAIN_SCREEN)
                 resetToken()
             }}
         >
-            <span className={profileStyle.logoutText}>
-                Выйти из аккаунта
-            </span>
+            Выйти из аккаунта
         </button>
     )
 }

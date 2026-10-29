@@ -1,4 +1,3 @@
-
 .page {
     width: calc(100% - 40px);
     max-width: 1080px;
@@ -323,6 +322,113 @@
     letter-spacing: 1px;
 }
 
+.settingsContent {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 760px;
+    min-width: 0;
+    margin: 0 auto;
+}
+
+.settingsCard {
+    min-width: 0;
+    padding: 28px 32px;
+    border: 1px solid #e1edf0;
+    border-radius: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 7px 24px rgba(12, 41, 60, 0.04);
+}
+
+.settingsCard .row {
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom-color: #e1edf0;
+}
+
+.settingsCard .row:first-child {
+    padding-top: 0;
+}
+
+.settingsCard .row:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.settingsCard .valueBlock {
+    min-width: 0;
+    gap: 14px;
+}
+
+.settingsCard .value {
+    min-width: 0;
+    margin-right: 0;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.settingsCard .valueBlock>button {
+    flex-shrink: 0;
+}
+
+.settingsSuccess {
+    margin-bottom: 20px;
+    padding: 14px 18px;
+    border: 1px solid #cfe9ee;
+    border-radius: 12px;
+    background-color: #eaf7f9;
+}
+
+.editHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.editTitle {
+    margin: 0;
+    color: #0c293c;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 620px) {
+    .settingsCard {
+        padding: 22px 20px;
+        border-radius: 16px;
+    }
+
+    .settingsCard .row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .settingsCard .valueBlock {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .settingsCard .value {
+        text-align: left;
+    }
+
+    .editTitle {
+        font-size: 22px;
+    }
+}
+
 @media (max-width: 800px) {
     .questSections {
         grid-template-columns: minmax(0, 1fr);
@@ -406,6 +512,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .accountSettings a,
     .questPanel a {
         transition: none;

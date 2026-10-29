@@ -22,15 +22,13 @@ export const ProfileName = ({ name, setTemplate, setSuccess }: ProfileNameProps)
 
                 <button
                     type="button"
-                    className={mainStyle.plainButton}
+                    className={`${mainStyle.siteButton} ${mainStyle.siteButtonSmall}`}
                     onClick={() => {
                         setSuccess(null)
                         setTemplate('name')
                     }}
                 >
-                    <span className={profileStyle.actionText}>
-                        Изменить
-                    </span>
+                    Изменить
                 </button>
             </div>
         </div>

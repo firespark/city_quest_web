@@ -1,13 +1,10 @@
-
 import type { Dispatch, SetStateAction, ReactNode } from 'react'
 
-import { TemplateClose } from './TemplateClose'
+import profileStyle from '../../styles/profileStyle.module.css'
 
+import { TemplateClose } from './TemplateClose'
 import { ProfileNameEdit } from './ProfileNameEdit'
 import { ProfilePasswordEdit } from './ProfilePasswordEdit'
-
-import mainStyle from '../../styles/mainStyle.module.css'
-import headerStyle from '../../styles/headerStyle.module.css'
 
 type ProfileUserData = {
     name: string | null
@@ -57,23 +54,20 @@ export const EditTemplate = ({
     }
 
     return (
-        <div
-            className={mainStyle.flex}
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: 0
-            }}
-        >
-            <header className={`${mainStyle.panelRowRight} ${headerStyle.panelHeader}`}>
-                <TemplateClose setTemplate={setTemplate} />
-            </header>
+        <section className={`${profileStyle.settingsContent} ${profileStyle.settingsCard}`}>
 
-            <div className={`${mainStyle.flex} ${mainStyle.mainScreenScroll}`}>
-                <div className={mainStyle.container}>
-                    {content}
-                </div>
+            <div className={profileStyle.editHeader}>
+
+                <h2 className={profileStyle.editTitle}>
+                    {template === 'name' ? 'Изменить имя' : 'Изменить пароль'}
+                </h2>
+
+                <TemplateClose setTemplate={setTemplate} />
+
             </div>
-        </div>
+
+            {content}
+
+        </section>
     )
 }
