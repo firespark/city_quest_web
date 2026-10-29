@@ -2,30 +2,40 @@
 import { useContext } from 'react'
 
 import mainStyle from '../styles/mainStyle.module.css'
-
-import { Quests } from '../components/quests/Quests'
+import questsStyle from '../styles/questsStyle.module.css'
 
 import { MainContext } from '../context/mainContext'
+import { Breadcrumbs } from '../components/common/Breadcrumbs'
+import { Quests } from '../components/quests/Quests'
 
 export const QuestsScreen = () => {
+
     const { cityData } = useContext(MainContext)
+
+    if (!cityData) return null
 
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            
             <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
-                <div className={mainStyle.container}>
-                    <div className={mainStyle.welcomeTitle}>
-                        {cityData!.title}
-                    </div>
+
+                <div className={questsStyle.questsPage}>
+
+                    <Breadcrumbs
+                        items={[
+                            { label: 'Главная', to: '/' },
+                            { label: cityData.title }
+                        ]}
+                    />
+
+                    <Quests
+                        key={cityData.id}
+                        cityId={cityData.id}
+                        showFilters={true}
+                    />
+
                 </div>
 
-                <Quests
-                    cityId={cityData!.id}
-                    showFilters={true}
-                />
             </main>
-
         </div>
     )
 }

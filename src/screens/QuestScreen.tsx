@@ -4,7 +4,7 @@ import { Http } from '../scripts/http'
 import { slugUrl } from '../routes'
 
 import mainStyle from '../styles/mainStyle.module.css'
-import detailStyle from '../styles/questDetailStyle.module.css'
+import questDetailStyle from '../styles/questDetailStyle.module.css'
 
 import { Breadcrumbs } from '../components/common/Breadcrumbs'
 import { QuestImageDetail } from '../components/quests/quest_detail/QuestImageDetail'
@@ -111,7 +111,7 @@ export const QuestScreen = () => {
 
             <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
 
-                <div className={detailStyle.page}>
+                <div className={questDetailStyle.page}>
 
                     <Breadcrumbs
                         items={[

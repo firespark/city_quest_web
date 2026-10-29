@@ -12,11 +12,7 @@ export const FeaturedCard = ({ quest }: { quest: FeaturedQuestData }) => {
 
     const content = (
         <>
-
-            <div
-                className={questsStyle.featuredImageWrapper}
-                style={{ position: 'relative' }}
-            >
+            <div className={questsStyle.featuredImageWrapper}>
                 <img
                     src={quest.image}
                     alt=""
@@ -37,7 +33,6 @@ export const FeaturedCard = ({ quest }: { quest: FeaturedQuestData }) => {
                     </div>
                 </div>
             </div>
-
 
             <div className={questsStyle.featuredBody}>
                 {quest.city && (

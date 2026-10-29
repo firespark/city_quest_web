@@ -1,4 +1,5 @@
-import detailStyle from '../../styles/questDetailStyle.module.css'
+
+import questsStyle from '../../styles/questsStyle.module.css'
 
 import { FormattedContent } from '../common/FormattedContent'
 
@@ -10,18 +11,18 @@ export const QuestContent = ({ content }: QuestContentProps) => {
     if (!content) return null
 
     return (
-        <section className={detailStyle.description}>
+        <section className={questsStyle.description}>
             <div>
-                <div className={detailStyle.eyebrow}>
+                <div className={questsStyle.eyebrow}>
                     Основная информация
                 </div>
 
-                <h2 className={detailStyle.sectionTitle}>
+                <h2 className={questsStyle.sectionTitle}>
                     О квесте
                 </h2>
             </div>
 
-            <div className={detailStyle.richText}>
+            <div className={questsStyle.richText}>
                 <FormattedContent text={content} />
             </div>
         </section>

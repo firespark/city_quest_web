@@ -1,5 +1,5 @@
 
-import style from '../../../styles/comingSoonStyle.module.css'
+import comingSoonStyle from '../../../styles/comingSoonStyle.module.css'
 
 import { TelegramButton } from '../TelegramButton'
 
@@ -19,40 +19,40 @@ export const ComingSoonHero = ({
 
     return (
         <section
-            className={style.hero}
+            className={comingSoonStyle.hero}
             aria-label={title}
         >
             <img
                 src={image}
                 alt=""
-                className={style.heroImage}
+                className={comingSoonStyle.heroImage}
             />
 
             <div
-                className={style.heroShade}
+                className={comingSoonStyle.heroShade}
                 aria-hidden="true"
             />
 
-            <div className={style.heroContent}>
+            <div className={comingSoonStyle.heroContent}>
 
-                <span className={style.badge}>
+                <span className={comingSoonStyle.badge}>
                     Скоро
                 </span>
 
-                <div className={style.heroCity}>
+                <div className={comingSoonStyle.heroCity}>
                     {city}
                 </div>
 
-                <h1 className={style.heroTitle}>
+                <h1 className={comingSoonStyle.heroTitle}>
                     {title}
                 </h1>
 
-                <p className={style.heroSubtitle}>
+                <p className={comingSoonStyle.heroSubtitle}>
                     Городской квест о пушистых жителях Тбилиси.
                 </p>
 
                 {import.meta.env.VITE_TELEGRAM_BOT_URL?.trim() && (
-                    <div className={style.heroAction}>
+                    <div className={comingSoonStyle.heroAction}>
                         <TelegramButton>
                             Записаться через Telegram
                         </TelegramButton>
@@ -64,7 +64,7 @@ export const ComingSoonHero = ({
                         src={bannerIcon}
                         alt=""
                         aria-hidden="true"
-                        className={style.heroIcon}
+                        className={comingSoonStyle.heroIcon}
                     />
                 )}
 

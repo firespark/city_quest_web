@@ -1,7 +1,7 @@
 
 import type { ComponentProps } from 'react'
 
-import detailStyle from '../../../styles/questDetailStyle.module.css'
+import questDetailStyle from '../../../styles/questDetailStyle.module.css'
 
 import { AccessBadge, StatusBadge } from '../QuestBadges'
 import { StartButton } from '../StartButton'
@@ -32,24 +32,24 @@ export const QuestImageDetail = ({
 
     return (
         <section
-            className={detailStyle.hero}
+            className={questDetailStyle.hero}
             aria-label={title}
         >
             <img
-                className={detailStyle.heroImage}
+                className={questDetailStyle.heroImage}
                 src={image}
                 alt=""
             />
 
             <div
-                className={detailStyle.heroShade}
+                className={questDetailStyle.heroShade}
                 aria-hidden="true"
             />
 
-            <div className={detailStyle.heroContent}>
+            <div className={questDetailStyle.heroContent}>
 
                 {(paid || status) && (
-                    <div className={detailStyle.badges}>
+                    <div className={questDetailStyle.badges}>
                         <AccessBadge
                             paid={paid}
                             available={available}
@@ -59,16 +59,16 @@ export const QuestImageDetail = ({
                     </div>
                 )}
 
-                <div className={detailStyle.cityText}>
+                <div className={questDetailStyle.cityText}>
                     {city}
                 </div>
 
-                <h1 className={detailStyle.heroTitle}>
+                <h1 className={questDetailStyle.heroTitle}>
                     {title}
                 </h1>
 
                 {available && (
-                    <div className={detailStyle.heroAction}>
+                    <div className={questDetailStyle.heroAction}>
                         <StartButton
                             changeScreen={changeScreen}
                             progress={progress}

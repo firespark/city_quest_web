@@ -584,9 +584,14 @@ button.itemWrapper:active {
 }
 
 .featuredImageWrapper {
+    position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
+}
+
+.questsListSection .featuredImageWrapper {
+    aspect-ratio: 4 / 3;
 }
 
 .featuredImage {
@@ -662,5 +667,579 @@ button.itemWrapper:active {
 
     .featuredGrid {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* Quest stats */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: calc(100% - 60px);
+    margin: 26px auto 68px;
+    padding: 22px 16px;
+    border: 1px solid #e9eff1;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 12px 36px rgba(12, 41, 60, .08);
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 0;
+    padding: 0 20px;
+}
+
+.stat+.stat {
+    border-left: 1px solid #e7eff2;
+}
+
+.statIcon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 43px;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background: #e5f8fa;
+    color: #17a2b8;
+}
+
+.statLabel {
+    color: #8293a2;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.statValue {
+    margin-top: 4px;
+    color: #0c293c;
+    font-size: 16px;
+    font-weight: 750;
+    overflow-wrap: anywhere;
+}
+
+/* Quest content */
+
+.description {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 52px;
+    padding: 0 20px 54px;
+    border-bottom: 1px solid #e6eef0;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+    color: #0797ae;
+    font-size: 11px;
+    font-weight: 850;
+    text-transform: uppercase;
+    letter-spacing: .095em;
+}
+
+.sectionTitle {
+    margin: 0;
+    color: #0c293c;
+    font-size: 29px;
+    font-weight: 850;
+    line-height: 1.16;
+    overflow-wrap: anywhere;
+}
+
+.richText {
+    min-width: 0;
+}
+
+.richText>div {
+    padding: 0;
+    margin: 0;
+}
+
+.facts {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 52px;
+    margin: 48px 0 42px;
+    padding: 37px 40px;
+    border-radius: 20px;
+    background: #eaf7f9;
+}
+
+@media (max-width: 800px) {
+
+    .description,
+    .facts {
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .facts {
+        padding: 30px;
+    }
+
+    .stat {
+        padding: 0 12px;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 620px) {
+    .stats {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 8px 20px;
+        margin: 18px auto 42px;
+    }
+
+    .stat {
+        padding: 13px 0;
+    }
+
+    .stat+.stat {
+        border-left: 0;
+        border-top: 1px solid #e7eff2;
+    }
+
+    .description,
+    .facts {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .description {
+        padding: 0 4px 32px;
+    }
+
+    .facts {
+        padding: 25px 22px;
+        margin: 30px 0;
+    }
+
+    .sectionTitle {
+        font-size: 25px;
+    }
+}
+
+
+/* Extra */
+
+.questsPage {
+    width: calc(100% - 40px);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 0 80px;
+}
+
+.questsHero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 390px;
+    padding: 52px 60px;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 20px;
+    background: linear-gradient(115deg,
+            #0c293c 0%,
+            #103e51 65%,
+            #126a7d 100%);
+}
+
+.questsHero::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -200px;
+    right: -190px;
+    width: 550px;
+    height: 550px;
+    border: 1px solid rgba(142, 214, 224, 0.17);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.questsHeroContent {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    min-width: 0;
+    max-width: 600px;
+}
+
+.questsHeroEyebrow {
+    margin-bottom: 18px;
+    color: #8ed6e0;
+    font-size: 12px;
+    font-weight: 850;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.questsHeroTitle {
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(42px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    overflow-wrap: anywhere;
+}
+
+.questsHeroDescription {
+    max-width: 510px;
+    margin: 0 0 28px;
+    color: #d2e6ed;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.questsHeroLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 48px;
+    padding: 13px 21px;
+    border-radius: 11px;
+    background: #ffffff;
+    color: #0c6577;
+    font-size: 15px;
+    font-weight: 750;
+    line-height: 1.3;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.questsHeroLink:visited {
+    color: #0c6577;
+}
+
+.questsHeroLink:hover {
+    background: #dff4f7;
+    color: #0c6577;
+}
+
+.questsHeroLink:focus-visible {
+    outline: 3px solid #8ed6e0;
+    outline-offset: 4px;
+}
+
+.questsHeroVisual {
+    position: relative;
+    flex: 0 0 280px;
+    width: 280px;
+    height: 280px;
+    pointer-events: none;
+}
+
+.questsHeroOrbit {
+    position: absolute;
+    inset: 8px;
+    border: 2px solid rgba(142, 214, 224, 0.27);
+    border-radius: 50%;
+}
+
+.questsHeroOrbit::before {
+    content: '';
+    position: absolute;
+    inset: 22px;
+    border: 1px dashed rgba(142, 214, 224, 0.32);
+    border-radius: 50%;
+}
+
+.questsHeroCompass {
+    position: absolute;
+    top: 39px;
+    left: 39px;
+    display: grid;
+    place-items: center;
+    width: 202px;
+    height: 202px;
+    border: 1px solid rgba(142, 214, 224, 0.22);
+    border-radius: 50%;
+    background: rgba(142, 214, 224, 0.08);
+    color: #8ed6e0;
+}
+
+.questsHeroMarker {
+    position: absolute;
+    right: 1px;
+    bottom: 12px;
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(142, 214, 224, 0.4);
+    border-radius: 18px;
+    background: #185367;
+    color: #8ed6e0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.questsListSection {
+    margin-top: 68px;
+    scroll-margin-top: 24px;
+}
+
+.questsListHeader {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.questsListEyebrow {
+    margin-bottom: 12px;
+    color: #0797ae;
+    font-size: 12px;
+    font-weight: 850;
+    text-transform: uppercase;
+    letter-spacing: 0.095em;
+}
+
+.questsListTitle {
+    margin: 0 0 12px;
+    color: #0c293c;
+    font-size: clamp(29px, 3.3vw, 38px);
+    font-weight: 850;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.questsListDescription {
+    margin: 0;
+    color: #698191;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+.questsListCount {
+    flex-shrink: 0;
+    color: #698191;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+
+.questsListLoading {
+    padding: 50px 0;
+}
+
+.questsListEmpty {
+    padding: 36px 24px;
+    border: 1px solid #e1edf0;
+    border-radius: 16px;
+    background: #f7fbfc;
+    color: #698191;
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+.questsListSection .filterContainer {
+    margin: 0 0 30px;
+}
+
+.questsListSection .filterScroll {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 0;
+    border-bottom: 1px solid #e5edf0;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.questsListSection .filterPill {
+    display: inline-flex;
+    align-items: baseline;
+    flex-direction: row;
+    gap: 8px;
+    flex-shrink: 0;
+    min-height: 0;
+    margin: 0 0 -1px;
+    padding: 10px 0 13px;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #718798;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.questsListSection .filterPill:not(.filterPillActive):hover {
+    color: #087f94;
+    border-bottom-color: #9cd7e1;
+}
+
+/* Clear selected state */
+.questsListSection .filterPillActive {
+    color: #087f94;
+    font-weight: 600;
+    border-bottom-color: #17a2b8;
+}
+
+.questsListSection .filterPillActive:hover {
+    color: #045c6b;
+    border-bottom-color: #087f94;
+}
+
+.questsListSection .filterText,
+.questsListSection .filterCount {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.questsListSection .filterTextActive,
+.questsListSection .filterPillActive .filterCount {
+    color: inherit;
+    font-weight: inherit;
+}
+
+.questsListSection .filterPill:focus-visible {
+    outline: 2px solid #17a2b8;
+    outline-offset: 3px;
+}
+
+
+@media (max-width: 800px) {
+    .questsHero {
+        min-height: 350px;
+        padding: 42px 38px;
+    }
+
+    .questsHeroVisual {
+        flex-basis: 210px;
+        width: 210px;
+        height: 210px;
+    }
+
+    .questsHeroCompass {
+        top: 29px;
+        left: 29px;
+        width: 152px;
+        height: 152px;
+    }
+
+    .questsHeroCompass svg {
+        width: 98px;
+        height: 98px;
+    }
+
+    .questsHeroMarker {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+    }
+
+    .questsHeroDescription {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 620px) {
+    .questsPage {
+        width: calc(100% - 28px);
+        padding: 16px 0 48px;
+    }
+
+    .questsHero {
+        min-height: 330px;
+        padding: 36px 26px;
+    }
+
+    .questsHeroVisual {
+        display: none;
+    }
+
+    .questsHeroEyebrow {
+        margin-bottom: 16px;
+        font-size: 11px;
+    }
+
+    .questsHeroTitle {
+        font-size: clamp(36px, 8vw, 48px);
+    }
+
+    .questsHeroDescription {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .questsHeroLink {
+        min-height: 44px;
+        font-size: 14px;
+    }
+
+    .questsListSection {
+        margin-top: 48px;
+    }
+
+    .questsListHeader {
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 24px;
+    }
+
+    .questsListTitle {
+        font-size: 29px;
+    }
+
+    .questsListDescription {
+        font-size: 15px;
+    }
+
+    .questsListSection .filterScroll {
+        gap: 20px;
+    }
+
+    .questsListSection .filterPill {
+        padding: 9px 0 11px;
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .questsHeroLink,
+    .questsListSection .filterPill {
+        transition: none;
     }
 }

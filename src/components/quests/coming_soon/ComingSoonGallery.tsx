@@ -7,7 +7,7 @@ import {
     IoExpandOutline
 } from 'react-icons/io5'
 
-import style from '../../../styles/comingSoonStyle.module.css'
+import comingSoonStyle from '../../../styles/comingSoonStyle.module.css'
 
 export type ComingSoonGalleryPhoto = {
     src: string
@@ -57,44 +57,44 @@ export const ComingSoonGallery = ({
         : photos[activeIndex]
 
     return (
-        <section className={style.supportSection}>
+        <section className={comingSoonStyle.supportSection}>
 
-            <div className={style.eyebrow}>
+            <div className={comingSoonStyle.eyebrow}>
                 Котики, которые ищут семью
             </div>
 
-            <h2 className={style.supportTitle}>
+            <h2 className={comingSoonStyle.supportTitle}>
                 При поддержке
             </h2>
 
             <div
                 className={`
-                    ${style.galleryGrid}
-                    ${photos.length === 1 ? style.galleryGridSingle : ''}
+                    ${comingSoonStyle.galleryGrid}
+                    ${photos.length === 1 ? comingSoonStyle.galleryGridSingle : ''}
                 `}
             >
                 {photos.map((photo, index) => (
                     <button
                         key={`${photo.src}-${index}`}
                         type="button"
-                        className={style.galleryCard}
+                        className={comingSoonStyle.galleryCard}
                         onClick={() => setActiveIndex(index)}
                         aria-label={photo.title
-                            ? `Открыть фотографию: ${photo.title}`
-                            : `Открыть фотографию ${index + 1}`
+                            ? `Открыть: ${photo.title}`
+                            : `Открыть ${index + 1}`
                         }
                     >
-                        <div className={style.galleryImageWrapper}>
+                        <div className={comingSoonStyle.galleryImageWrapper}>
 
                             <img
                                 src={photo.src}
                                 alt={photo.alt ?? photo.title ?? ''}
-                                className={style.galleryImage}
+                                className={comingSoonStyle.galleryImage}
                                 loading="lazy"
                             />
 
                             <IoExpandOutline
-                                className={style.galleryExpand}
+                                className={comingSoonStyle.galleryExpand}
                                 size={20}
                                 aria-hidden="true"
                             />
@@ -102,7 +102,7 @@ export const ComingSoonGallery = ({
                         </div>
 
                         {photo.title && (
-                            <span className={style.galleryCardTitle}>
+                            <span className={comingSoonStyle.galleryCardTitle}>
                                 {photo.title}
                             </span>
                         )}
@@ -112,8 +112,8 @@ export const ComingSoonGallery = ({
 
             <dialog
                 ref={dialogRef}
-                className={style.galleryDialog}
-                aria-label="Просмотр фотографий"
+                className={comingSoonStyle.galleryDialog}
+                aria-label="Просмотр"
                 onClose={() => setActiveIndex(null)}
                 onCancel={event => {
                     event.preventDefault()
@@ -146,13 +146,13 @@ export const ComingSoonGallery = ({
                 }}
             >
                 {activePhoto && (
-                    <div className={style.galleryDialogContent}>
+                    <div className={comingSoonStyle.galleryDialogContent}>
 
                         <button
                             type="button"
-                            className={style.galleryClose}
+                            className={comingSoonStyle.galleryClose}
                             onClick={() => setActiveIndex(null)}
-                            aria-label="Закрыть галерею"
+                            aria-label="Закрыть"
                         >
                             <IoClose size={24} />
                         </button>
@@ -160,20 +160,20 @@ export const ComingSoonGallery = ({
                         <img
                             src={activePhoto.src}
                             alt={activePhoto.alt ?? activePhoto.title ?? ''}
-                            className={style.galleryLargeImage}
+                            className={comingSoonStyle.galleryLargeImage}
                         />
 
-                        <div className={style.galleryDialogFooter}>
+                        <div className={comingSoonStyle.galleryDialogFooter}>
 
                             {activePhoto.title && (
-                                <span className={style.galleryDialogTitle}>
+                                <span className={comingSoonStyle.galleryDialogTitle}>
                                     {activePhoto.title}
                                 </span>
                             )}
 
-                            <div className={style.galleryDialogNav}>
+                            <div className={comingSoonStyle.galleryDialogNav}>
 
-                                <span className={style.galleryCounter}>
+                                <span className={comingSoonStyle.galleryCounter}>
                                     {activeIndex! + 1} / {photos.length}
                                 </span>
 
@@ -183,7 +183,7 @@ export const ComingSoonGallery = ({
                                             type="button"
                                             onClick={showPrevious}
                                             aria-label="Предыдущее фото"
-                                            className={style.galleryNavButton}
+                                            className={comingSoonStyle.galleryNavButton}
                                         >
                                             <IoArrowBack size={20} />
                                         </button>
@@ -192,7 +192,7 @@ export const ComingSoonGallery = ({
                                             type="button"
                                             onClick={showNext}
                                             aria-label="Следующее фото"
-                                            className={style.galleryNavButton}
+                                            className={comingSoonStyle.galleryNavButton}
                                         >
                                             <IoArrowForward size={20} />
                                         </button>

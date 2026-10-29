@@ -310,6 +310,28 @@
     border: 9px solid rgba(23, 162, 184, 0.16);
     border-radius: 50%;
     color: #17a2b8;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.signupArtwork svg {
+    display: block;
+    transform: translate(-6px, 6px);
+}
+
+.signupArtwork:hover {
+    border-color: rgba(23, 162, 184, 0.4);
+    background-color: rgba(23, 162, 184, 0.06);
+    box-shadow: 0 12px 28px rgba(23, 162, 184, 0.16);
+}
+
+.signupArtwork:focus-visible {
+    outline: 3px solid #17a2b8;
+    outline-offset: 5px;
 }
 
 .signupDark .signupArtwork {
@@ -317,9 +339,21 @@
     color: #8ed6e0;
 }
 
-.signupArtwork svg {
-    display: block;
-    transform: translate(-6px, 6px);
+.signupDark .signupArtwork:hover {
+    border-color: rgba(142, 214, 224, 0.6);
+    background-color: rgba(142, 214, 224, 0.08);
+    box-shadow: 0 12px 30px rgba(142, 214, 224, 0.12);
+}
+
+.signupDark .signupArtwork:focus-visible {
+    outline-color: #8ed6e0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .signupArtwork {
+        transition: none;
+    }
+
 }
 
 .signupButtonLight {

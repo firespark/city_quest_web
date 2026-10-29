@@ -1,7 +1,7 @@
 
 import type { ComponentProps } from 'react'
 
-import detailStyle from '../../../styles/questDetailStyle.module.css'
+import questDetailStyle from '../../../styles/questDetailStyle.module.css'
 
 import { StartButton } from '../StartButton'
 import { ResetButton } from '../ResetButton'
@@ -36,7 +36,7 @@ export const QuestDetailButton = ({
 
     if (!available) {
         return (
-            <div className={detailStyle.purchasePanel}>
+            <div className={questDetailStyle.purchasePanel}>
                 {isAuth ? (
                     <BuyButton
                         questId={questId}
@@ -50,19 +50,19 @@ export const QuestDetailButton = ({
     }
 
     return (
-        <div className={detailStyle.finalAction}>
+        <div className={questDetailStyle.finalAction}>
 
-            <div className={detailStyle.finalInfo}>
+            <div className={questDetailStyle.finalInfo}>
 
-                <strong className={detailStyle.finalTitle}>
+                <strong className={questDetailStyle.finalTitle}>
                     {title}
                 </strong>
 
                 {status && (
-                    <div className={detailStyle.finalMeta}>
+                    <div className={questDetailStyle.finalMeta}>
 
                         {status === 'in_progress' && (
-                            <span className={detailStyle.finalStatus}>
+                            <span className={questDetailStyle.finalStatus}>
                                 В процессе
                             </span>
                         )}
@@ -70,8 +70,8 @@ export const QuestDetailButton = ({
                         {status === 'finished' && (
                             <span
                                 className={`
-                                    ${detailStyle.finalStatus}
-                                    ${detailStyle.finalStatusFinished}
+                                    ${questDetailStyle.finalStatus}
+                                    ${questDetailStyle.finalStatusFinished}
                                 `}
                             >
                                 Пройден
@@ -87,7 +87,7 @@ export const QuestDetailButton = ({
 
             </div>
 
-            <div className={detailStyle.finalButton}>
+            <div className={questDetailStyle.finalButton}>
                 <StartButton
                     changeScreen={changeScreen}
                     progress={progress}

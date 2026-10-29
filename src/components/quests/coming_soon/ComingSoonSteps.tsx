@@ -1,5 +1,5 @@
 
-import style from '../../../styles/comingSoonStyle.module.css'
+import comingSoonStyle from '../../../styles/comingSoonStyle.module.css'
 
 export type ComingSoonStep = {
     number: number
@@ -18,35 +18,35 @@ export const ComingSoonSteps = ({
     if (steps.length === 0) return null
 
     return (
-        <section className={style.stepsSection}>
+        <section className={comingSoonStyle.stepsSection}>
 
-            <div className={style.eyebrow}>
+            <div className={comingSoonStyle.eyebrow}>
                 Три шага до приключения
             </div>
 
-            <h2 className={style.stepsHeading}>
+            <h2 className={comingSoonStyle.stepsHeading}>
                 Что тебя ждет
             </h2>
 
-            <div className={style.stepsGrid}>
+            <div className={comingSoonStyle.stepsGrid}>
 
                 {steps.map(step => (
                     <div
                         key={step.number}
-                        className={style.stepCard}
+                        className={comingSoonStyle.stepCard}
                     >
-                        <div className={style.stepNumber}>
+                        <div className={comingSoonStyle.stepNumber}>
                             {String(step.number).padStart(2, '0')}
                         </div>
 
                         {step.title && (
-                            <h3 className={style.stepTitle}>
+                            <h3 className={comingSoonStyle.stepTitle}>
                                 {step.title}
                             </h3>
                         )}
 
                         {step.description && (
-                            <p className={style.stepDescription}>
+                            <p className={comingSoonStyle.stepDescription}>
                                 {step.description}
                             </p>
                         )}

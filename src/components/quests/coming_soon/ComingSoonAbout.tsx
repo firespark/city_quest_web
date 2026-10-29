@@ -1,7 +1,7 @@
 
 import { FormattedContent } from '../../common/FormattedContent'
 
-import style from '../../../styles/comingSoonStyle.module.css'
+import comingSoonStyle from '../../../styles/comingSoonStyle.module.css'
 
 type ComingSoonAboutProps = {
     content: string | string[] | null
@@ -18,22 +18,22 @@ export const ComingSoonAbout = ({
     return (
         <section
             className={`
-                ${style.about}
-                ${additionalImage ? style.aboutWithImage : ''}
+                ${comingSoonStyle.about}
+                ${additionalImage ? comingSoonStyle.aboutWithImage : ''}
             `}
         >
-            <div className={style.aboutContent}>
+            <div className={comingSoonStyle.aboutContent}>
 
-                <div className={style.eyebrow}>
+                <div className={comingSoonStyle.eyebrow}>
                     О квесте
                 </div>
 
-                <h2 className={style.sectionTitle}>
+                <h2 className={comingSoonStyle.sectionTitle}>
                     Что это за игра
                 </h2>
 
                 {content && (
-                    <div className={style.richText}>
+                    <div className={comingSoonStyle.richText}>
                         <FormattedContent text={content} />
                     </div>
                 )}
@@ -41,12 +41,12 @@ export const ComingSoonAbout = ({
             </div>
 
             {additionalImage && (
-                <div className={style.aboutDecoration}>
+                <div className={comingSoonStyle.aboutDecoration}>
                     <img
                         src={additionalImage}
                         alt=""
                         aria-hidden="true"
-                        className={style.aboutImage}
+                        className={comingSoonStyle.aboutImage}
                     />
                 </div>
             )}

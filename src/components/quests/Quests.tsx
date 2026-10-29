@@ -1,115 +1,166 @@
 
-import { useState, useEffect, useContext } from 'react'
+import {
+    useCallback,
+    useContext,
+    useEffect,
+    useState
+} from 'react'
 
-import { Quest, type QuestData } from './Quest'
-import { QuestFilters } from './QuestFilters'
+import { FeaturedCard } from './FeaturedCard'
+import type { FeaturedQuestData } from './FeaturedQuests'
+
+import {
+    QuestFilters,
+    type QuestFilter
+} from './QuestFilters'
 
 import { Loader } from '../common/Loader'
-
-import mainStyle from '../../styles/mainStyle.module.css'
 import { ConnectionError } from '../common/ConnectionError'
 
 import { Http } from '../../scripts/http'
 import { MainContext } from '../../context/mainContext'
 
-export const Quests = ({ cityId, showFilters = false }: { cityId: number, showFilters?: boolean }) => {
+import questsStyle from '../../styles/questsStyle.module.css'
 
-    const [data, setData] = useState<QuestData[] | null>(null)
-    const { token } = useContext(MainContext)
-    const [loader, setLoader] = useState(false)
+type QuestsProps = {
+    cityId: number
+    showFilters?: boolean
+}
+
+export const Quests = ({
+    cityId,
+    showFilters = false
+}: QuestsProps) => {
+
+    const { token, cityData } = useContext(MainContext)
+
+    const [data, setData] = useState<FeaturedQuestData[]>([])
+    const [loader, setLoader] = useState(true)
     const [error, setError] = useState<string | null>(null)
+    const [filter, setFilter] = useState<QuestFilter>('all')
 
-    const [filter, setFilter] = useState('all')
-
-    const fetchData = async () => {
-        setError(null)
+    const fetchData = useCallback(async () => {
         setLoader(true)
+        setError(null)
 
         try {
-            const output = await Http.get<QuestData[]>(`${import.meta.env.VITE_API_URL}/quests/all/${cityId}`, token)
+            const output = await Http.get<FeaturedQuestData[]>(
+                `${import.meta.env.VITE_API_URL}/quests/all/${cityId}`,
+                token
+            )
 
-            if (output.success == 1) {
-                setData(output.data!.sort((a, b) => {
-                    const statusOrder = ['in_progress', null, 'finished']
+            if (output.success === 1 && Array.isArray(output.data)) {
 
-                    const aIndex = statusOrder.indexOf(a.status)
-                    const bIndex = statusOrder.indexOf(b.status)
+                const quests = [...output.data]
 
-                    return aIndex - bIndex
-                }))
+                quests.sort((a, b) => {
+                    const getOrder = (status: FeaturedQuestData['status']) => {
+                        if (status === 'in_progress') return 0
+                        if (status === 'finished') return 2
+                        return 1
+                    }
+
+                    return getOrder(a.status) - getOrder(b.status)
+                })
+
+                setData(quests)
+
+            } else {
+                setError(
+                    output.error === 'connection_error'
+                        ? 'connection_error'
+                        : 'load_error'
+                )
             }
-            else {
-                if (output.error) {
-                    setError(output.error)
-                }
-                else {
-                    setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
-                }
-            }
-        }
-        catch (e) {
-            console.error('Error:', e)
-            setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
-        }
-        finally {
+
+        } catch (error) {
+            console.error('Error loading quests:', error)
+            setError('connection_error')
+
+        } finally {
             setLoader(false)
         }
-    }
+
+    }, [cityId, token])
 
     useEffect(() => {
-        fetchData()
-    }, [])
+        void fetchData()
+    }, [fetchData])
 
-    if (loader) {
-        return <Loader />
+    const counts = {
+        all: data.length,
+        free: data.filter(quest => !quest.paid).length,
+        paid: data.filter(quest => quest.paid).length
     }
 
-    if (error === 'connection_error') {
-        return <ConnectionError onRetry={fetchData} />
-    }
-    if (error) {
-        return (
-            <div className={mainStyle.mb20}>
-                <span className={mainStyle.errorText}>{error}</span>
-            </div>
-        )
-    }
-
-    if (!data || data.length === 0) {
-        return (
-            <div className={mainStyle.wrapper}>
-                <div className={`${mainStyle.description} ${mainStyle.textCenter} ${mainStyle.mt20}`}>
-                    В этом городе пока нет доступных квест-туров.
-                </div>
-            </div>
-        )
-    }
-
-    const filteredData = data.filter(item => {
-        if (filter === 'free') return !item.paid
-        if (filter === 'paid') return item.paid
+    const filteredData = data.filter(quest => {
+        if (filter === 'free') return !quest.paid
+        if (filter === 'paid') return quest.paid
         return true
     })
 
     return (
-        <div className={mainStyle.wrapper}>
+        <section
+            id="quests-list"
+            className={questsStyle.questsListSection}
+        >
 
-            {showFilters && (
-                <QuestFilters filter={filter} setFilter={setFilter} />
-            )}
+            <div className={questsStyle.questsListHeader}>
 
-            {filteredData.length > 0 ? (
-                filteredData.map((item, index) => (
-                    <div key={item.id || index}>
-                        <Quest quest={item} />
+                <div>
+                    <div className={questsStyle.questsListEyebrow}>
+                        Маршруты и приключения
                     </div>
-                ))
-            ) : (
-                <div className={`${mainStyle.description} ${mainStyle.textCenter} ${mainStyle.mt20}`}>
-                    В этой категории пока нет квест-туров.
-                </div>
-            )}
 
-        </div>
+                    <h1 className={questsStyle.questsListTitle}>
+                        Квесты в городе {cityData?.title}
+                    </h1>
+
+                    <p className={questsStyle.questsListDescription}>
+                        Каждый маршрут открывает город с новой стороны.
+                    </p>
+                </div>
+
+                {!loader && !error && data.length > 0 && (
+                    <div className={questsStyle.questsListCount}>
+                        Квестов: {data.length}
+                    </div>
+                )}
+
+            </div>
+
+            {loader ? (
+                <div className={questsStyle.questsListLoading}>
+                    <Loader />
+                </div>
+
+            ) : error === 'connection_error' ? (
+                <ConnectionError onRetry={fetchData} />
+
+            ) : !error && data.length > 0 ? (
+                <>
+                    {showFilters && (
+                        <QuestFilters
+                            filter={filter}
+                            setFilter={setFilter}
+                            counts={counts}
+                        />
+                    )}
+
+                    {filteredData.length > 0 && (
+                        <div className={questsStyle.featuredGrid}>
+                            {filteredData.map(quest => (
+                                <FeaturedCard
+                                    key={quest.id}
+                                    quest={quest}
+                                />
+                            ))}
+                        </div>
+                    )}
+                </>
+
+            ) : null}
+
+        </section>
     )
 }
