@@ -6,6 +6,7 @@ import { PasswordForgot } from './PasswordForgot'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 import authStyle from '../../styles/authStyle.module.css'
+import formsStyle from '../../styles/formsStyle.module.css'
 
 import { Http } from '../../scripts/http'
 
@@ -18,7 +19,14 @@ type PasswordProps = {
     setLoader: Dispatch<SetStateAction<boolean>>
 }
 
-export const Password = ({ email, setError, changeScreen, token, screen, setLoader }: PasswordProps) => {
+export const Password = ({
+    email,
+    setError,
+    changeScreen,
+    token,
+    screen,
+    setLoader
+}: PasswordProps) => {
 
     const [input, setInput] = useState<string | null>(null)
     const [errorStyle, setErrorStyle] = useState(false)
@@ -58,8 +66,9 @@ export const Password = ({ email, setError, changeScreen, token, screen, setLoad
     }
 
     return (
-        <div className={mainStyle.center}>
-            <div className={`${mainStyle.formTitle} ${mainStyle.mb10}`}>
+        <div className={authStyle.authStep}>
+
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb10} ${mainStyle.textCenter}`}>
                 С возвращением!
             </div>
 
@@ -67,11 +76,17 @@ export const Password = ({ email, setError, changeScreen, token, screen, setLoad
                 Введи пароль для {email}:
             </div>
 
-            <div className={mainStyle.blockRelative}>
+            <div className={authStyle.passwordField}>
+
                 <input
                     type={showPassword ? 'text' : 'password'}
                     placeholder="Пароль"
-                    className={`${mainStyle.input} ${errorStyle ? mainStyle.inputError : ''} ${authStyle.eyePadding}`}
+                    aria-label="Пароль"
+                    className={`
+                        ${formsStyle.blockInput}
+                        ${authStyle.eyePadding}
+                        ${errorStyle ? formsStyle.blockInputInvalid : ''}
+                    `}
                     onChange={(event) => setInput(event.target.value)}
                     autoCapitalize="none"
                 />
@@ -83,24 +98,26 @@ export const Password = ({ email, setError, changeScreen, token, screen, setLoad
                     onClick={() => setShowPassword(!showPassword)}
                 >
                     {showPassword ? (
-                        <IoEyeOffOutline size={22} color="#BDC3C7" />
+                        <IoEyeOffOutline size={22} />
                     ) : (
-                        <IoEyeOutline size={22} color="#BDC3C7" />
+                        <IoEyeOutline size={22} />
                     )}
+                </button>
+
+            </div>
+
+            <div className={formsStyle.blockButtonRow}>
+                <button
+                    type="button"
+                    className={mainStyle.siteButton}
+                    onClick={checkPassword}
+                >
+                    Войти
                 </button>
             </div>
 
-            <button
-                type="button"
-                className={`${mainStyle.primaryButton} ${mainStyle.mt15}`}
-                onClick={checkPassword}
-            >
-                <span className={mainStyle.primaryButtonText}>
-                    Войти
-                </span>
-            </button>
-
             <PasswordForgot />
+
         </div>
     )
 }

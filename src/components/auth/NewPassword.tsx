@@ -4,6 +4,7 @@ import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 import authStyle from '../../styles/authStyle.module.css'
+import formsStyle from '../../styles/formsStyle.module.css'
 
 import { PROFILE_SCREEN } from '../../context/types'
 import { Http } from '../../scripts/http'
@@ -17,13 +18,20 @@ type NewPasswordProps = {
     token: string
 }
 
-export const NewPassword = ({ email, code, setError, changeScreen, setLoader, token }: NewPasswordProps) => {
+export const NewPassword = ({
+    email,
+    code,
+    setError,
+    changeScreen,
+    setLoader,
+    token
+}: NewPasswordProps) => {
 
     const [input, setInput] = useState<string | null>(null)
     const [confirmInput, setConfirmInput] = useState<string | null>(null)
 
-    const [style, setStyle] = useState<string | null>(null)
-    const [confirmStyle, setConfirmStyle] = useState<string | null>(null)
+    const [inputClass, setInputClass] = useState<string | null>(null)
+    const [confirmClass, setConfirmClass] = useState<string | null>(null)
 
     const [showPassword, setShowPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
@@ -32,25 +40,25 @@ export const NewPassword = ({ email, code, setError, changeScreen, setLoader, to
 
         setLoader(true)
         setError(null)
-        setStyle(null)
-        setConfirmStyle(null)
+        setInputClass(null)
+        setConfirmClass(null)
 
         if (!input || input.length < 8) {
-            setStyle(mainStyle.inputError)
+            setInputClass(formsStyle.blockInputInvalid)
             setError('Пароль должен содержать минимум 8 символов')
             setLoader(false)
             return
         }
 
         if (!confirmInput) {
-            setConfirmStyle(mainStyle.inputError)
+            setConfirmClass(formsStyle.blockInputInvalid)
             setLoader(false)
             return
         }
 
         if (input !== confirmInput) {
-            setStyle(mainStyle.inputError)
-            setConfirmStyle(mainStyle.inputError)
+            setInputClass(formsStyle.blockInputInvalid)
+            setConfirmClass(formsStyle.blockInputInvalid)
             setError('Пароли не совпадают')
             setLoader(false)
             return
@@ -75,8 +83,8 @@ export const NewPassword = ({ email, code, setError, changeScreen, setLoader, to
                     changeScreen(PROFILE_SCREEN)
                 }
             } else {
-                setStyle(mainStyle.inputError)
-                setConfirmStyle(mainStyle.inputError)
+                setInputClass(formsStyle.blockInputInvalid)
+                setConfirmClass(formsStyle.blockInputInvalid)
 
                 if (output.error) {
                     setError(output.error)
@@ -93,16 +101,22 @@ export const NewPassword = ({ email, code, setError, changeScreen, setLoader, to
     }
 
     return (
-        <div className={mainStyle.center}>
+        <div className={authStyle.authStep}>
+
             <div className={`${mainStyle.subtitle} ${mainStyle.mb10} ${mainStyle.textCenter}`}>
                 А теперь задай пароль (минимум 8 символов)
             </div>
 
-            <div className={`${mainStyle.blockRelative} ${mainStyle.mt15} ${mainStyle.mb10}`}>
+            <div className={`${authStyle.passwordField} ${mainStyle.mt15} ${mainStyle.mb10}`}>
                 <input
                     type={showPassword ? 'text' : 'password'}
                     placeholder="Новый пароль"
-                    className={`${mainStyle.input} ${style || ''} ${authStyle.eyePadding}`}
+                    aria-label="Новый пароль"
+                    className={`
+                        ${formsStyle.blockInput}
+                        ${authStyle.eyePadding}
+                        ${inputClass || ''}
+                    `}
                     onChange={(event) => setInput(event.target.value)}
                     autoCapitalize="none"
                 />
@@ -114,18 +128,23 @@ export const NewPassword = ({ email, code, setError, changeScreen, setLoader, to
                     onClick={() => setShowPassword(!showPassword)}
                 >
                     {showPassword ? (
-                        <IoEyeOffOutline size={22} color="#BDC3C7" />
+                        <IoEyeOffOutline size={22} />
                     ) : (
-                        <IoEyeOutline size={22} color="#BDC3C7" />
+                        <IoEyeOutline size={22} />
                     )}
                 </button>
             </div>
 
-            <div className={`${mainStyle.blockRelative} ${mainStyle.mb10}`}>
+            <div className={`${authStyle.passwordField} ${mainStyle.mb10}`}>
                 <input
                     type={showConfirmPassword ? 'text' : 'password'}
                     placeholder="Повторите пароль"
-                    className={`${mainStyle.input} ${confirmStyle || ''} ${authStyle.eyePadding}`}
+                    aria-label="Повторите пароль"
+                    className={`
+                        ${formsStyle.blockInput}
+                        ${authStyle.eyePadding}
+                        ${confirmClass || ''}
+                    `}
                     onChange={(event) => setConfirmInput(event.target.value)}
                     autoCapitalize="none"
                 />
@@ -137,22 +156,23 @@ export const NewPassword = ({ email, code, setError, changeScreen, setLoader, to
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 >
                     {showConfirmPassword ? (
-                        <IoEyeOffOutline size={22} color="#BDC3C7" />
+                        <IoEyeOffOutline size={22} />
                     ) : (
-                        <IoEyeOutline size={22} color="#BDC3C7" />
+                        <IoEyeOutline size={22} />
                     )}
                 </button>
             </div>
 
-            <button
-                type="button"
-                className={`${mainStyle.button} ${mainStyle.mt15}`}
-                onClick={changePassword}
-            >
-                <span className={mainStyle.buttonText}>
+            <div className={formsStyle.blockButtonRow}>
+                <button
+                    type="button"
+                    className={mainStyle.siteButton}
+                    onClick={changePassword}
+                >
                     Задать пароль
-                </span>
-            </button>
+                </button>
+            </div>
+
         </div>
     )
 }

@@ -1,35 +1,30 @@
 
 import type { Dispatch, SetStateAction } from 'react'
 
-import mainStyle from '../../styles/mainStyle.module.css'
-import authStyle from '../../styles/authStyle.module.css'
-
-import checkTrue from '../../../assets/img/check-true.png'
-import checkFalse from '../../../assets/img/check-false.png'
+import formsStyle from '../../styles/formsStyle.module.css'
 
 type AgreementProps = {
     agree: boolean
     setAgree: Dispatch<SetStateAction<boolean>>
 }
 
-export const Agreement = ({ agree, setAgree }: AgreementProps) => {
+export const Agreement = ({
+    agree,
+    setAgree
+}: AgreementProps) => {
 
     return (
-        <button
-            type="button"
-            className={`${mainStyle.plainButton} ${authStyle.authContainer} ${mainStyle.mt10}`}
-            onClick={() => setAgree(!agree)}
-            aria-pressed={agree}
-        >
-            <img
-                src={agree ? checkTrue : checkFalse}
-                className={mainStyle.checkbox}
-                alt=""
+        <label className={formsStyle.blockAgreement}>
+            <input
+                type="checkbox"
+                className={formsStyle.blockCheckbox}
+                checked={agree}
+                onChange={event => setAgree(event.target.checked)}
             />
 
-            <span className={mainStyle.checkboxText}>
+            <span>
                 Соглашаюсь на обработку моих персональных данных
             </span>
-        </button>
+        </label>
     )
 }

@@ -2,6 +2,8 @@
 import type { Dispatch, SetStateAction } from 'react'
 
 import mainStyle from '../../styles/mainStyle.module.css'
+import authStyle from '../../styles/authStyle.module.css'
+import formsStyle from '../../styles/formsStyle.module.css'
 
 import { Http } from '../../scripts/http'
 
@@ -12,7 +14,12 @@ type CreateProfileProps = {
     setLoader: Dispatch<SetStateAction<boolean>>
 }
 
-export const CreateProfile = ({ email, setTemplate, setError, setLoader }: CreateProfileProps) => {
+export const CreateProfile = ({
+    email,
+    setTemplate,
+    setError,
+    setLoader
+}: CreateProfileProps) => {
 
     const sendCode = async () => {
         setError(null)
@@ -38,8 +45,9 @@ export const CreateProfile = ({ email, setTemplate, setError, setLoader }: Creat
     }
 
     return (
-        <div className={mainStyle.center}>
-            <div className={`${mainStyle.formTitle} ${mainStyle.mb10}`}>
+        <div className={authStyle.authStep}>
+
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb10} ${mainStyle.textCenter}`}>
                 Новый аккаунт?
             </div>
 
@@ -47,25 +55,28 @@ export const CreateProfile = ({ email, setTemplate, setError, setLoader }: Creat
                 Email <span className={mainStyle.formThirdtitle}>{email}</span> еще не зарегистрирован. Создать учетную запись?
             </div>
 
-            <button
-                type="button"
-                className={`${mainStyle.primaryButton} ${mainStyle.mt15}`}
-                onClick={sendCode}
-            >
-                <span className={mainStyle.primaryButtonText}>
-                    Создать
-                </span>
-            </button>
+            <div className={`${mainStyle.center} ${mainStyle.mt20}`}>
 
-            <button
-                type="button"
-                className={`${mainStyle.secondButton} ${mainStyle.mt15}`}
-                onClick={() => setTemplate(null)}
-            >
-                <span className={mainStyle.secondButtonText}>
-                    Ввести другой емейл
-                </span>
-            </button>
+                <button
+                    type="button"
+                    className={mainStyle.siteButton}
+                    onClick={sendCode}
+                >
+                    Создать
+                </button>
+
+                <button
+                    type="button"
+                    className={`${mainStyle.secondButton} ${mainStyle.mt10}`}
+                    onClick={() => setTemplate(null)}
+                >
+                    <span className={mainStyle.secondButtonText}>
+                        Ввести другой емейл
+                    </span>
+                </button>
+
+            </div>
+
         </div>
     )
 }

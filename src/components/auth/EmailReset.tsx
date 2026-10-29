@@ -4,6 +4,8 @@ import { useState, type Dispatch, type SetStateAction } from 'react'
 import { Agreement } from './Agreement'
 
 import mainStyle from '../../styles/mainStyle.module.css'
+import authStyle from '../../styles/authStyle.module.css'
+import formsStyle from '../../styles/formsStyle.module.css'
 
 import { Http } from '../../scripts/http'
 
@@ -14,7 +16,12 @@ type EmailResetProps = {
     setLoader: Dispatch<SetStateAction<boolean>>
 }
 
-export const EmailReset = ({ setEmail, setTemplate, setError, setLoader }: EmailResetProps) => {
+export const EmailReset = ({
+    setEmail,
+    setTemplate,
+    setError,
+    setLoader
+}: EmailResetProps) => {
 
     const [input, setInput] = useState<string | null>(null)
     const [errorStyle, setErrorStyle] = useState(false)
@@ -55,7 +62,8 @@ export const EmailReset = ({ setEmail, setTemplate, setError, setLoader }: Email
     }
 
     return (
-        <div className={mainStyle.container}>
+        <div className={authStyle.authStep}>
+
             <div className={`${mainStyle.formTitle} ${mainStyle.mb10} ${mainStyle.textCenter}`}>
                 Восстановление доступа
             </div>
@@ -67,7 +75,11 @@ export const EmailReset = ({ setEmail, setTemplate, setError, setLoader }: Email
             <input
                 type="email"
                 placeholder="email@example.com"
-                className={`${mainStyle.input} ${errorStyle ? mainStyle.inputError : ''}`}
+                aria-label="Email"
+                className={`
+                    ${formsStyle.blockInput}
+                    ${errorStyle ? formsStyle.blockInputInvalid : ''}
+                `}
                 autoCapitalize="none"
                 onChange={(event) => {
                     setErrorStyle(false)
@@ -75,19 +87,18 @@ export const EmailReset = ({ setEmail, setTemplate, setError, setLoader }: Email
                 }}
             />
 
-            <button
-                type="button"
-                className={`${mainStyle.primaryButton} ${mainStyle.mt15}`}
-                onClick={checkEmail}
-            >
-                <span className={mainStyle.primaryButtonText}>
+            <div className={formsStyle.blockButtonRow}>
+                <button
+                    type="button"
+                    className={mainStyle.siteButton}
+                    onClick={checkEmail}
+                >
                     Дальше
-                </span>
-            </button>
-
-            <div className={mainStyle.agreementWrapper}>
-                <Agreement agree={agree} setAgree={setAgree} />
+                </button>
             </div>
+
+            <Agreement agree={agree} setAgree={setAgree} />
+
         </div>
     )
 }

@@ -1,0 +1,89 @@
+
+.blockForm {
+    min-width: 0;
+}
+
+.blockFields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.blockInput,
+.blockTextarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #d7e9ec;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    font: inherit;
+    font-size: 16px;
+}
+
+.blockInput {
+    height: 50px;
+    padding: 0 15px;
+}
+
+.blockTextarea {
+    grid-column: 1 / -1;
+    min-height: 105px;
+    padding: 14px 15px;
+    resize: vertical;
+}
+
+.blockInput:focus,
+.blockTextarea:focus {
+    border-color: #17a2b8;
+    outline: none;
+}
+
+.blockAgreement {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    color: #5a6a7a;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.blockCheckbox {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #17a2b8;
+    cursor: pointer;
+}
+
+.blockError {
+    margin-top: 12px;
+    color: #e74c3c;
+    font-size: 16px;
+}
+
+.blockSuccess {
+    color: #2c3e50;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.blockButtonRow {
+    display: flex;
+    justify-content: var(--form-actions-align, flex-end);
+    margin-top: 14px;
+}
+
+.blockInputInvalid {
+    border-color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+@media (max-width: 500px) {
+    .blockFields {
+        grid-template-columns: 1fr;
+    }
+}

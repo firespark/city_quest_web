@@ -1,31 +1,91 @@
-.authCardContent {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 25px;
+
+.page {
+    width: calc(100% - 40px);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 0 80px;
+}
+
+.pageTitle {
+    margin: 34px 0 36px;
     padding-bottom: 25px;
+    border-bottom: 1px solid #e1edf0;
+    color: #0c293c;
+    font-size: clamp(34px, 4vw, 46px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
 }
 
 .authScrollContent {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    justify-content: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    min-height: 100%;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 8px 0 20px;
     box-sizing: border-box;
 }
 
-.authContainer {
+.authCardContent {
+    --form-actions-align: center;
+    width: 100%;
+    min-width: 0;
+    padding: 38px 36px;
+    border: 1px solid #dcebf0;
+    border-radius: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(12, 41, 60, 0.06);
+}
+
+.authStep {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+}
+
+.secondaryAction {
+    display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 12px;
+}
+
+.passwordField {
+    position: relative;
     width: 100%;
-    padding-left: 0px;
-    padding-right: 0px;
+    min-width: 0;
+}
+
+.passwordField .eyePadding {
+    padding-right: 54px;
+}
+
+.eyeSign {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    background-color: transparent;
+    color: #8293a2;
+    cursor: pointer;
+}
+
+.eyeSign:hover {
+    color: #12879a;
+}
+
+.eyeSign:focus-visible {
+    outline: 2px solid #17a2b8;
+    outline-offset: -3px;
 }
 
 .googleContainer {
@@ -43,28 +103,32 @@
 .googleButton {
     display: flex;
     flex-direction: row;
-    background-color: #FFFFFF;
-    border-width: 1px;
-    border-color: #F1F5F9;
-    border-radius: 28px;
-    height: 56px;
     align-items: center;
     justify-content: center;
     width: 100%;
-    border-style: solid;
+    height: 56px;
+    border: 1px solid #f1f5f9;
+    border-radius: 28px;
+    background-color: #ffffff;
 }
 
 .googleButtonText {
     font-size: 16px;
     font-weight: 700;
-    color: #2C3E50;
+    color: #2c3e50;
 }
 
 .googleDividerText {
     margin-left: 15px;
     margin-right: 15px;
-    color: #BDC3C7;
+    color: #bdc3c7;
     font-weight: 600;
+}
+
+.googleLine {
+    flex: 1;
+    height: 1px;
+    background-color: #f1f5f9;
 }
 
 .authIcon {
@@ -79,21 +143,35 @@
     margin-right: 12px;
 }
 
-.googleLine {
-    flex: 1;
-    height: 1px;
-    background-color: #F1F5F9;
+@media (max-width: 800px) {
+    .pageTitle {
+        margin-top: 28px;
+    }
+
+    .authCardContent {
+        padding: 34px 30px;
+    }
 }
 
-.eyePadding {
-    padding-right: 50px;
-}
+@media (max-width: 620px) {
+    .page {
+        width: calc(100% - 28px);
+        padding: 16px 0 48px;
+    }
 
-.eyeSign {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    right: 15px;
-    height: 56px;
-    justify-content: center;
+    .pageTitle {
+        margin: 22px 0 28px;
+        padding-bottom: 20px;
+        font-size: 32px;
+    }
+
+    .authScrollContent {
+        max-width: none;
+        padding-top: 0;
+    }
+
+    .authCardContent {
+        padding: 28px 22px;
+        border-radius: 16px;
+    }
 }

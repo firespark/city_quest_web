@@ -535,6 +535,7 @@
   justify-content: center;
   width: max-content;
   max-width: 100%;
+  min-width: 180px;
   padding: 15px 23px;
   border: none;
   border-radius: 12px;
@@ -589,16 +590,17 @@
 }
 
 .siteButtonSmall {
-    min-height: 32px;
-    padding: 6px 11px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 700;
-    box-shadow: none;
+  min-width: 0;
+  min-height: 32px;
+  padding: 6px 11px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: none;
 }
 
 .siteButtonDanger.siteButtonSmall {
-    border: 1px solid #f5d2d0;
+  border: 1px solid #f5d2d0;
 }
 
 

@@ -2,6 +2,8 @@
 import { useState, type Dispatch, type SetStateAction } from 'react'
 
 import mainStyle from '../../styles/mainStyle.module.css'
+import authStyle from '../../styles/authStyle.module.css'
+import formsStyle from '../../styles/formsStyle.module.css'
 
 import { Http } from '../../scripts/http'
 
@@ -14,7 +16,14 @@ type CodeProps = {
     token: string
 }
 
-export const Code = ({ email, setTemplate, setError, setCode, setLoader, token }: CodeProps) => {
+export const Code = ({
+    email,
+    setTemplate,
+    setError,
+    setCode,
+    setLoader,
+    token
+}: CodeProps) => {
 
     const [input, setInput] = useState<string | null>(null)
     const [errorStyle, setErrorStyle] = useState(false)
@@ -52,8 +61,9 @@ export const Code = ({ email, setTemplate, setError, setCode, setLoader, token }
     }
 
     return (
-        <div className={mainStyle.center}>
-            <div className={`${mainStyle.formTitle} ${mainStyle.mb10}`}>
+        <div className={authStyle.authStep}>
+
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb10} ${mainStyle.textCenter}`}>
                 Подтверждение
             </div>
 
@@ -65,22 +75,27 @@ export const Code = ({ email, setTemplate, setError, setCode, setLoader, token }
                 type="text"
                 inputMode="numeric"
                 placeholder="0000"
-                className={`${mainStyle.input} ${errorStyle ? mainStyle.inputError : ''}`}
+                aria-label="Код подтверждения"
+                className={`
+                    ${formsStyle.blockInput}
+                    ${errorStyle ? formsStyle.blockInputInvalid : ''}
+                `}
                 onChange={(event) => {
                     setErrorStyle(false)
                     setInput(event.target.value)
                 }}
             />
 
-            <button
-                type="button"
-                className={`${mainStyle.primaryButton} ${mainStyle.mt15}`}
-                onClick={checkCode}
-            >
-                <span className={mainStyle.primaryButtonText}>
+            <div className={formsStyle.blockButtonRow}>
+                <button
+                    type="button"
+                    className={mainStyle.siteButton}
+                    onClick={checkCode}
+                >
                     Дальше
-                </span>
-            </button>
+                </button>
+            </div>
+
         </div>
     )
 }

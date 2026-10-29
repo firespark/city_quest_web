@@ -4,6 +4,8 @@ import { useState, type Dispatch, type SetStateAction } from 'react'
 import { Agreement } from './Agreement'
 
 import mainStyle from '../../styles/mainStyle.module.css'
+import authStyle from '../../styles/authStyle.module.css'
+import formsStyle from '../../styles/formsStyle.module.css'
 
 import { Http } from '../../scripts/http'
 
@@ -55,8 +57,9 @@ export const Email = ({ setEmail, setTemplate, setError, setLoader }: EmailProps
     }
 
     return (
-        <div className={mainStyle.center}>
-            <div className={`${mainStyle.formTitle} ${mainStyle.mb10}`}>
+        <div className={authStyle.authStep}>
+
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb10} ${mainStyle.textCenter}`}>
                 Добро пожаловать!
             </div>
 
@@ -67,7 +70,11 @@ export const Email = ({ setEmail, setTemplate, setError, setLoader }: EmailProps
             <input
                 type="email"
                 placeholder="email@example.com"
-                className={`${mainStyle.input} ${errorStyle ? mainStyle.inputError : ''}`}
+                aria-label="Email"
+                className={`
+                    ${formsStyle.blockInput}
+                    ${errorStyle ? formsStyle.blockInputInvalid : ''}
+                `}
                 autoCapitalize="none"
                 onChange={(event) => {
                     setErrorStyle(false)
@@ -77,15 +84,16 @@ export const Email = ({ setEmail, setTemplate, setError, setLoader }: EmailProps
 
             <Agreement agree={agree} setAgree={setAgree} />
 
-            <button
-                type="button"
-                className={`${mainStyle.primaryButton} ${mainStyle.mt15}`}
-                onClick={checkEmail}
-            >
-                <span className={mainStyle.primaryButtonText}>
+            <div className={formsStyle.blockButtonRow}>
+                <button
+                    type="button"
+                    className={mainStyle.siteButton}
+                    onClick={checkEmail}
+                >
                     Дальше
-                </span>
-            </button>
+                </button>
+            </div>
+
         </div>
     )
 }

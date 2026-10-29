@@ -6,7 +6,7 @@ import { Http } from '../../scripts/http'
 import { Loader } from '../common/Loader'
 
 import mainStyle from '../../styles/mainStyle.module.css'
-import contactsStyle from '../../styles/contactsStyle.module.css'
+import formsStyle from '../../styles/formsStyle.module.css'
 
 export const ContactsBlockForm = () => {
     const [name, setName] = useState('')
@@ -61,7 +61,7 @@ export const ContactsBlockForm = () => {
 
     if (sent) {
         return (
-            <div className={contactsStyle.blockSuccess} role="status">
+            <div className={formsStyle.blockSuccess} role="status">
                 Сообщение отправлено. Спасибо!
             </div>
         )
@@ -69,36 +69,34 @@ export const ContactsBlockForm = () => {
 
     return (
         <form
-            className={contactsStyle.blockForm}
+            className={formsStyle.blockForm}
             onSubmit={sendEmail}
         >
-            <div className={contactsStyle.blockFields}>
+            <div className={formsStyle.blockFields}>
                 <input
                     type="text"
                     placeholder="Ваше имя"
                     aria-label="Ваше имя"
-                    className={contactsStyle.blockInput}
+                    className={formsStyle.blockInput}
                     value={name}
                     onChange={event => setName(event.target.value)}
                     required
                 />
 
-
                 <input
                     type="text"
                     placeholder="Email или мессенджер"
                     aria-label="Email или мессенджер"
-                    className={contactsStyle.blockInput}
+                    className={formsStyle.blockInput}
                     value={email}
                     onChange={event => setEmail(event.target.value)}
                     required
                 />
 
-
                 <textarea
                     placeholder="Ваше сообщение"
                     aria-label="Ваше сообщение"
-                    className={contactsStyle.blockTextarea}
+                    className={formsStyle.blockTextarea}
                     value={message}
                     onChange={event => setMessage(event.target.value)}
                     rows={4}
@@ -106,10 +104,10 @@ export const ContactsBlockForm = () => {
                 />
             </div>
 
-            <label className={contactsStyle.blockAgreement}>
+            <label className={formsStyle.blockAgreement}>
                 <input
                     type="checkbox"
-                    className={contactsStyle.blockCheckbox}
+                    className={formsStyle.blockCheckbox}
                     checked={agree}
                     onChange={event => setAgree(event.target.checked)}
                 />
@@ -120,14 +118,14 @@ export const ContactsBlockForm = () => {
 
             {error && (
                 <div
-                    className={contactsStyle.blockError}
+                    className={formsStyle.blockError}
                     role="alert"
                 >
                     {error}
                 </div>
             )}
 
-            <div className={contactsStyle.blockButtonRow}>
+            <div className={formsStyle.blockButtonRow}>
                 <button
                     type="submit"
                     className={mainStyle.siteButton}
