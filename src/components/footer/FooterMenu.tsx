@@ -27,13 +27,13 @@ export const FooterMenu = () => {
                     Контакты
                 </Link>
 
-                <span>
+                <Link to={ROUTES.USER_AGREEMENT}>
                     Пользовательское соглашение
-                </span>
+                </Link>
 
-                <span>
+                <Link to={ROUTES.PRIVACY_POLICY}>
                     Политика конфиденциальности
-                </span>
+                </Link>
             </nav>
         </div>
     )

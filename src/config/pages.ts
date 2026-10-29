@@ -8,7 +8,9 @@ import {
     PROFILESETTINGS_SCREEN,
     AUTH_SCREEN,
     PASSWORDRESET_SCREEN,
-    SLUG_SCREEN
+    SLUG_SCREEN,
+    USERAGREEMENT_SCREEN,
+    PRIVACYPOLICY_SCREEN,
 } from '../context/types'
 
 export const PAGES = {
@@ -89,6 +91,26 @@ export const PAGES = {
             title: 'Восстановление пароля',
             description: 'Восстановление доступа к аккаунту.',
             robots: 'noindex, nofollow'
+        }
+    },
+
+    USER_AGREEMENT: {
+        path: '/user-agreement',
+        screen: USERAGREEMENT_SCREEN,
+        meta: {
+            title: 'Пользовательское соглашение',
+            description: 'Условия использования сервиса и приобретения доступа к городским квестам.',
+            robots: 'index, follow'
+        }
+    },
+
+    PRIVACY_POLICY: {
+        path: '/privacy-policy',
+        screen: PRIVACYPOLICY_SCREEN,
+        meta: {
+            title: 'Политика конфиденциальности',
+            description: 'Обработка персональных данных и порядок удаления аккаунта.',
+            robots: 'index, follow'
         }
     },
 

@@ -34,6 +34,8 @@ import { ProfileSettingsScreen } from './screens/ProfileSettingsScreen'
 import { QuestScreen } from './screens/QuestScreen'
 import { QuestsScreen } from './screens/QuestsScreen'
 import { SearchScreen } from './screens/SearchScreen'
+import { UserAgreementScreen } from './screens/UserAgreementScreen'
+import { PrivacyPolicyScreen } from './screens/PrivacyPolicyScreen'
 
 export const Layout = () => {
 
@@ -53,6 +55,10 @@ export const Layout = () => {
                 <Route path={ROUTES.SETTINGS} element={<ProfileSettingsScreen />} />
                 <Route path={ROUTES.AUTH} element={<AuthScreen />} />
                 <Route path={ROUTES.PASSWORD_RESET} element={<PasswordResetScreen />} />
+                <Route path={ROUTES.USER_AGREEMENT} element={<UserAgreementScreen />}
+                />
+                <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicyScreen />}
+                />
 
                 <Route
                     path={ROUTES.SLUG}

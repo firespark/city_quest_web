@@ -1,0 +1,130 @@
+.page {
+    width: calc(100% - 40px);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 0 80px;
+}
+
+.pageTitle {
+    margin: 34px 0 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e1edf0;
+    color: #0c293c;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    overflow-wrap: anywhere;
+}
+
+.revision {
+    margin: 0 0 32px;
+    color: #698191;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.content {
+    max-width: 900px;
+    color: #536f80;
+    font-size: 16px;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+}
+
+.content section+section {
+    margin-top: 32px;
+}
+
+.content h2 {
+    margin: 0 0 14px;
+    color: #0c293c;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.content p {
+    margin: 0 0 16px;
+}
+
+.content ul,
+.content ol {
+    margin: 0 0 16px;
+    padding-left: 24px;
+}
+
+.content li+li {
+    margin-top: 8px;
+}
+
+.content a,
+.documentsNav a {
+    color: #12879a;
+    text-underline-offset: 3px;
+}
+
+.content a:focus-visible,
+.documentsNav a:focus-visible {
+    outline: 2px solid #17a2b8;
+    outline-offset: 3px;
+}
+
+.details {
+    margin: 0;
+}
+
+.details>div {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e1edf0;
+}
+
+.details dt {
+    color: #0c293c;
+    font-weight: 700;
+}
+
+.details dd {
+    min-width: 0;
+    margin: 0;
+}
+
+.documentsNav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid #e1edf0;
+    font-size: 15px;
+}
+
+@media (max-width: 620px) {
+    .page {
+        width: calc(100% - 28px);
+        padding: 16px 0 48px;
+    }
+
+    .pageTitle {
+        margin-top: 22px;
+        padding-bottom: 20px;
+        font-size: 30px;
+    }
+
+    .content h2 {
+        font-size: 21px;
+    }
+
+    .details>div {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 4px;
+    }
+
+    .documentsNav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
