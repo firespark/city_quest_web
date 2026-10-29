@@ -1,17 +1,19 @@
-
 import { useState, useContext, type ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 
 import mainStyle from '../styles/mainStyle.module.css'
 import authStyle from '../styles/authStyle.module.css'
 
-import { EmailReset } from '../components/auth/EmailReset'
-import { Code } from '../components/auth/Code'
-import { NewPassword } from '../components/auth/NewPassword'
+import { ROUTES } from '../routes'
+import { MainContext } from '../context/mainContext'
 
+import { Breadcrumbs } from '../components/common/Breadcrumbs'
 import { Loader } from '../components/common/Loader'
 import { Error } from '../components/common/Error'
 
-import { MainContext } from '../context/mainContext'
+import { EmailReset } from '../components/auth/EmailReset'
+import { Code } from '../components/auth/Code'
+import { NewPassword } from '../components/auth/NewPassword'
 
 export const PasswordResetScreen = () => {
 
@@ -64,23 +66,64 @@ export const PasswordResetScreen = () => {
             break
     }
 
-    if (loader) return <Loader />
-
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
-                <div className={authStyle.authScrollContent}>
-                    {error && (
-                        <div className={mainStyle.mb20}>
-                            <Error text={error} />
-                        </div>
-                    )}
 
-                    <div className={`${mainStyle.card} ${authStyle.authCardContent}`}>
-                        {content}
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+
+                <div className={authStyle.page}>
+
+                    <Breadcrumbs
+                        items={[
+                            { label: 'Главная', to: ROUTES.HOME },
+                            { label: 'Вход и регистрация', to: ROUTES.AUTH },
+                            { label: 'Восстановление пароля' }
+                        ]}
+                    />
+
+                    <h1 className={authStyle.pageTitle}>
+                        Восстановление пароля
+                    </h1>
+
+                    <div className={authStyle.authScrollContent}>
+
+                        {error && (
+                            <div
+                                className={mainStyle.mb20}
+                                role="alert"
+                            >
+                                <Error text={error} />
+                            </div>
+                        )}
+
+                        <div
+                            className={authStyle.authCardContent}
+                            aria-busy={loader}
+                        >
+
+                            {loader && <Loader />}
+
+                            <div hidden={loader}>
+                                {content}
+                            </div>
+
+                        </div>
+
+                        <div className={authStyle.secondaryAction}>
+
+                            <Link
+                                to={ROUTES.AUTH}
+                                className={mainStyle.link}
+                            >
+                                Вернуться ко входу
+                            </Link>
+
+                        </div>
+
                     </div>
+
                 </div>
+
             </main>
 
         </div>
