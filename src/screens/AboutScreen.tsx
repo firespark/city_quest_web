@@ -2,14 +2,16 @@
 import { useState, useEffect } from 'react'
 
 import { FormattedContent } from '../components/common/FormattedContent'
+import { Breadcrumbs } from '../components/common/Breadcrumbs'
 import { Loader } from '../components/common/Loader'
 import { Error } from '../components/common/Error'
 import { ConnectionError } from '../components/common/ConnectionError'
 
 import mainStyle from '../styles/mainStyle.module.css'
-import headerStyle from '../styles/headerStyle.module.css'
+import aboutStyle from '../styles/aboutStyle.module.css'
 
 import { Http } from '../scripts/http'
+import { ROUTES } from '../routes'
 
 type AboutPageData = {
     title: string | null
@@ -62,18 +64,37 @@ export const AboutScreen = () => {
 
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            
+
             <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
                 <div className={mainStyle.scrollContent}>
-                    {error === 'connection_error' ? (
-                        <ConnectionError onRetry={fetchData} />
-                    ) : error ? (
-                        <Error text={error} />
-                    ) : (
-                        <div>
-                            <FormattedContent text={data.content} />
-                        </div>
-                    )}
+                    <div className={aboutStyle.page}>
+
+                        <Breadcrumbs
+                            items={[
+                                { label: 'Главная', to: ROUTES.HOME },
+                                { label: data.title ?? '' }
+                            ]}
+                        />
+
+                        {error === 'connection_error' ? (
+                            <ConnectionError onRetry={fetchData} />
+                        ) : error ? (
+                            <Error text={error} />
+                        ) : (
+                            <article className={aboutStyle.article}>
+
+                                <h1 className={aboutStyle.title}>
+                                    {data.title}
+                                </h1>
+
+                                <div className={aboutStyle.content}>
+                                    <FormattedContent text={data.content} />
+                                </div>
+
+                            </article>
+                        )}
+
+                    </div>
                 </div>
             </main>
 
