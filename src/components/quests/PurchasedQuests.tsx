@@ -1,8 +1,7 @@
 
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext, useEffect, useCallback } from 'react'
 
 import questsStyle from '../../styles/questsStyle.module.css'
-import mainStyle from '../../styles/mainStyle.module.css'
 
 import { ConnectionError } from '../common/ConnectionError'
 import { PurchasedQuest } from './PurchasedQuest'
@@ -14,6 +13,7 @@ import { Http } from '../../scripts/http'
 
 type PurchasedQuestData = {
     id: number
+    slug: string
     [key: string]: unknown
 }
 
@@ -22,10 +22,10 @@ export const PurchasedQuests = () => {
     const { token } = useContext(MainContext)
 
     const [data, setData] = useState<PurchasedQuestData[]>([])
-    const [loader, setLoader] = useState(false)
+    const [loader, setLoader] = useState(true)
     const [error, setError] = useState<string | null>(null)
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         setError(null)
         setLoader(true)
 
@@ -35,8 +35,8 @@ export const PurchasedQuests = () => {
                 token
             )
 
-            if (output.success == 1) {
-                setData(output.data!)
+            if (output.success === 1 && Array.isArray(output.data)) {
+                setData(output.data)
             } else {
                 setError(output.error || 'Ошибка загрузки')
             }
@@ -46,11 +46,11 @@ export const PurchasedQuests = () => {
         } finally {
             setLoader(false)
         }
-    }
+    }, [token])
 
     useEffect(() => {
-        fetchData()
-    }, [])
+        void fetchData()
+    }, [fetchData])
 
     if (loader) return <Loader />
 
@@ -58,31 +58,24 @@ export const PurchasedQuests = () => {
         return <ConnectionError onRetry={fetchData} />
     }
 
+    if (error) return <Error text={error} />
+
+    if (data.length === 0) return null
+
     return (
         <div>
-            <div className={questsStyle.blockTitle}>
+
+            <h2 className={questsStyle.blockTitle}>
                 Купленные туры
-            </div>
+            </h2>
 
-            {error && (
-                <div className={mainStyle.mb20}>
-                    <Error text={error} />
-                </div>
-            )}
+            {data.map(quest => (
+                <PurchasedQuest
+                    key={quest.id}
+                    quest={quest}
+                />
+            ))}
 
-            <div>
-                {data.length > 0 && data.map((item, index) => (
-                    <div key={index}>
-                        <PurchasedQuest quest={item} />
-                    </div>
-                ))}
-
-                {data.length === 0 && !error && (
-                    <div className={questsStyle.emptyText}>
-                        Нет купленных туров
-                    </div>
-                )}
-            </div>
         </div>
     )
 }

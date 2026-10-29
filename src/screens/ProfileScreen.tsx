@@ -1,33 +1,41 @@
 
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext, useEffect, useCallback } from 'react'
+import { IoPersonOutline } from 'react-icons/io5'
 
 import mainStyle from '../styles/mainStyle.module.css'
 import profileStyle from '../styles/profileStyle.module.css'
 
-import { Settings } from '../components/profile/Settings'
-import { ProfileRegister } from '../components/profile/ProfileRegister'
-import { OpenQuests } from '../components/quests/OpenQuests'
-import { DoneQuests } from '../components/quests/DoneQuests'
-import { PurchasedQuests } from '../components/quests/PurchasedQuests'
+import { ROUTES } from '../routes'
+import { MainContext } from '../context/mainContext'
+import { Http } from '../scripts/http'
+
+import { Breadcrumbs } from '../components/common/Breadcrumbs'
 import { Loader } from '../components/common/Loader'
 import { Error } from '../components/common/Error'
 import { ConnectionError } from '../components/common/ConnectionError'
 
-import { MainContext } from '../context/mainContext'
-import { Http } from '../scripts/http'
+import { Settings } from '../components/profile/Settings'
+import { ProfileRegister } from '../components/profile/ProfileRegister'
+
+import { OpenQuests } from '../components/quests/OpenQuests'
+import { DoneQuests } from '../components/quests/DoneQuests'
+import { PurchasedQuests } from '../components/quests/PurchasedQuests'
 
 type ProfileUserData = {
     name: string | null
     email: string | null
     notes: number
+    vk_id?: number | string | null
+    yandex_id?: number | string | null
     [key: string]: unknown
 }
 
 export const ProfileScreen = () => {
 
+    const { token } = useContext(MainContext)
+
     const [loader, setLoader] = useState(true)
     const [loadError, setLoadError] = useState<string | null>(null)
-    const { token } = useContext(MainContext)
 
     const [user, setUser] = useState<ProfileUserData>({
         name: 'Путешественник',
@@ -35,7 +43,7 @@ export const ProfileScreen = () => {
         notes: 0
     })
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         if (!token) {
             setLoader(false)
             return
@@ -50,13 +58,11 @@ export const ProfileScreen = () => {
                 token
             )
 
-            if (output.success == 1) {
-                setUser(prev => ({
-                    ...output.data!,
-                    name: (output.data!.name && output.data!.name.trim() !== '')
-                        ? output.data!.name
-                        : prev.name
-                }))
+            if (output.success === 1 && output.data) {
+                setUser({
+                    ...output.data,
+                    name: output.data.name?.trim() || 'Путешественник'
+                })
             } else if (output.error === 'connection_error') {
                 setLoadError('connection_error')
             }
@@ -67,11 +73,15 @@ export const ProfileScreen = () => {
         } finally {
             setLoader(false)
         }
-    }
+    }, [token])
 
     useEffect(() => {
-        fetchData()
-    }, [token])
+        void fetchData()
+    }, [fetchData])
+
+    const isAuthenticated = Boolean(
+        user.email || user.vk_id || user.yandex_id
+    )
 
     if (loader) return <Loader />
 
@@ -83,36 +93,72 @@ export const ProfileScreen = () => {
 
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
-                <div className={mainStyle.container}>
 
-                    <div className={`${mainStyle.card} ${profileStyle.profileHeaderCard}`}>
-                        <div className={profileStyle.profileNameRow}>
-                            <div className={profileStyle.profileUserName}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+
+                <div className={profileStyle.page}>
+
+                    <Breadcrumbs
+                        items={[
+                            { label: 'Главная', to: ROUTES.HOME },
+                            { label: 'Профиль' }
+                        ]}
+                    />
+
+                    <h1 className={profileStyle.pageTitle}>
+                        Профиль
+                    </h1>
+
+                    <section className={profileStyle.accountCard}>
+
+                        <div className={profileStyle.accountIcon} aria-hidden="true">
+                            <IoPersonOutline size={30} />
+                        </div>
+
+                        <div className={profileStyle.accountDetails}>
+
+                            <div className={profileStyle.accountName}>
                                 {user.name}
                             </div>
 
-                            {user.email && <Settings />}
+                            {user.email && (
+                                <div className={profileStyle.accountEmail}>
+                                    {user.email}
+                                </div>
+                            )}
+
                         </div>
+
+                        {user.email && (
+                            <div className={profileStyle.accountSettings}>
+                                <Settings />
+                            </div>
+                        )}
+
+                    </section>
+
+                    {!isAuthenticated && <ProfileRegister />}
+
+                    <div className={profileStyle.questSections}>
+
+                        <section className={profileStyle.questPanel}>
+                            <OpenQuests />
+                        </section>
+
+                        <section className={profileStyle.questPanel}>
+                            <DoneQuests />
+                        </section>
+
+                        {isAuthenticated && (
+                            <section className={`${profileStyle.questPanel} ${profileStyle.questPanelWide}`}>
+                                <PurchasedQuests />
+                            </section>
+                        )}
+
                     </div>
 
-                    {!user.email && <ProfileRegister />}
-
-                    <div className={mainStyle.card}>
-                        <OpenQuests />
-                    </div>
-
-                    <div className={mainStyle.card}>
-                        <DoneQuests />
-                    </div>
-
-                    {user.email && (
-                        <div className={mainStyle.card}>
-                            <PurchasedQuests />
-                        </div>
-                    )}
                 </div>
+
             </main>
 
         </div>

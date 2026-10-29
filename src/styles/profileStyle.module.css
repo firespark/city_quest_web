@@ -1,5 +1,170 @@
+
+.page {
+    width: calc(100% - 40px);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 0 80px;
+}
+
+.pageTitle {
+    margin: 34px 0 36px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e1edf0;
+    color: #0c293c;
+    font-size: clamp(34px, 4vw, 46px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.accountCard {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    min-width: 0;
+    padding: 28px 32px;
+    border: 1px solid #cfe9ee;
+    border-radius: 18px;
+    background-color: #eaf7f9;
+}
+
+.accountIcon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 70px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #d1eff3;
+    color: #1598aa;
+}
+
+.accountDetails {
+    flex: 1;
+    min-width: 0;
+}
+
+.accountName {
+    color: #0c293c;
+    font-size: clamp(22px, 2.7vw, 29px);
+    font-weight: 800;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.accountEmail {
+    margin-top: 6px;
+    color: #698191;
+    font-size: 15px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.accountSettings {
+    flex-shrink: 0;
+}
+
+.accountSettings a {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid #cfe4e9;
+    border-radius: 12px;
+    background-color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+.accountSettings a:hover {
+    background-color: #d9f1f4;
+}
+
+.accountSettings a:focus-visible {
+    outline: 2px solid #17a2b8;
+    outline-offset: 3px;
+}
+
+.guestNotice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 24px 28px;
+    border: 1px solid #e1edf0;
+    border-radius: 16px;
+    background-color: #ffffff;
+}
+
+.guestText {
+    margin: 0;
+    color: #536f80;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.questSections {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 22px;
+    margin-top: 28px;
+}
+
+.questPanel {
+    min-width: 0;
+    padding: 26px 26px 14px;
+    border: 1px solid #e1edf0;
+    border-radius: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 7px 24px rgba(12, 41, 60, 0.04);
+}
+
+.questPanel:empty {
+    display: none;
+}
+
+.questPanelWide {
+    grid-column: 1 / -1;
+}
+
+.questPanel h2 {
+    margin: 0 0 24px;
+    color: #0c293c;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.questPanel a {
+    display: flex;
+    min-width: 0;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 1px solid #e1edf0;
+    border-radius: 12px;
+    background-color: #f8fbfc;
+    color: #2c3e50;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.questPanel a:hover {
+    background-color: #eaf7f9;
+    border-color: #b8dfe7;
+}
+
+.questPanel a:focus-visible {
+    outline: 2px solid #17a2b8;
+    outline-offset: 3px;
+}
+
 .card {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-radius: 24px;
     padding-left: 20px;
     padding-right: 20px;
@@ -13,7 +178,7 @@
 }
 
 .editContainer {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-radius: 24px;
     padding: 24px;
     margin-top: 20px;
@@ -28,20 +193,18 @@
 .profileContainer {
     display: flex;
     flex-direction: column;
-    background-color: #F1F5F9;
-    border-radius: 24px;
+    align-items: center;
     padding: 20px;
     margin-bottom: 25px;
-    border-width: 1px;
-    border-color: #F1F5F9;
-    align-items: center;
-    border-style: solid;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    background-color: #f1f5f9;
 }
 
 .profileHeaderCard {
     padding-top: 25px;
     padding-bottom: 20px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
 
 .row {
@@ -51,14 +214,11 @@
     align-items: center;
     padding-top: 18px;
     padding-bottom: 18px;
-    border-bottom-width: 1px;
-    border-bottom-color: #F1F5F9;
-    border-bottom-style: solid;
+    border-bottom: 1px solid #f1f5f9;
 }
 
 .rowLast {
-    border-bottom-width: 0px;
-    border-bottom-style: solid;
+    border-bottom: 0;
 }
 
 .valueBlock {
@@ -79,41 +239,36 @@
 
 .inputModern {
     width: 100%;
-    background-color: #F1F5F9;
-    border-width: 1px;
-    border-color: #F1F5F9;
-    border-radius: 16px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    font-size: 16px;
-    color: #2C3E50;
+    padding: 16px 20px;
     margin-bottom: 15px;
-    border-style: solid;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    background-color: #f1f5f9;
+    color: #2c3e50;
+    font-size: 16px;
 }
 
 .inputModern::placeholder {
-    color: #BDC3C7;
+    color: #bdc3c7;
     opacity: 1;
 }
 
 .inputError {
-    border-color: #E74C3C;
+    border-color: #e74c3c;
     background-color: rgba(231, 76, 60, 0.05);
 }
 
 .logoutButton {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     min-height: 56px;
-    background-color: #FFF0F0;
-    border-radius: 28px;
-    justify-content: center;
-    align-items: center;
     margin-top: 10px;
     border: none;
+    border-radius: 28px;
+    background-color: #fff0f0;
     font: inherit;
     cursor: pointer;
 }
@@ -129,41 +284,130 @@
 
 .profileUserName {
     flex: 1;
+    min-width: 0;
+    color: #2c3e50;
     font-size: 28px;
     font-weight: 900;
-    color: #2C3E50;
     letter-spacing: -0.5px;
-    min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 .label {
+    color: #5a6a7a;
     font-size: 16px;
-    color: #5A6A7A;
     font-weight: 500;
 }
 
 .value {
-    font-size: 16px;
-    color: #2C3E50;
-    font-weight: 700;
     margin-right: 10px;
+    color: #2c3e50;
+    font-size: 16px;
+    font-weight: 700;
     text-align: right;
 }
 
 .actionText {
+    color: #17a2b8;
     font-size: 14px;
-    color: #17A2B8;
     font-weight: 700;
     text-transform: uppercase;
 }
 
 .logoutText {
-    color: #E74C3C;
+    color: #e74c3c;
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+@media (max-width: 800px) {
+    .questSections {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .questPanelWide {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 620px) {
+    .page {
+        width: calc(100% - 28px);
+        padding: 16px 0 48px;
+    }
+
+    .pageTitle {
+        margin: 22px 0 24px;
+        padding-bottom: 20px;
+        font-size: 32px;
+    }
+
+    .accountCard {
+        gap: 14px;
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+
+    .accountIcon {
+        flex-basis: 52px;
+        width: 52px;
+        height: 52px;
+    }
+
+    .accountIcon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .accountName {
+        font-size: 22px;
+    }
+
+    .accountEmail {
+        font-size: 14px;
+    }
+
+    .accountSettings a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .settingsIcon {
+        width: 29px;
+        height: 29px;
+    }
+
+    .guestNotice {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 22px 20px;
+    }
+
+    .guestNotice a {
+        width: 100%;
+    }
+
+    .questSections {
+        margin-top: 22px;
+    }
+
+    .questPanel {
+        padding: 22px 18px 10px;
+        border-radius: 16px;
+    }
+
+    .questPanel h2 {
+        font-size: 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .accountSettings a,
+    .questPanel a {
+        transition: none;
+    }
 }

@@ -1,5 +1,5 @@
 
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext, useEffect, useCallback } from 'react'
 import { IoGlobeOutline } from 'react-icons/io5'
 
 import questsStyle from '../../styles/questsStyle.module.css'
@@ -15,6 +15,7 @@ import { Http } from '../../scripts/http'
 
 type OpenQuestData = {
     id?: number | string
+    slug: string
     country_title?: string | null
     [key: string]: unknown
 }
@@ -23,11 +24,11 @@ export const OpenQuests = () => {
 
     const { token } = useContext(MainContext)
 
-    const [data, setData] = useState<Record<string, OpenQuestData[]>>()
-    const [loader, setLoader] = useState(false)
+    const [data, setData] = useState<Record<string, OpenQuestData[]> | null>(null)
+    const [loader, setLoader] = useState(true)
     const [error, setError] = useState<string | null>(null)
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         setError(null)
         setLoader(true)
 
@@ -37,15 +38,21 @@ export const OpenQuests = () => {
                 token
             )
 
-            if (output.success == 1) {
-                const grouped = output.data!.reduce<Record<string, OpenQuestData[]>>((acc, quest) => {
-                    const country = quest.country_title || 'Другие'
+            if (output.success === 1 && Array.isArray(output.data)) {
+                const grouped = output.data.reduce<Record<string, OpenQuestData[]>>(
+                    (acc, quest) => {
+                        const country = quest.country_title || 'Другие'
 
-                    if (!acc[country]) acc[country] = []
+                        if (!acc[country]) {
+                            acc[country] = []
+                        }
 
-                    acc[country].push(quest)
-                    return acc
-                }, {})
+                        acc[country].push(quest)
+
+                        return acc
+                    },
+                    {}
+                )
 
                 setData(grouped)
             } else {
@@ -57,11 +64,11 @@ export const OpenQuests = () => {
         } finally {
             setLoader(false)
         }
-    }
+    }, [token])
 
     useEffect(() => {
-        fetchData()
-    }, [])
+        void fetchData()
+    }, [fetchData])
 
     if (loader) return <Loader />
 
@@ -69,42 +76,47 @@ export const OpenQuests = () => {
         return <ConnectionError onRetry={fetchData} />
     }
 
+    if (error) return <Error text={error} />
+
+    if (!data || Object.keys(data).length === 0) {
+        return null
+    }
+
     return (
         <div>
-            <div className={questsStyle.blockTitle}>
+
+            <h2 className={questsStyle.blockTitle}>
                 Открытые туры
-            </div>
+            </h2>
 
-            {data && Object.keys(data).length > 0 ? (
-                Object.keys(data).map((countryName) => (
-                    <div key={countryName} className={questsStyle.countryBlock}>
+            {Object.entries(data).map(([countryName, quests]) => (
+                <div
+                    key={countryName}
+                    className={questsStyle.countryBlock}
+                >
 
-                        <div className={questsStyle.countryHeader}>
-                            <IoGlobeOutline
-                                size={18}
-                                color="#7F8C8D"
-                                className={mainStyle.mr10}
-                            />
+                    <div className={questsStyle.countryHeader}>
+                        <IoGlobeOutline
+                            size={18}
+                            className={mainStyle.mr10}
+                            aria-hidden="true"
+                        />
 
-                            <span className={questsStyle.countryTitle}>
-                                {countryName}
-                            </span>
-                        </div>
-
-                        {data[countryName].map((item, index) => (
-                            <div key={item.id || index}>
-                                <OpenQuest quest={item} />
-                            </div>
-                        ))}
+                        <span className={questsStyle.countryTitle}>
+                            {countryName}
+                        </span>
                     </div>
-                ))
-            ) : (
-                <div className={questsStyle.emptyText}>
-                    Нет открытых туров
-                </div>
-            )}
 
-            {error && <Error text={error} />}
+                    {quests.map((quest, index) => (
+                        <OpenQuest
+                            key={quest.id ?? index}
+                            quest={quest}
+                        />
+                    ))}
+
+                </div>
+            ))}
+
         </div>
     )
 }
