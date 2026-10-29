@@ -14,6 +14,8 @@ import {
     type QuestFilter
 } from './QuestFilters'
 
+import { QuestsListHeader } from './QuestsListHeader'
+
 import { Loader } from '../common/Loader'
 import { ConnectionError } from '../common/ConnectionError'
 
@@ -105,29 +107,14 @@ export const Quests = ({
             className={questsStyle.questsListSection}
         >
 
-            <div className={questsStyle.questsListHeader}>
-
-                <div>
-                    <div className={questsStyle.questsListEyebrow}>
-                        Маршруты и приключения
-                    </div>
-
-                    <h1 className={questsStyle.questsListTitle}>
-                        Квесты в городе {cityData?.title}
-                    </h1>
-
-                    <p className={questsStyle.questsListDescription}>
-                        Каждый маршрут открывает город с новой стороны.
-                    </p>
-                </div>
-
-                {!loader && !error && data.length > 0 && (
-                    <div className={questsStyle.questsListCount}>
-                        Квестов: {data.length}
-                    </div>
-                )}
-
-            </div>
+            <QuestsListHeader
+                cityTitle={cityData?.title}
+                questsCount={
+                    !loader && !error && data.length > 0
+                        ? data.length
+                        : undefined
+                }
+            />
 
             {loader ? (
                 <div className={questsStyle.questsListLoading}>

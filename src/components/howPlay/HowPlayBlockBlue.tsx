@@ -7,26 +7,37 @@ type HowPlayBlockBlueProps = {
     description?: string | null
 }
 
-export const HowPlayBlockBlue = ({ number, title, description }: HowPlayBlockBlueProps) => {
+export const HowPlayBlockBlue = ({
+    number,
+    title,
+    description
+}: HowPlayBlockBlueProps) => {
+
     return (
-        <div className={`${howPlayStyle.card} ${howPlayStyle.cardBlue}`}>
+        <section className={`${howPlayStyle.card} ${howPlayStyle.cardBlue}`}>
+
             <div className={howPlayStyle.headerRow}>
+
                 <div className={howPlayStyle.numberCircleBlue}>
                     <span className={howPlayStyle.numberTextBlue}>
                         {number}
                     </span>
                 </div>
 
-                <div className={howPlayStyle.titleBlue}>
-                    {title}
-                </div>
+                {title && (
+                    <h2 className={howPlayStyle.titleBlue}>
+                        {title}
+                    </h2>
+                )}
+
             </div>
 
-            <div>
-                <div className={howPlayStyle.descBlue}>
+            {description && (
+                <p className={howPlayStyle.descBlue}>
                     {description}
-                </div>
-            </div>
-        </div>
+                </p>
+            )}
+
+        </section>
     )
 }
