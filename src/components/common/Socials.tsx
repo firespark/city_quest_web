@@ -19,25 +19,25 @@ const socials = [
         name: 'Telegram',
         url: 'https://t.me/fireleit',
         icon: FaTelegramPlane,
-        color: '#2AABEE'
+        className: contactsStyle.socialTelegram
     },
     {
         name: 'Instagram',
         url: 'https://instagram.com/elena_fireleit',
         icon: FaInstagram,
-        color: '#E1306C'
+        className: contactsStyle.socialInstagram
     },
     {
         name: 'Facebook',
         url: 'https://www.facebook.com/fireleit',
         icon: FaFacebookF,
-        color: '#1877F2'
+        className: contactsStyle.socialFacebook
     },
     {
         name: 'ВКонтакте',
         url: 'https://vk.com/fireleit',
         icon: FaVk,
-        color: '#0077FF'
+        className: contactsStyle.socialVk
     }
 ]
 
@@ -45,6 +45,7 @@ export const Socials = ({
     variant = 'default',
     className = ''
 }: SocialsProps) => {
+
     const isFooter = variant === 'footer'
 
     return (
@@ -69,18 +70,10 @@ export const Socials = ({
                         className={
                             isFooter
                                 ? undefined
-                                : contactsStyle.socialIconBtn
-                        }
-                        style={
-                            isFooter
-                                ? undefined
-                                : { backgroundColor: social.color }
+                                : `${contactsStyle.socialIconBtn} ${social.className}`
                         }
                     >
-                        <Icon
-                            size={isFooter ? 16 : 24}
-                            color="#FFFFFF"
-                        />
+                        <Icon size={isFooter ? 16 : 24} />
                     </a>
                 )
             })}

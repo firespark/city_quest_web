@@ -586,12 +586,8 @@ button.itemWrapper:active {
 .featuredImageWrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-}
-
-.questsListSection .featuredImageWrapper {
     aspect-ratio: 4 / 3;
+    overflow: hidden;
 }
 
 .featuredImage {
