@@ -1,20 +1,15 @@
-
 import { useContext } from 'react'
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 
 import { MainContext } from './context/mainContext'
 import { ROUTES, getScreenByPath } from './routes'
 import { SlugRoute } from './SlugRoute'
 
 import {
-    AUTH_SCREEN,
     CITIES_SCREEN,
-    CONTACTS_SCREEN,
     GAME_SCREEN,
     MAIN_SCREEN,
     MENU_SCREEN,
-    PASSWORDRESET_SCREEN,
-    PROFILESETTINGS_SCREEN,
     QUEST_SCREEN,
     QUESTS_SCREEN,
     SEARCH_SCREEN
@@ -28,14 +23,15 @@ import { GameScreen } from './screens/GameScreen'
 import { HowPlayScreen } from './screens/HowPlayScreen'
 import { MainScreen } from './screens/MainScreen'
 import { MenuScreen } from './screens/MenuScreen'
+import { NotFoundScreen } from './screens/NotFoundScreen'
 import { PasswordResetScreen } from './screens/PasswordResetScreen'
+import { PrivacyPolicyScreen } from './screens/PrivacyPolicyScreen'
 import { ProfileScreen } from './screens/ProfileScreen'
 import { ProfileSettingsScreen } from './screens/ProfileSettingsScreen'
 import { QuestScreen } from './screens/QuestScreen'
 import { QuestsScreen } from './screens/QuestsScreen'
 import { SearchScreen } from './screens/SearchScreen'
 import { UserAgreementScreen } from './screens/UserAgreementScreen'
-import { PrivacyPolicyScreen } from './screens/PrivacyPolicyScreen'
 
 export const Layout = () => {
 
@@ -55,10 +51,8 @@ export const Layout = () => {
                 <Route path={ROUTES.SETTINGS} element={<ProfileSettingsScreen />} />
                 <Route path={ROUTES.AUTH} element={<AuthScreen />} />
                 <Route path={ROUTES.PASSWORD_RESET} element={<PasswordResetScreen />} />
-                <Route path={ROUTES.USER_AGREEMENT} element={<UserAgreementScreen />}
-                />
-                <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicyScreen />}
-                />
+                <Route path={ROUTES.USER_AGREEMENT} element={<UserAgreementScreen />} />
+                <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicyScreen />} />
 
                 <Route
                     path={ROUTES.SLUG}
@@ -66,10 +60,9 @@ export const Layout = () => {
                 />
 
                 <Route
-                    path="*"
-                    element={<Navigate to={ROUTES.HOME} replace />}
+                    path={ROUTES.NOT_FOUND}
+                    element={<NotFoundScreen />}
                 />
-
             </Routes>
         )
     }

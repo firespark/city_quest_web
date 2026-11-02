@@ -10,6 +10,7 @@ import {
     ComingSoonScreen,
     type ComingSoonQuestData
 } from './screens/ComingSoonScreen'
+import { NotFoundScreen } from './screens/NotFoundScreen'
 
 import { Loader } from './components/common/Loader'
 
@@ -180,7 +181,7 @@ export const SlugRoute = () => {
     }
 
     if (page?.type === 'notFound') {
-        return <div>Страница не найдена</div>
+        return <NotFoundScreen />
     }
 
     if (page?.type === 'city') {

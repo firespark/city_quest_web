@@ -61,8 +61,12 @@ export const LayoutMeta = () => {
             robots: 'noindex, nofollow'
         }
 
+        const pagePath = page && !/[:*]/.test(page.path)
+            ? page.path
+            : location.pathname
+
         const url = new URL(
-            meta.canonical || page?.path || location.pathname,
+            meta.canonical || pagePath,
             window.location.origin
         ).href
 

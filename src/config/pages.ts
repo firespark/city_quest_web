@@ -11,6 +11,7 @@ import {
     SLUG_SCREEN,
     USERAGREEMENT_SCREEN,
     PRIVACYPOLICY_SCREEN,
+    NOTFOUND_SCREEN,
 } from '../context/types'
 
 export const PAGES = {
@@ -120,6 +121,16 @@ export const PAGES = {
         meta: {
             title: 'Гагара Тур',
             description: '',
+            robots: 'noindex, nofollow'
+        }
+    },
+
+    NOT_FOUND: {
+        path: '*',
+        screen: NOTFOUND_SCREEN,
+        meta: {
+            title: '404 — Страница не найдена',
+            description: 'Запрашиваемая страница не найдена.',
             robots: 'noindex, nofollow'
         }
     }

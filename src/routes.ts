@@ -22,7 +22,9 @@ export const getPageByPath = (pathname: string) => {
 
 export const getPathByScreen = (screen: string): string | null => {
     return Object.values(PAGES).find(
-        page => page.screen === screen && !page.path.includes(':')
+        page => page.screen === screen
+            && !page.path.includes(':')
+            && !page.path.includes('*')
     )?.path ?? null
 }
 
