@@ -36,31 +36,21 @@ export const GameFormat = ({ selectedId, setSelectedId }: GameFormatProps) => {
                             className={`${mainStyle.radioCard} ${isSelected ? mainStyle.radioCardActive : ''}`}
                             onClick={() => setSelectedId(format.id)}
                         >
-                            <div className={gameStyle.modeRadioContainer}>
-                                <div className={`${mainStyle.radioOuter} ${isSelected ? mainStyle.radioOuterActive : ''}`}>
+                            <span className={gameStyle.modeRadioContainer}>
+                                <span className={`${mainStyle.radioOuter} ${isSelected ? mainStyle.radioOuterActive : ''}`}>
                                     {isSelected ? (
-                                        <div className={mainStyle.radioInner} />
+                                        <span className={mainStyle.radioInner} />
                                     ) : null}
-                                </div>
-                            </div>
+                                </span>
+                            </span>
 
-                            <div className={mainStyle.textColumn}>
-                                <div
-                                    className={[
-                                        `${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.mb16}`,
-                                        mainStyle.heading,
-                                        mainStyle.mt8,
-                                        mainStyle.mb8,
-                                        isSelected ? mainStyle.blue : ''
-                                    ].filter(Boolean).join(' ')}
-                                >
-                                    {format.title}
-                                </div>
+                            <span className={mainStyle.textColumn}>
+                                <span className={[`${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.mb16}`, mainStyle.heading, mainStyle.mt8, mainStyle.mb8, isSelected ? mainStyle.blue : ''].filter(Boolean).join(' ')}>{format.title}</span>
 
-                                <div className={`${mainStyle.description} ${mainStyle.mb12}`}>
+                                <span className={`${mainStyle.description} ${mainStyle.mb12}`}>
                                     {format.description}
-                                </div>
-                            </div>
+                                </span>
+                            </span>
                         </button>
                     </div>
                 )

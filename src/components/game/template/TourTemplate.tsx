@@ -1,3 +1,5 @@
+import { imageAlt } from '../../../scripts/imageAlt'
+
 
 import type { Dispatch, SetStateAction, ReactNode } from 'react'
 import { IoLocationSharp, IoCompassOutline } from 'react-icons/io5'
@@ -50,7 +52,7 @@ export const TourTemplate = ({ game, setGame, setModal, nextGame }: TourTemplate
                         <img
                             src={game.sight_image as string}
                             className={gameStyle.sightImage}
-                            alt=""
+                            alt={imageAlt('достопримечательности', game.sight_title)}
                         />
                     </div>
                 ) : null}

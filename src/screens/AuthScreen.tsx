@@ -192,9 +192,7 @@ export const AuthScreen = () => {
                         ]}
                     />
 
-                    <h1 className={mainStyle.pageTitle}>
-                        Вход и регистрация
-                    </h1>
+                    <h1>Вход и регистрация</h1>
 
                     <div className={authStyle.authScrollContent}>
 

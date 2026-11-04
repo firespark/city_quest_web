@@ -9,22 +9,15 @@ import mainStyle from '../../styles/mainStyle.module.css'
 export const Hero = () => {
     return (
         <section className={mainStyle.landingHero}>
-            <div className={mainStyle.landingHeroContent}>
+            <div className={`${mainStyle.landingHeroContent} ${questDetailStyle.heroContent}`}>
 
                 <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                     ГАГАРА ТУР · СКОРО НОВЫЙ КВЕСТ
                 </div>
 
-                <h1 className={questDetailStyle.heroTitle}>
-                    Городской квест
-                    <span className={mainStyle.blue}> Котики в Тбилиси</span>
-                </h1>
+                <h1>Городской квест<span className={mainStyle.blue}> Котики в Тбилиси</span></h1>
 
-                <p className={mainStyle.heroDescription}>
-                    Мы готовим новое городское приключение.
-                    Впереди загадки, открытия и маршрут,
-                    который захочется пройти.
-                </p>
+                <p className={mainStyle.heroDescription}>Мы готовим новое городское приключение. Впереди загадки, открытия и маршрут, который захочется пройти.</p>
 
                 <Link
                     to={slugUrl('tbilisi-cats')}
@@ -38,7 +31,7 @@ export const Hero = () => {
             <div className={mainStyle.heroVisual}>
                 <img
                     src="/cats.webp"
-                    alt="Городской квест Котики в Тбилиси"
+                    alt="Изображение квеста «Котики в Тбилиси»"
                     className={mainStyle.coverImage}
                 />
             </div>

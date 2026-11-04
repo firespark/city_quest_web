@@ -85,9 +85,7 @@ export const OpenQuests = () => {
     return (
         <div>
 
-            <h2 className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>
-                Открытые туры
-            </h2>
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>Открытые туры</div>
 
             {Object.entries(data).map(([countryName, quests]) => (
                 <div

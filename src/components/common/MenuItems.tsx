@@ -29,7 +29,8 @@ export const MenuItems = () => {
                         <img
                             src={infoImage}
                             className={mainStyle.controlIcon}
-                            alt=""
+                            alt="Изображение значка «О проекте»"
+                            aria-hidden="true"
                         />
                     </div>
 
@@ -50,7 +51,8 @@ export const MenuItems = () => {
                         <img
                             src={questionImage}
                             className={mainStyle.controlIcon}
-                            alt=""
+                            alt="Изображение значка «Как играть»"
+                            aria-hidden="true"
                         />
                     </div>
 
@@ -72,7 +74,8 @@ export const MenuItems = () => {
                         <img
                             src={envelopeImage}
                             className={mainStyle.controlIcon}
-                            alt=""
+                            alt="Изображение значка «Контакты»"
+                            aria-hidden="true"
                         />
                     </div>
                     <span className={headerStyle.menuButtonText}>

@@ -1,3 +1,5 @@
+import { imageAlt } from '../../../scripts/imageAlt'
+
 import questsStyle from '../../../styles/questsStyle.module.css'
 import mainStyle from '../../../styles/mainStyle.module.css'
 
@@ -8,11 +10,13 @@ import comingSoonStyle from '../../../styles/comingSoonStyle.module.css'
 type ComingSoonAboutProps = {
     content: string | string[] | null
     additionalImage?: string | null
+    questTitle: string
 }
 
 export const ComingSoonAbout = ({
     content,
-    additionalImage
+    additionalImage,
+    questTitle
 }: ComingSoonAboutProps) => {
 
     if (!content && !additionalImage) return null
@@ -22,6 +26,7 @@ export const ComingSoonAbout = ({
             className={`
                 ${comingSoonStyle.about}
                 ${additionalImage ? comingSoonStyle.aboutWithImage : ''}
+                ${questsStyle.questSection}
             `}
         >
             <div className={mainStyle.shrinkable}>
@@ -30,9 +35,7 @@ export const ComingSoonAbout = ({
                     О квесте
                 </div>
 
-                <h2 className={questsStyle.sectionTitle}>
-                    Что это за игра
-                </h2>
+                <h2>Что это за игра</h2>
 
                 {content && (
                     <div className={`${mainStyle.articleContent} ${mainStyle.bodyText} ${mainStyle.formattedContent}`}>
@@ -46,7 +49,7 @@ export const ComingSoonAbout = ({
                 <div className={comingSoonStyle.aboutDecoration}>
                     <img
                         src={additionalImage}
-                        alt=""
+                        alt={imageAlt('иллюстрации квеста', questTitle)}
                         aria-hidden="true"
                         className={comingSoonStyle.aboutImage}
                     />

@@ -32,7 +32,6 @@ textarea {
 }
 
 h1,
-h2,
 h3,
 h4,
 h5,
@@ -40,6 +39,26 @@ h6 {
   margin: 0;
   font-family: var(--font-family-heading);
   line-height: 1.2;
+}
+
+h1 {
+  border-bottom: 1px solid var(--color-light-gray);
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: var(--font-size-46);
+  overflow-wrap: anywhere;
+  margin: 0 0 40px;
+  padding-bottom: 25px;
+}
+
+h3 {
+  font-weight: 600;
+  color: var(--color-dark-blue);
+  margin-top: 16px;
+  margin-bottom: 12px;
+  font-size: var(--font-size-18);
+  line-height: 1.4;
 }
 
 strong,
@@ -97,6 +116,15 @@ button {
 @media (max-width: 760px) {
   html {
     scrollbar-gutter: auto;
+  }
+}
+
+@media (max-width: 620px) {
+
+  h1 {
+    margin: 0 0 24px;
+    padding-bottom: 20px;
+    font-size: var(--font-size-32);
   }
 }
 

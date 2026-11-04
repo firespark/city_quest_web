@@ -62,14 +62,6 @@
     font-size: var(--font-size-34);
 }
 
-.stepTitle {
-    margin: 0 0 12px;
-    color: var(--color-dark-blue);
-    font-weight: 800;
-    line-height: 1.4;
-    font-size: var(--font-size-18);
-}
-
 .signup {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 150px;
@@ -178,6 +170,7 @@
 }
 
 .galleryImageWrapper {
+    display: block;
     position: relative;
     aspect-ratio: 4 / 3;
     overflow: hidden;
@@ -325,6 +318,15 @@
     background: var(--color-dark-blue);
 }
 
+.panelTitle {
+    margin: 0 0 24px;
+    color: inherit;
+    font-weight: 800;
+    line-height: 1.2;
+    font-size: var(--font-size-32);
+    font-family: var(--font-family-heading);
+}
+
 /* Responsive overrides */
 
 @media (max-width: 800px) {
@@ -344,10 +346,6 @@
 
     .stepNumber {
         font-size: var(--font-size-32);
-    }
-
-    .stepTitle {
-        font-size: var(--font-size-16);
     }
 }
 
@@ -388,11 +386,6 @@
         font-size: var(--font-size-26);
     }
 
-    .stepTitle {
-        margin-bottom: 8px;
-        font-size: var(--font-size-18);
-    }
-
     .signup {
         grid-template-columns: minmax(0, 1fr);
         gap: 12px;
@@ -419,6 +412,11 @@
 
     .galleryDialogFooter {
         padding: 12px;
+    }
+
+    .panelTitle {
+        margin-bottom: 24px;
+        font-size: var(--font-size-26);
     }
 }
 

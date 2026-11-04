@@ -21,7 +21,8 @@ export const TaskSign = ({ number, setModal, disabled }: TaskSignProps) => {
                     <img
                         src={questionDisabledImage}
                         className={gameStyle.pillIcon}
-                        alt=""
+                        alt={`Изображение значка «Задание ${number}»`}
+                        aria-hidden="true"
                     />
                     <span className={`${mainStyle.textBlue} ${mainStyle.textMuted}`}>
                         Задание {number}
@@ -35,16 +36,17 @@ export const TaskSign = ({ number, setModal, disabled }: TaskSignProps) => {
                         setModal?.(`task${number}`)
                     }}
                 >
-                    <div className={`${gameStyle.pill} ${mainStyle.radioCardActive}`}>
+                    <span className={`${gameStyle.pill} ${mainStyle.radioCardActive}`}>
                         <img
                             src={questionImage}
                             className={gameStyle.pillIcon}
-                            alt=""
+                            alt={`Изображение значка «Задание ${number}»`}
+                            aria-hidden="true"
                         />
                         <span className={mainStyle.textBlue}>
                             Задание {number}
                         </span>
-                    </div>
+                    </span>
                 </button>
             )}
         </div>

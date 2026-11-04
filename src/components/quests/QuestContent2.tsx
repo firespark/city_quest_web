@@ -12,15 +12,13 @@ export const QuestContent2 = ({ content }: QuestContent2Props) => {
     if (!content) return null
 
     return (
-        <section className={questsStyle.facts}>
+        <section className={`${questsStyle.facts} ${questsStyle.questSection}`}>
             <div>
                 <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                     Дополнительная информация
                 </div>
 
-                <h2 className={questsStyle.sectionTitle}>
-                    Подробнее о локации
-                </h2>
+                <h2>Подробнее о локации</h2>
             </div>
 
             <div className={`${mainStyle.articleContent} ${mainStyle.bodyText} ${mainStyle.formattedContent}`}>

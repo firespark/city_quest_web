@@ -124,9 +124,7 @@ export const HowPlayScreen = () => {
 
                     <article className={mainStyle.articleBlock}>
 
-                        <h1 className={mainStyle.pageTitle}>
-                            {data.title}
-                        </h1>
+                        <h1>{data.title}</h1>
 
                         <div className={`${mainStyle.cardGrid} ${mainStyle.instructionGrid}`}>
 
@@ -175,9 +173,7 @@ export const HowPlayScreen = () => {
                         {rulesList.length > 0 && (
                             <section className={howPlayStyle.rulesContainer}>
 
-                                <h2 className={mainStyle.sectionHeading}>
-                                    Важно знать
-                                </h2>
+                                <h2>Важно знать</h2>
 
                                 <div className={howPlayStyle.rulesList}>
 

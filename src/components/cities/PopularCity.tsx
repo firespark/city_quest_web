@@ -1,3 +1,5 @@
+import { imageAlt } from '../../scripts/imageAlt'
+
 
 import { Link } from 'react-router-dom'
 
@@ -23,7 +25,7 @@ export const PopularCity = ({ city }: { city: PopularCityData }) => {
             <img
                 src={city.image}
                 className={citiesStyle.cityCardImage}
-                alt=""
+                alt={imageAlt('города', city.title)}
             />
 
             <div className={citiesStyle.cityInfoContainer}>

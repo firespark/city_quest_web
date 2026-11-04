@@ -73,7 +73,7 @@ export const ModalTemplate = ({ game, modal, setModal, setGame, nextGame }: Moda
             break
 
         case 'full_task':
-            content = <ModalFullTask task={game.show_full_task} />
+            content = <ModalFullTask task={game.show_full_task} questTitle={game.quest_title} />
             break
 
         case 'hint':

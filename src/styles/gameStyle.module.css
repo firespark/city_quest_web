@@ -214,6 +214,7 @@
 /* Images */
 
 .sightImageWrapper {
+    display: block;
     width: 100%;
     background-color: var(--color-light-gray);
     border-radius: 16px;
@@ -548,6 +549,7 @@ button.taskCard:active {
 }
 
 .taskImageThumbWrapper {
+    display: block;
     width: 100%;
     aspect-ratio: 1.33;
 }
@@ -596,12 +598,10 @@ button.taskCard:active {
 
 .taskTextPreviewImage {
     -webkit-line-clamp: 2;
-    line-clamp: 2;
 }
 
 .taskTextPreviewOnly {
     -webkit-line-clamp: 5;
-    line-clamp: 5;
 }
 
 .modalAnswerImageBg {
@@ -620,7 +620,6 @@ button.taskCard:active {
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: attr(data-image-ratio type(<number>), auto);
 }
 
 .fullWidthImageLoader {
@@ -644,4 +643,15 @@ button.pill:hover:not(:disabled),
 button.progressMedal:hover:not(:disabled),
 button.taskCard:hover:not(:disabled) {
     filter: brightness(0.85);
+}
+
+.modeTemplateContainer h1 {
+    font-weight: 800;
+    color: var(--color-dark-blue);
+    font-size: var(--font-size-24);
+    line-height: 1.4;
+    margin: 0 0 24px;
+    text-align: center;
+    border: 0;
+    padding: 0;
 }

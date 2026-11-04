@@ -59,9 +59,7 @@ export const EditTemplate = ({
 
             <div className={profileStyle.editHeader}>
 
-                <h2 className={mainStyle.formTitle}>
-                    {template === 'name' ? 'Изменить имя' : 'Изменить пароль'}
-                </h2>
+                <div className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>{template === 'name' ? 'Изменить имя' : 'Изменить пароль'}</div>
 
                 <TemplateClose setTemplate={setTemplate} />
 

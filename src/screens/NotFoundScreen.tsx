@@ -26,18 +26,11 @@ export const NotFoundScreen = () => {
                     />
 
                     <div className={notFoundStyle.notFoundBody}>
-                        <p className={notFoundStyle.code}>
-                            404
-                        </p>
+                        <p className={notFoundStyle.code}>404</p>
 
-                        <h1 className={notFoundStyle.notFoundTitle}>
-                            Страница не найдена
-                        </h1>
+                        <h1>Страница не найдена</h1>
 
-                        <p className={`${mainStyle.bodyText} ${mainStyle.mb32}`}>
-                            Проверь адрес или вернись на главную,
-                            чтобы выбрать город и квест.
-                        </p>
+                        <div className={`${mainStyle.bodyText} ${mainStyle.mb32}`}>Проверь адрес или вернись на главную, чтобы выбрать город и квест.</div>
 
                         <Link
                             to={ROUTES.HOME}

@@ -1,6 +1,7 @@
 
 import {
     IoCheckmarkSharp,
+    IoRocketSharp,
     IoHourglassOutline,
     IoDiamondOutline
 } from 'react-icons/io5'
@@ -10,7 +11,7 @@ import questsStyle from '../../styles/questsStyle.module.css'
 
 export const ComingSoonBadge = () => (
     <div className={`${questsStyle.questBadge} ${questsStyle.questBadgeComingSoon}`}>
-        <IoHourglassOutline size={12} className={mainStyle.textWhite} />
+        <IoRocketSharp size={12} className={mainStyle.textWhite} />
         <span className={questsStyle.questBadgeText}>Скоро</span>
     </div>
 )

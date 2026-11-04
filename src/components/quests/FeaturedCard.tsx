@@ -1,3 +1,5 @@
+import { imageAlt } from '../../scripts/imageAlt'
+
 import mainStyle from '../../styles/mainStyle.module.css'
 
 import { Link } from 'react-router-dom'
@@ -16,7 +18,7 @@ export const FeaturedCard = ({ quest }: { quest: FeaturedQuestData }) => {
             <div className={questsStyle.featuredImageWrapper}>
                 <img
                     src={quest.image}
-                    alt=""
+                    alt={imageAlt('квеста', quest.title)}
                     loading="lazy"
                     className={mainStyle.interactiveImage}
                 />
@@ -44,13 +46,7 @@ export const FeaturedCard = ({ quest }: { quest: FeaturedQuestData }) => {
                     ) : <span className={questsStyle.featuredCity}>{quest.city}</span>
                 )}
 
-                <h3 className={questsStyle.featuredTitle}>
-                    {quest.slug ? (
-                        <Link to={slugUrl(quest.slug)} className={questsStyle.featuredQuestLink}>
-                            {quest.title}
-                        </Link>
-                    ) : quest.title}
-                </h3>
+                <div className={questsStyle.featuredTitle}>{quest.slug ? <Link to={slugUrl(quest.slug)} className={questsStyle.featuredQuestLink}>{quest.title}</Link> : quest.title}</div>
 
                 <div className={questsStyle.featuredBottom}>
                     <span>
@@ -71,8 +67,8 @@ export const FeaturedCard = ({ quest }: { quest: FeaturedQuestData }) => {
     )
 
     return (
-        <article className={`${questsStyle.featuredCard} ${mainStyle.imageHover}`}>
+        <div className={`${questsStyle.featuredCard} ${mainStyle.imageHover}`}>
             {content}
-        </article>
+        </div>
     )
 }

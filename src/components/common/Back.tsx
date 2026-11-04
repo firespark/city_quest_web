@@ -22,7 +22,8 @@ export const Back = () => {
             <img
                 src={backImage}
                 className={mainStyle.controlIcon}
-                alt=""
+                alt="Изображение кнопки «Назад»"
+                aria-hidden="true"
             />
         </button>
     )

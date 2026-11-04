@@ -44,14 +44,6 @@
     border-top: 1px solid var(--color-light-gray);
 }
 
-.contactsEmailTitle {
-    margin: 0 0 12px;
-    color: var(--color-gray);
-    font-weight: 400;
-    line-height: 1.6;
-    font-size: var(--font-size-14);
-}
-
 .emailButton {
     display: inline-flex;
     align-items: center;
@@ -147,6 +139,15 @@
     border-radius: 22px;
     background-color: var(--color-light-gray);
     box-shadow: var(--card-shadow);
+}
+
+.contactsEmailTitle {
+    margin: 0 0 12px;
+    color: var(--color-gray);
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: var(--font-size-14);
+    font-family: var(--font-family-main);
 }
 
 /* Responsive overrides */

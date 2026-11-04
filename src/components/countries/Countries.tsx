@@ -77,15 +77,11 @@ export const Countries = () => {
     }
 
     return (
-        <section className={countriesStyle.countriesSection}>
+        <div className={countriesStyle.countriesSection}>
             <div className={mainStyle.contentContainer}>
-                <h2 className={mainStyle.welcomeTitle}>
-                    Доступные города
-                </h2>
+                <div className={mainStyle.welcomeTitle}>Доступные города</div>
 
-                <p className={mainStyle.description}>
-                    Квесты в ваших городах.
-                </p>
+                <p className={mainStyle.description}>Квесты в ваших городах.</p>
 
                 {loader ? (
                     <Loader />
@@ -104,15 +100,7 @@ export const Countries = () => {
                     <div className={`${mainStyle.cardGrid} ${mainStyle.countryGrid}`}>
                         {countriesWithCities.map(({ country, cities }) => (
                             <div key={country.id} className={countriesStyle.countryCard}>
-                                <h3 className={countriesStyle.countryHeading}>
-                                    {country.flag && (
-                                        <span
-                                            className={`fi fi-${country.flag.toLowerCase()}`}
-                                            aria-hidden="true"
-                                        />
-                                    )}
-                                    {country.title}
-                                </h3>
+                                <div className={countriesStyle.countryHeading}>{country.flag && <span className={`fi fi-${country.flag.toLowerCase()}`} aria-hidden="true" />}{country.title}</div>
 
                                 <div className={countriesStyle.countryCities}>
                                     {cities.map(city => city.slug ? (
@@ -128,6 +116,6 @@ export const Countries = () => {
                     </div>
                 )}
             </div>
-        </section>
+        </div>
     )
 }

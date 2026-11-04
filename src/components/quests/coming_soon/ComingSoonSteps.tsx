@@ -20,15 +20,13 @@ export const ComingSoonSteps = ({
     if (steps.length === 0) return null
 
     return (
-        <section className={comingSoonStyle.stepsSection}>
+        <div className={comingSoonStyle.stepsSection}>
 
             <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                 Три шага до приключения
             </div>
 
-            <h2 className={questsStyle.panelTitle}>
-                Что тебя ждет
-            </h2>
+            <div className={comingSoonStyle.panelTitle}>Что тебя ждет</div>
 
             <div className={`${mainStyle.cardGrid} ${mainStyle.announcementGrid}`}>
 
@@ -42,21 +40,17 @@ export const ComingSoonSteps = ({
                         </div>
 
                         {step.title && (
-                            <h3 className={comingSoonStyle.stepTitle}>
-                                {step.title}
-                            </h3>
+                            <div className={mainStyle.stepTitle}>{step.title}</div>
                         )}
 
                         {step.description && (
-                            <p className={mainStyle.bodyText}>
-                                {step.description}
-                            </p>
+                            <p className={mainStyle.bodyText}>{step.description}</p>
                         )}
                     </div>
                 ))}
 
             </div>
 
-        </section>
+        </div>
     )
 }

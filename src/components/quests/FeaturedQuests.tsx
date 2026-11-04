@@ -63,18 +63,18 @@ export const FeaturedQuests = ({
 
     if (loader) {
         return offset === 0 ? (
-            <section className={questsStyle.featuredSection}>
+            <div className={questsStyle.featuredSection}>
                 <Loader />
-            </section>
+            </div>
         ) : null
     }
 
     if (error) {
         if (error === 'connection_error' && offset === 0) {
             return (
-                <section className={questsStyle.featuredSection}>
+                <div className={questsStyle.featuredSection}>
                     <ConnectionError onRetry={fetchData} />
-                </section>
+                </div>
             )
         }
 
@@ -88,16 +88,12 @@ export const FeaturedQuests = ({
     }
 
     return (
-        <section className={questsStyle.featuredSection}>
+        <div className={questsStyle.featuredSection}>
             <div className={mainStyle.contentContainer}>
-                <h2 className={mainStyle.welcomeTitle}>
-                    {title}
-                </h2>
+                <div className={mainStyle.welcomeTitle}>{title}</div>
 
                 {subtitle && (
-                    <p className={mainStyle.description}>
-                        {subtitle}
-                    </p>
+                    <p className={mainStyle.description}>{subtitle}</p>
                 )}
 
                 <div className={`${mainStyle.cardGrid} ${mainStyle.questGrid}`}>
@@ -109,6 +105,6 @@ export const FeaturedQuests = ({
                     ))}
                 </div>
             </div>
-        </section>
+        </div>
     )
 }

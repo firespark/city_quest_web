@@ -55,8 +55,8 @@ export const CountrySelector = () => {
                 className={modalStyle.countriesPremiumSelector}
                 onClick={() => setModalVisible(true)}
             >
-                <div className={mainStyle.panelRowLeft}>
-                    <div className={modalStyle.countriesIconCircle}>
+                <span className={mainStyle.panelRowLeft}>
+                    <span className={modalStyle.countriesIconCircle}>
 
 
                         {selectedCountry && selectedCountry.flag ? (
@@ -71,14 +71,14 @@ export const CountrySelector = () => {
                             />
                         )}
 
-                    </div>
-                    <div>
-                        <div className={mainStyle.metaLabel}>Страна</div>
-                        <div className={mainStyle.strongText}>
+                    </span>
+                    <span>
+                        <span className={`${mainStyle.metaLabel} ${mainStyle.block}`}>Страна</span>
+                        <span className={`${mainStyle.strongText} ${mainStyle.block}`}>
                             {selectedCountry ? selectedCountry.title : 'Выберите страну'}
-                        </div>
-                    </div>
-                </div>
+                        </span>
+                    </span>
+                </span>
                 <IoChevronDownOutline
                     size={16}
 
@@ -110,12 +110,7 @@ export const CountrySelector = () => {
                     >
                         <div className={modalStyle.countriesDragIndicator} />
 
-                        <div
-                            id="countries-sheet-title"
-                            className={`${mainStyle.formTitle} ${mainStyle.mb24} ${mainStyle.heading}`}
-                        >
-                            Выберите страну
-                        </div>
+                        <div id="countries-sheet-title" className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>Выберите страну</div>
 
                         <div className={mainStyle.scrollArea}>
                             {countries.map((item) => {

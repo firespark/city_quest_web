@@ -1,3 +1,5 @@
+import { imageAlt } from '../../scripts/imageAlt'
+
 
 import { IoLibrary } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
@@ -33,7 +35,7 @@ export const Quest = ({ quest }: { quest: QuestData }) => {
                     <img
                         src={quest.image}
                         className={questsStyle.questCardImage}
-                        alt=""
+                        alt={imageAlt('квеста', quest.title)}
                     />
 
                     <div className={questsStyle.questBadgeOverlay}>

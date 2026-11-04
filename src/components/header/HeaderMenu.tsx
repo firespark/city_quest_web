@@ -42,7 +42,6 @@ export const HeaderMenu = () => {
                 type="button"
                 className={`${headerStyle.menuButton} ${headerStyle.headerMobileMenu}`}
                 popoverTarget={menuId}
-                aria-expanded={isOpen}
                 aria-controls={menuId}
                 aria-label={isOpen ? 'Закрыть меню' : 'Открыть меню'}
             >

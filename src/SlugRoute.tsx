@@ -18,6 +18,7 @@ import { Error as ErrorMessage } from './components/common/Error'
 import mainStyle from './styles/mainStyle.module.css'
 
 import { setDynamicPageTitle } from './LayoutMeta'
+import { contentDescription } from './scripts/pageMeta'
 
 
 type CityData = {
@@ -25,6 +26,8 @@ type CityData = {
     title: string
     slug: string
     country_id: number
+    image?: string
+    content?: string | string[] | null
 }
 
 type ApiResponse<T> = {
@@ -129,7 +132,10 @@ export const SlugRoute = () => {
                     title: city.title
                 })
 
-                setDynamicPageTitle(city.title)
+                setDynamicPageTitle(city.title, true, {
+                    description: contentDescription(city.content) || `Городские квесты в городе ${city.title}. Выбирайте маршрут и открывайте город вместе с Гагара Тур.`,
+                    image: city.image ? { url: city.image, alt: `Изображение города «${city.title}»` } : undefined,
+                })
                 setPage({ type: 'city' })
                 return
             }
@@ -146,7 +152,14 @@ export const SlugRoute = () => {
             if (quest) {
                 setQuestId(quest.id)
 
-                setDynamicPageTitle(quest.title)
+                setDynamicPageTitle(
+                    quest.title,
+                    (quest.published !== false || quest.coming_soon) && quest.city_published !== false,
+                    {
+                        description: contentDescription(quest.content) || `Квест «${quest.title}» в городе ${quest.city}. Подробности маршрута на сайте Гагара Тур.`,
+                        image: quest.image ? { url: quest.image, alt: `Изображение квеста «${quest.title}»` } : undefined,
+                    }
+                )
 
                 if (quest.coming_soon) {
                     setPage({

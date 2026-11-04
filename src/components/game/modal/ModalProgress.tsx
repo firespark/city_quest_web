@@ -103,7 +103,7 @@ export const ModalProgress = ({ game, setGame, setModal }: ModalProgressProps) =
                 <img
                     src={finishImage}
                     className={gameStyle.progressFinishIcon}
-                    alt=""
+                    alt="Изображение значка «Финиш квеста»"
                 />
             )
             : <span className={textSt}>{i}</span>
@@ -139,9 +139,7 @@ export const ModalProgress = ({ game, setGame, setModal }: ModalProgressProps) =
     return (
         <div className={`${mainStyle.container} ${mainStyle.center}`}>
             <div className={mainStyle.mb24}>
-                <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
-                    Карта тура
-                </div>
+                <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>Карта тура</div>
             </div>
 
             {error && (

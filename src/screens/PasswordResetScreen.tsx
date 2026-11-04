@@ -81,9 +81,7 @@ export const PasswordResetScreen = () => {
                         ]}
                     />
 
-                    <h1 className={mainStyle.pageTitle}>
-                        Восстановление пароля
-                    </h1>
+                    <h1>Восстановление пароля</h1>
 
                     <div className={authStyle.authScrollContent}>
 

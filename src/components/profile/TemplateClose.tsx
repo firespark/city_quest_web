@@ -24,7 +24,8 @@ export const TemplateClose = ({ setTemplate }: TemplateCloseProps) => {
             <img
                 src={closeImage}
                 className={headerStyle.close}
-                alt=""
+                alt="Изображение кнопки «Закрыть»"
+                aria-hidden="true"
             />
         </button>
     )

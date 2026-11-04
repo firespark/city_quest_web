@@ -1,3 +1,5 @@
+import { imageAlt } from '../../../scripts/imageAlt'
+
 import questsStyle from '../../../styles/questsStyle.module.css'
 import mainStyle from '../../../styles/mainStyle.module.css'
 
@@ -19,10 +21,12 @@ export type ComingSoonGalleryPhoto = {
 
 type ComingSoonGalleryProps = {
     photos: ComingSoonGalleryPhoto[]
+    questTitle: string
 }
 
 export const ComingSoonGallery = ({
-    photos
+    photos,
+    questTitle
 }: ComingSoonGalleryProps) => {
 
     const [activeIndex, setActiveIndex] = useState<number | null>(null)
@@ -58,16 +62,17 @@ export const ComingSoonGallery = ({
         ? null
         : photos[activeIndex]
 
+    const getPhotoAlt = (photo: ComingSoonGalleryPhoto, index: number) =>
+        `${imageAlt('галереи квеста', questTitle)} — ${photo.alt?.trim() || photo.title?.trim() || `фото ${index + 1}`}`
+
     return (
-        <section className={comingSoonStyle.supportSection}>
+        <div className={comingSoonStyle.supportSection}>
 
             <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                 Котики, которые ищут семью
             </div>
 
-            <h2 className={mainStyle.sectionHeading}>
-                При поддержке
-            </h2>
+            <div className={mainStyle.h2}>При поддержке</div>
 
             <div
                 className={`
@@ -86,11 +91,11 @@ export const ComingSoonGallery = ({
                             : `Открыть ${index + 1}`
                         }
                     >
-                        <div className={comingSoonStyle.galleryImageWrapper}>
+                        <span className={comingSoonStyle.galleryImageWrapper}>
 
                             <img
                                 src={photo.src}
-                                alt={photo.alt ?? photo.title ?? ''}
+                                alt={getPhotoAlt(photo, index)}
                                 className={mainStyle.interactiveImage}
                                 loading="lazy"
                             />
@@ -101,7 +106,7 @@ export const ComingSoonGallery = ({
                                 aria-hidden="true"
                             />
 
-                        </div>
+                        </span>
 
                         {photo.title && (
                             <span className={comingSoonStyle.galleryCardTitle}>
@@ -152,7 +157,7 @@ export const ComingSoonGallery = ({
 
                         <img
                             src={activePhoto.src}
-                            alt={activePhoto.alt ?? activePhoto.title ?? ''}
+                            alt={getPhotoAlt(activePhoto, activeIndex!)}
                             className={comingSoonStyle.galleryLargeImage}
                         />
 
@@ -199,6 +204,6 @@ export const ComingSoonGallery = ({
                 )}
             </dialog>
 
-        </section>
+        </div>
     )
 }

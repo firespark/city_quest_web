@@ -1,3 +1,5 @@
+import { imageAlt } from '../../scripts/imageAlt'
+
 
 import type { Dispatch, SetStateAction } from 'react'
 
@@ -74,43 +76,44 @@ export const TaskTemplate = ({
                 const content = (
                     <>
                         {task.image ? (
-                            <div
+                            <span
                                 className={`${gameStyle.taskImageThumbWrapper} ${isGrid ? gameStyle.taskImageGrid : ''}`}
                             >
                                 <img
                                     src={task.image}
                                     className={gameStyle.taskImageThumb}
-                                    alt=""
+                                    alt={`${imageAlt(`задания ${taskNumber} квеста`, game.quest_title)} — иллюстрация ${index + 1}`}
                                 />
-                            </div>
+                            </span>
                         ) : null}
 
                         {taskText ? (
-                            <div className={`${gameStyle.taskTextWrapper} ${(!task.image && isGrid) ? mainStyle.textColumn : ''}`}>
-                                <div
+                            <span className={`${gameStyle.taskTextWrapper} ${(!task.image && isGrid) ? mainStyle.textColumn : mainStyle.block}`}>
+                                <span
                                     className={[
                                         mainStyle.paragraph,
                                         mainStyle.textCenter,
                                         mainStyle.textPreLine,
-                                        isGrid ? gameStyle.taskTextPreview : '',
+                                        isGrid ? gameStyle.taskTextPreview : mainStyle.block,
                                         isGrid
                                             ? (task.image ? gameStyle.taskTextPreviewImage : gameStyle.taskTextPreviewOnly)
                                             : ''
                                     ].filter(Boolean).join(' ')}
                                 >
                                     {taskText}
-                                </div>
-                            </div>
+                                </span>
+                            </span>
                         ) : null}
 
                         {!isTextOnlySingle && (
-                            <div className={gameStyle.taskLoupeWrapper}>
+                            <span className={gameStyle.taskLoupeWrapper}>
                                 <img
                                     src={loupeImage}
                                     className={gameStyle.taskLoupe}
-                                    alt=""
+                                    alt="Изображение значка «Увеличить изображение»"
+                                    aria-hidden="true"
                                 />
-                            </div>
+                            </span>
                         )}
                     </>
                 )

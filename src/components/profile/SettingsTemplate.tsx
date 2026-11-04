@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 import type { Dispatch, SetStateAction } from 'react'
 
 import profileStyle from '../../styles/profileStyle.module.css'
@@ -43,6 +44,7 @@ export const SettingsTemplate = ({
             {user.email != null && (
                 <>
                     <section className={profileStyle.settingsCard}>
+                        <div className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>Личные данные</div>
 
                         <ProfileEmail email={user.email} />
 

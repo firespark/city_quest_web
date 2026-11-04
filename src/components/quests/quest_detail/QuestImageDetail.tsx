@@ -1,3 +1,5 @@
+import { imageAlt } from '../../../scripts/imageAlt'
+
 import mainStyle from "../../../styles/mainStyle.module.css"
 
 import type { ComponentProps } from 'react'
@@ -43,7 +45,7 @@ export const QuestImageDetail = ({
             <img
                 className={`${mainStyle.coverImage} ${questDetailStyle.questHeroImage}`}
                 src={image}
-                alt=""
+                alt={imageAlt('квеста', title)}
             />
 
             <div
@@ -51,7 +53,7 @@ export const QuestImageDetail = ({
                 aria-hidden="true"
             />
 
-            <div className={questDetailStyle.questHeroContent}>
+            <div className={`${questDetailStyle.questHeroContent} ${questDetailStyle.heroContent}`}>
 
                 {(paid || status) && (
                     <div className={questDetailStyle.badges}>
@@ -68,9 +70,7 @@ export const QuestImageDetail = ({
                     {city}
                 </Link>
 
-                <h1 className={questDetailStyle.heroTitle}>
-                    {title}
-                </h1>
+                <h1>{title}</h1>
 
                 {available && (
                     <div className={questDetailStyle.questHeroAction}>

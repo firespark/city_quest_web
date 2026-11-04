@@ -72,9 +72,9 @@ export const ModalSkipAlert = ({ setModal, setGame }: ModalSkipAlertProps) => {
                 className={`${mainStyle.radioCard} ${isSelected ? mainStyle.radioCardActive : ''}`}
                 onClick={() => setReason(id)}
             >
-                <div className={`${mainStyle.radioOuter} ${isSelected ? mainStyle.radioOuterActive : ''}`}>
-                    {isSelected ? <div className={mainStyle.radioInner} /> : null}
-                </div>
+                <span className={`${mainStyle.radioOuter} ${isSelected ? mainStyle.radioOuterActive : ''}`}>
+                    {isSelected ? <span className={mainStyle.radioInner} /> : null}
+                </span>
                 <span className={`${mainStyle.radioText} ${isSelected ? mainStyle.textSemibold : ''}`}>
                     {text}
                 </span>

@@ -24,9 +24,7 @@ export const ContactsScreen = () => {
                         ]}
                     />
 
-                    <h1 className={mainStyle.pageTitle}>
-                        Контакты
-                    </h1>
+                    <h1>Контакты</h1>
 
                     <div className={contactsStyle.contactsLayout}>
 

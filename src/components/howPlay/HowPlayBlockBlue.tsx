@@ -15,7 +15,7 @@ export const HowPlayBlockBlue = ({
 }: HowPlayBlockBlueProps) => {
 
     return (
-        <section className={`${mainStyle.stepCard} ${mainStyle.bgLightGray}`}>
+        <div className={`${mainStyle.stepCard} ${mainStyle.bgLightGray}`}>
 
             <div className={howPlayStyle.headerRow}>
 
@@ -26,19 +26,15 @@ export const HowPlayBlockBlue = ({
                 </div>
 
                 {title && (
-                    <h2 className={howPlayStyle.stepHeading}>
-                        {title}
-                    </h2>
+                    <div className={howPlayStyle.stepHeading}>{title}</div>
                 )}
 
             </div>
 
             {description && (
-                <p className={mainStyle.bodyText}>
-                    {description}
-                </p>
+                <p className={mainStyle.bodyText}>{description}</p>
             )}
 
-        </section>
+        </div>
     )
 }

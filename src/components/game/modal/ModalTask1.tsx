@@ -1,3 +1,4 @@
+import { imageAlt } from '../../../scripts/imageAlt'
 import questsStyle from '../../../styles/questsStyle.module.css'
 
 import type { Dispatch, SetStateAction, ReactNode } from 'react'
@@ -48,7 +49,7 @@ export const ModalTask1 = ({ game, setModal, setGame }: ModalTask1Props) => {
                     <div className={`${questsStyle.eyebrow} ${mainStyle.orange} ${mainStyle.textCenter}`}>
                         Использованная подсказка:
                     </div>
-                    <Hint text={sightHint1.text} image={sightHint1.image} />
+                    <Hint text={sightHint1.text} image={sightHint1.image} alt={imageAlt('подсказки к заданию 1 квеста', game.quest_title)} />
                 </div>
             )}
 

@@ -76,13 +76,9 @@ const ConnectionErrorCard = ({ onRetry }: ConnectionErrorProps) => {
 
     return (
         <div className={mainStyle.connectionError} role="status">
-            <h2 className={mainStyle.connectionErrorTitle}>
-                Нет подключения
-            </h2>
+            <div className={mainStyle.h2}>Нет подключения</div>
 
-            <p className={mainStyle.bodyText}>
-                Не удалось загрузить данные. Проверьте подключение к интернету и попробуйте снова.
-            </p>
+            <p className={mainStyle.bodyText}>Не удалось загрузить данные. Проверьте подключение к интернету и попробуйте снова.</p>
 
             <button
                 type="button"

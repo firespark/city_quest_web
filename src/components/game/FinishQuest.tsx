@@ -26,9 +26,7 @@ export const FinishQuest = ({ text, game, setModal, setResetModalVisible }: Fini
     return (
         <div className={mainStyle.card}>
             <div className={mainStyle.container}>
-                <div className={`${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.mb16} ${mainStyle.textCenter} ${mainStyle.heading}`}>
-                    {text as ReactNode}
-                </div>
+                <div className={`${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.mb16} ${mainStyle.textCenter} ${mainStyle.heading}`}>{text as ReactNode}</div>
             </div>
 
             <div className={`${mainStyle.divider} ${mainStyle.mb24}`} />

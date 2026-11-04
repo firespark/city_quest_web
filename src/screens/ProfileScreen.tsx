@@ -105,9 +105,7 @@ export const ProfileScreen = () => {
                         ]}
                     />
 
-                    <h1 className={mainStyle.pageTitle}>
-                        Профиль
-                    </h1>
+                    <h1>Профиль</h1>
 
                     <section className={profileStyle.accountCard}>
 
@@ -117,9 +115,7 @@ export const ProfileScreen = () => {
 
                         <div className={profileStyle.accountDetails}>
 
-                            <div className={`${profileStyle.accountName} ${mainStyle.heading}`}>
-                                {user.name}
-                            </div>
+                            <div className={profileStyle.accountName}>{user.name}</div>
 
                             {user.email && (
                                 <div className={profileStyle.accountEmail}>

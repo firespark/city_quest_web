@@ -11,9 +11,7 @@ export const ProfileRegister = () => {
     return (
         <section className={profileStyle.guestNotice}>
 
-            <p className={mainStyle.bodyText}>
-                Хочешь сохранять результаты своих игр?
-            </p>
+            <p className={mainStyle.bodyText}>Хочешь сохранять результаты своих игр?</p>
 
             <Link
                 to={ROUTES.AUTH}

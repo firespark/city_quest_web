@@ -7,24 +7,20 @@ import contactsStyle from '../../styles/contactsStyle.module.css'
 
 export const ContactsBlock = () => {
     return (
-        <section className={contactsStyle.blockSection}>
+        <div className={contactsStyle.blockSection}>
             <div className={contactsStyle.blockCard}>
                 <div className={mainStyle.shrinkable}>
                     <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                         ЕСТЬ ВОПРОСЫ?
                     </div>
 
-                    <h2 className={mainStyle.sectionHeading}>
-                        Напишите нам
-                    </h2>
+                    <div className={mainStyle.h2}>Напишите нам</div>
 
-                    <p className={mainStyle.bodyText}>
-                        Свяжитесь с нами с помощью этой формы. Либо пишите в мессенджеры или соцсети.
-                    </p>
+                    <p className={mainStyle.bodyText}>Свяжитесь с нами с помощью этой формы. Либо пишите в мессенджеры или соцсети.</p>
                 </div>
 
                 <ContactsBlockForm />
             </div>
-        </section>
+        </div>
     )
 }

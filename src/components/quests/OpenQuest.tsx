@@ -1,3 +1,5 @@
+import { imageAlt } from '../../scripts/imageAlt'
+
 import mainStyle from '../../styles/mainStyle.module.css'
 
 import type { ReactNode } from 'react'
@@ -49,7 +51,7 @@ export const OpenQuest = ({ quest }: { quest: OpenQuestData }) => {
                 <img
                     src={quest.quest_image as string}
                     className={questsStyle.questImage}
-                    alt=""
+                    alt={imageAlt('квеста', quest.quest_title)}
                 />
 
                 <div className={questsStyle.badgeAccessWrapper}>

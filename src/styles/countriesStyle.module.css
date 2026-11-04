@@ -12,16 +12,6 @@
   border-radius: 18px;
 }
 
-.countryHeading {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 24px;
-  color: var(--color-dark-blue);
-  font-weight: 800;
-  font-size: var(--font-size-18);
-}
-
 .countryCities {
   display: grid;
   grid-template-columns: repeat(2, max-content);
@@ -47,6 +37,18 @@
 .countryCities a:hover,
 .countryCities a:focus-visible {
   color: var(--color-blue-hover);
+}
+
+.countryHeading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 24px;
+    color: var(--color-dark-blue);
+    font-weight: 800;
+    font-size: var(--font-size-18);
+    line-height: 1.2;
+    font-family: var(--font-family-heading);
 }
 
 /* Responsive overrides */

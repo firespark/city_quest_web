@@ -1,3 +1,5 @@
+import { imageAlt } from '../../../scripts/imageAlt'
+
 
 import { useContext, type Dispatch, type SetStateAction, type ReactNode } from 'react'
 import { IoLocationSharp, IoCompassOutline } from 'react-icons/io5'
@@ -44,7 +46,7 @@ export const ModalAnswer1 = ({ title, image, address, location, description, set
                             <img
                                 src={image as string}
                                 className={gameStyle.sightImage}
-                                alt=""
+                                alt={imageAlt('достопримечательности', title)}
                             />
                         </div>
                     ) : null}

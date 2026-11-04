@@ -36,17 +36,6 @@
 
 /* Step titles */
 
-.stepHeading {
-    flex: 1;
-    min-width: 0;
-    margin: 0;
-    color: var(--color-dark-blue);
-    font-weight: 700;
-    line-height: 1.4;
-    overflow-wrap: anywhere;
-    font-size: var(--font-size-18);
-}
-
 /* Step descriptions */
 
 /* Rules */
@@ -68,6 +57,18 @@
 
 .rulesList > div {
     margin-bottom: 0;
+}
+
+.stepHeading {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    color: var(--color-dark-blue);
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    font-size: var(--font-size-18);
+    font-family: var(--font-family-heading);
 }
 
 /* Responsive overrides */

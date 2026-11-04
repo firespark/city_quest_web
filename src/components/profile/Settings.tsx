@@ -19,7 +19,8 @@ export const Settings = () => {
             <img
                 src={settingsImage}
                 className={profileStyle.settingsIcon}
-                alt=""
+                alt="Изображение значка «Настройки профиля»"
+                aria-hidden="true"
             />
         </Link>
     )

@@ -30,7 +30,7 @@ export const FormattedContent = ({ text }: { text: unknown }) => {
     }
 
     return (
-        <div className={mainStyle.container}>
+        <div className={`${mainStyle.container} ${mainStyle.formattedText}`}>
             {lines.map((line, index) => {
                 const trimmed = line.trim()
 
@@ -51,18 +51,14 @@ export const FormattedContent = ({ text }: { text: unknown }) => {
                 if (trimmed.startsWith('<h2>') || trimmed.endsWith('</h2>')) {
                     const cleanText = trimmed.replace(/<\/?h2>/g, '')
                     return (
-                        <div key={index} className={`${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.mb16} ${mainStyle.heading}`}>
-                            {parseInlineTags(cleanText, index)}
-                        </div>
+                        <h2 key={index}>{parseInlineTags(cleanText, index)}</h2>
                     )
                 }
 
                 if (trimmed.startsWith('<h3>') || trimmed.endsWith('</h3>')) {
                     const cleanText = trimmed.replace(/<\/?h3>/g, '')
                     return (
-                        <div key={index} className={`${mainStyle.thirdTitle} ${mainStyle.heading}`}>
-                            {parseInlineTags(cleanText, index)}
-                        </div>
+                        <h3 key={index}>{parseInlineTags(cleanText, index)}</h3>
                     )
                 }
 

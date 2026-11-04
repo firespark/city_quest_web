@@ -1,3 +1,5 @@
+import { imageAlt } from '../../scripts/imageAlt'
+
 import mainStyle from "../../styles/mainStyle.module.css"
 import questDetailStyle from '../../styles/questDetailStyle.module.css'
 
@@ -16,7 +18,7 @@ export const QuestImage = ({ data }: { data: QuestImageData }) => {
             <img
                 src={data.image as string}
                 className={`${mainStyle.coverImage} ${questDetailStyle.questHeroImage}`}
-                alt=""
+                alt={imageAlt('квеста', data.title)}
             />
             <div className={questsStyle.questBadgesTopLeft}>
                 <AccessBadge paid={data.paid} available={data.available} />

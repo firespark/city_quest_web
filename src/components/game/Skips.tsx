@@ -34,7 +34,7 @@ export const Skips = ({ skips, showSkip, setModal }: SkipsProps) => {
                     <img
                         src={skipImage}
                         className={gameStyle.pillIcon}
-                        alt=""
+                        alt="Изображение значка «Пропуски»"
                     />
                     <span className={gameStyle.skipTextActive}>
                         {skips as ReactNode}
@@ -50,7 +50,7 @@ export const Skips = ({ skips, showSkip, setModal }: SkipsProps) => {
                     <img
                         src={skipDisabledImage}
                         className={gameStyle.pillIcon}
-                        alt=""
+                        alt="Изображение значка «Пропуски недоступны»"
                     />
                     <span>
                         {skips as ReactNode}

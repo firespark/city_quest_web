@@ -34,7 +34,7 @@ export const Hints = ({ hints, showHint, setModal }: HintsProps) => {
                     <img
                         src={hintImage}
                         className={gameStyle.pillIcon}
-                        alt=""
+                        alt="Изображение значка «Подсказки»"
                     />
                     <span className={gameStyle.hintTextActive}>
                         {hints as ReactNode}
@@ -50,7 +50,7 @@ export const Hints = ({ hints, showHint, setModal }: HintsProps) => {
                     <img
                         src={hintDisabledImage}
                         className={gameStyle.pillIcon}
-                        alt=""
+                        alt="Изображение значка «Подсказки недоступны»"
                     />
                     <span className={gameStyle.hintTextDisabled}>
                         {hints as ReactNode}

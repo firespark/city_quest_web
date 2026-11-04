@@ -66,9 +66,7 @@ export const PurchasedQuests = () => {
     return (
         <div>
 
-            <h2 className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>
-                Купленные туры
-            </h2>
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>Купленные туры</div>
 
             {data.map(quest => (
                 <PurchasedQuest

@@ -21,12 +21,14 @@
     font-size: var(--font-size-180);
 }
 
-.notFoundTitle {
+.notFoundBody > h1 {
     margin: 24px 0 16px;
     color: var(--color-dark-blue);
     font-weight: 800;
     line-height: 1.2;
     font-size: var(--font-size-40);
+    border: 0;
+    padding: 0;
 }
 
 /* Responsive overrides */
@@ -41,7 +43,7 @@
         font-size: var(--font-size-112);
     }
 
-    .notFoundTitle {
+    .notFoundBody > h1 {
         font-size: var(--font-size-26);
     }
 }

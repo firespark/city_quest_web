@@ -1,4 +1,5 @@
 
+import { imageAlt } from '../../../scripts/imageAlt'
 import FullWidthImage from '../../common/FullWidthImage'
 
 import mainStyle from '../../../styles/mainStyle.module.css'
@@ -29,12 +30,11 @@ export const ModalHint = ({ game, task }: ModalHintProps) => {
 
     return (
         <div className={mainStyle.container}>
-            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
-                Подсказка
-            </div>
+            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>Подсказка</div>
 
             {hint.image ? (
                 <FullWidthImage
+                    alt={imageAlt(`подсказки к заданию ${task} квеста`, game.quest_title)}
                     source={{
                         uri: hint.image + '?time=' + new Date().getTime()
                     }}

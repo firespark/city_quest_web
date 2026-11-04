@@ -14,7 +14,7 @@ export const ComingSoonSignup2 = () => {
     if (!telegramBotUrl) return null
 
     return (
-        <section className={`${comingSoonStyle.signup} ${comingSoonStyle.signupDark}`}>
+        <div className={`${comingSoonStyle.signup} ${comingSoonStyle.signupDark}`}>
 
             <div className={comingSoonStyle.signupContent}>
 
@@ -22,14 +22,9 @@ export const ComingSoonSignup2 = () => {
                     НЕ ПРОПУСТИТЕ ОТКРЫТИЕ
                 </div>
 
-                <h2 className={questsStyle.panelTitle}>
-                    Запись через Telegram
-                </h2>
+                <div className={comingSoonStyle.panelTitle}>Запись через Telegram</div>
 
-                <p className={`${mainStyle.bodyText} ${mainStyle.mb24} ${mainStyle.textWhite}`}>
-                    Узнай условия участия и запишись на квест через
-                    нашего Telegram-бота.
-                </p>
+                <p className={`${mainStyle.bodyText} ${mainStyle.mb24} ${mainStyle.textWhite}`}>Узнай условия участия и запишись на квест через нашего Telegram-бота.</p>
 
                 <TelegramButton className={comingSoonStyle.signupButtonDark}>
                     Открыть Telegram-бот
@@ -47,6 +42,6 @@ export const ComingSoonSignup2 = () => {
                 <IoPaperPlaneOutline size={78} aria-hidden="true" />
             </a>
 
-        </section>
+        </div>
     )
 }

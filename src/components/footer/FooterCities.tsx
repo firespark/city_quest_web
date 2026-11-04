@@ -65,9 +65,7 @@ export const FooterCities = () => {
 
     return (
         <div>
-            <h2 className={footerStyle.footerTitle}>
-                Города
-            </h2>
+            <div className={footerStyle.footerTitle}>Города</div>
 
             {loader ? (
                 <Loader />

@@ -85,9 +85,7 @@ export const DoneQuests = () => {
     return (
         <div>
 
-            <h2 className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>
-                Пройденные туры
-            </h2>
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>Пройденные туры</div>
 
             {Object.entries(data).map(([countryName, quests]) => (
                 <div

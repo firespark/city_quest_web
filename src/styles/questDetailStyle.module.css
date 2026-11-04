@@ -157,7 +157,13 @@
     text-underline-offset: 4px;
 }
 
-.heroTitle {
+.questHeroAction {
+    margin-top: 24px;
+    width: max-content;
+    max-width: 100%;
+}
+
+.heroContent > h1 {
     max-width: 560px;
     margin: 12px 0 16px;
     color: inherit;
@@ -165,12 +171,8 @@
     line-height: 1.2;
     overflow-wrap: anywhere;
     font-size: var(--font-size-52);
-}
-
-.questHeroAction {
-    margin-top: 24px;
-    width: max-content;
-    max-width: 100%;
+    border: 0;
+    padding: 0;
 }
 
 /* Responsive overrides */
@@ -179,7 +181,8 @@
     .questHeroContent {
         padding: 48px 40px 70px;
     }
-    .heroTitle {
+
+    .heroContent > h1 {
         font-size: var(--font-size-46);
     }
 }
@@ -244,7 +247,8 @@
     .questHeroCity {
         margin-top: 24px;
     }
-    .heroTitle {
+
+    .heroContent > h1 {
         font-size: var(--font-size-34);
     }
 }

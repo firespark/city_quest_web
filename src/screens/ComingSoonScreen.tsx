@@ -37,6 +37,8 @@ export type ComingSoonQuestData = {
     end_point: string | null
     sights_count: number
     coming_soon: boolean
+    published?: boolean
+    city_published?: boolean
 
     coming_soon_banner_icon?: string | null
     coming_soon_additional_image?: string | null
@@ -87,6 +89,7 @@ export const ComingSoonScreen = ({
                     />
 
                     <ComingSoonAbout
+                        questTitle={quest.title}
                         content={quest.content}
                         additionalImage={quest.coming_soon_additional_image}
                     />
@@ -98,6 +101,7 @@ export const ComingSoonScreen = ({
                     <ComingSoonSignup />
 
                     <ComingSoonGallery
+                        questTitle={quest.title}
                         photos={quest.coming_soon_gallery ?? []}
                     />
 

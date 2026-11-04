@@ -23,7 +23,7 @@ const socials = [
     },
     {
         name: 'Instagram',
-        url: 'https://instagram.com/elena_fireleit',
+        url: 'https://www.instagram.com/elena_fireleit',
         icon: FaInstagram,
         className: mainStyle.bgPurple
     },

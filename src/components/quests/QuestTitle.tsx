@@ -10,9 +10,7 @@ export const QuestTitle = ({ title, city }: { title: unknown, city: unknown }) =
             <div className={`${questsStyle.city} ${questsStyle.questCityCaption} ${mainStyle.textCenter}`}>
                 {city as ReactNode}
             </div>
-            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.mt8} ${mainStyle.heading}`}>
-                {title as ReactNode}
-            </div>
+            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.mt8} ${mainStyle.heading}`}>{title as ReactNode}</div>
         </div>
     )
 }

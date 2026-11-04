@@ -26,11 +26,13 @@
 }
 
 .accountName {
+    margin: 0;
     color: var(--color-dark-blue);
     font-weight: 800;
     line-height: 1.4;
     overflow-wrap: anywhere;
     font-size: var(--font-size-32);
+    font-family: var(--font-family-heading);
 }
 
 .accountEmail {
@@ -101,10 +103,6 @@
 
 .questPanelWide {
     grid-column: 1 / -1;
-}
-
-.questPanel h2 {
-    margin: 0 0 24px;
 }
 
 .questPanel a {

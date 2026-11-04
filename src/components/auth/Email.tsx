@@ -59,9 +59,7 @@ export const Email = ({ setEmail, setTemplate, setError, setLoader }: EmailProps
     return (
         <div className={authStyle.authStep}>
 
-            <div className={`${mainStyle.formTitle} ${mainStyle.mb12} ${mainStyle.textCenter} ${mainStyle.heading}`}>
-                Добро пожаловать!
-            </div>
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb12} ${mainStyle.textCenter}`}>Добро пожаловать!</div>
 
             <div className={`${mainStyle.formSubtitle} ${mainStyle.mb32}`}>
                 Введи Email, чтобы продолжить:

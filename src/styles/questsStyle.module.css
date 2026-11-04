@@ -170,7 +170,6 @@ button.itemWrapper:active {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    line-clamp: 2;
     overflow: hidden;
     font-size: var(--font-size-24);
 }
@@ -368,6 +367,7 @@ button.itemWrapper:active {
     line-height: 1.4;
     font-size: var(--font-size-20);
     transition: color 0.2s ease;
+    font-family: var(--font-family-heading);
 }
 
 .featuredBottom {
@@ -616,7 +616,7 @@ button.itemWrapper:active {
     outline-offset: 3px;
 }
 
-.sectionTitle {
+.questSection > div > h2 {
     margin: 0 0 24px;
     color: var(--color-dark-blue);
     font-weight: 700;
@@ -625,12 +625,15 @@ button.itemWrapper:active {
     font-size: var(--font-size-40);
 }
 
-.panelTitle {
+.questsListHeader h1 {
     margin: 0 0 24px;
-    color: inherit;
+    color: var(--color-dark-blue);
     font-weight: 800;
     line-height: 1.2;
-    font-size: var(--font-size-32);
+    font-size: var(--font-size-36);
+    border: 0;
+    padding: 0;
+    overflow-wrap: normal;
 }
 
 /* Responsive */
@@ -711,12 +714,9 @@ button.itemWrapper:active {
         padding: 9px 0 11px;
         font-size: var(--font-size-14);
     }
-    .sectionTitle {
+
+    .questSection > div > h2 {
         font-size: var(--font-size-32);
-    }
-    .panelTitle {
-        margin-bottom: 24px;
-        font-size: var(--font-size-26);
     }
 }
 
@@ -729,5 +729,12 @@ button.itemWrapper:active {
 @media (prefers-reduced-motion: reduce) {
     .questsListSection .filterPill {
         transition: none;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .questsListHeader h1 {
+        font-size: var(--font-size-32);
     }
 }

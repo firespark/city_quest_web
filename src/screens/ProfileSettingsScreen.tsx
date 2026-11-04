@@ -99,9 +99,7 @@ export const ProfileSettingsScreen = () => {
                         ]}
                     />
 
-                    <h1 className={mainStyle.pageTitle}>
-                        Настройки профиля
-                    </h1>
+                    <h1>Настройки профиля</h1>
 
                     {template ? (
                         <EditTemplate

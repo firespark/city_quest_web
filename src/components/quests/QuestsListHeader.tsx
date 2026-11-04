@@ -20,13 +20,9 @@ export const QuestsListHeader = ({
                     Маршруты и приключения
                 </div>
 
-                <h1 className={mainStyle.sectionHeading}>
-                    Квесты в городе {cityTitle}
-                </h1>
+                <h1>Квесты в городе {cityTitle}</h1>
 
-                <p className={mainStyle.bodyText}>
-                    Каждый маршрут открывает город с новой стороны.
-                </p>
+                <p className={mainStyle.bodyText}>Каждый маршрут открывает город с новой стороны.</p>
             </div>
 
             {questsCount !== undefined && questsCount > 0 && (

@@ -1,3 +1,5 @@
+import { imageAlt } from '../../scripts/imageAlt'
+
 
 import type { Dispatch, SetStateAction, ReactNode } from 'react'
 
@@ -20,24 +22,20 @@ export const Sight = ({ setModal, title, image }: SightProps) => {
                     setModal('answer1')
                 }}
             >
-                <div className={gameStyle.sightImageWrapper}>
+                <span className={gameStyle.sightImageWrapper}>
                     <img
                         src={image as string}
                         className={gameStyle.sightImage}
-                        alt=""
+                        alt={imageAlt('достопримечательности', title)}
                     />
-                </div>
+                </span>
 
                 {title ? (
-                    <div
+                    <span
                         className={gameStyle.sightTitleWrapper}
                     >
-                        <div
-                            className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}
-                        >
-                            {title as ReactNode}
-                        </div>
-                    </div>
+                        <span className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>{title as ReactNode}</span>
+                    </span>
                 ) : null}
             </button>
         </div>

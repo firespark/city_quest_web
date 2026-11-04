@@ -12,15 +12,13 @@ export const QuestContent = ({ content }: QuestContentProps) => {
     if (!content) return null
 
     return (
-        <section className={questsStyle.questOverview}>
+        <section className={`${questsStyle.questOverview} ${questsStyle.questSection}`}>
             <div>
                 <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                     Основная информация
                 </div>
 
-                <h2 className={questsStyle.sectionTitle}>
-                    О квесте
-                </h2>
+                <h2>О квесте</h2>
             </div>
 
             <div className={`${mainStyle.articleContent} ${mainStyle.bodyText} ${mainStyle.formattedContent}`}>

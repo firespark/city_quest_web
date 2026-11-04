@@ -137,16 +137,17 @@ export const TaskAnswerForm = ({
                         className={mainStyle.plainButton}
                         onClick={() => setModal(`hint${answerNumber}`)}
                     >
-                        <div className={gameStyle.hintPill}>
+                        <span className={gameStyle.hintPill}>
                             <img
                                 src={hintImage}
                                 className={gameStyle.pillIcon}
-                                alt=""
+                                alt="Изображение значка «Подсказка»"
+                                aria-hidden="true"
                             />
                             <span className={gameStyle.hintTextActive}>
                                 Подсказка
                             </span>
-                        </div>
+                        </span>
                     </button>
                 </div>
             ) : null}

@@ -20,7 +20,8 @@ export const ModalClose = ({ setModal }: ModalCloseProps) => {
             <img
                 src={closeImage}
                 className={gameStyle.closeIcon}
-                alt=""
+                alt="Изображение кнопки «Закрыть»"
+                aria-hidden="true"
             />
         </button>
     )

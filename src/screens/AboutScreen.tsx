@@ -82,11 +82,10 @@ export const AboutScreen = () => {
                     ) : (
                         <article className={mainStyle.articleBlock}>
 
-                            <h1 className={mainStyle.pageTitle}>
-                                {data.title}
-                            </h1>
+                            <h1>{data.title}</h1>
 
                             <div className={`${mainStyle.articleContent} ${mainStyle.bodyText} ${mainStyle.formattedContent}`}>
+                                <h2>Как устроены квесты</h2>
                                 <FormattedContent text={data.content} />
                             </div>
 

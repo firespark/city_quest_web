@@ -1,3 +1,5 @@
+import { imageAlt } from '../../scripts/imageAlt'
+
 
 import type { Dispatch, SetStateAction, ReactNode } from 'react'
 import { IoLocationSharp, IoCompassOutline } from 'react-icons/io5'
@@ -27,9 +29,7 @@ export const FinishTour = ({ text, game, setResetModalVisible }: FinishTourProps
         <div className={gameStyle.playTemplateContainer}>
 
             <div className={`${mainStyle.card} ${mainStyle.container} ${mainStyle.mb16}`}>
-                <div className={`${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.mb16} ${mainStyle.textCenter} ${mainStyle.heading}`}>
-                    {text as ReactNode}
-                </div>
+                <div className={`${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.mb16} ${mainStyle.textCenter} ${mainStyle.heading}`}>{text as ReactNode}</div>
             </div>
 
             <div className={mainStyle.card}>
@@ -38,7 +38,7 @@ export const FinishTour = ({ text, game, setResetModalVisible }: FinishTourProps
                         <img
                             src={game.sight_image as string}
                             className={gameStyle.sightImage}
-                            alt=""
+                            alt={imageAlt('достопримечательности', game.sight_title)}
                         />
                     </div>
                 ) : null}

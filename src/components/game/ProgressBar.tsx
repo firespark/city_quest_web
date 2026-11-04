@@ -36,7 +36,7 @@ export const ProgressBar = ({ game, setModal }: ProgressBarProps) => {
         }
 
         content.push(
-            <div
+            <span
                 key={i}
                 className={[
                     gameStyle.progressPoint,

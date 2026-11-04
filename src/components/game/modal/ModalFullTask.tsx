@@ -1,4 +1,5 @@
 
+import { imageAlt } from '../../../scripts/imageAlt'
 import mainStyle from '../../../styles/mainStyle.module.css'
 import FullWidthImage from '../../common/FullWidthImage'
 
@@ -7,7 +8,7 @@ type TaskData = {
     text?: string | string[] | null
 }
 
-export const ModalFullTask = ({ task }: { task: unknown }) => {
+export const ModalFullTask = ({ task, questTitle }: { task: unknown; questTitle: unknown }) => {
 
     if (!task) return null
 
@@ -22,7 +23,7 @@ export const ModalFullTask = ({ task }: { task: unknown }) => {
 
             {taskData.image ? (
                 <div>
-                    <FullWidthImage source={{ uri: taskData.image }} />
+                    <FullWidthImage source={{ uri: taskData.image }} alt={imageAlt('задания квеста', questTitle)} />
                 </div>
             ) : null}
 

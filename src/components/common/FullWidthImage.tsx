@@ -8,7 +8,7 @@ import { Loader } from './Loader'
 
 type FullWidthImageProps = {
     source: { uri: string } | string
-    ratio?: number
+    alt: string
     style?: string | CSSProperties
 }
 
@@ -30,9 +30,8 @@ export default function FullWidthImage(props: FullWidthImageProps) {
 
             <img
                 src={imageSource}
-                alt=""
+                alt={props.alt}
                 className={gameStyle.fullWidthImage}
-                data-image-ratio={props.ratio ? 1 / props.ratio : undefined}
                 onLoad={() => setIsLoading(false)}
                 onError={() => setIsLoading(false)}
             />

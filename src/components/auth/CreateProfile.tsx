@@ -47,9 +47,7 @@ export const CreateProfile = ({
     return (
         <div className={authStyle.authStep}>
 
-            <div className={`${mainStyle.formTitle} ${mainStyle.mb12} ${mainStyle.textCenter} ${mainStyle.heading}`}>
-                Новый аккаунт?
-            </div>
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb12} ${mainStyle.textCenter}`}>Новый аккаунт?</div>
 
             <div className={`${mainStyle.formSubtitle} ${mainStyle.mb32}`}>
                 Email <span className={mainStyle.formThirdtitle}>{email}</span> еще не зарегистрирован. Создать учетную запись?

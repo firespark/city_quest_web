@@ -1,3 +1,5 @@
+import { imageAlt } from '../../../scripts/imageAlt'
+
 import mainStyle from "../../../styles/mainStyle.module.css"
 import questDetailStyle from '../../../styles/questDetailStyle.module.css'
 
@@ -31,7 +33,7 @@ export const ComingSoonHero = ({
         >
             <img
                 src={image}
-                alt=""
+                alt={imageAlt('квеста', title)}
                 className={`${mainStyle.coverImage} ${questDetailStyle.questHeroImage}`}
             />
 
@@ -40,7 +42,7 @@ export const ComingSoonHero = ({
                 aria-hidden="true"
             />
 
-            <div className={questDetailStyle.questHeroContent}>
+            <div className={`${questDetailStyle.questHeroContent} ${questDetailStyle.heroContent}`}>
 
                 <ComingSoonBadge />
 
@@ -48,13 +50,9 @@ export const ComingSoonHero = ({
                     {city}
                 </Link>
 
-                <h1 className={questDetailStyle.heroTitle}>
-                    {title}
-                </h1>
+                <h1>{title}</h1>
 
-                <p className={comingSoonStyle.heroSubtitle}>
-                    Городской квест о пушистых жителях Тбилиси.
-                </p>
+                <p className={comingSoonStyle.heroSubtitle}>Городской квест о пушистых жителях Тбилиси.</p>
 
                 {import.meta.env.VITE_TELEGRAM_BOT_URL?.trim() && (
                     <div className={questDetailStyle.questHeroAction}>
@@ -67,7 +65,7 @@ export const ComingSoonHero = ({
                 {bannerIcon && (
                     <img
                         src={bannerIcon}
-                        alt=""
+                        alt={imageAlt('значка квеста', title)}
                         aria-hidden="true"
                         className={comingSoonStyle.heroIcon}
                     />

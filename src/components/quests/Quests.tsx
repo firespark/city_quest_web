@@ -127,6 +127,8 @@ export const Quests = ({
 
             ) : !error && data.length > 0 ? (
                 <>
+                    <div className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>Доступные квесты</div>
+
                     {showFilters && (
                         <QuestFilters
                             filter={filter}

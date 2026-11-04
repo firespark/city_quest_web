@@ -133,21 +133,9 @@ export const ResetModal = ({
                     !
                 </div>
 
-                <h2
-                    id="reset-dialog-title"
-                    className={`${mainStyle.formTitle} ${mainStyle.mb24}`}
-                >
-                    Сбросить прогресс?
-                </h2>
+                <div id="reset-dialog-title" className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>Сбросить прогресс?</div>
 
-                <p
-                    id="reset-dialog-description"
-                    className={`${mainStyle.bodyText} ${mainStyle.mb32}`}
-                >
-                    Весь прогресс прохождения этого квеста будет удалён.
-                    Вы сможете начать его заново, но восстановить
-                    прежний прогресс не получится.
-                </p>
+                <p id="reset-dialog-description" className={`${mainStyle.bodyText} ${mainStyle.mb32}`}>Весь прогресс прохождения этого квеста будет удалён. Вы сможете начать его заново, но восстановить прежний прогресс не получится.</p>
 
                 <form
                     onSubmit={(event) => {
@@ -180,12 +168,7 @@ export const ResetModal = ({
                     />
 
                     {error && (
-                        <p
-                            className={modalStyle.resetModalError}
-                            role="alert"
-                        >
-                            {error}
-                        </p>
+                        <p className={modalStyle.resetModalError} role="alert">{error}</p>
                     )}
 
                     <div className={modalStyle.resetModalActions}>

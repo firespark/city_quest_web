@@ -62,9 +62,7 @@ export const ModalHintAlert = ({ setModal, setGame }: ModalHintAlertProps) => {
 
     return (
         <div className={`${mainStyle.container} ${mainStyle.center}`}>
-            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
-                Применить подсказку?
-            </div>
+            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>Применить подсказку?</div>
 
             {error && (
                 <div className={mainStyle.mb24}>

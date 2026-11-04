@@ -33,14 +33,6 @@
     margin: 16px 0 0;
 }
 
-.footerTitle {
-    margin: 4px 0 24px;
-    color: var(--color-white);
-    font-weight: 700;
-    line-height: 1.4;
-    font-size: inherit;
-}
-
 .cityList {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -150,6 +142,15 @@
     color: var(--color-light-gray);
 }
 
+.footerTitle {
+    margin: 4px 0 24px;
+    color: var(--color-white);
+    font-weight: 700;
+    line-height: 1.4;
+    font-size: inherit;
+    font-family: var(--font-family-heading);
+}
+
 /* Responsive overrides */
 
 @media (max-width: 900px) {
@@ -232,11 +233,11 @@
         gap: 16px;
     }
 
-    .footerTitle {
+    .footerLinks a {
         overflow-wrap: anywhere;
     }
 
-    .footerLinks a {
+    .footerTitle {
         overflow-wrap: anywhere;
     }
 }

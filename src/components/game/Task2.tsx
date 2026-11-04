@@ -1,3 +1,5 @@
+import { imageAlt } from '../../scripts/imageAlt'
+
 
 import type { Dispatch, SetStateAction, ReactNode } from 'react'
 
@@ -23,9 +25,7 @@ export const Task2 = ({ game, setGame, setModal }: Task2Props) => {
 
     return (
         <div className={mainStyle.container}>
-            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
-                Ответь на вопрос
-            </div>
+            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>Ответь на вопрос</div>
 
             <TaskTemplate
                 tasks={task.tasks}
@@ -43,7 +43,7 @@ export const Task2 = ({ game, setGame, setModal }: Task2Props) => {
                             <img
                                 src={task.sight_image}
                                 className={gameStyle.taskImageThumb}
-                                alt=""
+                                alt={imageAlt('задания 2 квеста', game.quest_title)}
                             />
                         </div>
                     ) : null}
