@@ -8,6 +8,7 @@ import { LayoutMeta } from './LayoutMeta'
 import { Header } from './components/header/Header'
 import { Footer } from './components/footer/Footer'
 import { ConnectionErrorContent, ConnectionErrorProvider } from './components/common/ConnectionError'
+import { ScrollToTop } from './components/common/ScrollToTop'
 
 import { ROUTES } from './routes'
 import mainStyle from './styles/mainStyle.module.css'
@@ -35,6 +36,7 @@ const AppContent = () => {
                 </div>
 
                 <Footer active={active} />
+                <ScrollToTop />
             </div>
         </ConnectionErrorProvider>
     )
