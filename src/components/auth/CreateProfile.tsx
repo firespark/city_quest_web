@@ -38,7 +38,7 @@ export const CreateProfile = ({
             }
         } catch (e) {
             console.error('Error:', e)
-            setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+            setError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
         } finally {
             setLoader(false)
         }

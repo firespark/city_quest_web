@@ -53,7 +53,7 @@ export const Code = ({
                 }
             } catch (e) {
                 console.error('Error:', e)
-                setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+                setError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
             } finally {
                 setLoader(false)
             }
@@ -66,7 +66,7 @@ export const Code = ({
             <div className={`${mainStyle.formTitle} ${mainStyle.mb12} ${mainStyle.textCenter}`}>Подтверждение</div>
 
             <div className={`${mainStyle.formSubtitle} ${mainStyle.mb32}`}>
-                Введите код, отправленный на {email}
+                Введи код, отправленный на {email}
             </div>
 
             <input

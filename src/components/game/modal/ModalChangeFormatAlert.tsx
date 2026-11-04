@@ -70,7 +70,7 @@ export const ModalChangeFormatAlert = ({ game, setModal, setGame }: ModalChangeF
             <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>Переключиться на формат {newFormatName}?</div>
 
             <div className={`${mainStyle.formSubtitle} ${mainStyle.mb24}`}>
-                Вы уверены, что хотите сменить формат? Текущий прогресс будет сброшен.
+                Хочешь сменить формат? Текущий прогресс будет сброшен.
             </div>
 
             {error && (

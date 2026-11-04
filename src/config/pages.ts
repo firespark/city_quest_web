@@ -12,6 +12,7 @@ import {
     USERAGREEMENT_SCREEN,
     PRIVACYPOLICY_SCREEN,
     NOTFOUND_SCREEN,
+    PURCHASE_SCREEN,
 } from '../context/types.ts'
 
 export type OpenGraphImage = {
@@ -59,7 +60,7 @@ export const PAGES = {
         screen: MAIN_SCREEN,
         meta: {
             title: 'Квест-Экскурсии | Гагара Тур',
-            description: 'Городские квесты Гагара Тур. Выбирайте город и отправляйтесь навстречу приключениям.',
+            description: 'Городские квесты Гагара Тур. Выбирай город и отправляйся навстречу приключениям.',
             robots: 'index, follow',
             openGraph: {
                 image: {
@@ -78,7 +79,7 @@ export const PAGES = {
         screen: ABOUT_SCREEN,
         meta: {
             title: 'О проекте',
-            description: 'Узнайте больше о нашем проекте.',
+            description: 'Узнай больше о нашем проекте.',
             robots: 'index, follow'
         }
     },
@@ -98,7 +99,7 @@ export const PAGES = {
         screen: CONTACTS_SCREEN,
         meta: {
             title: 'Контакты',
-            description: 'Свяжитесь с командой Гагара Тур.',
+            description: 'Свяжись с командой Гагара Тур.',
             robots: 'index, follow'
         }
     },
@@ -109,6 +110,16 @@ export const PAGES = {
         meta: {
             title: 'Профиль',
             description: 'Личный профиль пользователя.',
+            robots: 'noindex, nofollow'
+        }
+    },
+
+    PURCHASE: {
+        path: '/purchase',
+        screen: PURCHASE_SCREEN,
+        meta: {
+            title: 'Покупка квеста',
+            description: 'Способы покупки квеста и скачивания приложения Гагара Тур.',
             robots: 'noindex, nofollow'
         }
     },

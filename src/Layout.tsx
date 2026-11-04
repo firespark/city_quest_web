@@ -7,7 +7,6 @@ import { SlugRoute } from './SlugRoute'
 
 import {
     CITIES_SCREEN,
-    GAME_SCREEN,
     MAIN_SCREEN,
     MENU_SCREEN,
     QUEST_SCREEN,
@@ -19,7 +18,7 @@ import { AboutScreen } from './screens/AboutScreen'
 import { AuthScreen } from './screens/AuthScreen'
 import { CitiesScreen } from './screens/CitiesScreen'
 import { ContactsScreen } from './screens/ContactsScreen'
-import { GameScreen } from './screens/GameScreen'
+import { PurchaseScreen } from './screens/PurchaseScreen'
 import { HowPlayScreen } from './screens/HowPlayScreen'
 import { MainScreen } from './screens/MainScreen'
 import { MenuScreen } from './screens/MenuScreen'
@@ -50,6 +49,7 @@ export const Layout = () => {
                 <Route path={ROUTES.CONTACTS} element={<ContactsScreen />} />
                 <Route path={ROUTES.SETTINGS} element={<ProfileSettingsScreen />} />
                 <Route path={ROUTES.AUTH} element={<AuthScreen />} />
+                <Route path={ROUTES.PURCHASE} element={<PurchaseScreen key={location.search} />} />
                 <Route path={ROUTES.PASSWORD_RESET} element={<PasswordResetScreen />} />
                 <Route path={ROUTES.USER_AGREEMENT} element={<UserAgreementScreen />} />
                 <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicyScreen />} />
@@ -70,9 +70,6 @@ export const Layout = () => {
     switch (screen) {
         case CITIES_SCREEN:
             return <CitiesScreen />
-
-        case GAME_SCREEN:
-            return <GameScreen />
 
         case MENU_SCREEN:
             return <MenuScreen />

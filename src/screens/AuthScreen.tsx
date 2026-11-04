@@ -7,12 +7,12 @@ import {
     type ReactNode
 } from 'react'
 
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate, useSearchParams } from 'react-router-dom'
 
 import mainStyle from '../styles/mainStyle.module.css'
 import authStyle from '../styles/authStyle.module.css'
 
-import { ROUTES } from '../routes'
+import { ROUTES, purchaseReturnUrl } from '../routes'
 import { Http } from '../scripts/http'
 
 import { Breadcrumbs } from '../components/common/Breadcrumbs'
@@ -46,6 +46,16 @@ type AuthStatus =
 export const AuthScreen = () => {
 
     const { changeScreen, token } = useContext(MainContext)
+    const navigate = useNavigate()
+    const [searchParams] = useSearchParams()
+    const returnTo = purchaseReturnUrl(searchParams.get('returnTo'))
+    const completeAuth = (screen: string) => {
+        if (screen === PROFILE_SCREEN && returnTo) {
+            navigate(returnTo, { replace: true })
+        } else {
+            changeScreen(screen)
+        }
+    }
 
     const [authStatus, setAuthStatus] = useState<AuthStatus>('checking')
 
@@ -107,7 +117,7 @@ export const AuthScreen = () => {
                 <Password
                     email={email}
                     setError={setError}
-                    changeScreen={changeScreen}
+                    changeScreen={completeAuth}
                     token={token}
                     screen={PROFILE_SCREEN}
                     setLoader={setLoader}
@@ -145,7 +155,7 @@ export const AuthScreen = () => {
                     email={email}
                     code={code}
                     setError={setError}
-                    changeScreen={changeScreen}
+                    changeScreen={completeAuth}
                     setLoader={setLoader}
                     token={token}
                 />
@@ -174,7 +184,7 @@ export const AuthScreen = () => {
     }
 
     if (authStatus === 'authenticated') {
-        return <Navigate to={ROUTES.PROFILE} replace />
+        return <Navigate to={returnTo ?? ROUTES.PROFILE} replace />
     }
 
 

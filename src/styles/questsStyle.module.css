@@ -471,6 +471,7 @@ button.itemWrapper:active {
     padding: 37px 40px;
     border-radius: 20px;
     background: var(--color-light-gray);
+    --list-bullet-background: var(--color-white);
 }
 
 /* Extra */
@@ -636,6 +637,69 @@ button.itemWrapper:active {
     overflow-wrap: normal;
 }
 
+/* Скачивание приложения */
+
+.downloads {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 520px;
+}
+
+.storeButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.storeButton {
+    gap: 8px;
+    min-width: 0;
+    min-height: 44px;
+    justify-content: flex-start;
+    font-size: var(--font-size-14);
+}
+
+.storeButton.storeButtonLight {
+    --button-bg: var(--color-white);
+    --button-hover: var(--color-gray-hover);
+    --button-text: var(--color-dark-blue);
+    border: 1px solid var(--color-gray-hover);
+    box-shadow: var(--card-shadow);
+    padding: 10px 16px;
+}
+
+.storeButtonLight:disabled {
+    --button-text: var(--color-gray);
+    opacity: 1;
+}
+
+.storeIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.storeIcon img {
+    display: block;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.storeIcon .googlePlayIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.downloadHint {
+    font-size: var(--font-size-14);
+    line-height: 1.2;
+}
+
 /* Responsive */
 
 @media (max-width: 920px) {
@@ -669,6 +733,17 @@ button.itemWrapper:active {
 }
 
 @media (max-width: 620px) {
+    /* Скачивание приложения */
+    .downloads,
+    .storeButtons {
+        width: 100%;
+    }
+
+    .storeButton.storeButtonLight {
+        width: max-content;
+        padding-inline: 12px;
+    }
+
     .stats {
         width: 100%;
         grid-template-columns: 1fr;

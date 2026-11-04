@@ -87,7 +87,7 @@ export const ModalTask2 = ({ game, setModal, setGame }: ModalTask2Props) => {
                 <div className={gameStyle.gameSuccessBadge}>
                     <span className={gameStyle.gameSuccessIcon}>✓</span>
                 </div>
-                <div className={gameStyle.gameAnswerLabel}>Ваш ответ</div>
+                <div className={gameStyle.gameAnswerLabel}>Твой ответ</div>
                 <div className={gameStyle.gameAnswerText}>
                     {game.answer2 as ReactNode}
                 </div>

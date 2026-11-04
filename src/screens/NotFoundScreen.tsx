@@ -26,7 +26,7 @@ export const NotFoundScreen = () => {
                     />
 
                     <div className={notFoundStyle.notFoundBody}>
-                        <p className={notFoundStyle.code}>404</p>
+                        <div className={notFoundStyle.code}>404</div>
 
                         <h1>Страница не найдена</h1>
 

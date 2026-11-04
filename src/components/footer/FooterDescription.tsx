@@ -9,7 +9,7 @@ export const FooterDescription = () => {
         <div className={footerStyle.footerBrand}>
             <Logo />
 
-            <p className={`${mainStyle.bodyText} ${footerStyle.footerDescription}`}>Городские квесты и необычные маршруты. Открывайте знакомые улицы заново.</p>
+            <div className={`${mainStyle.bodyText} ${footerStyle.footerDescription}`}>Городские квесты и необычные маршруты. Открывай знакомые улицы заново.</div>
         </div>
     )
 }

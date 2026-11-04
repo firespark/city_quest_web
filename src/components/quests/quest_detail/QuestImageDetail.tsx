@@ -2,14 +2,13 @@ import { imageAlt } from '../../../scripts/imageAlt'
 
 import mainStyle from "../../../styles/mainStyle.module.css"
 
-import type { ComponentProps } from 'react'
 import { Link } from 'react-router-dom'
 import { slugUrl } from '../../../routes'
 
 import questDetailStyle from '../../../styles/questDetailStyle.module.css'
 
 import { AccessBadge, StatusBadge } from '../QuestBadges'
-import { StartButton } from '../StartButton'
+import { QuestAppAction } from './QuestAppAction'
 
 
 type QuestImageDetailProps = {
@@ -17,11 +16,10 @@ type QuestImageDetailProps = {
     city: string
     citySlug: string
     title: string
+    slug: string
     paid: boolean
     available: boolean
     status: 'finished' | 'in_progress' | null
-    progress: string
-    changeScreen: ComponentProps<typeof StartButton>['changeScreen']
 }
 
 
@@ -30,11 +28,10 @@ export const QuestImageDetail = ({
     city,
     citySlug,
     title,
+    slug,
     paid,
     available,
-    status,
-    progress,
-    changeScreen
+    status
 }: QuestImageDetailProps) => {
 
     return (
@@ -72,14 +69,9 @@ export const QuestImageDetail = ({
 
                 <h1>{title}</h1>
 
-                {available && (
-                    <div className={questDetailStyle.questHeroAction}>
-                        <StartButton
-                            changeScreen={changeScreen}
-                            progress={progress}
-                        />
-                    </div>
-                )}
+                <div className={questDetailStyle.questHeroAction}>
+                    <QuestAppAction slug={slug} paid={paid} available={available} />
+                </div>
 
             </div>
         </section>

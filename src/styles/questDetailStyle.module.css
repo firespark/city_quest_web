@@ -5,36 +5,11 @@
     margin: 0 0 16px;
 }
 
-/* Purchase */
-
-.purchasePanel {
-    margin-top: 48px;
-    padding: 28px 32px;
-    background: var(--color-light-gray);
-    border-radius: 17px;
-}
-
-.purchasePanel > div {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) max-content;
-    align-items: center;
-    gap: 28px;
-}
-
-.purchasePanel > div > div:first-child {
-    margin-bottom: 0;
-    text-align: left;
-    line-height: 1.6;
-}
-
-.purchasePanel > div > button:only-child {
-    grid-column: 2;
-}
-
 /* Final action */
 
 .finalAction {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
@@ -50,7 +25,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-    flex: 1;
+    flex: 1 1 240px;
     min-width: 0;
 }
 
@@ -62,46 +37,14 @@
     font-size: var(--font-size-20);
 }
 
-.finalMeta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-}
-
-.finalStatus {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 6px 11px;
-    border-radius: 8px;
-    background: var(--color-light-gray);
-    color: var(--color-orange);
-    font-weight: 700;
-    line-height: 1.4;
-    font-size: var(--font-size-12);
-}
-
-.finalStatus::before {
-    content: '';
-    width: 7px;
-    height: 7px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: var(--color-orange);
-}
-
-.finalStatusFinished {
-    background: var(--color-light-gray);
-    color: var(--color-blue);
-}
-
-.finalStatusFinished::before {
-    background: var(--color-blue);
+.finalInfo p {
+    margin: 0;
+    color: var(--color-gray);
+    line-height: 1.6;
 }
 
 .finalButton {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
     max-width: 100%;
 }
 
@@ -189,24 +132,6 @@
 
 @media (max-width: 620px) {
 
-    .purchasePanel {
-        margin-top: 32px;
-        padding: 24px;
-    }
-
-    .purchasePanel > div {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 18px;
-    }
-
-    .purchasePanel > div > div:first-child {
-        text-align: center;
-    }
-
-    .purchasePanel > div > button:only-child {
-        grid-column: auto;
-    }
-
     .finalAction {
         flex-direction: column;
         align-items: stretch;
@@ -216,11 +141,8 @@
     }
 
     .finalInfo {
+        flex-basis: auto;
         gap: 12px;
-    }
-
-    .finalMeta {
-        gap: 10px;
     }
 
     .finalButton {
@@ -229,7 +151,7 @@
     }
 
     .finalButton button,
-.finalButton a {
+    .finalButton a {
         width: 100%;
     }
     .questHero {

@@ -14,7 +14,7 @@ export class Http {
     const response = await request<T>(url, token, 'POST', data, 0, 1000)
 
     if (response.error === 'connection_error') {
-      response.error = 'Отсутствует подключение к интернету. Проверьте сеть и попробуйте снова.'
+      response.error = 'Отсутствует подключение к интернету. Проверь сеть и попробуй снова.'
     }
 
     return response

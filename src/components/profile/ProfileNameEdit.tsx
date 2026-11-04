@@ -58,12 +58,12 @@ export const ProfileNameEdit = ({ user, setUser, setTemplate, setSuccess }: Prof
                 if (output.error) {
                     setError(output.error)
                 } else {
-                    setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+                    setError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
                 }
             }
         } catch (e) {
             console.error('Error:', e)
-            setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+            setError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
         } finally {
             setLoader(false)
         }
@@ -86,14 +86,14 @@ export const ProfileNameEdit = ({ user, setUser, setTemplate, setSuccess }: Prof
                     htmlFor="profile-name"
                     className={profileStyle.label}
                 >
-                    Ваше имя
+                    Твоё имя
                 </label>
 
                 <input
                     id="profile-name"
                     type="text"
                     autoComplete="name"
-                    placeholder="Введите имя"
+                    placeholder="Введи имя"
                     className={formsStyle.blockInput}
                     value={input ?? ''}
                     onChange={(event) => setInput(event.target.value)}

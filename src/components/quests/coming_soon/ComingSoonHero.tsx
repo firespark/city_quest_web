@@ -52,7 +52,7 @@ export const ComingSoonHero = ({
 
                 <h1>{title}</h1>
 
-                <p className={comingSoonStyle.heroSubtitle}>Городской квест о пушистых жителях Тбилиси.</p>
+                <div className={comingSoonStyle.heroSubtitle}>Городской квест о пушистых жителях Тбилиси.</div>
 
                 {import.meta.env.VITE_TELEGRAM_BOT_URL?.trim() && (
                     <div className={questDetailStyle.questHeroAction}>

@@ -44,7 +44,7 @@ export const Legal = ({ title, children }: LegalProps) => {
 
                         <h1>{title}</h1>
 
-                        <p className={legalStyle.revision}>Редакция от {LEGAL.revisionDate}</p>
+                        <div className={legalStyle.revision}>Редакция от {LEGAL.revisionDate}</div>
 
                         <div className={`${mainStyle.articleContent} ${mainStyle.bodyText}`}>
 

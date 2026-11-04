@@ -32,7 +32,7 @@ export const HowPlayBlock = ({
             </div>
 
             {description && (
-                <p className={mainStyle.bodyText}>{description}</p>
+                <div className={mainStyle.bodyText}>{description}</div>
             )}
 
         </div>

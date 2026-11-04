@@ -85,7 +85,7 @@ export const ModalSkipAlert = ({ setModal, setGame }: ModalSkipAlertProps) => {
     return (
         <div className={mainStyle.container}>
             <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>Пропустить задание?</div>
-            <div className={mainStyle.formSubtitle}>Пожалуйста, укажите причину:</div>
+            <div className={mainStyle.formSubtitle}>Пожалуйста, укажи причину:</div>
 
             <div className={mainStyle.mt24}>
                 {renderRadioItem(1, "Я не знаю правильный ответ")}
@@ -94,7 +94,7 @@ export const ModalSkipAlert = ({ setModal, setGame }: ModalSkipAlertProps) => {
 
                 {reason === 3 && (
                     <textarea
-                        placeholder="Напишите причину"
+                        placeholder="Напиши причину"
                         className={mainStyle.modernTextarea}
                         rows={3}
                         onChange={(event) => setComment(event.target.value)}

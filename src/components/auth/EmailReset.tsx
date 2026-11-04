@@ -54,7 +54,7 @@ export const EmailReset = ({
                 }
             } catch (e) {
                 console.error('Error:', e)
-                setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+                setError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
             } finally {
                 setLoader(false)
             }
@@ -67,7 +67,7 @@ export const EmailReset = ({
             <div className={`${mainStyle.formTitle} ${mainStyle.mb12} ${mainStyle.textCenter}`}>Восстановление доступа</div>
 
             <div className={`${mainStyle.formSubtitle} ${mainStyle.mb32}`}>
-                Введите ваш Email для восстановления пароля:
+                Введи свой email для восстановления пароля:
             </div>
 
             <input

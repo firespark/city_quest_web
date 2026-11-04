@@ -14,13 +14,13 @@ import { QuestContent2 } from '../components/quests/QuestContent2'
 
 import { Loader } from '../components/common/Loader'
 import { Error } from '../components/common/Error'
-import { ResetModal } from '../components/quests/ResetModal'
 import { ConnectionError } from '../components/common/ConnectionError'
 import { MainContext } from '../context/mainContext'
 
 
-type QuestScreenData = {
+export type QuestScreenData = {
     id: number
+    slug: string
     title: string
     city: string
     city_slug: string
@@ -44,12 +44,10 @@ export const QuestScreen = () => {
     const {
         questId,
         token,
-        changeScreen,
         setAnswersState
     } = useContext(MainContext)
 
     const [data, setData] = useState<QuestScreenData | null>(null)
-    const [modalVisible, setModalVisible] = useState(false)
 
 
     const fetchData = async () => {
@@ -96,15 +94,6 @@ export const QuestScreen = () => {
     if (!data) return <Error text="Квест не найден" />
 
 
-    let progress = 'Начать приключение'
-
-    if (data.status === 'in_progress') {
-        progress = 'Продолжить'
-    } else if (data.status === 'finished') {
-        progress = 'Посмотреть игру'
-    }
-
-
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
 
@@ -125,11 +114,10 @@ export const QuestScreen = () => {
                         city={data.city}
                         citySlug={data.city_slug}
                         title={data.title}
+                        slug={data.slug}
                         paid={data.paid}
                         available={data.available}
                         status={data.status}
-                        progress={progress}
-                        changeScreen={changeScreen}
                     />
 
                     <QuestStats
@@ -147,25 +135,14 @@ export const QuestScreen = () => {
                     />
 
                     <QuestDetailButton
-                        questId={data.id}
+                        slug={data.slug}
                         title={data.title}
                         available={data.available}
-                        isAuth={data.is_auth}
-                        status={data.status}
-                        progress={progress}
-                        changeScreen={changeScreen}
-                        onPurchaseSuccess={fetchData}
-                        setModalVisible={setModalVisible}
+                        paid={data.paid}
                     />
 
                 </div>
             </main>
-
-            <ResetModal
-                modalVisible={modalVisible}
-                setModalVisible={setModalVisible}
-                onSuccess={fetchData}
-            />
 
         </div>
     )

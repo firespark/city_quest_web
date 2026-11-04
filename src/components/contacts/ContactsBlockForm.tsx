@@ -47,11 +47,11 @@ export const ContactsBlockForm = () => {
             if (output.success == 1) {
                 setSent(true)
             } else {
-                setError('Не удалось отправить сообщение. Попробуйте ещё раз.')
+                setError('Не удалось отправить сообщение. Попробуй ещё раз.')
             }
         } catch (e) {
             console.error('Error:', e)
-            setError('Не удалось отправить сообщение. Попробуйте ещё раз.')
+            setError('Не удалось отправить сообщение. Попробуй ещё раз.')
         } finally {
             setLoader(false)
         }
@@ -75,8 +75,8 @@ export const ContactsBlockForm = () => {
             <div className={formsStyle.blockFields}>
                 <input
                     type="text"
-                    placeholder="Ваше имя"
-                    aria-label="Ваше имя"
+                    placeholder="Твоё имя"
+                    aria-label="Твоё имя"
                     className={formsStyle.blockInput}
                     value={name}
                     onChange={event => setName(event.target.value)}
@@ -94,8 +94,8 @@ export const ContactsBlockForm = () => {
                 />
 
                 <textarea
-                    placeholder="Ваше сообщение"
-                    aria-label="Ваше сообщение"
+                    placeholder="Твоё сообщение"
+                    aria-label="Твоё сообщение"
                     className={formsStyle.blockTextarea}
                     value={message}
                     onChange={event => setMessage(event.target.value)}

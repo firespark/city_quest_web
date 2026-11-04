@@ -24,7 +24,7 @@ export const ComingSoonSignup2 = () => {
 
                 <div className={comingSoonStyle.panelTitle}>Запись через Telegram</div>
 
-                <p className={`${mainStyle.bodyText} ${mainStyle.mb24} ${mainStyle.textWhite}`}>Узнай условия участия и запишись на квест через нашего Telegram-бота.</p>
+                <div className={`${mainStyle.bodyText} ${mainStyle.mb24} ${mainStyle.textWhite}`}>Узнай условия участия и запишись на квест через нашего Telegram-бота.</div>
 
                 <TelegramButton className={comingSoonStyle.signupButtonDark}>
                     Открыть Telegram-бот

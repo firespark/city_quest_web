@@ -876,7 +876,7 @@
   margin: 0 auto;
 }
 
-.contentContainer > p {
+.contentContainer > .description {
   margin: 8px 0 32px;
 }
 

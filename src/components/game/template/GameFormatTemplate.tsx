@@ -48,12 +48,12 @@ export const GameFormatTemplate = ({ setGame }: GameFormatTemplateProps) => {
             } else {
                 setError(
                     output.error ||
-                    'Возникли ошибки. Пожалуйста, сообщите разработчикам об этом'
+                    'Возникли ошибки. Пожалуйста, сообщи разработчикам об этом'
                 )
             }
         } catch (e) {
             console.error('Error:', e)
-            setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+            setError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
         } finally {
             setLoader(false)
         }

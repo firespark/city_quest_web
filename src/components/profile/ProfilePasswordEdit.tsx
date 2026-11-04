@@ -42,7 +42,7 @@ export const ProfilePasswordEdit = ({ setTemplate, setSuccess }: ProfilePassword
 
         if (!confirmInput) {
             setConfirmStyle(formsStyle.blockInputInvalid)
-            setError('Пожалуйста, повторите пароль')
+            setError('Пожалуйста, повтори пароль')
             return
         }
 
@@ -74,12 +74,12 @@ export const ProfilePasswordEdit = ({ setTemplate, setSuccess }: ProfilePassword
                 if (output.error) {
                     setError(output.error)
                 } else {
-                    setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+                    setError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
                 }
             }
         } catch (e) {
             console.error('Error:', e)
-            setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+            setError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
         } finally {
             setLoader(false)
         }
@@ -126,14 +126,14 @@ export const ProfilePasswordEdit = ({ setTemplate, setSuccess }: ProfilePassword
                     htmlFor="profile-password-confirm"
                     className={profileStyle.label}
                 >
-                    Повторите пароль
+                    Повтори пароль
                 </label>
 
                 <input
                     id="profile-password-confirm"
                     type="password"
                     autoComplete="new-password"
-                    placeholder="Повторите пароль"
+                    placeholder="Повтори пароль"
                     className={`${formsStyle.blockInput} ${confirmStyle || ''}`}
                     value={confirmInput ?? ''}
                     onChange={(event) => setConfirmInput(event.target.value)}

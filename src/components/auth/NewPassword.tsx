@@ -89,12 +89,12 @@ export const NewPassword = ({
                 if (output.error) {
                     setError(output.error)
                 } else {
-                    setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+                    setError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
                 }
             }
         } catch (e) {
             console.error('Error:', e)
-            setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+            setError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
         } finally {
             setLoader(false)
         }
@@ -136,8 +136,8 @@ export const NewPassword = ({
             <div className={`${authStyle.passwordField} ${mainStyle.mb12}`}>
                 <input
                     type={showConfirmPassword ? 'text' : 'password'}
-                    placeholder="Повторите пароль"
-                    aria-label="Повторите пароль"
+                    placeholder="Повтори пароль"
+                    aria-label="Повтори пароль"
                     className={`
                         ${formsStyle.blockInput}
                         ${authStyle.eyePadding}

@@ -60,12 +60,12 @@ export const HowPlayScreen = () => {
                 if (output.error) {
                     setLoadError(output.error)
                 } else {
-                    setLoadError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+                    setLoadError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
                 }
             }
         } catch (e) {
             console.error('Error:', e)
-            setLoadError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+            setLoadError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
         } finally {
             setLoader(false)
         }

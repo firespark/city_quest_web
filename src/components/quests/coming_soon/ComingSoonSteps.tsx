@@ -44,7 +44,7 @@ export const ComingSoonSteps = ({
                         )}
 
                         {step.description && (
-                            <p className={mainStyle.bodyText}>{step.description}</p>
+                            <div className={mainStyle.bodyText}>{step.description}</div>
                         )}
                     </div>
                 ))}

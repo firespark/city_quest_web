@@ -75,7 +75,7 @@ export const CountrySelector = () => {
                     <span>
                         <span className={`${mainStyle.metaLabel} ${mainStyle.block}`}>Страна</span>
                         <span className={`${mainStyle.strongText} ${mainStyle.block}`}>
-                            {selectedCountry ? selectedCountry.title : 'Выберите страну'}
+                            {selectedCountry ? selectedCountry.title : 'Выбери страну'}
                         </span>
                     </span>
                 </span>
@@ -110,7 +110,7 @@ export const CountrySelector = () => {
                     >
                         <div className={modalStyle.countriesDragIndicator} />
 
-                        <div id="countries-sheet-title" className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>Выберите страну</div>
+                        <div id="countries-sheet-title" className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>Выбери страну</div>
 
                         <div className={mainStyle.scrollArea}>
                             {countries.map((item) => {

@@ -1,0 +1,61 @@
+.questName {
+    margin: 0 0 16px;
+    color: var(--color-dark-blue);
+    font-size: var(--font-size-24);
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px;
+    border-radius: 18px;
+    box-shadow: var(--card-shadow);
+    background: var(--color-white);
+    color: var(--color-gray);
+    line-height: 1.6;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.option p {
+    margin: 0;
+}
+
+.account {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.socials {
+    justify-content: flex-start;
+}
+
+@media (max-width: 920px) {
+    .options {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 620px) {
+    .option {
+        padding: 24px;
+    }
+
+    .option > a {
+        width: 100%;
+    }
+}

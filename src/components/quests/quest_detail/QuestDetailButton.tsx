@@ -1,100 +1,22 @@
-
-import type { ComponentProps } from 'react'
+import { QuestAppAction, type QuestAppActionProps } from './QuestAppAction'
 
 import questDetailStyle from '../../../styles/questDetailStyle.module.css'
 import mainStyle from '../../../styles/mainStyle.module.css'
 
-import { StartButton } from '../StartButton'
-import { ResetButton } from '../ResetButton'
-import { RegisterButton } from '../RegisterButton'
-import { BuyButton } from '../BuyButton'
-
-
-type QuestDetailButtonProps = {
-    questId: number
+type QuestDetailButtonProps = QuestAppActionProps & {
     title: string
-    available: boolean
-    isAuth: boolean
-    status: 'finished' | 'in_progress' | null
-    progress: string
-    changeScreen: ComponentProps<typeof StartButton>['changeScreen']
-    onPurchaseSuccess: ComponentProps<typeof BuyButton>['onSuccess']
-    setModalVisible: ComponentProps<typeof ResetButton>['setModalVisible']
 }
 
-
-export const QuestDetailButton = ({
-    questId,
-    title,
-    available,
-    isAuth,
-    status,
-    progress,
-    changeScreen,
-    onPurchaseSuccess,
-    setModalVisible
-}: QuestDetailButtonProps) => {
-
-    if (!available) {
-        return (
-            <div className={questDetailStyle.purchasePanel}>
-                {isAuth ? (
-                    <BuyButton
-                        questId={questId}
-                        onSuccess={onPurchaseSuccess}
-                    />
-                ) : (
-                    <RegisterButton />
-                )}
-            </div>
-        )
-    }
-
+export const QuestDetailButton = ({ title, ...action }: QuestDetailButtonProps) => {
     return (
         <div className={questDetailStyle.finalAction}>
-
             <div className={questDetailStyle.finalInfo}>
-
-                <strong className={`${questDetailStyle.finalTitle} ${mainStyle.heading}`}>
-                    {title}
-                </strong>
-
-                {status && (
-                    <div className={questDetailStyle.finalMeta}>
-
-                        {status === 'in_progress' && (
-                            <span className={questDetailStyle.finalStatus}>
-                                В процессе
-                            </span>
-                        )}
-
-                        {status === 'finished' && (
-                            <span
-                                className={`
-                                    ${questDetailStyle.finalStatus}
-                                    ${questDetailStyle.finalStatusFinished}
-                                `}
-                            >
-                                Пройден
-                            </span>
-                        )}
-
-                        <ResetButton
-                            setModalVisible={setModalVisible}
-                        />
-
-                    </div>
-                )}
-
+                <strong className={`${questDetailStyle.finalTitle} ${mainStyle.heading}`}>{title}</strong>
+                <p>Проходи квест в мобильном приложении Гагара Тур.</p>
             </div>
-
             <div className={questDetailStyle.finalButton}>
-                <StartButton
-                    changeScreen={changeScreen}
-                    progress={progress}
-                />
+                <QuestAppAction {...action} showPaymentHint />
             </div>
-
         </div>
     )
 }

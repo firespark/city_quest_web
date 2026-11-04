@@ -93,7 +93,7 @@ export const FeaturedQuests = ({
                 <div className={mainStyle.welcomeTitle}>{title}</div>
 
                 {subtitle && (
-                    <p className={mainStyle.description}>{subtitle}</p>
+                    <div className={mainStyle.description}>{subtitle}</div>
                 )}
 
                 <div className={`${mainStyle.cardGrid} ${mainStyle.questGrid}`}>

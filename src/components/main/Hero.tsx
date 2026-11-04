@@ -17,7 +17,7 @@ export const Hero = () => {
 
                 <h1>Городской квест<span className={mainStyle.blue}> Котики в Тбилиси</span></h1>
 
-                <p className={mainStyle.heroDescription}>Мы готовим новое городское приключение. Впереди загадки, открытия и маршрут, который захочется пройти.</p>
+                <div className={mainStyle.heroDescription}>Мы готовим новое городское приключение. Впереди загадки, открытия и маршрут, который захочется пройти.</div>
 
                 <Link
                     to={slugUrl('tbilisi-cats')}

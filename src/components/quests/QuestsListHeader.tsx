@@ -22,7 +22,7 @@ export const QuestsListHeader = ({
 
                 <h1>Квесты в городе {cityTitle}</h1>
 
-                <p className={mainStyle.bodyText}>Каждый маршрут открывает город с новой стороны.</p>
+                <div className={mainStyle.bodyText}>Каждый маршрут открывает город с новой стороны.</div>
             </div>
 
             {questsCount !== undefined && questsCount > 0 && (

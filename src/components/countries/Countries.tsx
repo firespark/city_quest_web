@@ -46,12 +46,12 @@ export const Countries = () => {
                 const cities = flattenCities(output.data)
 
                 if (cities.some(city => city.country_id == null)) {
-                    setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+                    setError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
                 } else {
                     setData(cities)
                 }
             } else {
-                setError(output.error || 'Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+                setError(output.error || 'Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
             }
         } catch (e) {
             console.error('Error:', e)
@@ -81,7 +81,7 @@ export const Countries = () => {
             <div className={mainStyle.contentContainer}>
                 <div className={mainStyle.welcomeTitle}>Доступные города</div>
 
-                <p className={mainStyle.description}>Квесты в ваших городах.</p>
+                <div className={mainStyle.description}>Выбирай город и отправляйся на квест.</div>
 
                 {loader ? (
                     <Loader />

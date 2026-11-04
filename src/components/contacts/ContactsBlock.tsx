@@ -14,9 +14,9 @@ export const ContactsBlock = () => {
                         ЕСТЬ ВОПРОСЫ?
                     </div>
 
-                    <div className={mainStyle.h2}>Напишите нам</div>
+                    <div className={mainStyle.h2}>Напиши нам</div>
 
-                    <p className={mainStyle.bodyText}>Свяжитесь с нами с помощью этой формы. Либо пишите в мессенджеры или соцсети.</p>
+                    <div className={mainStyle.bodyText}>Свяжись с нами с помощью этой формы. Либо пиши в мессенджеры или соцсети.</div>
                 </div>
 
                 <ContactsBlockForm />

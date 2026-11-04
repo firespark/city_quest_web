@@ -133,7 +133,7 @@ export const SlugRoute = () => {
                 })
 
                 setDynamicPageTitle(city.title, true, {
-                    description: contentDescription(city.content) || `Городские квесты в городе ${city.title}. Выбирайте маршрут и открывайте город вместе с Гагара Тур.`,
+                    description: contentDescription(city.content) || `Городские квесты в городе ${city.title}. Выбирай маршрут и открывай город вместе с Гагара Тур.`,
                     image: city.image ? { url: city.image, alt: `Изображение города «${city.title}»` } : undefined,
                 })
                 setPage({ type: 'city' })

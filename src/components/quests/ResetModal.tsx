@@ -55,7 +55,7 @@ export const ResetModal = ({
 
         if (!isConfirmed) {
             if (comment.trim().length > 0) {
-                setError('Введите слово "Подтверждаю" без ошибок')
+                setError('Введи слово "Подтверждаю" без ошибок')
             }
             return
         }
@@ -81,14 +81,14 @@ export const ResetModal = ({
             } else {
                 setError(
                     output.error ||
-                    'Возникли ошибки. Пожалуйста, сообщите разработчикам об этом'
+                    'Возникли ошибки. Пожалуйста, сообщи разработчикам об этом'
                 )
             }
 
         } catch (e) {
             console.error('Error:', e)
             setError(
-                'Возникли ошибки. Пожалуйста, сообщите разработчикам об этом'
+                'Возникли ошибки. Пожалуйста, сообщи разработчикам об этом'
             )
         } finally {
             setLoader(false)
@@ -135,7 +135,7 @@ export const ResetModal = ({
 
                 <div id="reset-dialog-title" className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>Сбросить прогресс?</div>
 
-                <p id="reset-dialog-description" className={`${mainStyle.bodyText} ${mainStyle.mb32}`}>Весь прогресс прохождения этого квеста будет удалён. Вы сможете начать его заново, но восстановить прежний прогресс не получится.</p>
+                <div id="reset-dialog-description" className={`${mainStyle.bodyText} ${mainStyle.mb32}`}>Весь прогресс прохождения этого квеста будет удалён. Ты сможешь начать его заново, но восстановить прежний прогресс не получится.</div>
 
                 <form
                     onSubmit={(event) => {
@@ -147,7 +147,7 @@ export const ResetModal = ({
                         htmlFor="reset-confirm"
                         className={modalStyle.resetModalLabel}
                     >
-                        Для подтверждения введите слово{' '}
+                        Для подтверждения введи слово{' '}
                         <strong>Подтверждаю</strong>
                     </label>
 
@@ -168,7 +168,7 @@ export const ResetModal = ({
                     />
 
                     {error && (
-                        <p className={modalStyle.resetModalError} role="alert">{error}</p>
+                        <div className={modalStyle.resetModalError} role="alert">{error}</div>
                     )}
 
                     <div className={modalStyle.resetModalActions}>

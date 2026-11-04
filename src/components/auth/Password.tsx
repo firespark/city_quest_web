@@ -39,7 +39,7 @@ export const Password = ({
 
         if (!input) {
             setErrorStyle(true)
-            setError('Введите пароль')
+            setError('Введи пароль')
             setLoader(false)
             return
         }

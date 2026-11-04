@@ -49,7 +49,7 @@ export const Email = ({ setEmail, setTemplate, setError, setLoader }: EmailProps
                 }
             } catch (e) {
                 console.error('Error:', e)
-                setError('Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+                setError('Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
             } finally {
                 setLoader(false)
             }

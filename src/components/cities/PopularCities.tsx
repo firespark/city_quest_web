@@ -35,7 +35,7 @@ export const PopularCities = () => {
                 setData(output.data)
             }
             else {
-                setError(output.error || 'Возникли ошибки. Пожалуйста, сообщите разработчикам об этом')
+                setError(output.error || 'Возникли ошибки. Пожалуйста, сообщи разработчикам об этом')
             }
         }
         catch (e) {
