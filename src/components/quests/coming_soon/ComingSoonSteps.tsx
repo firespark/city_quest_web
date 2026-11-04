@@ -1,3 +1,5 @@
+import questsStyle from '../../../styles/questsStyle.module.css'
+import mainStyle from '../../../styles/mainStyle.module.css'
 
 import comingSoonStyle from '../../../styles/comingSoonStyle.module.css'
 
@@ -20,20 +22,20 @@ export const ComingSoonSteps = ({
     return (
         <section className={comingSoonStyle.stepsSection}>
 
-            <div className={comingSoonStyle.eyebrow}>
+            <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                 Три шага до приключения
             </div>
 
-            <h2 className={comingSoonStyle.stepsHeading}>
+            <h2 className={questsStyle.panelTitle}>
                 Что тебя ждет
             </h2>
 
-            <div className={comingSoonStyle.stepsGrid}>
+            <div className={`${mainStyle.cardGrid} ${mainStyle.announcementGrid}`}>
 
                 {steps.map(step => (
                     <div
                         key={step.number}
-                        className={comingSoonStyle.stepCard}
+                        className={`${mainStyle.stepCard} ${mainStyle.bgWhite}`}
                     >
                         <div className={comingSoonStyle.stepNumber}>
                             {String(step.number).padStart(2, '0')}
@@ -46,7 +48,7 @@ export const ComingSoonSteps = ({
                         )}
 
                         {step.description && (
-                            <p className={comingSoonStyle.stepDescription}>
+                            <p className={mainStyle.bodyText}>
                                 {step.description}
                             </p>
                         )}

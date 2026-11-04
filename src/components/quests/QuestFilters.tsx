@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import questsStyle from '../../styles/questsStyle.module.css'
 
@@ -38,7 +39,7 @@ export const QuestFilters = ({
                 >
                     <span className={`
                         ${questsStyle.filterText}
-                        ${filter === 'all' ? questsStyle.filterTextActive : ''}
+                        ${filter === 'all' ? mainStyle.textWhite : ''}
                     `}>
                         Все
                     </span>
@@ -59,7 +60,7 @@ export const QuestFilters = ({
                 >
                     <span className={`
                         ${questsStyle.filterText}
-                        ${filter === 'free' ? questsStyle.filterTextActive : ''}
+                        ${filter === 'free' ? mainStyle.textWhite : ''}
                     `}>
                         Бесплатные
                     </span>
@@ -80,7 +81,7 @@ export const QuestFilters = ({
                 >
                     <span className={`
                         ${questsStyle.filterText}
-                        ${filter === 'paid' ? questsStyle.filterTextActive : ''}
+                        ${filter === 'paid' ? mainStyle.textWhite : ''}
                     `}>
                         Премиум
                     </span>

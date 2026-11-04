@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import howPlayStyle from '../../styles/howPlayStyle.module.css'
 
@@ -14,18 +15,18 @@ export const HowPlayBlockBlue = ({
 }: HowPlayBlockBlueProps) => {
 
     return (
-        <section className={`${howPlayStyle.card} ${howPlayStyle.cardBlue}`}>
+        <section className={`${mainStyle.stepCard} ${mainStyle.bgLightGray}`}>
 
             <div className={howPlayStyle.headerRow}>
 
-                <div className={howPlayStyle.numberCircleBlue}>
-                    <span className={howPlayStyle.numberTextBlue}>
+                <div className={`${howPlayStyle.stepNumberCircle} ${howPlayStyle.stepNumberCircleContrast}`}>
+                    <span className={howPlayStyle.stepNumberText}>
                         {number}
                     </span>
                 </div>
 
                 {title && (
-                    <h2 className={howPlayStyle.titleBlue}>
+                    <h2 className={howPlayStyle.stepHeading}>
                         {title}
                     </h2>
                 )}
@@ -33,7 +34,7 @@ export const HowPlayBlockBlue = ({
             </div>
 
             {description && (
-                <p className={howPlayStyle.descBlue}>
+                <p className={mainStyle.bodyText}>
                     {description}
                 </p>
             )}

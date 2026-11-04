@@ -1,3 +1,4 @@
+import questsStyle from '../../styles/questsStyle.module.css'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 
@@ -5,18 +6,18 @@ export const About = () => {
     return (
         <section className={mainStyle.mainAbout}>
             <div className={mainStyle.mainAboutInner}>
-                <div className={mainStyle.mainAboutContent}>
-                    <div className={mainStyle.heroEyebrow}>
+                <div className={mainStyle.shrinkable}>
+                    <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                         О ПРОЕКТЕ
                     </div>
 
-                    <h2 className={mainStyle.mainAboutTitle}>
+                    <h2 className={mainStyle.sectionHeading}>
                         Обычная прогулка.
                         <br />
                         Необычные открытия.
                     </h2>
 
-                    <p className={mainStyle.mainAboutDescription}>
+                    <p className={`${mainStyle.bodyText} ${mainStyle.mb24}`}>
                         Гагара Тур превращает город в пространство для маленьких
                         приключений. Выбирайте маршрут, исследуйте улицы,
                         решайте загадки и узнавайте новые истории в своём темпе.
@@ -28,7 +29,7 @@ export const About = () => {
                     <img
                         src="/about-city.png"
                         alt="Путешественница с картой на фоне исторического города"
-                        className={mainStyle.mainAboutImage}
+                        className={mainStyle.coverImage}
                         loading="lazy"
                     />
                 </div>

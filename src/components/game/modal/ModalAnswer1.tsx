@@ -22,22 +22,22 @@ export const ModalAnswer1 = ({ title, image, address, location, description, set
     const { setAnswersState } = useContext(MainContext)
 
     return (
-        <div className={mainStyle.mt5}>
+        <div className={mainStyle.mt8}>
 
             <div className={mainStyle.card}>
-                <div className={`${gameStyle.gameSuccessTitle} ${mainStyle.mt10}`}>
+                <div className={`${gameStyle.gameSuccessTitle} ${mainStyle.mt12} ${mainStyle.heading}`}>
                     ВЕРНО!
                 </div>
 
                 {title ? (
-                    <div className={`${gameStyle.answerTitle} ${mainStyle.mb10}`}>
+                    <div className={`${gameStyle.answerTitle} ${mainStyle.mb12} ${mainStyle.heading}`}>
                         {title as ReactNode}
                     </div>
                 ) : null}
             </div>
 
             {(image || address || location) ? (
-                <div className={`${mainStyle.card} ${mainStyle.mt15}`}>
+                <div className={`${mainStyle.card} ${mainStyle.mt16}`}>
 
                     {image ? (
                         <div className={gameStyle.modalAnswerImageBg}>
@@ -54,7 +54,7 @@ export const ModalAnswer1 = ({ title, image, address, location, description, set
                             {address ? (
                                 <div className={gameStyle.gameDetailRow}>
                                     <div className={gameStyle.gameIconWrapper}>
-                                        <IoLocationSharp size={18} color="#17A2B8" />
+                                        <IoLocationSharp size={18} className={mainStyle.blue} />
                                     </div>
 
                                     <div className={gameStyle.gameDetailValue}>
@@ -66,7 +66,7 @@ export const ModalAnswer1 = ({ title, image, address, location, description, set
                             {location ? (
                                 <div className={gameStyle.gameDetailRow}>
                                     <div className={gameStyle.gameIconWrapper}>
-                                        <IoCompassOutline size={18} color="#17A2B8" />
+                                        <IoCompassOutline size={18} className={mainStyle.blue} />
                                     </div>
 
                                     <a
@@ -83,12 +83,12 @@ export const ModalAnswer1 = ({ title, image, address, location, description, set
             ) : null}
 
             {description ? (
-                <div className={`${mainStyle.card} ${mainStyle.mt15}`}>
+                <div className={`${mainStyle.card} ${mainStyle.mt16}`}>
                     <FormattedContent text={description} />
                 </div>
             ) : null}
 
-            <div className={mainStyle.mt15}>
+            <div className={mainStyle.mt16}>
                 <button
                     type="button"
                     className={mainStyle.primaryButton}

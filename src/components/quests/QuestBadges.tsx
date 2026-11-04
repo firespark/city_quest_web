@@ -8,11 +8,18 @@ import {
 import mainStyle from '../../styles/mainStyle.module.css'
 import questsStyle from '../../styles/questsStyle.module.css'
 
+export const ComingSoonBadge = () => (
+    <div className={`${questsStyle.questBadge} ${questsStyle.questBadgeComingSoon}`}>
+        <IoHourglassOutline size={12} className={mainStyle.textWhite} />
+        <span className={questsStyle.questBadgeText}>Скоро</span>
+    </div>
+)
+
 export const StatusBadge = ({ status }: { status: string | null }) => {
     if (status === 'finished') {
         return (
             <div className={`${questsStyle.questBadge} ${mainStyle.bgBlue}`}>
-                <IoCheckmarkSharp size={12} color="#FFFFFF" />
+                <IoCheckmarkSharp size={12} className={mainStyle.textWhite} />
                 <span className={questsStyle.questBadgeText}>Пройден</span>
             </div>
         )
@@ -20,7 +27,7 @@ export const StatusBadge = ({ status }: { status: string | null }) => {
     if (status === 'in_progress') {
         return (
             <div className={`${questsStyle.questBadge} ${mainStyle.bgOrange}`}>
-                <IoHourglassOutline size={12} color="#FFFFFF" />
+                <IoHourglassOutline size={12} className={mainStyle.textWhite} />
                 <span className={questsStyle.questBadgeText}>В процессе</span>
             </div>
         )
@@ -32,7 +39,7 @@ export const AccessBadge = ({ paid, available }: { paid: unknown, available: unk
     if (paid && !available) {
         return (
             <div className={`${questsStyle.questBadge} ${mainStyle.bgPurple}`}>
-                <IoDiamondOutline size={12} color="#FFFFFF" />
+                <IoDiamondOutline size={12} className={mainStyle.textWhite} />
                 <span className={questsStyle.questBadgeText}>Премиум</span>
             </div>
         )
@@ -40,7 +47,7 @@ export const AccessBadge = ({ paid, available }: { paid: unknown, available: unk
     if (paid && available) {
         return (
             <div className={`${questsStyle.questBadge} ${mainStyle.bgGreen}`}>
-                <IoCheckmarkSharp size={12} color="#FFFFFF" />
+                <IoCheckmarkSharp size={12} className={mainStyle.textWhite} />
                 <span className={questsStyle.questBadgeText}>Куплен</span>
             </div>
         )

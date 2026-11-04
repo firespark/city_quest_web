@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
@@ -18,9 +19,9 @@ export const OpenQuest = ({ quest }: { quest: OpenQuestData }) => {
     const renderAccessBadge = () => {
         if (quest.paid && !quest.available) {
             return (
-                <div className={`${questsStyle.microBadge} ${questsStyle.badgeLocked}`}>
+                <div className={`${questsStyle.microBadge} ${mainStyle.bgRed}`}>
                     <span className={questsStyle.microBadgeText}>
-                        <IoLockClosed size={12} color="#FFFFFF" />
+                        <IoLockClosed size={12} className={mainStyle.textWhite} />
                     </span>
                 </div>
             )
@@ -28,9 +29,9 @@ export const OpenQuest = ({ quest }: { quest: OpenQuestData }) => {
 
         if (quest.paid && quest.available) {
             return (
-                <div className={`${questsStyle.microBadge} ${questsStyle.badgeSuccess}`}>
+                <div className={`${questsStyle.microBadge} ${mainStyle.bgGreen}`}>
                     <span className={questsStyle.microBadgeText}>
-                        <IoCheckmarkSharp size={12} color="#FFFFFF" />
+                        <IoCheckmarkSharp size={12} className={mainStyle.textWhite} />
                     </span>
                 </div>
             )
@@ -57,19 +58,19 @@ export const OpenQuest = ({ quest }: { quest: OpenQuestData }) => {
             </div>
 
             <div className={questsStyle.contentBlock}>
-                <div className={questsStyle.title}>
+                <div className={`${questsStyle.compactQuestTitle} ${mainStyle.heading}`}>
                     {quest.quest_title as ReactNode}
                 </div>
 
-                <div className={questsStyle.locationContainer}>
-                    <IoLocationSharp size={14} color="#17A2B8" />
+                <div className={mainStyle.panelRowLeft}>
+                    <IoLocationSharp size={14} className={mainStyle.blue} />
 
-                    <span className={`${questsStyle.city} ${questsStyle.cityText}`}>
+                    <span className={`${questsStyle.city} ${questsStyle.questCityCaption}`}>
                         {quest.city as ReactNode}
                     </span>
                 </div>
 
-                <div className={questsStyle.divider} />
+                <div className={mainStyle.divider} />
 
                 <div className={questsStyle.progressRow}>
                     <span className={questsStyle.progressText}>

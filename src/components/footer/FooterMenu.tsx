@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import { Link } from 'react-router-dom'
 
@@ -6,7 +7,7 @@ import footerStyle from '../../styles/footerStyle.module.css'
 
 export const FooterMenu = () => {
     return (
-        <div className={footerStyle.footerInformation}>
+        <div className={mainStyle.shrinkable}>
             <h2 className={footerStyle.footerTitle}>
                 Информация
             </h2>

@@ -1,3 +1,5 @@
+import questsStyle from '../../../styles/questsStyle.module.css'
+import mainStyle from '../../../styles/mainStyle.module.css'
 
 import { IoPaperPlaneOutline } from 'react-icons/io5'
 
@@ -16,15 +18,15 @@ export const ComingSoonSignup2 = () => {
 
             <div className={comingSoonStyle.signupContent}>
 
-                <div className={comingSoonStyle.signupEyebrow}>
+                <div className={`${questsStyle.eyebrow} ${mainStyle.textLight}`}>
                     НЕ ПРОПУСТИТЕ ОТКРЫТИЕ
                 </div>
 
-                <h2 className={comingSoonStyle.signupTitle}>
+                <h2 className={questsStyle.panelTitle}>
                     Запись через Telegram
                 </h2>
 
-                <p className={comingSoonStyle.signupText}>
+                <p className={`${mainStyle.bodyText} ${mainStyle.mb24} ${mainStyle.textWhite}`}>
                     Узнай условия участия и запишись на квест через
                     нашего Telegram-бота.
                 </p>

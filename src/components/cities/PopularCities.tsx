@@ -61,7 +61,7 @@ export const PopularCities = () => {
 
     if (error) {
         return (
-            <div className={mainStyle.mb20}>
+            <div className={mainStyle.mb24}>
                 <div className={mainStyle.errorText}>{error}</div>
             </div>
         )

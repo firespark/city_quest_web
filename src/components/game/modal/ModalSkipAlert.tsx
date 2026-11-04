@@ -75,7 +75,7 @@ export const ModalSkipAlert = ({ setModal, setGame }: ModalSkipAlertProps) => {
                 <div className={`${mainStyle.radioOuter} ${isSelected ? mainStyle.radioOuterActive : ''}`}>
                     {isSelected ? <div className={mainStyle.radioInner} /> : null}
                 </div>
-                <span className={`${mainStyle.radioText} ${isSelected ? mainStyle.radioTextActive : ''}`}>
+                <span className={`${mainStyle.radioText} ${isSelected ? mainStyle.textSemibold : ''}`}>
                     {text}
                 </span>
             </button>
@@ -84,10 +84,10 @@ export const ModalSkipAlert = ({ setModal, setGame }: ModalSkipAlertProps) => {
 
     return (
         <div className={mainStyle.container}>
-            <div className={mainStyle.titleMain}>Пропустить задание?</div>
+            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>Пропустить задание?</div>
             <div className={mainStyle.formSubtitle}>Пожалуйста, укажите причину:</div>
 
-            <div className={mainStyle.mt20}>
+            <div className={mainStyle.mt24}>
                 {renderRadioItem(1, "Я не знаю правильный ответ")}
                 {renderRadioItem(2, "Я знаю правильный ответ, но он не подходит")}
                 {renderRadioItem(3, "Другая причина")}
@@ -103,12 +103,12 @@ export const ModalSkipAlert = ({ setModal, setGame }: ModalSkipAlertProps) => {
             </div>
 
             {error && (
-                <div className={mainStyle.mb15}>
+                <div className={mainStyle.mb16}>
                     <Error text={error} />
                 </div>
             )}
 
-            <div className={`${mainStyle.textCenter} ${mainStyle.mt15}`}>
+            <div className={`${mainStyle.textCenter} ${mainStyle.mt16}`}>
                 <button
                     type="button"
                     className={mainStyle.primaryButton}

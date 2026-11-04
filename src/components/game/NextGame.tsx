@@ -8,7 +8,7 @@ type NextGameProps = {
 export const NextGame = ({ nextGame }: NextGameProps) => {
 
     return (
-        <div className={`${mainStyle.center} ${mainStyle.mt30} ${mainStyle.mb30}`}>
+        <div className={`${mainStyle.center} ${mainStyle.mt32} ${mainStyle.mb32}`}>
             <button
                 type="button"
                 className={mainStyle.button}

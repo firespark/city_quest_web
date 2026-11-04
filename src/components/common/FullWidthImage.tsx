@@ -2,6 +2,7 @@
 import { useState, type CSSProperties } from 'react'
 
 import gameStyle from '../../styles/gameStyle.module.css'
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import { Loader } from './Loader'
 
@@ -19,7 +20,7 @@ export default function FullWidthImage(props: FullWidthImageProps) {
         : props.source.uri
 
     return (
-        <div style={{ position: 'relative', width: '100%' }}>
+        <div className={mainStyle.blockRelative}>
 
             {isLoading && (
                 <div className={gameStyle.fullWidthImageLoader}>
@@ -30,12 +31,8 @@ export default function FullWidthImage(props: FullWidthImageProps) {
             <img
                 src={imageSource}
                 alt=""
-                style={{
-                    display: 'block',
-                    width: '100%',
-                    height: 'auto',
-                    ...(props.ratio ? { aspectRatio: 1 / props.ratio } : {})
-                }}
+                className={gameStyle.fullWidthImage}
+                data-image-ratio={props.ratio ? 1 / props.ratio : undefined}
                 onLoad={() => setIsLoading(false)}
                 onError={() => setIsLoading(false)}
             />

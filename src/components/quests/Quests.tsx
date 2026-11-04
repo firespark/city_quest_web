@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import {
     useCallback,
@@ -135,7 +136,7 @@ export const Quests = ({
                     )}
 
                     {filteredData.length > 0 && (
-                        <div className={questsStyle.featuredGrid}>
+                        <div className={`${mainStyle.cardGrid} ${mainStyle.questGrid}`}>
                             {filteredData.map(quest => (
                                 <FeaturedCard
                                     key={quest.id}

@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import type { Dispatch, SetStateAction, ReactNode } from 'react'
 import { IoDiamondOutline } from 'react-icons/io5'
@@ -32,7 +33,7 @@ export const Hints = ({ hints, showHint, setModal }: HintsProps) => {
                 >
                     <img
                         src={hintImage}
-                        className={gameStyle.hintIcon}
+                        className={gameStyle.pillIcon}
                         alt=""
                     />
                     <span className={gameStyle.hintTextActive}>
@@ -48,7 +49,7 @@ export const Hints = ({ hints, showHint, setModal }: HintsProps) => {
                 >
                     <img
                         src={hintDisabledImage}
-                        className={gameStyle.hintIcon}
+                        className={gameStyle.pillIcon}
                         alt=""
                     />
                     <span className={gameStyle.hintTextDisabled}>
@@ -57,7 +58,7 @@ export const Hints = ({ hints, showHint, setModal }: HintsProps) => {
 
                     {hints === 0 && (
                         <span className={gameStyle.pillPremiumSign}>
-                            <IoDiamondOutline size={10} color="#FFFFFF" />
+                            <IoDiamondOutline size={10} className={mainStyle.textWhite} />
                         </span>
                     )}
                 </button>

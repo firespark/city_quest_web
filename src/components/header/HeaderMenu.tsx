@@ -1,14 +1,23 @@
 
-import { useContext } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import { MainContext } from '../../context/mainContext'
-import { MENU_SCREEN } from '../../context/types'
 import { ROUTES } from '../../routes'
 import headerStyle from '../../styles/headerStyle.module.css'
 
 export const HeaderMenu = () => {
-    const { changeScreen } = useContext(MainContext)
+    const menuId = useId()
+    const menuRef = useRef<HTMLElement>(null)
+    const [isOpen, setIsOpen] = useState(false)
+
+    useEffect(() => {
+        const desktop = window.matchMedia('(min-width: 761px)')
+        const closeOnDesktop = () => {
+            if (desktop.matches) menuRef.current?.hidePopover()
+        }
+        desktop.addEventListener('change', closeOnDesktop)
+        return () => desktop.removeEventListener('change', closeOnDesktop)
+    }, [])
 
     return (
         <>
@@ -32,8 +41,10 @@ export const HeaderMenu = () => {
             <button
                 type="button"
                 className={`${headerStyle.menuButton} ${headerStyle.headerMobileMenu}`}
-                onClick={() => changeScreen(MENU_SCREEN)}
-                aria-label="Открыть меню"
+                popoverTarget={menuId}
+                aria-expanded={isOpen}
+                aria-controls={menuId}
+                aria-label={isOpen ? 'Закрыть меню' : 'Открыть меню'}
             >
                 <span className={headerStyle.menuIconContainer} aria-hidden="true">
                     <span className={`${headerStyle.menuLine} ${headerStyle.menuLine1}`} />
@@ -41,6 +52,21 @@ export const HeaderMenu = () => {
                     <span className={`${headerStyle.menuLine} ${headerStyle.menuLine3}`} />
                 </span>
             </button>
+
+            <nav
+                ref={menuRef}
+                id={menuId}
+                popover="auto"
+                className={headerStyle.mobileDrawer}
+                aria-label="Мобильная навигация"
+                onToggle={event => setIsOpen(event.newState === 'open')}
+            >
+                <NavLink to={ROUTES.HOME} onClick={() => menuRef.current?.hidePopover()}>Главная</NavLink>
+                <NavLink to={ROUTES.ABOUT} onClick={() => menuRef.current?.hidePopover()}>О проекте</NavLink>
+                <NavLink to={ROUTES.HOW_PLAY} onClick={() => menuRef.current?.hidePopover()}>Как играть</NavLink>
+                <NavLink to={ROUTES.CONTACTS} onClick={() => menuRef.current?.hidePopover()}>Контакты</NavLink>
+                <NavLink to={ROUTES.PROFILE} onClick={() => menuRef.current?.hidePopover()}>Личный кабинет</NavLink>
+            </nav>
         </>
     )
 }

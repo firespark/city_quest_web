@@ -27,7 +27,7 @@ export const PopularCity = ({ city }: { city: PopularCityData }) => {
             />
 
             <div className={citiesStyle.cityInfoContainer}>
-                <div className={citiesStyle.cityTitle}>
+                <div className={`${citiesStyle.cityTitle} ${mainStyle.heading}`}>
                     {city.title}
                 </div>
 

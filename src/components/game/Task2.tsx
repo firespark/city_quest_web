@@ -23,7 +23,7 @@ export const Task2 = ({ game, setGame, setModal }: Task2Props) => {
 
     return (
         <div className={mainStyle.container}>
-            <div className={mainStyle.titleMain}>
+            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
                 Ответь на вопрос
             </div>
 

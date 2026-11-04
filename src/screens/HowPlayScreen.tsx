@@ -111,104 +111,100 @@ export const HowPlayScreen = () => {
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
 
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
 
-                <div className={mainStyle.scrollContent}>
+                <div className={mainStyle.sitePage}>
 
-                    <div className={howPlayStyle.page}>
+                    <Breadcrumbs
+                        items={[
+                            { label: 'Главная', to: ROUTES.HOME },
+                            { label: data.title ?? '' }
+                        ]}
+                    />
 
-                        <Breadcrumbs
-                            items={[
-                                { label: 'Главная', to: ROUTES.HOME },
-                                { label: data.title ?? '' }
-                            ]}
-                        />
+                    <article className={mainStyle.articleBlock}>
 
-                        <article className={howPlayStyle.article}>
+                        <h1 className={mainStyle.pageTitle}>
+                            {data.title}
+                        </h1>
 
-                            <h1 className={howPlayStyle.title}>
-                                {data.title}
-                            </h1>
+                        <div className={`${mainStyle.cardGrid} ${mainStyle.instructionGrid}`}>
 
-                            <div className={howPlayStyle.stepsGrid}>
-
-                                {(data.playTitle1 || data.playContent1) && (
-                                    <HowPlayBlockBlue
-                                        number="1"
-                                        title={data.playTitle1}
-                                        description={data.playContent1}
-                                    />
-                                )}
-
-                                {(data.playTitle2 || data.playContent2) && (
-                                    <HowPlayBlock
-                                        number="2"
-                                        title={data.playTitle2}
-                                        description={data.playContent2}
-                                    />
-                                )}
-
-                                {(data.playTitle3 || data.playContent3) && (
-                                    <HowPlayBlockBlue
-                                        number="3"
-                                        title={data.playTitle3}
-                                        description={data.playContent3}
-                                    />
-                                )}
-
-                                {(data.playTitle4 || data.playContent4) && (
-                                    <HowPlayBlock
-                                        number="4"
-                                        title={data.playTitle4}
-                                        description={data.playContent4}
-                                    />
-                                )}
-
-                                {(data.playTitle5 || data.playContent5) && (
-                                    <HowPlayBlockBlue
-                                        number="5"
-                                        title={data.playTitle5}
-                                        description={data.playContent5}
-                                    />
-                                )}
-
-                            </div>
-
-                            {rulesList.length > 0 && (
-                                <section className={howPlayStyle.rulesContainer}>
-
-                                    <h2 className={howPlayStyle.rulesMainTitle}>
-                                        Важно знать
-                                    </h2>
-
-                                    <div className={howPlayStyle.rulesList}>
-
-                                        {rulesList.map((rule, index) => (
-                                            <div
-                                                key={index}
-                                                className={howPlayStyle.ruleRow}
-                                            >
-                                                <div
-                                                    className={howPlayStyle.ruleBullet}
-                                                    aria-hidden="true"
-                                                >
-                                                    <div className={howPlayStyle.ruleBulletInner} />
-                                                </div>
-
-                                                <div className={howPlayStyle.ruleText}>
-                                                    {rule}
-                                                </div>
-                                            </div>
-                                        ))}
-
-                                    </div>
-
-                                </section>
+                            {(data.playTitle1 || data.playContent1) && (
+                                <HowPlayBlockBlue
+                                    number="1"
+                                    title={data.playTitle1}
+                                    description={data.playContent1}
+                                />
                             )}
 
-                        </article>
+                            {(data.playTitle2 || data.playContent2) && (
+                                <HowPlayBlock
+                                    number="2"
+                                    title={data.playTitle2}
+                                    description={data.playContent2}
+                                />
+                            )}
 
-                    </div>
+                            {(data.playTitle3 || data.playContent3) && (
+                                <HowPlayBlockBlue
+                                    number="3"
+                                    title={data.playTitle3}
+                                    description={data.playContent3}
+                                />
+                            )}
+
+                            {(data.playTitle4 || data.playContent4) && (
+                                <HowPlayBlock
+                                    number="4"
+                                    title={data.playTitle4}
+                                    description={data.playContent4}
+                                />
+                            )}
+
+                            {(data.playTitle5 || data.playContent5) && (
+                                <HowPlayBlockBlue
+                                    number="5"
+                                    title={data.playTitle5}
+                                    description={data.playContent5}
+                                />
+                            )}
+
+                        </div>
+
+                        {rulesList.length > 0 && (
+                            <section className={howPlayStyle.rulesContainer}>
+
+                                <h2 className={mainStyle.sectionHeading}>
+                                    Важно знать
+                                </h2>
+
+                                <div className={howPlayStyle.rulesList}>
+
+                                    {rulesList.map((rule, index) => (
+                                        <div
+                                            key={index}
+                                            className={mainStyle.listRow}
+                                        >
+                                            <div
+                                                className={mainStyle.listBullet}
+                                                aria-hidden="true"
+                                            >
+                                                <div className={mainStyle.listDot} />
+                                            </div>
+
+                                            <div className={`${mainStyle.bodyText} ${mainStyle.flex}`}>
+                                                {rule}
+                                            </div>
+                                        </div>
+                                    ))}
+
+                                </div>
+
+                            </section>
+                        )}
+
+                    </article>
 
                 </div>
 

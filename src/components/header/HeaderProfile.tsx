@@ -1,20 +1,19 @@
 
 import { Link } from 'react-router-dom'
+import { IoPersonOutline } from 'react-icons/io5'
 
 import { ROUTES } from '../../routes'
 import headerStyle from '../../styles/headerStyle.module.css'
 
-import userBlue from '../../../assets/img/user-blue.png'
-
 export const HeaderProfile = () => {
     return (
         <Link
-            to={ROUTES.AUTH}
+            to={ROUTES.PROFILE}
             className={headerStyle.headerLogin}
-            aria-label="Войти"
-            title="Войти"
+            aria-label="Личный кабинет"
+            title="Личный кабинет"
         >
-            <img src={userBlue} alt="" />
+            <IoPersonOutline size={24} aria-hidden="true" />
         </Link>
     )
 }

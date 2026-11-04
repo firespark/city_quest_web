@@ -16,7 +16,7 @@ export const ModalBackAlert = ({ setModal }: ModalBackAlertProps) => {
 
     return (
         <div className={mainStyle.container}>
-            <div className={mainStyle.titleMain}>
+            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
                 Ты хочешь выйти из игры?
             </div>
 

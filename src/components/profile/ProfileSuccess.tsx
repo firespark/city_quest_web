@@ -7,7 +7,7 @@ type ProfileSuccessProps = {
 
 export const ProfileSuccess = ({ text }: ProfileSuccessProps) => {
     return (
-        <div className={mainStyle.p}>
+        <div className={`${mainStyle.description} ${mainStyle.textThin} ${mainStyle.mb8}`}>
             <span className={mainStyle.blue}>
                 {text}
             </span>

@@ -14,7 +14,7 @@
     padding-right: 20px;
     padding-top: 15px;
     padding-bottom: 10px;
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
 }
 
 .playTemplateContainer {
@@ -23,26 +23,21 @@
 }
 
 .playTemplateTaskContainer {
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
     border-radius: 24px;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 20px;
     padding-bottom: 30px;
-    margin-top: 25px;
-    --rn-shadow-rgb: 0, 0, 0;
-    --rn-shadow-offset-x: 0px;
-    --rn-shadow-offset-y: 6px;
-    --rn-shadow-radius: 10px;
-    --rn-shadow-opacity: 0.08;
-    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+    margin-top: 32px;
+    box-shadow: var(--card-shadow);
 }
 
 .playTemplateProgressContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .playTemplateSignsRow {
@@ -57,85 +52,42 @@
     padding-top: 10px;
 }
 
-.finishProgressWrapper {
-    display: flex;
-    flex-direction: column;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    width: 100%;
-    align-items: center;
-}
-
 .modeTemplateContainer {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 30px;
 }
 
-.modeListContainer {
-    width: 100%;
-    margin-bottom: 5px;
-}
-
-.gameInfoCard {
-    background-color: #F1F5F9;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 25px;
-    border-width: 1px;
-    border-color: #F1F5F9;
-    border-style: solid;
-}
-
-.gameDetailsBlock {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-
 .gameDetailRow {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin-bottom: 6px;
-}
-
-.taskBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
+    margin-bottom: 8px;
 }
 
 .taskSignWrapper {
-    margin-top: 20px;
+    margin-top: 24px;
     margin-left: 8px;
     margin-right: 8px;
 }
 
 .gameHintSection {
-    background-color: #F1F5F9;
+    background-color: var(--color-light-gray);
     border-radius: 12px;
     padding: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 32px;
     border-style: dashed;
     border-width: 1px;
-    border-color: #E67E22;
+    border-color: var(--color-orange);
 }
 
 .sightTitleWrapper {
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
+    margin-top: 32px;
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
-}
-
-.templateTextContent {
-    padding: 20px;
-    background-color: #FFFFFF;
 }
 
 .gameActions {
@@ -146,228 +98,128 @@
 }
 
 /* Forms */
-.inputsContainer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    width: 100%;
-    align-items: center;
-}
-
-.inputContainer {
-    width: 100%;
-    margin-bottom: 15px;
-    margin-top: 5px;
-}
-
-.inputWrapper {
-    width: 100%;
-    margin-bottom: 5px;
-}
-
-.questionWrapper {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-bottom: 20px;
-}
 
 .hintContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5px;
-    margin-bottom: 25px;
+    margin-top: 8px;
+    margin-bottom: 32px;
 }
 
 .modeRadioContainer {
     display: flex;
     flex-direction: column;
-    margin-right: 5px;
-    justify-content: center;
-}
-
-.modeTextContainer {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+    margin-right: 8px;
     justify-content: center;
 }
 
 /* Titles and Texts */
-.gameMainTitle {
-    font-size: 26px;
-    font-weight: 800;
-    color: #2C3E50;
-    text-align: center;
-    margin-bottom: 20px;
-}
 
 .gameSuccessTitle {
-    font-size: 22px;
-    font-weight: 900;
-    color: #4CAF50;
+    font-weight: 800;
+    color: var(--color-green);
     text-align: center;
-}
-
-.gameTitle {
-    font-size: 18px;
-    line-height: 21px;
-    text-align: center;
-    color: #17A2B8;
+    font-size: var(--font-size-24);
 }
 
 .answerTitle {
-    font-size: 22px;
     font-weight: 600;
     text-transform: uppercase;
-    color: #2C3E50;
+    color: var(--color-dark-blue);
     text-align: center;
+    font-size: var(--font-size-24);
 }
-
-/*
-questionText: {
-    fontWeight: '400',
-    fontSize: 16,
-    lineHeight: 20,
-    textAlign: 'center',
-    color: '#17A2B8',
-},
-*/
 .questionText {
-    font-size: 18px;
     font-weight: 700;
-    color: #2C3E50;
+    color: var(--color-dark-blue);
     text-align: center;
-    line-height: 24px;
+    line-height: 1.4;
+    font-size: var(--font-size-18);
 }
 
 .gameAnswerText {
-    font-size: 20px;
-    font-weight: 900;
-    color: #2C3E50;
+    font-weight: 800;
+    color: var(--color-dark-blue);
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.answerText {
-    font-size: 16px;
-    line-height: 22px;
-    color: #5A6A7A;
+    font-size: var(--font-size-20);
 }
 
 .gameText {
-    font-size: 16px;
-    line-height: 24px;
-    color: #2C3E50;
-    margin-top: 25px;
+    line-height: 1.6;
+    color: var(--color-dark-blue);
+    margin-top: 32px;
     text-align: center;
-}
-
-.taskText {
-    width: 92px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 22px;
-    color: #5A6A7A;
-    margin-top: 4px;
 }
 
 .gameDetailValue {
     flex: 1;
-    font-size: 16px;
-    color: #5A6A7A;
-    font-weight: 500;
-    line-height: 20px;
+    color: var(--color-gray);
+    font-weight: 400;
+    line-height: 1.2;
 }
 
 .gameLink {
     flex: 1;
-    font-size: 16px;
-    color: #17A2B8;
-    font-weight: 500;
-    text-decoration-line: underline;
-    line-height: 20px;
+    color: var(--color-blue);
+    font-weight: 400;
+    line-height: 1.2;
 }
 
 .gameLinkText {
-    font-size: 16px;
-    color: #7F8C8D;
+    transition: color 0.2s ease;
+    color: var(--color-gray);
     font-weight: 600;
-}
-
-.gameSectionLabel {
-    font-size: 12px;
-    color: #E67E22;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
 }
 
 .gameAnswerLabel {
-    font-size: 13px;
-    color: #7F8C8D;
+    color: var(--color-gray);
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 5px;
-}
-
-.modeTitleActive {
-    color: #17A2B8;
+    margin-bottom: 8px;
+    font-size: var(--font-size-14);
 }
 
 .hintTextActive {
-    font-size: 14px;
     font-weight: 600;
-    color: #E67E22;
+    color: var(--color-orange);
+    font-size: var(--font-size-14);
 }
 
 .skipTextActive {
-    font-size: 14px;
     font-weight: 600;
-    color: #17A2B8;
+    color: var(--color-blue);
+    font-size: var(--font-size-14);
 }
 
 .hintTextDisabled {
-    font-size: 14px;
     font-weight: 800;
-    color: #BDC3C7;
+    color: var(--color-gray);
+    font-size: var(--font-size-14);
 }
 
 .progressTextLight {
     font-weight: 800;
-    font-size: 18px;
-    color: #FFFFFF;
+    color: var(--color-white);
+    font-size: var(--font-size-18);
 }
 
 .progressTextDisabled {
     font-weight: 700;
-    font-size: 18px;
-    color: #BDC3C7;
+    color: var(--color-gray);
+    font-size: var(--font-size-18);
 }
 
 /* Images */
-.gameImage {
-    width: 100%;
-    aspect-ratio: 1.33;
-    object-fit: cover;
-    margin-top: 10px;
-    border-radius: 16px;
-    overflow: hidden;
-}
 
 .sightImageWrapper {
     width: 100%;
-    background-color: #F1F5F9;
+    background-color: var(--color-light-gray);
     border-radius: 16px;
     aspect-ratio: 1.33;
     overflow: hidden;
-    --rn-shadow-rgb: 0, 0, 0;
-    --rn-shadow-offset-x: 0px;
-    --rn-shadow-offset-y: 4px;
-    --rn-shadow-radius: 6px;
-    --rn-shadow-opacity: 0.1;
-    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+    box-shadow: var(--card-shadow);
 }
 
 .sightImage {
@@ -377,50 +229,9 @@ questionText: {
     border-radius: 15px;
 }
 
-.templateImageWrapper {
-    background-color: #FFFFFF;
-    border-bottom-width: 1px;
-    border-bottom-color: #F1F5F9;
-    border-bottom-style: solid;
-}
-
-.templateImage {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-/*
-taskImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 10,
-},
-*/
-
-.taskImage {
-    width: 12px;
-    height: 20px;
-    margin-right: 8px;
-    object-fit: contain;
-}
-
-.zoomImage {
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-}
-
 .closeIcon {
     width: 30px;
     height: 30px;
-    object-fit: contain;
-}
-
-.gameBackIcon {
-    width: 24px;
-    height: 24px;
     object-fit: contain;
 }
 
@@ -430,15 +241,11 @@ taskImage: {
     object-fit: contain;
 }
 
-.hintIcon {
+.pillIcon {
     width: 14px;
     height: 20px;
     object-fit: contain;
-    margin-right: 6px;
-}
-
-.formatIcon {
-    text-align: center;
+    margin-right: 8px;
 }
 
 .gameIconWrapper {
@@ -446,8 +253,8 @@ taskImage: {
     flex-direction: column;
     width: 22px;
     align-items: center;
-    margin-right: 6px;
-    margin-top: 1px;
+    margin-right: 8px;
+    margin-top: 2px;
 }
 
 /* Buttons */
@@ -490,18 +297,6 @@ taskImage: {
     opacity: 0.7;
 }
 
-.answerBackButton {
-    background: transparent;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-}
-
-.answerBackButton:active {
-    opacity: 0.7;
-}
-
 button.barContainer {
     border: none;
     padding: 0;
@@ -538,7 +333,6 @@ button.barContainer:active {
     justify-content: center;
 }
 
-
 button.formatPill {
     cursor: pointer;
 }
@@ -546,7 +340,6 @@ button.formatPill {
 button.formatPill:active {
     opacity: 0.7;
 }
-
 
 button.pill {
     font: inherit;
@@ -563,35 +356,30 @@ button.pill:disabled {
     cursor: default;
 }
 
-.pillActive {
-    background-color: #F1F5F9;
-    border-color: #17A2B8;
-}
-
 .pillActiveOrange {
-    background-color: #F1F5F9;
-    border-color: #E67E22;
+    background-color: var(--color-light-gray);
+    border-color: var(--color-orange);
 }
 
 .pillActiveGreen {
-    background-color: #F1F5F9;
-    border-color: #027900;
+    background-color: var(--color-light-gray);
+    border-color: var(--color-green);
 }
 
 .pillDisabled {
-    background-color: #F1F5F9;
-    border-color: #F1F5F9;
+    background-color: var(--color-light-gray);
+    border-color: var(--color-light-gray);
 }
 
 .pillPremiumSign {
     position: absolute;
     top: -5px;
     right: -5px;
-    background-color: #8E44AD;
+    background-color: var(--color-purple);
     border-radius: 10px;
     padding: 3px;
     border-width: 1.5px;
-    border-color: #FFFFFF;
+    border-color: var(--color-white);
     border-style: solid;
 }
 
@@ -599,44 +387,38 @@ button.pill:disabled {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #F1F5F9;
+    background-color: var(--color-light-gray);
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 20px;
     border-width: 1px;
-    border-color: #E67E22;
+    border-color: var(--color-orange);
     border-style: solid;
 }
 
 .gameAnswerCard {
     display: flex;
     flex-direction: column;
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
     border-radius: 20px;
     padding: 25px;
     align-items: center;
     border-width: 2px;
-    border-color: #4CAF50;
-    margin-top: 10px;
+    border-color: var(--color-green);
+    margin-top: 12px;
     border-style: solid;
-    --rn-shadow-rgb: 76, 175, 80;
-    --rn-shadow-offset-x: 0px;
-    --rn-shadow-offset-y: 10px;
-    --rn-shadow-radius: 15px;
-    --rn-shadow-opacity: 0.1;
-    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+    box-shadow: var(--card-shadow);
 }
 
 .gameSuccessBadge {
     display: flex;
     flex-direction: column;
-    position: relative;
     width: 30px;
     height: 30px;
     border-radius: 15px;
-    background-color: #4CAF50;
+    background-color: var(--color-green);
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -644,8 +426,8 @@ button.pill:disabled {
 }
 
 .gameSuccessIcon {
-    color: #FFFFFF;
-    font-weight: bold;
+    color: var(--color-white);
+    font-weight: 700;
 }
 
 /* Progress */
@@ -669,44 +451,19 @@ button.pill:disabled {
     margin: 8px;
     justify-content: center;
     align-items: center;
-    --rn-shadow-rgb: 0, 0, 0;
-    --rn-shadow-offset-x: 0px;
-    --rn-shadow-offset-y: 2px;
-    --rn-shadow-radius: 4px;
-    --rn-shadow-opacity: 0.08;
-    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+    box-shadow: var(--card-shadow);
 }
 
 .progressMedal.progressMedalCurrent {
-    background-color: #2C3E50;
+    background-color: var(--color-dark-blue);
     transform: scale(1.15);
     z-index: 10;
-    --rn-shadow-rgb: 44, 62, 80;
-    --rn-shadow-radius: 6px;
-    --rn-shadow-opacity: 0.3;
-    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
+    box-shadow: var(--card-shadow);
 }
 
 .progressMedalDisabled {
-    background-color: #F1F5F9;
-    --rn-shadow-opacity: 0;
-    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
-}
-
-.progressMedalDone {
-    background-color: #81C7D4;
-}
-
-.progressMedalInProgress {
-    background-color: #17A2B8;
-}
-
-.progressMedalFinish {
-    background-color: #F1F5F9;
-}
-
-.progressMedalFinishDone {
-    background-color: #E67E22;
+    background-color: var(--color-light-gray);
+    box-shadow: none;
 }
 
 button.progressMedal {
@@ -725,7 +482,7 @@ button.progressMedal:active {
     flex-direction: row;
     width: 90%;
     height: 14px;
-    background-color: #F1F5F9;
+    background-color: var(--color-light-gray);
     border-radius: 7px;
     overflow: hidden;
     align-self: center;
@@ -735,7 +492,7 @@ button.progressMedal:active {
     flex: 1;
     height: 100%;
     border-right-width: 1px;
-    border-right-color: #FFFFFF;
+    border-right-color: var(--color-white);
     border-right-style: solid;
 }
 
@@ -743,28 +500,12 @@ button.progressMedal:active {
     background-color: transparent;
 }
 
-.progressDone {
-    background-color: #17A2B8;
-}
-
-.progressInProgress {
-    background-color: #4CAF50;
-}
-
-.progressFinish {
-    background-color: #E74C3C;
-}
-
-.progressFinishDone {
-    background-color: #E67E22;
-}
-
 .progressCurrent {
-    background-color: #2C3E50;
+    background-color: var(--color-dark-blue);
 }
 
 .progressPoint.progressCurrent.progressFinishDone {
-    background-color: #E67E22;
+    background-color: var(--color-orange);
 }
 
 /* Task */
@@ -775,22 +516,20 @@ button.progressMedal:active {
     justify-content: space-between;
 }
 
-.taskTextPreviewContainer {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: center;
-}
-
 .taskCardGridItem {
     width: 31%;
-    margin-bottom: 15px;
+    aspect-ratio: 0.85;
+    margin-bottom: 16px;
+}
+
+.taskCardGridItem.taskCardPair {
+    width: 48%;
 }
 
 .taskCard {
     padding: 0px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -808,36 +547,14 @@ button.taskCard:active {
     opacity: 0.8;
 }
 
-.taskNumber {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background-color: #E67E22;
-    width: 24px;
-    height: 24px;
-    border-radius: 12px;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    --rn-shadow-rgb: 0, 0, 0;
-    --rn-shadow-offset-x: 0px;
-    --rn-shadow-offset-y: 2px;
-    --rn-shadow-radius: 3px;
-    --rn-shadow-opacity: 0.3;
-    box-shadow: var(--rn-shadow-offset-x, 0px) var(--rn-shadow-offset-y, 0px) var(--rn-shadow-radius, 0px) rgba(var(--rn-shadow-rgb, 0, 0, 0), var(--rn-shadow-opacity, 0));
-}
-
-.taskNumberText {
-    font-size: 12px;
-    font-weight: 900;
-    color: #FFFFFF;
-}
-
 .taskImageThumbWrapper {
     width: 100%;
     aspect-ratio: 1.33;
+}
+
+.taskImageThumbWrapper.taskImageGrid {
+    flex: 1;
+    aspect-ratio: auto;
 }
 
 .taskImageThumb {
@@ -850,7 +567,7 @@ button.taskCard:active {
     position: absolute;
     bottom: 10px;
     right: 10px;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: #FFFFFFE6;
     padding: 8px;
     border-radius: 12px;
 }
@@ -872,41 +589,38 @@ button.taskCard:active {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-size: 11px;
-    line-height: 14px;
-    margin-bottom: 0px;
+    line-height: 1.2;
+    margin-bottom: 0;
+    font-size: var(--font-size-12);
 }
 
-.hintImageWrapper {
-    position: relative;
-    width: 100%;
-    min-height: 200px;
-    margin-bottom: 20px;
+.taskTextPreviewImage {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
 }
 
-.hintImageLoader {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
+.taskTextPreviewOnly {
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
 }
 
 .modalAnswerImageBg {
     width: 100%;
     aspect-ratio: 1.33;
-    background-color: #F1F5F9;
+    background-color: var(--color-light-gray);
 }
 
 .fullWidthImageBg {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.fullWidthImage {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: attr(data-image-ratio type(<number>), auto);
 }
 
 .fullWidthImageLoader {
@@ -920,4 +634,14 @@ button.taskCard:active {
     justify-content: center;
     align-items: center;
     z-index: 10;
+}
+
+.closeButton:hover:not(:disabled),
+.gameCancelLink:hover:not(:disabled),
+button.barContainer:hover:not(:disabled),
+button.formatPill:hover:not(:disabled),
+button.pill:hover:not(:disabled),
+button.progressMedal:hover:not(:disabled),
+button.taskCard:hover:not(:disabled) {
+    filter: brightness(0.85);
 }

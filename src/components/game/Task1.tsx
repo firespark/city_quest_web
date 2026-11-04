@@ -18,7 +18,7 @@ export const Task1 = ({ game, setGame, setModal }: Task1Props) => {
 
     return (
         <div className={mainStyle.container}>
-            <div className={mainStyle.titleMain}>
+            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
                 Угадай достопримечательность
             </div>
 

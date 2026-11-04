@@ -5,7 +5,7 @@ export const Error = ({ text }: { text: string }) => {
 
     return (
         <div>
-            <div className={`${mainStyle.red} ${mainStyle.mb10}`}>
+            <div className={`${mainStyle.red} ${mainStyle.mb12}`}>
                 {text}
             </div>
         </div>

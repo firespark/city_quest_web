@@ -26,13 +26,13 @@ export const ProgressBar = ({ game, setModal }: ProgressBarProps) => {
     for (let i = 1; i <= levels; i++) {
         let st: string | string[] = gameStyle.progressDisabled
 
-        if (i < stepTotal) st = gameStyle.progressDone
-        if (i == levels) st = gameStyle.progressFinish
-        if (i == stepTotal) st = gameStyle.progressInProgress
-        if (i == levels && i == stepTotal) st = gameStyle.progressFinishDone
+        if (i < stepTotal) st = mainStyle.bgBlue
+        if (i == levels) st = mainStyle.bgRed
+        if (i == stepTotal) st = mainStyle.bgGreen
+        if (i == levels && i == stepTotal) st = `${gameStyle.progressFinishDone} ${mainStyle.bgOrange}`
         if (i == game.step) st = gameStyle.progressCurrent
         if (i == game.step && i == levels) {
-            st = [gameStyle.progressCurrent, gameStyle.progressFinishDone]
+            st = [gameStyle.progressCurrent, `${gameStyle.progressFinishDone} ${mainStyle.bgOrange}`]
         }
 
         content.push(
@@ -49,7 +49,7 @@ export const ProgressBar = ({ game, setModal }: ProgressBarProps) => {
     return (
         <button
             type="button"
-            className={`${gameStyle.barContainer} ${mainStyle.mt10}`}
+            className={`${gameStyle.barContainer} ${mainStyle.mt12}`}
             onClick={() => {
                 setModal('progress')
             }}

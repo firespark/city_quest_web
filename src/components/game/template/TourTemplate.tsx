@@ -43,7 +43,7 @@ export const TourTemplate = ({ game, setGame, setModal, nextGame }: TourTemplate
                 />
             </div>
 
-            <div className={`${mainStyle.card} ${mainStyle.mt15}`}>
+            <div className={`${mainStyle.card} ${mainStyle.mt16}`}>
 
                 {game.sight_image ? (
                     <div className={gameStyle.modalAnswerImageBg}>
@@ -59,7 +59,7 @@ export const TourTemplate = ({ game, setGame, setModal, nextGame }: TourTemplate
                     {game.sight_address ? (
                         <div className={gameStyle.gameDetailRow}>
                             <div className={gameStyle.gameIconWrapper}>
-                                <IoLocationSharp size={18} color="#17A2B8" />
+                                <IoLocationSharp size={18} className={mainStyle.blue} />
                             </div>
 
                             <div className={gameStyle.gameDetailValue}>
@@ -71,7 +71,7 @@ export const TourTemplate = ({ game, setGame, setModal, nextGame }: TourTemplate
                     {location ? (
                         <div className={gameStyle.gameDetailRow}>
                             <div className={gameStyle.gameIconWrapper}>
-                                <IoCompassOutline size={18} color="#17A2B8" />
+                                <IoCompassOutline size={18} className={mainStyle.blue} />
                             </div>
 
                             <a
@@ -86,12 +86,12 @@ export const TourTemplate = ({ game, setGame, setModal, nextGame }: TourTemplate
             </div>
 
             {game.sight_content ? (
-                <div className={`${mainStyle.card} ${mainStyle.mt15}`}>
+                <div className={`${mainStyle.card} ${mainStyle.mt16}`}>
                     <FormattedContent text={game.sight_content} />
                 </div>
             ) : null}
 
-            <div className={mainStyle.mt15}>
+            <div className={mainStyle.mt16}>
                 <NextGame nextGame={nextGame} />
             </div>
         </div>

@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
@@ -23,16 +24,16 @@ export const MenuItems = () => {
                 to={ROUTES.ABOUT}
                 className={headerStyle.menuButtonPanel}
             >
-                <div className={headerStyle.leftContent}>
+                <div className={mainStyle.panelRowLeft}>
                     <div className={headerStyle.iconWrapper}>
                         <img
                             src={infoImage}
-                            className={headerStyle.icon}
+                            className={mainStyle.controlIcon}
                             alt=""
                         />
                     </div>
 
-                    <span className={headerStyle.buttonText}>
+                    <span className={headerStyle.menuButtonText}>
                         О проекте
                     </span>
                 </div>
@@ -44,16 +45,16 @@ export const MenuItems = () => {
                 to={ROUTES.HOW_PLAY}
                 className={headerStyle.menuButtonPanel}
             >
-                <div className={headerStyle.leftContent}>
+                <div className={mainStyle.panelRowLeft}>
                     <div className={headerStyle.iconWrapper}>
                         <img
                             src={questionImage}
-                            className={headerStyle.icon}
+                            className={mainStyle.controlIcon}
                             alt=""
                         />
                     </div>
 
-                    <span className={headerStyle.buttonText}>
+                    <span className={headerStyle.menuButtonText}>
                         Как играть
                     </span>
                 </div>
@@ -66,15 +67,15 @@ export const MenuItems = () => {
                 to={ROUTES.CONTACTS}
                 className={headerStyle.menuButtonPanel}
             >
-                <div className={headerStyle.leftContent}>
+                <div className={mainStyle.panelRowLeft}>
                     <div className={headerStyle.iconWrapper}>
                         <img
                             src={envelopeImage}
-                            className={headerStyle.icon}
+                            className={mainStyle.controlIcon}
                             alt=""
                         />
                     </div>
-                    <span className={headerStyle.buttonText}>
+                    <span className={headerStyle.menuButtonText}>
                         Контакты
                     </span>
                 </div>

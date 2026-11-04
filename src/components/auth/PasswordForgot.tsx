@@ -7,7 +7,7 @@ import { ROUTES } from '../../routes'
 export const PasswordForgot = () => {
 
     return (
-        <div className={`${mainStyle.center} ${mainStyle.mt30}`}>
+        <div className={`${mainStyle.center} ${mainStyle.mt32}`}>
             <Link
                 to={ROUTES.PASSWORD_RESET}
                 className={mainStyle.plainButton}

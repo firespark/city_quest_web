@@ -103,11 +103,11 @@ export const NewPassword = ({
     return (
         <div className={authStyle.authStep}>
 
-            <div className={`${mainStyle.subtitle} ${mainStyle.mb10} ${mainStyle.textCenter}`}>
+            <div className={`${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.mb16} ${mainStyle.textCenter} ${mainStyle.heading}`}>
                 А теперь задай пароль (минимум 8 символов)
             </div>
 
-            <div className={`${authStyle.passwordField} ${mainStyle.mt15} ${mainStyle.mb10}`}>
+            <div className={`${authStyle.passwordField} ${mainStyle.mt16} ${mainStyle.mb12}`}>
                 <input
                     type={showPassword ? 'text' : 'password'}
                     placeholder="Новый пароль"
@@ -135,7 +135,7 @@ export const NewPassword = ({
                 </button>
             </div>
 
-            <div className={`${authStyle.passwordField} ${mainStyle.mb10}`}>
+            <div className={`${authStyle.passwordField} ${mainStyle.mb12}`}>
                 <input
                     type={showConfirmPassword ? 'text' : 'password'}
                     placeholder="Повторите пароль"

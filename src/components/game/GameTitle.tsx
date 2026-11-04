@@ -2,7 +2,7 @@
 import type { Dispatch, SetStateAction, ReactNode } from 'react'
 
 import mainStyle from '../../styles/mainStyle.module.css'
-import gameStyle from '../../styles/gameStyle.module.css'
+
 
 type GameTitleProps = {
     title: unknown
@@ -13,7 +13,7 @@ type GameTitleProps = {
 export const GameTitle = ({ title, description, setModal }: GameTitleProps) => {
     return (
         <div className={mainStyle.wrapper}>
-            <div className={mainStyle.titleMain}>
+            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
                 {title as ReactNode}
             </div>
 

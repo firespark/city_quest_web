@@ -18,7 +18,7 @@ export const ModalFullTask = ({ task }: { task: unknown }) => {
         : (taskData.text || '').trim()
 
     return (
-        <div className={mainStyle.mt20}>
+        <div className={mainStyle.mt24}>
 
             {taskData.image ? (
                 <div>
@@ -29,8 +29,7 @@ export const ModalFullTask = ({ task }: { task: unknown }) => {
             {taskText ? (
                 <div className={mainStyle.wrapper}>
                     <div
-                        className={`${mainStyle.paragraph} ${mainStyle.textCenter} ${mainStyle.mt20}`}
-                        style={{ whiteSpace: 'pre-line' }}
+                        className={`${mainStyle.paragraph} ${mainStyle.textCenter} ${mainStyle.mt24} ${mainStyle.textPreLine}`}
                     >
                         {taskText}
                     </div>

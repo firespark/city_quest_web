@@ -6,18 +6,15 @@ import headerStyle from '../../styles/headerStyle.module.css'
 
 import { ROUTES } from '../../routes'
 
-import logoImage from '../../../assets/img/logo-fun-black.png'
-
 export const Logo = () => {
     return (
         <Link
             to={ROUTES.HOME}
             className={`${mainStyle.panelRowLeft} ${headerStyle.logoLink}`}
         >
-            <img
-                src={logoImage}
+            <span
                 className={headerStyle.logoImage}
-                alt=""
+                aria-hidden="true"
             />
 
             <span className={headerStyle.logoTitle}>

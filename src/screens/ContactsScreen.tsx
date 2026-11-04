@@ -13,9 +13,9 @@ export const ContactsScreen = () => {
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
 
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
 
-                <div className={contactsStyle.page}>
+                <div className={mainStyle.sitePage}>
 
                     <Breadcrumbs
                         items={[
@@ -24,7 +24,7 @@ export const ContactsScreen = () => {
                         ]}
                     />
 
-                    <h1 className={contactsStyle.pageTitle}>
+                    <h1 className={mainStyle.pageTitle}>
                         Контакты
                     </h1>
 

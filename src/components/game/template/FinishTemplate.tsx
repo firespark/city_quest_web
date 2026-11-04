@@ -65,8 +65,8 @@ export const FinishTemplate = ({ title, content, game, setModal, formatId }: Fin
                 />
             )}
 
-            <div className={mainStyle.mt30}>
-                <div className={`${mainStyle.subtitle} ${mainStyle.textCenter} ${mainStyle.mb20}`}>
+            <div className={mainStyle.mt32}>
+                <div className={`${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
                     {formatId === 2
                         ? `Еще туры в г. ${game.quest_city}`
                         : `Еще туры в г. ${game.quest_city}`}

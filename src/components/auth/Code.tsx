@@ -63,11 +63,11 @@ export const Code = ({
     return (
         <div className={authStyle.authStep}>
 
-            <div className={`${mainStyle.formTitle} ${mainStyle.mb10} ${mainStyle.textCenter}`}>
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb12} ${mainStyle.textCenter} ${mainStyle.heading}`}>
                 Подтверждение
             </div>
 
-            <div className={`${mainStyle.formSubtitle} ${mainStyle.mb25}`}>
+            <div className={`${mainStyle.formSubtitle} ${mainStyle.mb32}`}>
                 Введите код, отправленный на {email}
             </div>
 

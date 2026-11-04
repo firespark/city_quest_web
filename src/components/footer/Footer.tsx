@@ -15,8 +15,10 @@ export const Footer = (_props: { active?: string }) => {
 
                 <div className={footerStyle.footerColumns}>
                     <FooterDescription />
-                    <FooterCities />
-                    <FooterMenu />
+                    <div className={footerStyle.footerNavigation}>
+                        <FooterCities />
+                        <FooterMenu />
+                    </div>
                 </div>
 
                 <div className={footerStyle.footerBottom}>

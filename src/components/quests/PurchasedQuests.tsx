@@ -1,7 +1,8 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import { useState, useContext, useEffect, useCallback } from 'react'
 
-import questsStyle from '../../styles/questsStyle.module.css'
+
 
 import { ConnectionError } from '../common/ConnectionError'
 import { PurchasedQuest } from './PurchasedQuest'
@@ -65,7 +66,7 @@ export const PurchasedQuests = () => {
     return (
         <div>
 
-            <h2 className={questsStyle.blockTitle}>
+            <h2 className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>
                 Купленные туры
             </h2>
 

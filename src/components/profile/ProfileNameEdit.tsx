@@ -73,7 +73,7 @@ export const ProfileNameEdit = ({ user, setUser, setTemplate, setSuccess }: Prof
 
     return (
         <form
-            className={formsStyle.blockForm}
+            className={mainStyle.shrinkable}
             onSubmit={(event) => {
                 event.preventDefault()
                 void saveName()
@@ -102,7 +102,7 @@ export const ProfileNameEdit = ({ user, setUser, setTemplate, setSuccess }: Prof
             </div>
 
             {error && (
-                <div className={`${mainStyle.mt10} ${mainStyle.mb10}`}>
+                <div className={`${mainStyle.mt12} ${mainStyle.mb12}`}>
                     <Error text={error} />
                 </div>
             )}

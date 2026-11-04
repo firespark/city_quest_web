@@ -1,58 +1,3 @@
-
-.page {
-    width: calc(100% - 40px);
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 24px 0 78px;
-}
-
-.hero {
-    position: relative;
-    min-height: 380px;
-    overflow: hidden;
-    background: #0c293c;
-    border-radius: 18px;
-}
-
-.heroImage {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.heroShade {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(6, 35, 49, .96) 0%,
-        rgba(6, 35, 49, .81) 35%,
-        rgba(6, 35, 49, .17) 100%
-    );
-}
-
-.heroContent {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    min-height: 380px;
-    max-width: 740px;
-    padding: 38px 54px;
-}
-
-.cityText {
-    margin-top: 6px;
-    color: #d9edf1;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.4;
-}
-
 .badges {
     display: flex;
     flex-wrap: wrap;
@@ -60,27 +5,12 @@
     margin: 0 0 16px;
 }
 
-.heroTitle {
-    max-width: 650px;
-    margin: 20px 0 23px;
-    color: #fff;
-    font-size: clamp(29px, 3.5vw, 46px);
-    line-height: 1.12;
-    font-weight: 850;
-    overflow-wrap: anywhere;
-}
-
-.heroAction {
-    width: max-content;
-    max-width: 100%;
-}
-
 /* Purchase */
 
 .purchasePanel {
-    margin-top: 44px;
+    margin-top: 48px;
     padding: 28px 32px;
-    background: #f3f8fa;
+    background: var(--color-light-gray);
     border-radius: 17px;
 }
 
@@ -94,8 +24,7 @@
 .purchasePanel > div > div:first-child {
     margin-bottom: 0;
     text-align: left;
-    font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .purchasePanel > div > button:only-child {
@@ -109,10 +38,10 @@
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    margin-top: 44px;
+    margin-top: 48px;
     padding: 26px 32px;
-    background: #f3f8fa;
-    border: 1px solid #e4eff1;
+    background: var(--color-light-gray);
+    border: 1px solid var(--color-light-gray);
     border-radius: 18px;
 }
 
@@ -126,11 +55,11 @@
 }
 
 .finalTitle {
-    color: #0c293c;
-    font-size: 19px;
+    color: var(--color-dark-blue);
     font-weight: 800;
-    line-height: 1.3;
+    line-height: 1.4;
     overflow-wrap: anywhere;
+    font-size: var(--font-size-20);
 }
 
 .finalMeta {
@@ -146,11 +75,11 @@
     gap: 7px;
     padding: 6px 11px;
     border-radius: 8px;
-    background: #fff0e2;
-    color: #ad5d16;
-    font-size: 12px;
+    background: var(--color-light-gray);
+    color: var(--color-orange);
     font-weight: 700;
     line-height: 1.4;
+    font-size: var(--font-size-12);
 }
 
 .finalStatus::before {
@@ -159,16 +88,16 @@
     height: 7px;
     flex-shrink: 0;
     border-radius: 50%;
-    background: #e67e22;
+    background: var(--color-orange);
 }
 
 .finalStatusFinished {
-    background: #e0f4f7;
-    color: #117e90;
+    background: var(--color-light-gray);
+    color: var(--color-blue);
 }
 
 .finalStatusFinished::before {
-    background: #17a2b8;
+    background: var(--color-blue);
 }
 
 .finalButton {
@@ -176,45 +105,89 @@
     max-width: 100%;
 }
 
-/* Tablet */
+.questHero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 465px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: var(--color-dark-blue);
+}
+
+.questHeroImage {
+    position: absolute;
+    inset: 0;
+}
+
+.questHeroShade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            #2C3E50E6 0%,
+            #2C3E50CC 35%,
+            #2C3E501A 100%);
+}
+
+.questHeroContent {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 740px;
+    padding: 58px 64px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--color-white);
+}
+
+.questHeroCity {
+    margin-top: 24px;
+    color: var(--color-light-gray);
+    font-weight: 700;
+    line-height: 1.4;
+    display: block;
+    text-decoration: none;
+}
+
+.questHeroCity:hover,
+.questHeroCity:focus-visible {
+    color: var(--color-light-blue-hover);
+    text-underline-offset: 4px;
+}
+
+.heroTitle {
+    max-width: 560px;
+    margin: 12px 0 16px;
+    color: inherit;
+    font-weight: 700;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+    font-size: var(--font-size-52);
+}
+
+.questHeroAction {
+    margin-top: 24px;
+    width: max-content;
+    max-width: 100%;
+}
+
+/* Responsive overrides */
 
 @media (max-width: 800px) {
-    .heroContent {
-        padding: 32px;
+    .questHeroContent {
+        padding: 48px 40px 70px;
+    }
+    .heroTitle {
+        font-size: var(--font-size-46);
     }
 }
 
-/* Mobile */
-
 @media (max-width: 620px) {
-    .page {
-        width: calc(100% - 28px);
-        padding: 16px 0 48px;
-    }
-
-    .hero,
-    .heroContent {
-        min-height: 360px;
-    }
-
-    .heroContent {
-        padding: 24px;
-    }
-
-    .heroShade {
-        background: linear-gradient(
-            90deg,
-            rgba(6, 35, 49, .94),
-            rgba(6, 35, 49, .46)
-        );
-    }
-
-    .heroTitle {
-        font-size: 30px;
-    }
 
     .purchasePanel {
-        margin-top: 28px;
+        margin-top: 32px;
         padding: 24px;
     }
 
@@ -235,7 +208,7 @@
         flex-direction: column;
         align-items: stretch;
         gap: 20px;
-        margin-top: 28px;
+        margin-top: 32px;
         padding: 22px;
     }
 
@@ -253,7 +226,25 @@
     }
 
     .finalButton button,
-    .finalButton a {
+.finalButton a {
         width: 100%;
+    }
+    .questHero {
+        min-height: 390px;
+    }
+    .questHeroShade {
+        background: linear-gradient(90deg,
+                #2C3E50E6 0%,
+                #2C3E50CC 48%,
+                #2C3E5033 100%);
+    }
+    .questHeroContent {
+        padding: 40px 26px 62px;
+    }
+    .questHeroCity {
+        margin-top: 24px;
+    }
+    .heroTitle {
+        font-size: var(--font-size-34);
     }
 }

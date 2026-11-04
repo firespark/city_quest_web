@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 import type { Dispatch, SetStateAction, ReactNode } from 'react'
 
 import profileStyle from '../../styles/profileStyle.module.css'
@@ -58,7 +59,7 @@ export const EditTemplate = ({
 
             <div className={profileStyle.editHeader}>
 
-                <h2 className={profileStyle.editTitle}>
+                <h2 className={mainStyle.formTitle}>
                     {template === 'name' ? 'Изменить имя' : 'Изменить пароль'}
                 </h2>
 

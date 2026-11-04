@@ -61,7 +61,7 @@ export const ContactsBlockForm = () => {
 
     if (sent) {
         return (
-            <div className={formsStyle.blockSuccess} role="status">
+            <div className={mainStyle.strongText} role="status">
                 Сообщение отправлено. Спасибо!
             </div>
         )
@@ -69,7 +69,7 @@ export const ContactsBlockForm = () => {
 
     return (
         <form
-            className={formsStyle.blockForm}
+            className={mainStyle.shrinkable}
             onSubmit={sendEmail}
         >
             <div className={formsStyle.blockFields}>

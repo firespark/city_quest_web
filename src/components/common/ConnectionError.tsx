@@ -1,39 +1,95 @@
 
-import { useEffect, useState } from 'react'
+import { createContext, useCallback, useContext, useEffect, useId, useRef, useState, type ReactNode } from 'react'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 
-export const ConnectionError = ({ onRetry }: { onRetry: () => void | Promise<void> }) => {
+type Retry = () => void | Promise<void>
+type RegisterError = (id: string, onRetry: Retry) => () => void
 
-    const [visible, setVisible] = useState(false)
+const ConnectionErrorContext = createContext<{
+    registerError: RegisterError
+    errors: Map<string, Retry>
+} | null>(null)
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setVisible(true)
-        }, 2000)
+type ConnectionErrorProps = {
+    onRetry: Retry
+}
 
-        return () => clearTimeout(timer)
+export const ConnectionErrorProvider = ({ children }: { children: ReactNode }) => {
+    const [errors, setErrors] = useState<Map<string, Retry>>(() => new Map())
+
+    const registerError = useCallback<RegisterError>((id, onRetry) => {
+        setErrors(current => new Map(current).set(id, onRetry))
+
+        return () => {
+            setErrors(current => {
+                const next = new Map(current)
+                next.delete(id)
+                return next
+            })
+        }
     }, [])
 
-    if (!visible) return null
+    return (
+        <ConnectionErrorContext.Provider value={{ registerError, errors }}>
+            {children}
+        </ConnectionErrorContext.Provider>
+    )
+}
 
+export const ConnectionErrorContent = ({ children }: { children: ReactNode }) => {
+    const context = useContext(ConnectionErrorContext)
+    const errors = context?.errors
+    const hasErrors = Boolean(errors?.size)
+
+    const retryAll = async () => {
+        await Promise.all([...(errors?.values() ?? [])].map(onRetry => onRetry()))
+    }
 
     return (
-        <div className={`${mainStyle.center} ${mainStyle.mt30} ${mainStyle.p20}`}>
-            <div className={`${mainStyle.titleMain} ${mainStyle.mb10}`}>
-                Нет подключения
+        <>
+            {hasErrors && <ConnectionErrorCard onRetry={retryAll} />}
+            <div hidden={hasErrors}>
+                {children}
             </div>
+        </>
+    )
+}
 
-            <div className={`${mainStyle.description} ${mainStyle.textCenter} ${mainStyle.mb20}`}>
+export const ConnectionError = ({ onRetry }: ConnectionErrorProps) => {
+    const registerError = useContext(ConnectionErrorContext)?.registerError
+    const id = useId()
+    const retryRef = useRef(onRetry)
+
+    useEffect(() => {
+        retryRef.current = onRetry
+    }, [onRetry])
+
+    useEffect(() => {
+        return registerError?.(id, () => retryRef.current())
+    }, [id, registerError])
+
+    return registerError ? null : <ConnectionErrorCard onRetry={onRetry} />
+}
+
+const ConnectionErrorCard = ({ onRetry }: ConnectionErrorProps) => {
+
+    return (
+        <div className={mainStyle.connectionError} role="status">
+            <h2 className={mainStyle.connectionErrorTitle}>
+                Нет подключения
+            </h2>
+
+            <p className={mainStyle.bodyText}>
                 Не удалось загрузить данные. Проверьте подключение к интернету и попробуйте снова.
-            </div>
+            </p>
 
             <button
                 type="button"
-                className={mainStyle.primaryButton}
+                className={mainStyle.siteButton}
                 onClick={onRetry}
             >
-                <span className={mainStyle.primaryButtonText}>Повторить</span>
+                Повторить
             </button>
         </div>
     )

@@ -16,8 +16,8 @@ export const NotFoundScreen = () => {
 
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
-                <div className={notFoundStyle.page}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
+                <div className={`${mainStyle.sitePage} ${notFoundStyle.page}`}>
                     <Breadcrumbs
                         items={[
                             { label: 'Главная', to: ROUTES.HOME },
@@ -25,16 +25,16 @@ export const NotFoundScreen = () => {
                         ]}
                     />
 
-                    <div className={notFoundStyle.content}>
+                    <div className={notFoundStyle.notFoundBody}>
                         <p className={notFoundStyle.code}>
                             404
                         </p>
 
-                        <h1 className={notFoundStyle.title}>
+                        <h1 className={notFoundStyle.notFoundTitle}>
                             Страница не найдена
                         </h1>
 
-                        <p className={notFoundStyle.description}>
+                        <p className={`${mainStyle.bodyText} ${mainStyle.mb32}`}>
                             Проверь адрес или вернись на главную,
                             чтобы выбрать город и квест.
                         </p>

@@ -1,22 +1,3 @@
-
-.page {
-    width: calc(100% - 40px);
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 24px 0 80px;
-}
-
-.pageTitle {
-    margin: 34px 0 36px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #e1edf0;
-    color: #0c293c;
-    font-size: clamp(34px, 4vw, 46px);
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-}
-
 .authScrollContent {
     display: flex;
     flex-direction: column;
@@ -32,10 +13,10 @@
     width: 100%;
     min-width: 0;
     padding: 38px 36px;
-    border: 1px solid #dcebf0;
+    border: 1px solid var(--color-light-gray);
     border-radius: 18px;
-    background-color: #ffffff;
-    box-shadow: 0 10px 30px rgba(12, 41, 60, 0.06);
+    background-color: var(--color-white);
+    box-shadow: var(--card-shadow);
 }
 
 .authStep {
@@ -75,78 +56,22 @@
     border: none;
     border-radius: 0 10px 10px 0;
     background-color: transparent;
-    color: #8293a2;
+    color: var(--color-gray);
     cursor: pointer;
 }
 
 .eyeSign:hover {
-    color: #12879a;
+    color: var(--color-blue-hover);
 }
 
 .eyeSign:focus-visible {
-    outline: 2px solid #17a2b8;
+    outline: 2px solid var(--color-blue);
     outline-offset: -3px;
 }
 
-.googleContainer {
-    margin-top: 30px;
-    width: 100%;
-}
-
-.googleDividerRow {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.googleButton {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 56px;
-    border: 1px solid #f1f5f9;
-    border-radius: 28px;
-    background-color: #ffffff;
-}
-
-.googleButtonText {
-    font-size: 16px;
-    font-weight: 700;
-    color: #2c3e50;
-}
-
-.googleDividerText {
-    margin-left: 15px;
-    margin-right: 15px;
-    color: #bdc3c7;
-    font-weight: 600;
-}
-
-.googleLine {
-    flex: 1;
-    height: 1px;
-    background-color: #f1f5f9;
-}
-
-.authIcon {
-    width: 48px;
-    height: 48px;
-    margin: 7px;
-}
-
-.googleIcon {
-    width: 24px;
-    height: 24px;
-    margin-right: 12px;
-}
+/* Responsive overrides */
 
 @media (max-width: 800px) {
-    .pageTitle {
-        margin-top: 28px;
-    }
 
     .authCardContent {
         padding: 34px 30px;
@@ -154,16 +79,6 @@
 }
 
 @media (max-width: 620px) {
-    .page {
-        width: calc(100% - 28px);
-        padding: 16px 0 48px;
-    }
-
-    .pageTitle {
-        margin: 22px 0 28px;
-        padding-bottom: 20px;
-        font-size: 32px;
-    }
 
     .authScrollContent {
         max-width: none;

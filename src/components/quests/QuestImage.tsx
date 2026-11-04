@@ -1,3 +1,5 @@
+import mainStyle from "../../styles/mainStyle.module.css"
+import questDetailStyle from '../../styles/questDetailStyle.module.css'
 
 import questsStyle from '../../styles/questsStyle.module.css'
 
@@ -13,7 +15,7 @@ export const QuestImage = ({ data }: { data: QuestImageData }) => {
         <div className={questsStyle.questImageWrapper}>
             <img
                 src={data.image as string}
-                className={questsStyle.questHeroImage}
+                className={`${mainStyle.coverImage} ${questDetailStyle.questHeroImage}`}
                 alt=""
             />
             <div className={questsStyle.questBadgesTopLeft}>

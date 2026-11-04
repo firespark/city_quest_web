@@ -13,7 +13,7 @@ import { ContactsBlock } from '../components/contacts/ContactsBlock'
 export const MainScreen = () => {
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
                 <Hero />
 
                 <Countries />

@@ -13,6 +13,9 @@ import {
 import { NotFoundScreen } from './screens/NotFoundScreen'
 
 import { Loader } from './components/common/Loader'
+import { ConnectionError } from './components/common/ConnectionError'
+import { Error as ErrorMessage } from './components/common/Error'
+import mainStyle from './styles/mainStyle.module.css'
 
 import { setDynamicPageTitle } from './LayoutMeta'
 
@@ -92,6 +95,7 @@ export const SlugRoute = () => {
 
     const [page, setPage] = useState<SlugPage>(null)
     const [fatalError, setFatalError] = useState<Error | null>(null)
+    const [retry, setRetry] = useState(0)
 
 
     useEffect(() => {
@@ -173,11 +177,17 @@ export const SlugRoute = () => {
             controller.abort()
         }
 
-    }, [slug, token])
+    }, [slug, token, retry])
 
 
     if (fatalError) {
-        throw fatalError
+        return fatalError instanceof TypeError || !navigator.onLine ? (
+            <ConnectionError onRetry={() => setRetry(value => value + 1)} />
+        ) : (
+            <div className={mainStyle.sitePage}>
+                <ErrorMessage text={fatalError.message} />
+            </div>
+        )
     }
 
     if (page?.type === 'notFound') {

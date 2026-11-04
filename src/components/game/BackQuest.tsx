@@ -22,7 +22,7 @@ export const BackQuest = ({ setModal }: BackQuestProps) => {
         >
             <img
                 src={backImage}
-                className={gameStyle.gameBackIcon}
+                className={mainStyle.controlIcon}
                 alt=""
             />
         </button>

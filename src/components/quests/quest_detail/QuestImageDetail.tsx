@@ -1,5 +1,8 @@
+import mainStyle from "../../../styles/mainStyle.module.css"
 
 import type { ComponentProps } from 'react'
+import { Link } from 'react-router-dom'
+import { slugUrl } from '../../../routes'
 
 import questDetailStyle from '../../../styles/questDetailStyle.module.css'
 
@@ -10,6 +13,7 @@ import { StartButton } from '../StartButton'
 type QuestImageDetailProps = {
     image: string
     city: string
+    citySlug: string
     title: string
     paid: boolean
     available: boolean
@@ -22,6 +26,7 @@ type QuestImageDetailProps = {
 export const QuestImageDetail = ({
     image,
     city,
+    citySlug,
     title,
     paid,
     available,
@@ -32,21 +37,21 @@ export const QuestImageDetail = ({
 
     return (
         <section
-            className={questDetailStyle.hero}
+            className={questDetailStyle.questHero}
             aria-label={title}
         >
             <img
-                className={questDetailStyle.heroImage}
+                className={`${mainStyle.coverImage} ${questDetailStyle.questHeroImage}`}
                 src={image}
                 alt=""
             />
 
             <div
-                className={questDetailStyle.heroShade}
+                className={questDetailStyle.questHeroShade}
                 aria-hidden="true"
             />
 
-            <div className={questDetailStyle.heroContent}>
+            <div className={questDetailStyle.questHeroContent}>
 
                 {(paid || status) && (
                     <div className={questDetailStyle.badges}>
@@ -59,16 +64,16 @@ export const QuestImageDetail = ({
                     </div>
                 )}
 
-                <div className={questDetailStyle.cityText}>
+                <Link to={slugUrl(citySlug)} className={questDetailStyle.questHeroCity}>
                     {city}
-                </div>
+                </Link>
 
                 <h1 className={questDetailStyle.heroTitle}>
                     {title}
                 </h1>
 
                 {available && (
-                    <div className={questDetailStyle.heroAction}>
+                    <div className={questDetailStyle.questHeroAction}>
                         <StartButton
                             changeScreen={changeScreen}
                             progress={progress}

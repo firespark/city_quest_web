@@ -1,93 +1,10 @@
-.page {
-    width: calc(100% - 40px);
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 24px 0 78px;
-}
-
-.hero {
-    position: relative;
-    display: flex;
-    align-items: center;
-    min-height: 465px;
-    overflow: hidden;
-    border-radius: 18px;
-    background: #0c293c;
-}
-
-.heroImage {
-    position: absolute;
-    inset: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.heroShade {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg,
-            rgba(5, 25, 32, 0.94) 0%,
-            rgba(5, 25, 32, 0.77) 35%,
-            rgba(5, 25, 32, 0.14) 100%);
-}
-
-.heroContent {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 680px;
-    padding: 58px 64px 70px;
-}
-
-.badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 7px 15px;
-    border-radius: 20px;
-    background: #f8d67a;
-    color: #0c293c;
-    font-size: 12px;
-    font-weight: 850;
-    line-height: 1.3;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-.heroCity {
-    margin-top: 24px;
-    color: #d9edf1;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.4;
-}
-
-.heroTitle {
-    max-width: 560px;
-    margin: 10px 0 16px;
-    color: #ffffff;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: clamp(38px, 5vw, 62px);
-    font-weight: 700;
-    line-height: 1.06;
-    letter-spacing: -1px;
-    overflow-wrap: anywhere;
-}
-
 .heroSubtitle {
     max-width: 450px;
     margin: 0;
-    color: #eef6f8;
-    font-size: 18px;
-    font-weight: 500;
+    color: var(--color-white);
+    font-weight: 400;
     line-height: 1.6;
-}
-
-.heroAction {
-    margin-top: 24px;
+    font-size: var(--font-size-18);
 }
 
 .heroIcon {
@@ -95,7 +12,7 @@
     width: auto;
     height: 32px;
     max-width: 180px;
-    margin-top: 25px;
+    margin-top: 32px;
     object-fit: contain;
     object-position: left center;
 }
@@ -105,7 +22,7 @@
     box-sizing: border-box;
     width: 100%;
     max-width: 900px;
-    margin: 0 auto 42px;
+    margin: 0 auto 48px;
     padding: 0 16px;
 }
 
@@ -116,65 +33,13 @@
     gap: 48px;
 }
 
-.aboutContent {
-    min-width: 0;
-}
-
-.eyebrow {
-    margin: 0 0 12px;
-    color: #0797ae;
-    font-size: 12px;
-    font-weight: 850;
-    line-height: 1.4;
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-}
-
-.sectionTitle {
-    margin: 0 0 20px;
-    color: #0c293c;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: clamp(28px, 3.3vw, 40px);
-    font-weight: 700;
-    line-height: 1.17;
-    letter-spacing: -0.5px;
-    overflow-wrap: anywhere;
-}
-
-.richText {
-    max-width: 630px;
-    color: #425568;
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-.richText>div {
-    padding: 0;
-    margin: 0;
-}
-
-.richText p {
-    margin: 0 0 14px;
-}
-
-.richText p:last-child {
-    margin-bottom: 0;
-}
-
 .aboutDecoration {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 170px;
-    color: #168da3;
-}
-
-.aboutDecoration {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 170px;
+    color: var(--color-blue);
 }
 
 .aboutImage {
@@ -187,56 +52,22 @@
 }
 
 .stepsSection {
-    margin: 0 16px 46px;
-}
-
-.stepsHeading {
-    margin: 0 0 24px;
-    color: #0c293c;
-    font-size: clamp(25px, 2.8vw, 32px);
-    font-weight: 850;
-    line-height: 1.2;
-}
-
-.stepsGrid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-}
-
-.stepCard {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    padding: 26px 24px 30px;
-    border: 1px solid #e1edf0;
-    border-radius: 16px;
-    background: #ffffff;
-    box-shadow: 0 8px 24px rgba(12, 41, 60, 0.045);
+    margin: 0 16px 48px;
 }
 
 .stepNumber {
-    margin-bottom: 25px;
-    color: #17a2b8;
-    font-size: 34px;
-    font-weight: 850;
+    color: var(--color-blue);
+    font-weight: 800;
     line-height: 1;
-    letter-spacing: -1px;
+    font-size: var(--font-size-34);
 }
 
 .stepTitle {
     margin: 0 0 12px;
-    color: #0c293c;
-    font-size: 18px;
+    color: var(--color-dark-blue);
     font-weight: 800;
-    line-height: 1.35;
-}
-
-.stepDescription {
-    margin: 0;
-    color: #698191;
-    font-size: 15px;
-    line-height: 1.65;
+    line-height: 1.4;
+    font-size: var(--font-size-18);
 }
 
 .signup {
@@ -250,12 +81,14 @@
 }
 
 .signupLight {
-    background: linear-gradient(115deg, #daf5f7, #effafa);
+    background: linear-gradient(115deg, var(--color-light-gray), var(--color-light-gray));
+    color: var(--color-dark-blue);
 }
 
 .signupDark {
-    margin-top: 28px;
-    background: #0c293c;
+    margin-top: 32px;
+    background: var(--color-dark-blue);
+    color: var(--color-white);
 }
 
 .signupContent {
@@ -264,58 +97,18 @@
     min-width: 0;
 }
 
-.signupEyebrow {
-    margin-bottom: 12px;
-    color: #1196a9;
-    font-size: 11px;
-    font-weight: 850;
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-}
-
-.signupDark .signupEyebrow {
-    color: #8ed6e0;
-}
-
-.signupTitle {
-    margin: 0 0 12px;
-    color: #0c293c;
-    font-size: clamp(25px, 3vw, 32px);
-    line-height: 1.2;
-    font-weight: 850;
-}
-
-.signupDark .signupTitle {
-    color: #ffffff;
-}
-
-.signupText {
-    max-width: 570px;
-    margin: 0 0 22px;
-    color: #587488;
-    font-size: 15px;
-    line-height: 1.65;
-}
-
-.signupDark .signupText {
-    color: #c6dbe3;
-}
-
 .signupArtwork {
     display: grid;
     place-items: center;
     justify-self: center;
     width: 132px;
     height: 132px;
-    border: 9px solid rgba(23, 162, 184, 0.16);
+    border: 9px solid #17A2B833;
     border-radius: 50%;
-    color: #17a2b8;
+    color: var(--color-blue);
     text-decoration: none;
     cursor: pointer;
-    transition:
-        border-color 0.25s ease,
-        background-color 0.25s ease,
-        box-shadow 0.25s ease;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .signupArtwork svg {
@@ -324,93 +117,63 @@
 }
 
 .signupArtwork:hover {
-    border-color: rgba(23, 162, 184, 0.4);
-    background-color: rgba(23, 162, 184, 0.06);
-    box-shadow: 0 12px 28px rgba(23, 162, 184, 0.16);
+    color: var(--color-blue-hover);
 }
 
 .signupArtwork:focus-visible {
-    outline: 3px solid #17a2b8;
+    outline: 3px solid var(--color-blue);
     outline-offset: 5px;
 }
 
 .signupDark .signupArtwork {
-    border-color: rgba(142, 214, 224, 0.26);
-    color: #8ed6e0;
+    border-color: #D8F4F74D;
+    color: var(--color-light-gray);
 }
 
 .signupDark .signupArtwork:hover {
-    border-color: rgba(142, 214, 224, 0.6);
-    background-color: rgba(142, 214, 224, 0.08);
-    box-shadow: 0 12px 30px rgba(142, 214, 224, 0.12);
+    color: var(--color-light-blue-hover);
 }
 
 .signupDark .signupArtwork:focus-visible {
-    outline-color: #8ed6e0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .signupArtwork {
-        transition: none;
-    }
-
+    outline-color: var(--color-light-gray);
 }
 
 .signupButtonLight {
-    --button-bg: #17a2b8;
-    --button-hover: #12879a;
+    --button-bg: var(--color-blue);
+    --button-hover: var(--color-blue-hover);
 }
 
 .signupButtonDark {
-    --button-bg: #ffffff;
-    --button-hover: #eff8fa;
-    --button-text: #0c6577;
-    --button-shadow: transparent;
+    --button-bg: var(--color-white);
+    --button-hover: var(--color-light-blue-hover);
+    --button-text: var(--color-dark-blue);
 }
 
 .supportSection {
-    margin: 66px 16px 0;
-}
-
-.supportTitle {
-    margin: 0 0 25px;
-    color: #0c293c;
-    font-size: clamp(27px, 3.3vw, 38px);
-    font-weight: 850;
-    line-height: 1.2;
-}
-
-.galleryGrid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-}
-
-.galleryGridSingle {
-    grid-template-columns: minmax(0, 340px);
+    margin: 72px 16px 0;
 }
 
 .galleryCard {
     min-width: 0;
     padding: 0;
-    border: 1px solid #e1edf0;
+    border: 1px solid var(--color-light-gray);
     border-radius: 14px;
     overflow: hidden;
-    background: #ffffff;
+    background: var(--color-white);
     text-align: left;
     font: inherit;
     cursor: zoom-in;
-    box-shadow: 0 6px 18px rgba(12, 41, 60, 0.05);
-    transition: box-shadow 0.2s, border-color 0.2s;
+    box-shadow: var(--card-shadow);
+    transition: color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .galleryCard:hover {
-    border-color: #8bcfd9;
-    box-shadow: 0 10px 26px rgba(12, 41, 60, 0.10);
+    border-color: var(--color-light-blue-hover);
+    box-shadow: var(--card-shadow);
 }
 
 .galleryCard:focus-visible {
-    outline: 3px solid #17a2b8;
+    outline: 3px solid var(--color-blue);
     outline-offset: 3px;
 }
 
@@ -418,19 +181,7 @@
     position: relative;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    background: #eaf7f9;
-}
-
-.galleryImage {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.35s ease;
-}
-
-.galleryCard:hover .galleryImage {
-    transform: scale(1.04);
+    background: var(--color-light-gray);
 }
 
 .galleryExpand {
@@ -440,36 +191,36 @@
     box-sizing: content-box;
     padding: 9px;
     border-radius: 9px;
-    background: rgba(12, 41, 60, 0.7);
-    color: #ffffff;
+    background: #2C3E50B3;
+    color: var(--color-white);
 }
 
 .galleryCardTitle {
     display: block;
     padding: 13px 16px;
-    color: #0c293c;
-    font-size: 15px;
-    font-weight: 750;
+    color: var(--color-dark-blue);
+    font-weight: 700;
 }
 
 .galleryDialog {
     position: fixed;
     inset: 0;
     box-sizing: border-box;
-    width: min(980px, calc(100% - 32px));
-    max-width: calc(100% - 32px);
-    max-height: calc(100dvh - 32px);
-    padding: 0;
-    margin: auto;
-    overflow: hidden;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    padding: 16px;
+    margin: 0;
+    overflow: auto;
     border: 0;
-    border-radius: 18px;
-    background: #ffffff;
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    height: 100dvh;
 }
 
 .galleryDialog::backdrop {
-    background: rgba(6, 24, 35, 0.83);
+    background: #2C3E50CC;
 }
 
 .galleryDialogContent {
@@ -477,6 +228,12 @@
     display: flex;
     flex-direction: column;
     max-height: calc(100dvh - 32px);
+    width: min(980px,100%);
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    background: var(--color-white);
+    box-shadow: var(--card-shadow);
 }
 
 .galleryClose {
@@ -491,8 +248,8 @@
     padding: 0;
     border: none;
     border-radius: 50%;
-    background: rgba(12, 41, 60, 0.78);
-    color: #ffffff;
+    background: #2C3E50CC;
+    color: var(--color-white);
     cursor: pointer;
 }
 
@@ -501,7 +258,9 @@
     width: 100%;
     max-height: calc(100dvh - 132px);
     object-fit: contain;
-    background: #0c293c;
+    background: var(--color-dark-blue);
+    min-height: 0;
+    flex: 1 1 auto;
 }
 
 .galleryDialogFooter {
@@ -510,13 +269,15 @@
     justify-content: space-between;
     gap: 20px;
     padding: 14px 20px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
 }
 
 .galleryDialogTitle {
     min-width: 0;
-    color: #0c293c;
-    font-size: 15px;
-    font-weight: 750;
+    color: var(--color-dark-blue);
+    font-weight: 700;
+    overflow-wrap: anywhere;
 }
 
 .galleryDialogNav {
@@ -527,10 +288,10 @@
 }
 
 .galleryCounter {
-    margin-right: 10px;
-    color: #698191;
-    font-size: 13px;
+    margin-right: 12px;
+    color: var(--color-gray);
     white-space: nowrap;
+    font-size: var(--font-size-14);
 }
 
 .galleryNavButton {
@@ -540,25 +301,33 @@
     width: 36px;
     height: 36px;
     padding: 0;
-    border: 1px solid #dcebf0;
+    border: 1px solid var(--color-light-gray);
     border-radius: 9px;
-    background: #f3fafb;
-    color: #12879a;
+    background: var(--color-light-gray);
+    color: var(--color-blue-hover);
     cursor: pointer;
 }
 
 .galleryNavButton:hover {
-    background: #e2f5f7;
+    background: var(--color-light-blue-hover);
 }
 
 .additionalContent {
     margin-top: 0;
 }
 
+.galleryDialog[open] {
+    display: grid;
+    place-items: center;
+}
+
+.galleryClose:hover {
+    background: var(--color-dark-blue);
+}
+
+/* Responsive overrides */
+
 @media (max-width: 800px) {
-    .heroContent {
-        padding: 48px 40px 70px;
-    }
 
     .about {
         max-width: 760px;
@@ -573,74 +342,20 @@
         width: 115px;
     }
 
-    .stepsGrid {
-        gap: 12px;
-    }
-
-    .stepCard {
-        padding: 24px 18px;
-    }
-
     .stepNumber {
-        margin-bottom: 20px;
-        font-size: 30px;
+        font-size: var(--font-size-32);
     }
 
     .stepTitle {
-        font-size: 16px;
-    }
-
-    .stepDescription {
-        font-size: 14px;
-    }
-
-    .galleryGrid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    .galleryGridSingle {
-        grid-template-columns: minmax(0, 340px);
+        font-size: var(--font-size-16);
     }
 }
 
 @media (max-width: 620px) {
-    .page {
-        width: calc(100% - 28px);
-        padding: 16px 0 48px;
-    }
-
-    .hero {
-        min-height: 390px;
-    }
-
-    .heroContent {
-        padding: 40px 26px 62px;
-    }
-
-    .heroShade {
-        background: linear-gradient(90deg,
-                rgba(5, 25, 32, 0.95) 0%,
-                rgba(5, 25, 32, 0.75) 48%,
-                rgba(5, 25, 32, 0.24) 100%);
-    }
-
-    .heroCity {
-        margin-top: 20px;
-        font-size: 14px;
-    }
-
-    .heroTitle {
-        font-size: clamp(34px, 8vw, 45px);
-    }
 
     .heroSubtitle {
         max-width: 310px;
-        font-size: 16px;
-    }
-
-    .heroDecoration {
-        margin-top: 18px;
+        font-size: var(--font-size-16);
     }
 
     .about {
@@ -649,16 +364,7 @@
         width: 100%;
         max-width: none;
         padding: 0 8px;
-        margin-bottom: 30px;
-    }
-
-    .sectionTitle {
-        font-size: 30px;
-    }
-
-    .richText {
-        max-width: none;
-        font-size: 15px;
+        margin-bottom: 32px;
     }
 
     .aboutDecoration {
@@ -675,50 +381,22 @@
     }
 
     .stepsSection {
-        margin: 0 4px 34px;
-    }
-
-    .stepsHeading {
-        margin-bottom: 18px;
-        font-size: 26px;
-    }
-
-    .stepsGrid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .stepCard {
-        padding: 20px 22px;
+        margin: 0 4px 40px;
     }
 
     .stepNumber {
-        margin-bottom: 12px;
-        font-size: 28px;
+        font-size: var(--font-size-26);
     }
 
     .stepTitle {
-        margin-bottom: 6px;
-        font-size: 17px;
-    }
-
-    .stepDescription {
-        font-size: 14px;
-        line-height: 1.55;
+        margin-bottom: 8px;
+        font-size: var(--font-size-18);
     }
 
     .signup {
         grid-template-columns: minmax(0, 1fr);
         gap: 12px;
         padding: 27px 24px;
-    }
-
-    .signupTitle {
-        font-size: 26px;
-    }
-
-    .signupText {
-        font-size: 14px;
     }
 
     .signupArtwork {
@@ -729,19 +407,8 @@
         margin: 48px 4px 0;
     }
 
-    .supportTitle {
-        margin-bottom: 18px;
-        font-size: 29px;
-    }
-
-    .galleryGrid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-    }
-
     .galleryCardTitle {
         padding: 10px 11px;
-        font-size: 13px;
     }
 
     .galleryExpand {
@@ -755,8 +422,8 @@
     }
 }
 
-@media (max-width: 360px) {
-    .galleryGrid {
-        grid-template-columns: 1fr;
+@media (prefers-reduced-motion: reduce) {
+    .signupArtwork {
+        transition: none;
     }
 }

@@ -103,7 +103,7 @@ export const GameTemplate = ({ game, setGame, setModal, nextGame }: GameTemplate
                 </div>
             </header>
 
-            <main className={`${mainStyle.flex} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.flex} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
                 <div className={mainStyle.scrollContent}>
                     {template}
                 </div>

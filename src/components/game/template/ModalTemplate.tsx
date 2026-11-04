@@ -116,7 +116,7 @@ export const ModalTemplate = ({ game, modal, setModal, setGame, nextGame }: Moda
                 <ModalClose setModal={handleClose} />
             </header>
 
-            <main className={`${mainStyle.flex} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.flex} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
                 <div className={gameStyle.modalTemplateWrapper}>
                     {content}
                 </div>

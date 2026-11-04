@@ -1,3 +1,5 @@
+import questsStyle from '../../../styles/questsStyle.module.css'
+import mainStyle from '../../../styles/mainStyle.module.css'
 
 import { FormattedContent } from '../../common/FormattedContent'
 
@@ -22,18 +24,18 @@ export const ComingSoonAbout = ({
                 ${additionalImage ? comingSoonStyle.aboutWithImage : ''}
             `}
         >
-            <div className={comingSoonStyle.aboutContent}>
+            <div className={mainStyle.shrinkable}>
 
-                <div className={comingSoonStyle.eyebrow}>
+                <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                     О квесте
                 </div>
 
-                <h2 className={comingSoonStyle.sectionTitle}>
+                <h2 className={questsStyle.sectionTitle}>
                     Что это за игра
                 </h2>
 
                 {content && (
-                    <div className={comingSoonStyle.richText}>
+                    <div className={`${mainStyle.articleContent} ${mainStyle.bodyText} ${mainStyle.formattedContent}`}>
                         <FormattedContent text={content} />
                     </div>
                 )}

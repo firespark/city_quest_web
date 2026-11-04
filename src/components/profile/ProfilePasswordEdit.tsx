@@ -91,7 +91,7 @@ export const ProfilePasswordEdit = ({ setTemplate, setSuccess }: ProfilePassword
 
     return (
         <form
-            className={formsStyle.blockForm}
+            className={mainStyle.shrinkable}
             onSubmit={(event) => {
                 event.preventDefault()
                 void savePassword()
@@ -143,7 +143,7 @@ export const ProfilePasswordEdit = ({ setTemplate, setSuccess }: ProfilePassword
             </div>
 
             {error && (
-                <div className={mainStyle.mb15}>
+                <div className={mainStyle.mb16}>
                     <Error text={error} />
                 </div>
             )}

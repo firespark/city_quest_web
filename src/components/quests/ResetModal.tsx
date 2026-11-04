@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import { useState, useContext, useEffect, useRef } from 'react'
 
@@ -134,14 +135,14 @@ export const ResetModal = ({
 
                 <h2
                     id="reset-dialog-title"
-                    className={modalStyle.resetModalTitle}
+                    className={`${mainStyle.formTitle} ${mainStyle.mb24}`}
                 >
                     Сбросить прогресс?
                 </h2>
 
                 <p
                     id="reset-dialog-description"
-                    className={modalStyle.resetModalDescription}
+                    className={`${mainStyle.bodyText} ${mainStyle.mb32}`}
                 >
                     Весь прогресс прохождения этого квеста будет удалён.
                     Вы сможете начать его заново, но восстановить

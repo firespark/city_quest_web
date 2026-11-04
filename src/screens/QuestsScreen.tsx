@@ -2,7 +2,7 @@
 import { useContext } from 'react'
 
 import mainStyle from '../styles/mainStyle.module.css'
-import questsStyle from '../styles/questsStyle.module.css'
+
 
 import { MainContext } from '../context/mainContext'
 import { Breadcrumbs } from '../components/common/Breadcrumbs'
@@ -16,9 +16,9 @@ export const QuestsScreen = () => {
 
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
 
-                <div className={questsStyle.questsPage}>
+                <div className={mainStyle.sitePage}>
 
                     <Breadcrumbs
                         items={[

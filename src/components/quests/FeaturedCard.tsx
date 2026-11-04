@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import { Link } from 'react-router-dom'
 import { IoArrowForward } from 'react-icons/io5'
@@ -17,7 +18,7 @@ export const FeaturedCard = ({ quest }: { quest: FeaturedQuestData }) => {
                     src={quest.image}
                     alt=""
                     loading="lazy"
-                    className={questsStyle.featuredImage}
+                    className={mainStyle.interactiveImage}
                 />
 
                 <div className={questsStyle.questBadgeOverlay}>
@@ -36,13 +37,19 @@ export const FeaturedCard = ({ quest }: { quest: FeaturedQuestData }) => {
 
             <div className={questsStyle.featuredBody}>
                 {quest.city && (
-                    <span className={questsStyle.featuredCity}>
-                        {quest.city}
-                    </span>
+                    quest.city_slug ? (
+                        <Link to={slugUrl(quest.city_slug)} className={questsStyle.featuredCity}>
+                            {quest.city}
+                        </Link>
+                    ) : <span className={questsStyle.featuredCity}>{quest.city}</span>
                 )}
 
                 <h3 className={questsStyle.featuredTitle}>
-                    {quest.title}
+                    {quest.slug ? (
+                        <Link to={slugUrl(quest.slug)} className={questsStyle.featuredQuestLink}>
+                            {quest.title}
+                        </Link>
+                    ) : quest.title}
                 </h3>
 
                 <div className={questsStyle.featuredBottom}>
@@ -63,16 +70,9 @@ export const FeaturedCard = ({ quest }: { quest: FeaturedQuestData }) => {
         </>
     )
 
-    return quest.slug ? (
-        <Link
-            to={slugUrl(quest.slug)}
-            className={questsStyle.featuredCard}
-        >
+    return (
+        <article className={`${questsStyle.featuredCard} ${mainStyle.imageHover}`}>
             {content}
-        </Link>
-    ) : (
-        <div className={questsStyle.featuredCard}>
-            {content}
-        </div>
+        </article>
     )
 }

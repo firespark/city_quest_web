@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import { useContext, useState, useEffect, useRef } from 'react'
 import {
@@ -54,34 +55,33 @@ export const CountrySelector = () => {
                 className={modalStyle.countriesPremiumSelector}
                 onClick={() => setModalVisible(true)}
             >
-                <div className={modalStyle.countriesSelectorLeft}>
+                <div className={mainStyle.panelRowLeft}>
                     <div className={modalStyle.countriesIconCircle}>
 
 
                         {selectedCountry && selectedCountry.flag ? (
                             <span
-                                className={`fi fi-${selectedCountry.flag.toLowerCase()}`}
-                                style={{ fontSize: 18 }}
+                                className={`fi fi-${selectedCountry.flag.toLowerCase()} ${modalStyle.countryFlag}`}
                                 aria-hidden="true"
                             />
                         ) : (
                             <IoGlobeOutline
                                 size={18}
-                                color="#7F8C8D"
+                                className={mainStyle.textMuted}
                             />
                         )}
 
                     </div>
                     <div>
-                        <div className={modalStyle.countriesLabel}>Страна</div>
-                        <div className={modalStyle.countryName}>
+                        <div className={mainStyle.metaLabel}>Страна</div>
+                        <div className={mainStyle.strongText}>
                             {selectedCountry ? selectedCountry.title : 'Выберите страну'}
                         </div>
                     </div>
                 </div>
                 <IoChevronDownOutline
                     size={16}
-                    color="#7F8C8D"
+
                     className={modalStyle.countriesChevron}
                 />
             </button>
@@ -112,12 +112,12 @@ export const CountrySelector = () => {
 
                         <div
                             id="countries-sheet-title"
-                            className={modalStyle.countriesSheetTitle}
+                            className={`${mainStyle.formTitle} ${mainStyle.mb24} ${mainStyle.heading}`}
                         >
                             Выберите страну
                         </div>
 
-                        <div className={modalStyle.countriesList}>
+                        <div className={mainStyle.scrollArea}>
                             {countries.map((item) => {
                                 const isSelected = item.id === countryId
 
@@ -125,17 +125,16 @@ export const CountrySelector = () => {
                                     <button
                                         type="button"
                                         key={item.id.toString()}
-                                        className={`${modalStyle.countriesItemRow} ${isSelected ? modalStyle.countriesItemRowActive : ''}`}
+                                        className={`${modalStyle.countriesItemRow} ${isSelected ? mainStyle.bgLightGray : ''}`}
                                         onClick={() => onSelect(item.id)}
                                     >
                                         <span
-                                            className={`${modalStyle.countriesItemText} ${isSelected ? modalStyle.countriesItemTextActive : ''}`}
+                                            className={`${mainStyle.optionText} ${isSelected ? mainStyle.textBlue : ''}`}
                                         >
 
                                             {item.flag && (
                                                 <span
-                                                    className={`fi fi-${item.flag.toLowerCase()}`}
-                                                    style={{ marginRight: 8 }}
+                                                    className={`fi fi-${item.flag.toLowerCase()} ${mainStyle.mr8}`}
                                                     aria-hidden="true"
                                                 />
                                             )}

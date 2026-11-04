@@ -1,8 +1,3 @@
-
-.blockForm {
-    min-width: 0;
-}
-
 .blockFields {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -14,12 +9,12 @@
     box-sizing: border-box;
     width: 100%;
     min-width: 0;
-    border: 1px solid #d7e9ec;
+    border: 1px solid var(--color-light-gray);
     border-radius: 10px;
-    background-color: #ffffff;
-    color: #2c3e50;
+    background-color: var(--color-white);
+    color: var(--color-dark-blue);
     font: inherit;
-    font-size: 16px;
+    box-shadow: var(--card-shadow);
 }
 
 .blockInput {
@@ -36,7 +31,7 @@
 
 .blockInput:focus,
 .blockTextarea:focus {
-    border-color: #17a2b8;
+    border-color: var(--color-blue);
     outline: none;
 }
 
@@ -44,9 +39,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 14px;
-    color: #5a6a7a;
-    font-size: 16px;
+    margin-top: 16px;
+    color: var(--color-gray);
     cursor: pointer;
 }
 
@@ -55,35 +49,35 @@
     width: 18px;
     height: 18px;
     margin: 0;
-    accent-color: #17a2b8;
+    accent-color: var(--color-blue);
     cursor: pointer;
 }
 
 .blockError {
     margin-top: 12px;
-    color: #e74c3c;
-    font-size: 16px;
-}
-
-.blockSuccess {
-    color: #2c3e50;
-    font-size: 18px;
-    font-weight: 700;
+    color: var(--color-red);
 }
 
 .blockButtonRow {
     display: flex;
-    justify-content: var(--form-actions-align, flex-end);
-    margin-top: 14px;
+    justify-content: var(--form-actions-align, flex-start);
+    margin-top: 32px;
 }
 
 .blockInputInvalid {
-    border-color: #e74c3c;
-    background-color: rgba(231, 76, 60, 0.05);
+    border-color: var(--color-red);
+    background-color: #E74C3C1A;
 }
+
+/* Responsive overrides */
 
 @media (max-width: 500px) {
     .blockFields {
         grid-template-columns: 1fr;
+    }
+
+    .blockButtonRow > button {
+        width: 100%;
+        min-width: 0;
     }
 }

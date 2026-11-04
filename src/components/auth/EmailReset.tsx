@@ -64,11 +64,11 @@ export const EmailReset = ({
     return (
         <div className={authStyle.authStep}>
 
-            <div className={`${mainStyle.formTitle} ${mainStyle.mb10} ${mainStyle.textCenter}`}>
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb12} ${mainStyle.textCenter} ${mainStyle.heading}`}>
                 Восстановление доступа
             </div>
 
-            <div className={`${mainStyle.formSubtitle} ${mainStyle.mb25}`}>
+            <div className={`${mainStyle.formSubtitle} ${mainStyle.mb32}`}>
                 Введите ваш Email для восстановления пароля:
             </div>
 

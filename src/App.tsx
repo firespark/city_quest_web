@@ -7,6 +7,7 @@ import { LayoutMeta } from './LayoutMeta'
 
 import { Header } from './components/header/Header'
 import { Footer } from './components/footer/Footer'
+import { ConnectionErrorContent, ConnectionErrorProvider } from './components/common/ConnectionError'
 
 import { ROUTES } from './routes'
 import mainStyle from './styles/mainStyle.module.css'
@@ -23,15 +24,19 @@ const AppContent = () => {
                 : undefined
 
     return (
-        <div className={mainStyle.siteLayout}>
-            <Header />
+        <ConnectionErrorProvider>
+            <div className={mainStyle.siteLayout}>
+                <Header />
 
-            <div className={mainStyle.siteContent}>
-                <Layout />
+                <div className={mainStyle.siteContent}>
+                    <ConnectionErrorContent>
+                        <Layout />
+                    </ConnectionErrorContent>
+                </div>
+
+                <Footer active={active} />
             </div>
-
-            <Footer active={active} />
-        </div>
+        </ConnectionErrorProvider>
     )
 }
 

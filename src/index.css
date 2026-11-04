@@ -1,13 +1,50 @@
+@import './styles/variables.css';
+@import './styles/fonts.css';
 
 :root {
-  font-family: Roboto, "Segoe UI", Arial, sans-serif;
-  color: #2C3E50;
-  background-color: #FFFFFF;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-16);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-dark-blue);
+  background-color: var(--color-white);
   font-synthesis: none;
 }
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  line-height: 1.2;
+}
+
+strong,
+b {
+  font-weight: 700;
 }
 
 html,
@@ -25,4 +62,46 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+}
+
+/* Lock the page while a gallery or navigation overlay is open. */
+html:has(dialog[open], [popover]:popover-open),
+body:has(dialog[open], [popover]:popover-open) {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-blue-hover);
+}
+
+a,
+button {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+@media (max-width: 760px) {
+  html {
+    scrollbar-gutter: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }

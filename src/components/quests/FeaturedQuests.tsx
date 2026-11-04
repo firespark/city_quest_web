@@ -15,6 +15,7 @@ export type FeaturedQuestData = {
     title: string
     image: string
     city?: string | null
+    city_slug?: string | null
     sights_count: number
     slug: string | null
     paid: boolean
@@ -88,7 +89,7 @@ export const FeaturedQuests = ({
 
     return (
         <section className={questsStyle.featuredSection}>
-            <div className={questsStyle.featuredInner}>
+            <div className={mainStyle.contentContainer}>
                 <h2 className={mainStyle.welcomeTitle}>
                     {title}
                 </h2>
@@ -99,7 +100,7 @@ export const FeaturedQuests = ({
                     </p>
                 )}
 
-                <div className={questsStyle.featuredGrid}>
+                <div className={`${mainStyle.cardGrid} ${mainStyle.questGrid}`}>
                     {visibleQuests.map(quest => (
                         <FeaturedCard
                             key={quest.id}

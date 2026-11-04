@@ -1,3 +1,4 @@
+import questsStyle from '../../../styles/questsStyle.module.css'
 
 import type { Dispatch, SetStateAction, ReactNode } from 'react'
 
@@ -24,14 +25,14 @@ export const ModalTask1 = ({ game, setModal, setGame }: ModalTask1Props) => {
     const sightHint1 = game.sight_hint1 as { text?: unknown, image?: unknown } | null
 
     return (
-        <div className={mainStyle.mt5}>
+        <div className={mainStyle.mt8}>
 
-            <div className={mainStyle.preTitle}>Задание выполнено</div>
-            <div className={mainStyle.titleMain}>{game.sight_title as ReactNode}</div>
+            <div className={`${questsStyle.eyebrow} ${mainStyle.green} ${mainStyle.textCenter}`}>Задание выполнено</div>
+            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>{game.sight_title as ReactNode}</div>
 
             <div className={mainStyle.divider} />
 
-            <div className={mainStyle.mb20}>
+            <div className={mainStyle.mb24}>
                 <TaskTemplate
                     tasks={task.tasks}
                     game={game}
@@ -44,7 +45,7 @@ export const ModalTask1 = ({ game, setModal, setGame }: ModalTask1Props) => {
 
             {sightHint1 && (
                 <div className={gameStyle.gameHintSection}>
-                    <div className={gameStyle.gameSectionLabel}>
+                    <div className={`${questsStyle.eyebrow} ${mainStyle.orange} ${mainStyle.textCenter}`}>
                         Использованная подсказка:
                     </div>
                     <Hint text={sightHint1.text} image={sightHint1.image} />

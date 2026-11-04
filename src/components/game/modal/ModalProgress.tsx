@@ -69,21 +69,21 @@ export const ModalProgress = ({ game, setGame, setModal }: ModalProgressProps) =
         let textSt = gameStyle.progressTextDisabled
 
         if (i < stepTotal) {
-            st = gameStyle.progressMedalDone
+            st = mainStyle.bgLightGray
             textSt = gameStyle.progressTextLight
         }
 
         if (i == levels) {
-            st = gameStyle.progressMedalFinish
+            st = mainStyle.bgLightGray
         }
 
         if (i == stepTotal) {
-            st = gameStyle.progressMedalInProgress
+            st = mainStyle.bgBlue
             textSt = gameStyle.progressTextLight
         }
 
         if (i == levels && i == stepTotal) {
-            st = gameStyle.progressMedalFinishDone
+            st = mainStyle.bgOrange
         }
 
         const isCurrent = i == game.step
@@ -138,14 +138,14 @@ export const ModalProgress = ({ game, setGame, setModal }: ModalProgressProps) =
 
     return (
         <div className={`${mainStyle.container} ${mainStyle.center}`}>
-            <div className={mainStyle.mb20}>
-                <div className={mainStyle.titleMain}>
+            <div className={mainStyle.mb24}>
+                <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
                     Карта тура
                 </div>
             </div>
 
             {error && (
-                <div className={mainStyle.mb15}>
+                <div className={mainStyle.mb16}>
                     <Error text={error} />
                 </div>
             )}

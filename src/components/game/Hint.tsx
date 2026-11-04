@@ -10,8 +10,8 @@ export const Hint = ({ text, image }: {
 }) => {
 
     return (
-        <div className={mainStyle.mt20}>
-            <div className={`${mainStyle.textThin} ${mainStyle.textCenter}`}>
+        <div className={mainStyle.mt24}>
+            <div className={`${mainStyle.description} ${mainStyle.textThin} ${mainStyle.textCenter}`}>
                 Подсказка:
             </div>
 
@@ -19,7 +19,7 @@ export const Hint = ({ text, image }: {
                 <FullWidthImage source={{ uri: image as string }} />
             ) : null}
 
-            <div className={`${mainStyle.text} ${mainStyle.mt20}`}>
+            <div className={`${mainStyle.description} ${mainStyle.mt24}`}>
                 {text as ReactNode}
             </div>
         </div>

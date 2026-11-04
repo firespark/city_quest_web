@@ -72,11 +72,9 @@ export const FooterCities = () => {
             {loader ? (
                 <Loader />
             ) : error === 'connection_error' ? (
-                <div className={mainStyle.card}>
-                    <ConnectionError onRetry={fetchData} />
-                </div>
+                <ConnectionError onRetry={fetchData} />
             ) : error ? (
-                <div className={mainStyle.mb20}>
+                <div className={mainStyle.mb24}>
                     <div className={mainStyle.errorText}>{error}</div>
                 </div>
             ) : (

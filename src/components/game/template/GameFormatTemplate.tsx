@@ -64,7 +64,7 @@ export const GameFormatTemplate = ({ setGame }: GameFormatTemplateProps) => {
     return (
         <div className={gameStyle.modeTemplateContainer}>
             <div className={mainStyle.center}>
-                <div className={mainStyle.titleMain}>
+                <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
                     Выбери формат
                 </div>
             </div>
@@ -80,7 +80,7 @@ export const GameFormatTemplate = ({ setGame }: GameFormatTemplateProps) => {
                 </div>
             )}
 
-            <div className={`${mainStyle.center} ${mainStyle.mt5}`}>
+            <div className={`${mainStyle.center} ${mainStyle.mt8}`}>
                 <button
                     type="button"
                     className={mainStyle.primaryButton}

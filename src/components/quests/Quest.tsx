@@ -50,17 +50,17 @@ export const Quest = ({ quest }: { quest: QuestData }) => {
 
             <div className={questsStyle.questInfoContainer}>
                 <div className={questsStyle.questMainTextContent}>
-                    <div className={questsStyle.questTitle}>
+                    <div className={`${questsStyle.questTitle} ${mainStyle.heading}`}>
                         {quest.title}
                     </div>
 
                     <div className={questsStyle.questStatRow}>
                         <div className={questsStyle.questIconCircle}>
-                            <IoLibrary size={20} color="#17A2B8" />
+                            <IoLibrary size={20} className={mainStyle.blue} />
                         </div>
 
-                        <div className={questsStyle.questTextContainer}>
-                            <span className={questsStyle.questLabel}>
+                        <div className={mainStyle.textColumn}>
+                            <span className={mainStyle.metaLabel}>
                                 Локаций: {quest.sights_count}
                             </span>
                         </div>

@@ -1,29 +1,14 @@
 .countriesSection {
   width: 100%;
   padding: 64px 20px;
-  background-color: #EAF7F9;
-}
-
-.countriesInner {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-.countriesInner > p {
-  margin: 8px 0 28px;
-}
-
-.countriesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  background-color: var(--color-light-gray);
 }
 
 .countryCard {
   min-width: 0;
   padding: 24px;
-  background-color: #FFFFFF;
-  border: 1px solid #DDEDF0;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
   border-radius: 18px;
 }
 
@@ -31,12 +16,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0 0 20px;
-  color: #2C3E50;
-  font-size: 19px;
+  margin: 0 0 24px;
+  color: var(--color-dark-blue);
   font-weight: 800;
+  font-size: var(--font-size-18);
 }
-
 
 .countryCities {
   display: grid;
@@ -47,12 +31,10 @@
   align-items: start;
 }
 
-
 .countryCities a,
 .countryCities a:visited,
 .countryCities span {
-  color: #5A6A7A;
-  font-size: 16px;
+  color: var(--color-gray);
   line-height: 1.4;
   overflow-wrap: anywhere;
 }
@@ -64,23 +46,14 @@
 
 .countryCities a:hover,
 .countryCities a:focus-visible {
-  color: #17A2B8;
+  color: var(--color-blue-hover);
 }
 
-@media (max-width: 900px) {
-  .countriesGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
+/* Responsive overrides */
 
 @media (max-width: 600px) {
   .countriesSection {
     padding: 44px 16px;
-  }
-
-  .countriesGrid {
-    grid-template-columns: 1fr;
-    gap: 14px;
   }
 
   .countryCard {

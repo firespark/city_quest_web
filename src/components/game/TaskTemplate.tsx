@@ -47,10 +47,9 @@ export const TaskTemplate = ({
     }
 
     const isGrid = taskItems.length > 1
-    const gridWidth = taskItems.length >= 3 ? '31%' : '48%'
 
     return (
-        <div className={`${mainStyle.mt10} ${isGrid ? gameStyle.taskGridWrapper : ''}`}>
+        <div className={`${mainStyle.mt12} ${isGrid ? gameStyle.taskGridWrapper : ''}`}>
             {taskItems.map((task, index) => {
 
                 const cleanTaskText = (text: unknown) =>
@@ -68,19 +67,15 @@ export const TaskTemplate = ({
                 const cardClassName = [
                     mainStyle.card,
                     gameStyle.taskCard,
-                    isGrid ? gameStyle.taskCardGridItem : ''
+                    isGrid ? gameStyle.taskCardGridItem : '',
+                    isGrid && taskItems.length < 3 ? gameStyle.taskCardPair : ''
                 ].filter(Boolean).join(' ')
-
-                const cardStyle = isGrid
-                    ? { width: gridWidth, aspectRatio: 0.85 }
-                    : undefined
 
                 const content = (
                     <>
                         {task.image ? (
                             <div
-                                className={gameStyle.taskImageThumbWrapper}
-                                style={isGrid ? { flex: 1, aspectRatio: 'auto' } : undefined}
+                                className={`${gameStyle.taskImageThumbWrapper} ${isGrid ? gameStyle.taskImageGrid : ''}`}
                             >
                                 <img
                                     src={task.image}
@@ -91,16 +86,17 @@ export const TaskTemplate = ({
                         ) : null}
 
                         {taskText ? (
-                            <div className={`${gameStyle.taskTextWrapper} ${(!task.image && isGrid) ? gameStyle.taskTextPreviewContainer : ''}`}>
+                            <div className={`${gameStyle.taskTextWrapper} ${(!task.image && isGrid) ? mainStyle.textColumn : ''}`}>
                                 <div
-                                    className={`${mainStyle.paragraph} ${mainStyle.textCenter} ${isGrid ? gameStyle.taskTextPreview : ''}`}
-                                    style={{
-                                        whiteSpace: 'pre-line',
-                                        ...(isGrid ? {
-                                            WebkitLineClamp: task.image ? 2 : 5,
-                                            lineClamp: task.image ? 2 : 5
-                                        } : {})
-                                    }}
+                                    className={[
+                                        mainStyle.paragraph,
+                                        mainStyle.textCenter,
+                                        mainStyle.textPreLine,
+                                        isGrid ? gameStyle.taskTextPreview : '',
+                                        isGrid
+                                            ? (task.image ? gameStyle.taskTextPreviewImage : gameStyle.taskTextPreviewOnly)
+                                            : ''
+                                    ].filter(Boolean).join(' ')}
                                 >
                                     {taskText}
                                 </div>
@@ -123,7 +119,6 @@ export const TaskTemplate = ({
                     <div
                         key={index}
                         className={cardClassName}
-                        style={cardStyle}
                     >
                         {content}
                     </div>
@@ -132,7 +127,6 @@ export const TaskTemplate = ({
                         key={index}
                         type="button"
                         className={cardClassName}
-                        style={cardStyle}
                         onClick={() => setFullTask(task)}
                     >
                         {content}

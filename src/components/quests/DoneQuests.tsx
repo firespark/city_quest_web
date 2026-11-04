@@ -85,24 +85,24 @@ export const DoneQuests = () => {
     return (
         <div>
 
-            <h2 className={questsStyle.blockTitle}>
+            <h2 className={`${mainStyle.formTitle} ${mainStyle.mb24}`}>
                 Пройденные туры
             </h2>
 
             {Object.entries(data).map(([countryName, quests]) => (
                 <div
                     key={countryName}
-                    className={questsStyle.countryBlock}
+                    className={mainStyle.mb12}
                 >
 
                     <div className={questsStyle.countryHeader}>
                         <IoGlobeOutline
                             size={18}
-                            className={mainStyle.mr10}
+                            className={mainStyle.mr12}
                             aria-hidden="true"
                         />
 
-                        <span className={questsStyle.countryTitle}>
+                        <span className={`${questsStyle.countryTitle} ${mainStyle.heading}`}>
                             {countryName}
                         </span>
                     </div>

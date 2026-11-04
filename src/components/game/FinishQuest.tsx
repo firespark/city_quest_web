@@ -1,3 +1,4 @@
+import questsStyle from '../../styles/questsStyle.module.css'
 
 import type { Dispatch, SetStateAction, ReactNode } from 'react'
 
@@ -25,15 +26,15 @@ export const FinishQuest = ({ text, game, setModal, setResetModalVisible }: Fini
     return (
         <div className={mainStyle.card}>
             <div className={mainStyle.container}>
-                <div className={`${mainStyle.subtitle} ${mainStyle.textCenter}`}>
+                <div className={`${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.mb16} ${mainStyle.textCenter} ${mainStyle.heading}`}>
                     {text as ReactNode}
                 </div>
             </div>
 
-            <div className={`${mainStyle.divider} ${mainStyle.mb20}`} />
+            <div className={`${mainStyle.divider} ${mainStyle.mb24}`} />
 
             <div className={mainStyle.center}>
-                <div className={`${mainStyle.preTitle} ${mainStyle.mb20}`}>
+                <div className={`${questsStyle.eyebrow} ${mainStyle.green} ${mainStyle.textCenter} ${mainStyle.mb24}`}>
                     Финишная достопримечательность
                 </div>
 
@@ -55,9 +56,9 @@ export const FinishQuest = ({ text, game, setModal, setResetModalVisible }: Fini
                 </div>
             </div>
 
-            <div className={`${mainStyle.divider} ${mainStyle.mt20}`} />
+            <div className={`${mainStyle.divider} ${mainStyle.mt24}`} />
 
-            <div className={mainStyle.mb30}>
+            <div className={mainStyle.mb32}>
                 <ResetButton setModalVisible={setResetModalVisible} />
             </div>
         </div>

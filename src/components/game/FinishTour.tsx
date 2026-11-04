@@ -26,8 +26,8 @@ export const FinishTour = ({ text, game, setResetModalVisible }: FinishTourProps
     return (
         <div className={gameStyle.playTemplateContainer}>
 
-            <div className={`${mainStyle.card} ${mainStyle.container} ${mainStyle.mb15}`}>
-                <div className={`${mainStyle.subtitle} ${mainStyle.textCenter}`}>
+            <div className={`${mainStyle.card} ${mainStyle.container} ${mainStyle.mb16}`}>
+                <div className={`${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.mb16} ${mainStyle.textCenter} ${mainStyle.heading}`}>
                     {text as ReactNode}
                 </div>
             </div>
@@ -47,7 +47,7 @@ export const FinishTour = ({ text, game, setResetModalVisible }: FinishTourProps
                     {game.sight_address ? (
                         <div className={gameStyle.gameDetailRow}>
                             <div className={gameStyle.gameIconWrapper}>
-                                <IoLocationSharp size={18} color="#17A2B8" />
+                                <IoLocationSharp size={18} className={mainStyle.blue} />
                             </div>
 
                             <div className={gameStyle.gameDetailValue}>
@@ -59,7 +59,7 @@ export const FinishTour = ({ text, game, setResetModalVisible }: FinishTourProps
                     {location ? (
                         <div className={gameStyle.gameDetailRow}>
                             <div className={gameStyle.gameIconWrapper}>
-                                <IoCompassOutline size={18} color="#17A2B8" />
+                                <IoCompassOutline size={18} className={mainStyle.blue} />
                             </div>
 
                             <a
@@ -74,12 +74,12 @@ export const FinishTour = ({ text, game, setResetModalVisible }: FinishTourProps
             </div>
 
             {game.sight_content ? (
-                <div className={`${mainStyle.card} ${mainStyle.mt15}`}>
+                <div className={`${mainStyle.card} ${mainStyle.mt16}`}>
                     <FormattedContent text={game.sight_content} />
                 </div>
             ) : null}
 
-            <div className={mainStyle.mt20}>
+            <div className={mainStyle.mt24}>
                 <ResetButton setModalVisible={setResetModalVisible} />
             </div>
         </div>

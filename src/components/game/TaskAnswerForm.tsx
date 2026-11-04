@@ -3,6 +3,7 @@ import { useContext, useState, type Dispatch, type SetStateAction } from 'react'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 import gameStyle from '../../styles/gameStyle.module.css'
+import formsStyle from '../../styles/formsStyle.module.css'
 
 import hintImage from '../../../assets/img/hint.png'
 
@@ -107,11 +108,11 @@ export const TaskAnswerForm = ({
         if (typeof inputResults[i] !== 'undefined') {
             style = inputResults[i] == 1
                 ? mainStyle.inputCorrect
-                : mainStyle.inputError
+                : formsStyle.blockInputInvalid
         }
 
         inputs.push(
-            <div key={i} className={gameStyle.inputWrapper}>
+            <div key={i} className={mainStyle.formGroup}>
                 <input
                     type="text"
                     placeholder={inputCount == 1 ? 'Ответ' : `Слово ${i + 1}`}
@@ -139,7 +140,7 @@ export const TaskAnswerForm = ({
                         <div className={gameStyle.hintPill}>
                             <img
                                 src={hintImage}
-                                className={gameStyle.hintIcon}
+                                className={gameStyle.pillIcon}
                                 alt=""
                             />
                             <span className={gameStyle.hintTextActive}>
@@ -151,16 +152,16 @@ export const TaskAnswerForm = ({
             ) : null}
 
             {loader ? (
-                <div className={mainStyle.mt30}>
+                <div className={mainStyle.mt32}>
                     <Loader />
                 </div>
             ) : (
                 <>
-                    <div className={mainStyle.mt15}>
+                    <div className={mainStyle.mt16}>
                         {inputs}
                     </div>
 
-                    <div className={mainStyle.mt15}>
+                    <div className={mainStyle.mt16}>
                         <button
                             type="button"
                             className={mainStyle.primaryButton}

@@ -1,0 +1,5714 @@
+Зачем нам два одинаковых заголовка? оставь только pageTitle
+src/styles/mainStyle.module.css:892
+.pageTitle,
+.articleTitle {
+  border-bottom: 1px solid var(--color-light-gray);
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: var(--font-size-46);
+  overflow-wrap: anywhere;
+  margin: 0 0 36px;
+  padding-bottom: 25px;
+}
+
+src/styles/mainStyle.module.css:1114
+@media (max-width: 620px) {
+  .pageTitle,
+  .articleTitle {
+    margin: 0 0 24px;
+    padding-bottom: 20px;
+    font-size: var(--font-size-32);
+  }
+}
+
+
+========================================================================
+Группа 2. Крупные заголовки в Hero
+========================================================================
+
+src/styles/mainStyle.module.css:766
+.heroTitle {
+  margin: 0 0 24px;
+  color: var(--color-dark-blue);
+  font-weight: 900;
+  line-height: 1.08;
+  font-size: var(--font-size-52);
+}
+
+src/styles/mainStyle.module.css:1080
+@media (max-width: 760px) {
+  .heroTitle {
+    font-size: var(--font-size-36);
+  }
+}
+У нас уже есть heroTitle. давай этот удалим, из comingSoon возьмем
+src/styles/questDetailStyle.module.css:56
+.heroTitle {
+  max-width: 650px;
+  margin: 20px 0 23px;
+  color: var(--color-white);
+  line-height: 1.12;
+  font-weight: 850;
+  overflow-wrap: anywhere;
+  font-size: var(--font-size-52);
+}
+src/styles/questDetailStyle.module.css:247
+@media (max-width: 620px) {
+  .heroTitle {
+    font-size: var(--font-size-32);
+  }
+}
+Вот этот оставь вместо questDetailStyle. перенеси его в questDetailStyle
+src/styles/comingSoonStyle.module.css:47
+.heroTitle {
+  max-width: 560px;
+  margin: 10px 0 16px;
+  color: var(--color-white);
+  font-weight: 700;
+  line-height: 1.06;
+  overflow-wrap: anywhere;
+  font-size: var(--font-size-52);
+}
+
+src/styles/comingSoonStyle.module.css:571
+@media (max-width: 800px) {
+  .heroTitle {
+    font-size: var(--font-size-46);
+  }
+}
+
+src/styles/comingSoonStyle.module.css:697
+@media (max-width: 620px) {
+  .heroTitle {
+    font-size: var(--font-size-34);
+  }
+}
+
+========================================================================
+Группа 3. Заголовки разделов
+========================================================================
+Используй из comingSoonStyle
+
+src/styles/questsStyle.module.css:545
+.sectionTitle {
+  margin: 0;
+  color: var(--color-dark-blue);
+  font-weight: 850;
+  line-height: 1.16;
+  overflow-wrap: anywhere;
+  font-size: var(--font-size-32);
+}
+
+src/styles/questsStyle.module.css:820
+@media (max-width: 620px) {
+  .sectionTitle {
+    font-size: var(--font-size-26);
+  }
+}
+перенеси в questsStyle
+src/styles/comingSoonStyle.module.css:109
+.sectionTitle {
+  margin: 0 0 20px;
+  color: var(--color-dark-blue);
+  font-weight: 700;
+  line-height: 1.17;
+  overflow-wrap: anywhere;
+  font-size: var(--font-size-40);
+}
+
+src/styles/comingSoonStyle.module.css:701
+@media (max-width: 620px) {
+  .sectionTitle {
+    font-size: var(--font-size-32);
+  }
+}
+
+
+src/styles/comingSoonStyle.module.css:154
+переназови
+.stepsHeading {
+  margin: 0 0 24px;
+  color: var(--color-dark-blue);
+  font-weight: 850;
+  line-height: 1.2;
+  font-size: var(--font-size-32);
+}
+
+src/styles/comingSoonStyle.module.css:631
+@media (max-width: 620px) {
+  .stepsHeading {
+    margin-bottom: 18px;
+    font-size: var(--font-size-26);
+  }
+}
+используй stepsHeading. но переназови по-другому
+src/styles/comingSoonStyle.module.css:238
+.signupTitle {
+  margin: 0 0 12px;
+  color: var(--color-dark-blue);
+  line-height: 1.2;
+  font-weight: 850;
+  font-size: var(--font-size-32);
+}
+
+src/styles/comingSoonStyle.module.css:705
+@media (max-width: 620px) {
+  .signupTitle {
+    font-size: var(--font-size-26);
+  }
+}
+
+
+========================================================================
+Группа 4. Основной текст: description, p, textThin и paragraph
+========================================================================
+
+src/styles/mainStyle.module.css:181
+.description {
+  line-height: 20px;
+  color: var(--color-gray);
+  font-size: var(--font-size-18);
+}
+
+src/styles/mainStyle.module.css:167
+.p {
+  margin-bottom: 5px;
+  line-height: 21px;
+  color: var(--color-gray);
+  font-weight: 300;
+  font-size: var(--font-size-18);
+}
+
+src/styles/mainStyle.module.css:187
+.textThin {
+  font-weight: 300;
+  line-height: 21px;
+  color: var(--color-gray);
+  font-size: var(--font-size-18);
+}
+
+src/styles/mainStyle.module.css:175
+.paragraph {
+  line-height: 24px;
+  color: var(--color-gray);
+  margin-bottom: 12px;
+}
+
+src/styles/mainStyle.module.css:206
+.textRed {
+  line-height: 21px;
+  color: var(--color-red);
+  font-size: var(--font-size-18);
+}
+
+src/styles/gameStyle.module.css:170
+.gameText {
+  line-height: 24px;
+  color: var(--color-dark-blue);
+  margin-top: 25px;
+  text-align: center;
+}
+
+========================================================================
+Группа 5. Серые описания блоков и карточек
+========================================================================
+
+src/styles/mainStyle.module.css:837
+.mainAboutDescription {
+  max-width: 490px;
+  margin: 0 0 24px;
+  color: var(--color-gray);
+  line-height: 1.65;
+}
+
+src/styles/mainStyle.module.css:778
+.heroDescription {
+  max-width: 450px;
+  margin: 0 0 28px;
+  color: var(--color-gray);
+  line-height: 1.6;
+  font-size: var(--font-size-18);
+}
+
+src/styles/mainStyle.module.css:1058
+@media (max-width: 760px) {
+  .heroDescription {
+    font-size: var(--font-size-16);
+  }
+}
+
+src/styles/mainStyle.module.css:957
+.listText {
+  flex: 1;
+  min-width: 0;
+  color: var(--color-gray);
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+src/styles/contactsStyle.module.css:187
+.blockDescription {
+  max-width: 350px;
+  margin: 0;
+  color: var(--color-gray);
+  line-height: 1.6;
+}
+
+src/styles/comingSoonStyle.module.css:195
+.stepDescription {
+  margin: 0;
+  color: var(--color-gray);
+  line-height: 1.65;
+}
+
+src/styles/comingSoonStyle.module.css:655
+@media (max-width: 620px) {
+  .stepDescription {
+    line-height: 1.55;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:250
+.signupText {
+  max-width: 570px;
+  margin: 0 0 22px;
+  color: var(--color-gray);
+  line-height: 1.65;
+}
+
+src/styles/questsStyle.module.css:599
+.questsListDescription {
+  margin: 0;
+  color: var(--color-gray);
+  line-height: 1.6;
+}
+
+src/styles/profileStyle.module.css:80
+.guestText {
+  margin: 0;
+  color: var(--color-gray);
+  line-height: 1.6;
+}
+
+src/styles/howPlayStyle.module.css:97
+.descLight,
+.descBlue {
+  margin: 0;
+  color: var(--color-gray);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+src/styles/footerStyle.module.css:32
+.description {
+  max-width: 260px;
+  margin: 16px 0 0;
+  color: var(--color-light-gray);
+  line-height: 1.65;
+}
+
+src/styles/footerStyle.module.css:172
+@media (max-width: 900px) {
+  .description {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+}
+
+src/styles/notFoundStyle.module.css:32
+.description {
+  max-width: 420px;
+  margin: 0 0 28px;
+  color: var(--color-gray);
+  line-height: 1.7;
+}
+
+src/styles/modalStyle.module.css:244
+.resetModalDescription {
+  margin: 0 0 25px;
+  color: var(--color-gray);
+  line-height: 1.6;
+}
+
+========================================================================
+Группа 6. Текст статей и форматированное содержимое
+========================================================================
+
+src/styles/aboutStyle.module.css:11
+.content {
+  width: 100%;
+  color: var(--color-gray);
+  line-height: 1.75;
+}
+
+src/styles/aboutStyle.module.css:35
+@media (max-width: 620px) {
+  .content {
+    line-height: 1.7;
+  }
+}
+
+src/styles/legalStyle.module.css:8
+.content {
+  max-width: 900px;
+  color: var(--color-gray);
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+src/styles/comingSoonStyle.module.css:118
+.richText {
+  max-width: 630px;
+  color: var(--color-gray);
+  line-height: 1.7;
+}
+
+src/styles/comingSoonStyle.module.css:610
+@media (max-width: 620px) {
+  .richText {
+    max-width: none;
+  }
+}
+
+========================================================================
+Группа 7. Вводные подписи над заголовками
+========================================================================
+
+src/styles/mainStyle.module.css:156
+.preTitle {
+  color: var(--color-green);
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-size: var(--font-size-12);
+}
+
+src/styles/mainStyle.module.css:759
+.heroEyebrow {
+  margin-bottom: 20px;
+  color: var(--color-blue);
+  font-weight: 600;
+  font-size: var(--font-size-14);
+}
+
+src/styles/contactsStyle.module.css:172
+.blockEyebrow {
+  margin-bottom: 10px;
+  color: var(--color-blue);
+  font-weight: 800;
+  font-size: var(--font-size-12);
+}
+
+src/styles/questsStyle.module.css:537
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--color-blue);
+  font-weight: 850;
+  text-transform: uppercase;
+  font-size: var(--font-size-12);
+}
+
+src/styles/questsStyle.module.css:583
+удали, используй eyebrow
+.questsListEyebrow {
+  margin-bottom: 12px;
+  color: var(--color-blue);
+  font-weight: 850;
+  text-transform: uppercase;
+  font-size: var(--font-size-12);
+}
+
+src/styles/comingSoonStyle.module.css:100
+используй из questsStyle
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--color-blue);
+  font-weight: 850;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-size: var(--font-size-12);
+}
+
+src/styles/comingSoonStyle.module.css:226
+используй eyebrow из questsStyle
+.signupEyebrow {
+  margin-bottom: 12px;
+  color: var(--color-blue);
+  font-weight: 850;
+  text-transform: uppercase;
+  font-size: var(--font-size-12);
+}
+
+src/styles/gameStyle.module.css:202
+.gameSectionLabel {
+  color: var(--color-orange);
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: var(--font-size-12);
+}
+
+========================================================================
+Группа 8. Заголовки форм и панелей
+========================================================================
+
+src/styles/mainStyle.module.css:123
+.formTitle {
+  font-weight: 900;
+  color: var(--color-dark-blue);
+  font-size: var(--font-size-24);
+}
+
+src/styles/mainStyle.module.css:115
+.titleMain {
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: var(--font-size-24);
+}
+
+src/styles/mainStyle.module.css:129
+.subtitle {
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  margin-top: 16px;
+  margin-bottom: 12px;
+  font-size: var(--font-size-18);
+}
+
+src/styles/mainStyle.module.css:137
+.thirdTitle {
+  font-weight: 600;
+  color: var(--color-dark-blue);
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+src/styles/mainStyle.module.css:151
+.formThirdtitle {
+  font-weight: 700;
+  color: var(--color-dark-blue);
+}
+
+src/styles/questsStyle.module.css:181
+.blockTitle {
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  margin-bottom: 20px;
+  font-size: var(--font-size-24);
+}
+
+src/styles/profileStyle.module.css:242
+.editTitle {
+  margin: 0;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.3;
+  font-size: var(--font-size-24);
+}
+
+src/styles/profileStyle.module.css:111
+.questPanel h2 {
+  margin: 0 0 24px;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.3;
+  font-size: var(--font-size-24);
+}
+
+src/styles/modalStyle.module.css:236
+.resetModalTitle {
+  margin: 0 0 12px;
+  color: var(--color-dark-blue);
+  font-weight: 850;
+  line-height: 1.25;
+  font-size: var(--font-size-24);
+}
+
+src/styles/modalStyle.module.css:107
+используй resetModalTitle
+.countriesSheetTitle {
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: var(--font-size-24);
+}
+
+========================================================================
+Группа 9. Названия шагов, квестов и городов в карточках
+========================================================================
+
+src/styles/howPlayStyle.module.css:83
+.titleLight,
+.titleBlue {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  color: var(--color-dark-blue);
+  font-weight: 750;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  font-size: var(--font-size-18);
+}
+
+src/styles/comingSoonStyle.module.css:187
+.stepTitle {
+  margin: 0 0 12px;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.35;
+  font-size: var(--font-size-18);
+}
+
+src/styles/comingSoonStyle.module.css:567
+@media (max-width: 800px) {
+  .stepTitle {
+    font-size: var(--font-size-16);
+  }
+}
+
+src/styles/comingSoonStyle.module.css:650
+@media (max-width: 620px) {
+  .stepTitle {
+    margin-bottom: 6px;
+    font-size: var(--font-size-18);
+  }
+}
+
+src/styles/comingSoonStyle.module.css:389
+.galleryCardTitle {
+  display: block;
+  padding: 13px 16px;
+  color: var(--color-dark-blue);
+  font-weight: 750;
+}
+
+src/styles/comingSoonStyle.module.css:683
+@media (max-width: 620px) {
+  .galleryCardTitle {
+    padding: 10px 11px;
+  }
+}
+
+src/styles/questsStyle.module.css:443
+.featuredTitle {
+  margin: 0;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.3;
+  font-size: var(--font-size-20);
+  transition: color 0.2s ease;
+}
+
+src/styles/questsStyle.module.css:188
+.questTitle {
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  margin-bottom: 10px;
+  line-height: 28px;
+  min-height: 32px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  font-size: var(--font-size-24);
+}
+
+src/styles/questsStyle.module.css:202
+.title {
+  font-weight: 700;
+  color: inherit;
+  margin-bottom: 6px;
+  line-height: 22px;
+  font-size: inherit;
+}
+
+src/styles/citiesStyle.module.css:40
+.cityTitle {
+  flex: 1;
+  min-width: 0;
+  margin-top: 20px;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  padding-right: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--font-size-24);
+}
+
+========================================================================
+Группа 10. Номера шагов
+========================================================================
+
+src/styles/howPlayStyle.module.css:73
+.numberTextLight,
+.numberTextBlue {
+  color: var(--color-blue);
+  font-weight: 750;
+  line-height: 1;
+  font-size: var(--font-size-20);
+}
+
+src/styles/comingSoonStyle.module.css:179
+.stepNumber {
+  margin-bottom: 25px;
+  color: var(--color-blue);
+  font-weight: 850;
+  line-height: 1;
+  font-size: var(--font-size-34);
+}
+
+src/styles/comingSoonStyle.module.css:553
+@media (max-width: 800px) {
+  .stepNumber {
+    margin-bottom: 20px;
+    font-size: var(--font-size-32);
+  }
+}
+
+src/styles/comingSoonStyle.module.css:645
+@media (max-width: 620px) {
+  .stepNumber {
+    margin-bottom: 12px;
+    font-size: var(--font-size-26);
+  }
+}
+
+========================================================================
+Группа 11. Заголовки стран
+========================================================================
+
+src/styles/countriesStyle.module.css:30
+.countryHeading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  font-size: var(--font-size-18);
+}
+
+src/styles/questsStyle.module.css:210
+.countryTitle {
+  font-weight: 700;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  font-size: var(--font-size-18);
+}
+
+src/styles/modalStyle.module.css:42
+.countryName {
+  font-weight: 700;
+  color: var(--color-dark-blue);
+  font-size: var(--font-size-18);
+}
+
+========================================================================
+Группа 12. Город: ссылки и подписи
+========================================================================
+
+src/styles/questsStyle.module.css:434
+.featuredCity {
+  color: var(--color-blue);
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+}
+
+src/styles/questsStyle.module.css:217
+.city {
+  color: var(--color-blue);
+  font-weight: 500;
+  margin-bottom: 6px;
+  font-size: var(--font-size-14);
+}
+
+src/styles/questsStyle.module.css:224
+.cityText {
+  margin-left: 4px;
+  margin-bottom: 0px;
+  line-height: 16px;
+}
+
+src/styles/questDetailStyle.module.css:40
+.cityText {
+  margin-top: 6px;
+  color: var(--color-light-gray);
+  font-weight: 700;
+  line-height: 1.4;
+  display: block;
+  text-decoration: none;
+}
+
+src/styles/comingSoonStyle.module.css:38
+.heroCity {
+  margin-top: 24px;
+  color: var(--color-light-gray);
+  font-weight: 700;
+  line-height: 1.4;
+  display: block;
+  text-decoration: none;
+}
+
+src/styles/comingSoonStyle.module.css:592
+@media (max-width: 620px) {
+  .heroCity {
+    margin-top: 20px;
+  }
+}
+
+========================================================================
+Группа 13. Короткие подписи и пояснения
+========================================================================
+
+src/styles/mainStyle.module.css:144
+.formSubtitle {
+  color: var(--color-gray);
+  text-align: center;
+  line-height: 20px;
+  font-size: var(--font-size-14);
+}
+
+src/styles/contactsStyle.module.css:47
+.contactsEmailTitle {
+  margin: 0 0 10px;
+  color: var(--color-gray);
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: var(--font-size-14);
+}
+
+src/styles/contactsStyle.module.css:79
+.emailText {
+  color: inherit;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+src/styles/questsStyle.module.css:230
+.questLabel {
+  color: var(--color-gray);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: var(--font-size-12);
+}
+
+src/styles/questsStyle.module.css:513
+.statLabel {
+  color: var(--color-gray);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: var(--font-size-10);
+}
+
+src/styles/questsStyle.module.css:242
+.progressText {
+  color: var(--color-gray);
+  font-weight: 400;
+  font-size: var(--font-size-12);
+}
+
+src/styles/questsStyle.module.css:605
+.questsListCount {
+  flex-shrink: 0;
+  color: var(--color-gray);
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: nowrap;
+  font-size: var(--font-size-14);
+}
+
+src/styles/gameStyle.module.css:210
+.gameAnswerLabel {
+  color: var(--color-gray);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: var(--font-size-14);
+}
+
+src/styles/modalStyle.module.css:35
+.countriesLabel {
+  color: var(--color-gray);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: var(--font-size-12);
+}
+
+src/styles/modalStyle.module.css:250
+.resetModalLabel {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-dark-blue);
+  line-height: 1.5;
+  font-size: var(--font-size-14);
+}
+
+src/styles/legalStyle.module.css:1
+.revision {
+  margin: 0 0 32px;
+  color: var(--color-gray);
+  line-height: 1.5;
+  font-size: var(--font-size-14);
+}
+
+========================================================================
+Группа 14. Текст кнопок и управляющих ссылок
+========================================================================
+
+src/styles/mainStyle.module.css:324
+.buttonText {
+  color: var(--color-white);
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+src/styles/mainStyle.module.css:331
+.primaryButtonText {
+  color: var(--color-white);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+src/styles/mainStyle.module.css:344
+.dangerButtonText {
+  color: var(--color-red);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+src/styles/mainStyle.module.css:337
+.secondButtonText {
+  transition: color 0.2s ease;
+  color: var(--color-gray);
+  font-weight: 600;
+  font-size: var(--font-size-14);
+}
+
+src/styles/mainStyle.module.css:217
+.link {
+  transition: color 0.2s ease;
+  line-height: 22px;
+  text-align: center;
+  color: var(--color-blue);
+}
+
+src/styles/headerStyle.module.css:82
+.buttonText {
+  font-weight: 600;
+  color: var(--color-dark-blue);
+  font-size: var(--font-size-18);
+}
+
+src/styles/gameStyle.module.css:191
+.gameLinkText {
+  transition: color 0.2s ease;
+  color: var(--color-gray);
+  font-weight: 600;
+}
+
+src/styles/gameStyle.module.css:184
+.gameLink {
+  flex: 1;
+  color: var(--color-blue);
+  font-weight: 500;
+  line-height: 20px;
+}
+
+src/styles/modalStyle.module.css:180
+.countriesCancelText {
+  color: var(--color-red);
+  font-weight: 600;
+}
+
+========================================================================
+Группа 15. Поля ввода и текстовые области
+========================================================================
+
+src/styles/formsStyle.module.css:11
+.blockInput,
+.blockTextarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 10px;
+  background-color: var(--color-white);
+  color: var(--color-dark-blue);
+  font: inherit;
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/formsStyle.module.css:24
+.blockInput {
+  height: 50px;
+  padding: 0 15px;
+}
+
+src/styles/formsStyle.module.css:29
+.blockTextarea {
+  grid-column: 1 / -1;
+  min-height: 105px;
+  padding: 14px 15px;
+  resize: vertical;
+}
+
+src/styles/mainStyle.module.css:520
+.modernInput {
+  width: 100%;
+  height: 54px;
+  background-color: var(--color-light-gray);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-light-gray);
+  border-radius: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: var(--color-dark-blue);
+  margin-bottom: 10px;
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/mainStyle.module.css:541
+.modernTextarea {
+  width: 100%;
+  background-color: var(--color-light-gray);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-light-gray);
+  border-radius: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: var(--color-dark-blue);
+  min-height: 100px;
+  margin-bottom: 15px;
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/modalStyle.module.css:262
+.resetModalInput {
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+  padding: 0 15px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 10px;
+  background: var(--color-light-gray);
+  color: var(--color-dark-blue);
+  font: inherit;
+  outline: none;
+  transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--card-shadow);
+}
+
+========================================================================
+Группа 16. Панели форм
+========================================================================
+
+src/styles/authStyle.module.css:11
+.authCardContent {
+  --form-actions-align: center;
+  width: 100%;
+  min-width: 0;
+  padding: 38px 36px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 18px;
+  background-color: var(--color-white);
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/authStyle.module.css:76
+@media (max-width: 800px) {
+  .authCardContent {
+    padding: 34px 30px;
+  }
+}
+
+src/styles/authStyle.module.css:88
+@media (max-width: 620px) {
+  .authCardContent {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+}
+
+src/styles/profileStyle.module.css:186
+.settingsCard {
+  min-width: 0;
+  padding: 28px 32px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 18px;
+  background-color: var(--color-white);
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/profileStyle.module.css:271
+@media (max-width: 620px) {
+  .settingsCard {
+    padding: 22px 20px;
+    border-radius: 16px;
+  }
+}
+
+src/styles/contactsStyle.module.css:5
+.contactsLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: stretch;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 20px;
+  background-color: var(--color-white);
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/contactsStyle.module.css:197
+@media (max-width: 820px) {
+  .contactsLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+src/styles/contactsStyle.module.css:227
+@media (max-width: 620px) {
+  .contactsLayout {
+    border-radius: 16px;
+  }
+}
+
+src/styles/contactsStyle.module.css:135
+.contactsCard {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 42px 44px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+src/styles/contactsStyle.module.css:212
+@media (max-width: 820px) {
+  .contactsCard {
+    padding: 30px;
+  }
+}
+
+src/styles/contactsStyle.module.css:231
+@media (max-width: 620px) {
+  .contactsInfo,
+  .contactsCard {
+    padding: 26px 22px;
+  }
+}
+
+src/styles/contactsStyle.module.css:154
+.blockCard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 42px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 40px 46px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 22px;
+  background-color: var(--color-light-gray);
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/contactsStyle.module.css:218
+@media (max-width: 800px) {
+  .blockCard {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 30px;
+  }
+}
+
+src/styles/contactsStyle.module.css:242
+@media (max-width: 500px) {
+  .blockCard {
+    padding: 24px 18px;
+  }
+}
+
+========================================================================
+Группа 17. Карточки
+========================================================================
+
+src/styles/mainStyle.module.css:475
+.card {
+  background-color: var(--color-white);
+  border-radius: 24px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/questsStyle.module.css:2
+.questCardWrapper {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--color-white);
+  border-radius: 28px;
+  margin-bottom: 24px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-light-gray);
+  box-shadow: var(--card-shadow);
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+src/styles/questsStyle.module.css:20
+.itemWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: var(--color-light-gray);
+  border-radius: 16px;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-light-gray);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+src/styles/questsStyle.module.css:391
+.featuredCard {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 16px;
+  background: var(--color-white);
+  text-decoration: none;
+  box-shadow: var(--card-shadow);
+  transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+src/styles/citiesStyle.module.css:1
+.cityCardWrapper {
+  display: block;
+  width: 100%;
+  background-color: var(--color-white);
+  border-radius: 24px;
+  margin-bottom: 25px;
+  box-shadow: var(--card-shadow);
+  border: none;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+src/styles/howPlayStyle.module.css:21
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 24px 22px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/howPlayStyle.module.css:148
+@media (max-width: 800px) {
+  .card {
+    padding: 22px;
+  }
+}
+
+src/styles/howPlayStyle.module.css:170
+@media (max-width: 620px) {
+  .card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:168
+.stepCard {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 26px 24px 30px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 16px;
+  background: var(--color-white);
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/comingSoonStyle.module.css:549
+@media (max-width: 800px) {
+  .stepCard {
+    padding: 24px 18px;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:641
+@media (max-width: 620px) {
+  .stepCard {
+    padding: 20px 22px;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:335
+.galleryCard {
+  min-width: 0;
+  padding: 0;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--color-white);
+  text-align: left;
+  font: inherit;
+  cursor: zoom-in;
+  box-shadow: var(--card-shadow);
+  transition: color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+src/styles/profileStyle.module.css:94
+.questPanel {
+  min-width: 0;
+  padding: 26px 26px 14px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 18px;
+  background-color: var(--color-white);
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/profileStyle.module.css:334
+@media (max-width: 620px) {
+  .questPanel {
+    padding: 22px 18px 10px;
+    border-radius: 16px;
+  }
+}
+
+========================================================================
+Группа 18. Основные кнопки и кнопки подтверждения
+========================================================================
+
+src/styles/mainStyle.module.css:233
+.button {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 56px;
+  background-color: var(--color-blue);
+  justify-content: center;
+  align-items: center;
+  border-radius: 28px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  box-shadow: var(--card-shadow);
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+src/styles/mainStyle.module.css:256
+.primaryButton {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-blue);
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 28px;
+  align-items: center;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+src/styles/mainStyle.module.css:287
+.dangerButton {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--color-light-gray);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-light-gray);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 28px;
+  align-items: center;
+  font: inherit;
+  cursor: pointer;
+}
+
+src/styles/mainStyle.module.css:369
+.siteButton {
+  --button-bg: var(--color-blue);
+  --button-hover: var(--color-blue-hover);
+  --button-text: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  max-width: 100%;
+  min-width: 180px;
+  padding: 15px 23px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  font-family: inherit;
+  line-height: 1.3;
+  text-transform: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--card-shadow);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+src/styles/modalStyle.module.css:304
+.resetModalCancel,
+.resetModalConfirm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-height: 40px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 9px;
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  font-size: var(--font-size-14);
+}
+
+src/styles/modalStyle.module.css:322
+.resetModalCancel {
+  background: var(--color-light-gray);
+  color: var(--color-gray);
+}
+
+src/styles/modalStyle.module.css:331
+.resetModalConfirm {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+src/styles/modalStyle.module.css:166
+.countriesCancelButton {
+  display: flex;
+  margin-top: 15px;
+  padding: 15px;
+  background-color: var(--color-light-gray);
+  border-radius: 14px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+========================================================================
+Группа 19. Кнопки без заливки
+========================================================================
+
+src/styles/mainStyle.module.css:350
+.plainButton {
+  border: none;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+src/styles/mainStyle.module.css:275
+.secondButton {
+  padding: 10px;
+  border: none;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+src/styles/gameStyle.module.css:349
+.answerBackButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+src/styles/gameStyle.module.css:336
+.gameCancelLink {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+src/styles/authStyle.module.css:47
+.eyeSign {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  background-color: transparent;
+  color: var(--color-gray);
+  cursor: pointer;
+}
+
+========================================================================
+Группа 20. Кнопки со значком
+========================================================================
+
+src/styles/mainStyle.module.css:307
+.backButton {
+  display: flex;
+  flex-direction: column;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: flex-start;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+src/styles/gameStyle.module.css:310
+.closeButton {
+  display: flex;
+  flex-direction: column;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: flex-end;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+src/styles/headerStyle.module.css:58
+.menuButton {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+src/styles/headerStyle.module.css:176
+.headerLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  margin-left: 20px;
+  border-radius: 50%;
+  background-color: var(--color-light-gray);
+  transition: color 0.2s ease, background-color 0.2s ease;
+  color: var(--color-blue);
+}
+
+src/styles/headerStyle.module.css:285
+@media (max-width: 760px) {
+  .headerLogin {
+    order: 1;
+    margin-left: auto;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:430
+.galleryClose {
+  position: absolute;
+  z-index: 1;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #2C3E50CC;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+src/styles/comingSoonStyle.module.css:488
+.galleryNavButton {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 9px;
+  background: var(--color-light-gray);
+  color: var(--color-blue-hover);
+  cursor: pointer;
+}
+
+src/styles/profileStyle.module.css:47
+.accountSettings a {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 12px;
+  background-color: var(--color-white);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+src/styles/profileStyle.module.css:310
+@media (max-width: 620px) {
+  .accountSettings a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+src/styles/profileStyle.module.css:345
+@media (prefers-reduced-motion: reduce) {
+  .accountSettings a,
+  .questPanel a {
+    transition: none;
+  }
+}
+
+========================================================================
+Группа 21. Выбор вариантов и фильтры
+========================================================================
+
+src/styles/mainStyle.module.css:565
+.radioCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--color-light-gray);
+  border-radius: 16px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-light-gray);
+  margin-bottom: 10px;
+  width: 100%;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+src/styles/mainStyle.module.css:586
+.radioCardActive {
+  border-color: var(--color-blue);
+  background-color: var(--color-light-gray);
+}
+
+src/styles/questsStyle.module.css:328
+.filterPill {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: var(--color-light-gray);
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-light-gray);
+  flex-shrink: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+src/styles/questsStyle.module.css:343
+.filterPillActive {
+  background-color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+src/styles/questsStyle.module.css:632
+.questsListSection .filterPill {
+  display: inline-flex;
+  align-items: baseline;
+  flex-direction: row;
+  gap: 8px;
+  flex-shrink: 0;
+  min-height: 0;
+  margin: 0 0 -1px;
+  padding: 10px 0 13px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--color-gray);
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+src/styles/questsStyle.module.css:815
+@media (max-width: 620px) {
+  .questsListSection .filterPill {
+    padding: 9px 0 11px;
+    font-size: var(--font-size-14);
+  }
+}
+
+src/styles/questsStyle.module.css:837
+@media (prefers-reduced-motion: reduce) {
+  .questsListSection .filterPill {
+    transition: none;
+  }
+}
+
+src/styles/gameStyle.module.css:376
+.pill {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 20px;
+  border-width: 1px;
+  position: relative;
+  border-style: solid;
+}
+
+src/styles/gameStyle.module.css:405
+button.pill {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+src/styles/gameStyle.module.css:390
+.formatPill {
+  display: flex;
+  flex-direction: column;
+  width: 56px;
+  justify-content: center;
+}
+
+========================================================================
+Группа 22. Текстовые ссылки навигации
+========================================================================
+
+src/styles/headerStyle.module.css:160
+.headerNav a {
+  color: var(--color-dark-blue);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+src/styles/headerStyle.module.css:229
+.mobileDrawer a {
+  display: block;
+  padding: 14px 12px;
+  border-radius: 8px;
+  color: var(--color-dark-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+src/styles/footerStyle.module.css:65
+.cityList a {
+  transition: color 0.2s ease;
+}
+
+src/styles/footerStyle.module.css:81
+.footerLinks a {
+  transition: color 0.2s ease;
+}
+
+src/styles/footerStyle.module.css:242
+@media (max-width: 480px) {
+  .footerLinks a {
+    overflow-wrap: anywhere;
+  }
+}
+
+src/styles/countriesStyle.module.css:57
+.countryCities a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+src/styles/mainStyle.module.css:864
+.breadcrumbs a {
+  color: var(--color-gray);
+  text-decoration: none;
+}
+
+src/styles/legalStyle.module.css:41
+.content a,
+.documentsNav a {
+  color: var(--color-blue);
+  text-underline-offset: 3px;
+}
+
+src/styles/contactsStyle.module.css:55
+.emailButton {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-blue);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+src/styles/contactsStyle.module.css:252
+@media (prefers-reduced-motion: reduce) {
+  .emailButton,
+  .socialIconBtn {
+    transition: none;
+  }
+}
+
+========================================================================
+Группа 23. Контейнеры страниц и статей
+========================================================================
+
+src/styles/mainStyle.module.css:880
+.sitePage {
+  width: calc(100% - 40px);
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 0 var(--page-padding-bottom, 80px);
+}
+
+src/styles/mainStyle.module.css:1109
+@media (max-width: 620px) {
+  .sitePage {
+    width: calc(100% - 28px);
+    padding: 16px 0 var(--page-mobile-padding-bottom, 48px);
+  }
+}
+
+src/styles/aboutStyle.module.css:3
+.article {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+src/styles/aboutStyle.module.css:28
+@media (max-width: 800px) {
+  .article {
+    max-width: 760px;
+  }
+}
+
+src/styles/howPlayStyle.module.css:3
+.article {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+src/styles/authStyle.module.css:1
+.authScrollContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 8px 0 20px;
+  box-sizing: border-box;
+}
+
+src/styles/authStyle.module.css:83
+@media (max-width: 620px) {
+  .authScrollContent {
+    max-width: none;
+    padding-top: 0;
+  }
+}
+
+src/styles/profileStyle.module.css:178
+.settingsContent {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 760px;
+  min-width: 0;
+  margin: 0 auto;
+}
+
+src/styles/footerStyle.module.css:9
+.footerInner {
+  width: calc(100% - 40px);
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+src/styles/footerStyle.module.css:218
+@media (max-width: 480px) {
+  .footerInner {
+    width: calc(100% - 32px);
+  }
+}
+
+src/styles/countriesStyle.module.css:7
+.countriesInner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+src/styles/questsStyle.module.css:376
+.featuredInner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+========================================================================
+Группа 24. Сетки карточек и шагов
+========================================================================
+
+src/styles/questsStyle.module.css:385
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+src/styles/questsStyle.module.css:768
+@media (max-width: 768px) {
+  .featuredGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+src/styles/countriesStyle.module.css:16
+.countriesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+src/styles/countriesStyle.module.css:70
+@media (max-width: 900px) {
+  .countriesGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+src/styles/countriesStyle.module.css:80
+@media (max-width: 600px) {
+  .countriesGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:162
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+src/styles/comingSoonStyle.module.css:545
+@media (max-width: 800px) {
+  .stepsGrid {
+    gap: 12px;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:636
+@media (max-width: 620px) {
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:325
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+src/styles/comingSoonStyle.module.css:558
+@media (max-width: 800px) {
+  .galleryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:678
+@media (max-width: 620px) {
+  .galleryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:711
+@media (max-width: 360px) {
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:331
+.galleryGridSingle {
+  grid-template-columns: minmax(0, 340px);
+}
+
+src/styles/comingSoonStyle.module.css:563
+@media (max-width: 800px) {
+  .galleryGridSingle {
+    grid-template-columns: minmax(0, 340px);
+  }
+}
+
+src/styles/profileStyle.module.css:86
+.questSections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+src/styles/profileStyle.module.css:260
+@media (max-width: 800px) {
+  .questSections {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+src/styles/profileStyle.module.css:330
+@media (max-width: 620px) {
+  .questSections {
+    margin-top: 22px;
+  }
+}
+
+src/styles/howPlayStyle.module.css:11
+.stepsGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 18px;
+}
+
+src/styles/howPlayStyle.module.css:144
+@media (max-width: 800px) {
+  .stepsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+src/styles/howPlayStyle.module.css:166
+@media (max-width: 620px) {
+  .stepsGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+========================================================================
+Группа 25. Секции в две колонки
+========================================================================
+
+src/styles/mainStyle.module.css:744
+.hero {
+  width: calc(100% - 40px);
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 64px 0 72px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 56px;
+}
+
+src/styles/mainStyle.module.css:1052
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 44px 0 52px;
+  }
+}
+
+src/styles/mainStyle.module.css:816
+.mainAboutInner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 60px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+src/styles/mainStyle.module.css:1071
+@media (max-width: 760px) {
+  .mainAboutInner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+src/styles/questsStyle.module.css:529
+.description {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 52px;
+  padding: 0 20px 54px;
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+src/styles/questsStyle.module.css:743
+@media (max-width: 920px) {
+  .description,
+  .facts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+
+src/styles/questsStyle.module.css:751
+@media (max-width: 800px) {
+  .description,
+  .facts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+
+src/styles/questsStyle.module.css:790
+@media (max-width: 620px) {
+  .description,
+  .facts {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+src/styles/questsStyle.module.css:796
+@media (max-width: 620px) {
+  .description {
+    padding: 0 4px 32px;
+  }
+}
+
+src/styles/questsStyle.module.css:558
+.facts {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 52px;
+  margin: 48px 0 42px;
+  padding: 37px 40px;
+  border-radius: 20px;
+  background: var(--color-light-gray);
+}
+
+src/styles/questsStyle.module.css:757
+@media (max-width: 800px) {
+  .facts {
+    padding: 30px;
+  }
+}
+
+src/styles/questsStyle.module.css:800
+@media (max-width: 620px) {
+  .facts {
+    padding: 25px 22px;
+    margin: 30px 0;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:89
+.aboutWithImage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  align-items: center;
+  gap: 48px;
+}
+
+src/styles/comingSoonStyle.module.css:536
+@media (max-width: 800px) {
+  .aboutWithImage {
+    grid-template-columns: minmax(0, 1fr) 120px;
+    gap: 24px;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:201
+.signup {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  align-items: center;
+  gap: 32px;
+  padding: 38px 42px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+src/styles/comingSoonStyle.module.css:659
+@media (max-width: 620px) {
+  .signup {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 27px 24px;
+  }
+}
+
+========================================================================
+Группа 26. Круглые контейнеры значков и номеров
+========================================================================
+
+src/styles/howPlayStyle.module.css:55
+.numberCircleLight,
+.numberCircleBlue {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+src/styles/howPlayStyle.module.css:180
+@media (max-width: 620px) {
+  .numberCircleLight,
+  .numberCircleBlue {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+src/styles/questsStyle.module.css:502
+.statIcon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 43px;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: var(--color-light-gray);
+  color: var(--color-blue);
+}
+
+src/styles/questsStyle.module.css:292
+.questIconCircle {
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  background-color: #17A2B833;
+}
+
+src/styles/profileStyle.module.css:12
+.accountIcon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 70px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--color-light-gray);
+  color: var(--color-blue);
+}
+
+src/styles/profileStyle.module.css:299
+@media (max-width: 620px) {
+  .accountIcon {
+    flex-basis: 52px;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+src/styles/modalStyle.module.css:24
+.countriesIconCircle {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background-color: var(--color-light-gray);
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+}
+
+src/styles/headerStyle.module.css:88
+.iconWrapper {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+========================================================================
+Группа 27. Бейджи
+========================================================================
+
+src/styles/mainStyle.module.css:641
+.badge {
+  background-color: var(--color-light-gray);
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-light-gray);
+}
+
+src/styles/mainStyle.module.css:653
+.badgeText {
+  font-weight: 700;
+  color: var(--color-blue);
+  text-transform: uppercase;
+  font-size: var(--font-size-14);
+}
+
+src/styles/questsStyle.module.css:146
+.questBadge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 10px;
+}
+
+src/styles/questsStyle.module.css:157
+.questBadgeText {
+  color: var(--color-white);
+  font-weight: 900;
+  margin-left: 4px;
+  font-size: var(--font-size-12);
+}
+
+src/styles/questsStyle.module.css:719
+.questBadgeComingSoon {
+  display: inline-flex;
+  vertical-align: top;
+  background-color: var(--color-red);
+}
+
+src/styles/questsStyle.module.css:109
+.microBadge {
+  display: flex;
+  flex-direction: column;
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  justify-content: center;
+  align-items: center;
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: var(--color-white);
+}
+
+src/styles/questsStyle.module.css:122
+.microBadgeText {
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: var(--font-size-10);
+}
+
+src/styles/questDetailStyle.module.css:135
+.finalStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 11px;
+  border-radius: 8px;
+  background: var(--color-light-gray);
+  color: var(--color-orange);
+  font-weight: 700;
+  line-height: 1.4;
+  font-size: var(--font-size-12);
+}
+
+src/styles/gameStyle.module.css:481
+.gameSuccessBadge {
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: var(--color-green);
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -15px;
+}
+
+========================================================================
+Группа 28. Окна поверх страницы
+========================================================================
+
+src/styles/modalStyle.module.css:199
+.resetDialog {
+  position: fixed;
+  inset: 0;
+  width: min(480px, calc(100% - 32px));
+  max-width: calc(100% - 32px);
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background: var(--color-white);
+  box-shadow: var(--card-shadow);
+  overflow-y: auto;
+}
+
+src/styles/modalStyle.module.css:57
+.countriesDialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+src/styles/comingSoonStyle.module.css:396
+.galleryDialog {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  padding: 16px;
+  margin: 0;
+  overflow: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  height: 100dvh;
+}
+
+src/styles/comingSoonStyle.module.css:417
+.galleryDialogContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 32px);
+  width: min(980px,100%);
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--color-white);
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/headerStyle.module.css:199
+.mobileDrawer {
+  position: fixed;
+  inset: 72px 0 0 auto;
+  width: min(320px,100%);
+  height: calc(100dvh - 72px);
+  max-height: none;
+  max-width: none;
+  margin: 0;
+  padding: 28px 24px;
+  border: 0;
+  border-left: 1px solid var(--color-gray-hover);
+  background: var(--color-white);
+  box-shadow: var(--card-shadow);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.2s ease, display 0.2s allow-discrete, overlay 0.2s allow-discrete;
+}
+
+========================================================================
+Группа 29. Фотографии и иллюстрации
+========================================================================
+
+src/styles/mainStyle.module.css:800
+.heroImage,
+.mainAboutImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+src/styles/questDetailStyle.module.css:9
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+src/styles/comingSoonStyle.module.css:11
+.heroImage {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+src/styles/comingSoonStyle.module.css:366
+.galleryImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: color 0.2s ease, transform 0.3s ease-out;
+}
+
+src/styles/questsStyle.module.css:413
+.featuredImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: color 0.2s ease, transform 0.3s ease-out;
+}
+
+src/styles/questsStyle.module.css:83
+.questCardImage {
+  width: 100%;
+  aspect-ratio: 1.5;
+  background-color: var(--color-light-gray);
+  object-fit: cover;
+}
+
+src/styles/questsStyle.module.css:96
+.questHeroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+src/styles/questsStyle.module.css:66
+.questImage {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+src/styles/citiesStyle.module.css:31
+.cityCardImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+src/styles/gameStyle.module.css:263
+.sightImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+src/styles/gameStyle.module.css:665
+.taskImageThumb {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+src/styles/gameStyle.module.css:724
+.fullWidthImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: attr(data-image-ratio type(<number>), auto);
+}
+
+========================================================================
+Группа 30. Контейнеры изображений
+========================================================================
+
+src/styles/mainStyle.module.css:788
+.heroVisual {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  aspect-ratio: 1.4;
+  overflow: hidden;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 64px 22px 22px 22px;
+  background-color: var(--color-light-gray);
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/mainStyle.module.css:1062
+@media (max-width: 760px) {
+  .heroVisual {
+    aspect-ratio: 4 / 3;
+    border-radius: 48px 18px 18px 18px;
+  }
+}
+
+src/styles/mainStyle.module.css:844
+.mainAboutVisual {
+  min-width: 0;
+  aspect-ratio: 1.5;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: var(--color-light-gray);
+}
+
+src/styles/mainStyle.module.css:1076
+@media (max-width: 760px) {
+  .mainAboutVisual {
+    aspect-ratio: 1.5;
+  }
+}
+
+src/styles/questsStyle.module.css:406
+.featuredImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+src/styles/questsStyle.module.css:90
+.questImageWrapper {
+  width: 100%;
+  height: 340px;
+  position: relative;
+}
+
+src/styles/questsStyle.module.css:77
+.questImageContainer {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+src/styles/comingSoonStyle.module.css:359
+.galleryImageWrapper {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-light-gray);
+}
+
+src/styles/gameStyle.module.css:254
+.sightImageWrapper {
+  width: 100%;
+  background-color: var(--color-light-gray);
+  border-radius: 16px;
+  aspect-ratio: 1.33;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/gameStyle.module.css:655
+.taskImageThumbWrapper {
+  width: 100%;
+  aspect-ratio: 1.33;
+}
+
+========================================================================
+Группа 31. Социальные значки
+========================================================================
+
+src/styles/contactsStyle.module.css:87
+.socialIconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  color: var(--color-white);
+  text-decoration: none;
+  box-shadow: var(--card-shadow);
+  transition: color 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+src/styles/contactsStyle.module.css:117
+.socialTelegram {
+  background-color: var(--color-blue);
+}
+
+src/styles/contactsStyle.module.css:121
+.socialInstagram {
+  background-color: var(--color-purple);
+}
+
+src/styles/contactsStyle.module.css:125
+.socialFacebook {
+  background-color: var(--color-blue);
+}
+
+src/styles/contactsStyle.module.css:129
+.socialVk {
+  background-color: var(--color-blue);
+}
+
+src/styles/footerStyle.module.css:96
+.socials a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid var(--color-gray);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+========================================================================
+Группа 32. Списки городов и меню футера
+========================================================================
+
+src/styles/countriesStyle.module.css:40
+.countryCities {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 22px;
+  row-gap: 10px;
+  justify-content: start;
+  align-items: start;
+}
+
+src/styles/countriesStyle.module.css:91
+@media (max-width: 420px) {
+  .countryCities {
+    grid-template-columns: 1fr;
+  }
+}
+
+src/styles/footerStyle.module.css:47
+.cityList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 10px;
+  justify-content: start;
+}
+
+src/styles/footerStyle.module.css:189
+@media (max-width: 900px) {
+  .cityList {
+    grid-template-columns: 1fr;
+  }
+}
+
+src/styles/footerStyle.module.css:214
+@media (max-width: 480px) {
+  .cityList {
+    grid-template-columns: 1fr;
+  }
+}
+
+src/styles/footerStyle.module.css:74
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+src/styles/footerStyle.module.css:137
+.footerNavigation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px;
+  min-width: 0;
+}
+
+src/styles/footerStyle.module.css:181
+@media (max-width: 900px) {
+  .footerNavigation {
+    gap: 28px;
+    width: 100%;
+    max-width: 640px;
+    margin-inline: auto;
+    text-align: center;
+  }
+}
+
+src/styles/footerStyle.module.css:208
+@media (max-width: 760px) {
+  .footerNavigation {
+    gap: 24px;
+  }
+}
+
+src/styles/footerStyle.module.css:234
+@media (max-width: 480px) {
+  .footerNavigation {
+    gap: 16px;
+  }
+}
+
+src/styles/mainStyle.module.css:854
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 11px;
+  margin: 0 0 70px;
+  color: var(--color-gray);
+  font-size: var(--font-size-14);
+}
+
+src/styles/mainStyle.module.css:1090
+@media (max-width: 620px) {
+  .breadcrumbs {
+    margin-bottom: 44px;
+  }
+}
+
+========================================================================
+Группа 33. Сообщения и ошибки
+========================================================================
+
+src/styles/mainStyle.module.css:696
+.errorText {
+  color: var(--color-red);
+  text-align: center;
+}
+
+src/styles/mainStyle.module.css:965
+.connectionError {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: min(480px, calc(100% - 32px));
+  margin: 40px auto;
+  padding: 28px 24px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 16px;
+  background: var(--color-white);
+  color: var(--color-dark-blue);
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/mainStyle.module.css:982
+.connectionErrorTitle {
+  margin: 0;
+  color: var(--color-dark-blue);
+  font-size: var(--font-size-24);
+  line-height: 1.3;
+}
+
+src/styles/mainStyle.module.css:989
+.connectionErrorText {
+  margin: 0;
+  color: var(--color-gray);
+  line-height: 1.6;
+}
+
+src/styles/formsStyle.module.css:60
+.blockError {
+  margin-top: 12px;
+  color: var(--color-red);
+}
+
+src/styles/formsStyle.module.css:65
+.blockSuccess {
+  color: var(--color-dark-blue);
+  font-weight: 700;
+  font-size: var(--font-size-18);
+}
+
+src/styles/modalStyle.module.css:288
+.resetModalError {
+  margin: 10px 0 0;
+  color: var(--color-red);
+  line-height: 1.5;
+  font-size: var(--font-size-14);
+}
+
+src/styles/profileStyle.module.css:226
+.settingsSuccess {
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 12px;
+  background-color: var(--color-light-gray);
+}
+
+========================================================================
+Группа 34. Служебные отступы
+========================================================================
+
+src/styles/mainStyle.module.css:47
+.mt5 {
+  margin-top: 5px;
+}
+
+src/styles/mainStyle.module.css:51
+.mb5 {
+  margin-bottom: 5px;
+}
+
+src/styles/mainStyle.module.css:55
+.mr8 {
+  margin-right: 8px;
+}
+
+src/styles/mainStyle.module.css:59
+.mt10 {
+  margin-top: 10px;
+}
+
+src/styles/mainStyle.module.css:63
+.mr10 {
+  margin-right: 10px;
+}
+
+src/styles/mainStyle.module.css:67
+.mb10 {
+  margin-bottom: 10px;
+}
+
+src/styles/mainStyle.module.css:71
+.mt15 {
+  margin-top: 15px;
+}
+
+src/styles/mainStyle.module.css:75
+.mb15 {
+  margin-bottom: 15px;
+}
+
+src/styles/mainStyle.module.css:79
+.mt20 {
+  margin-top: 20px;
+}
+
+src/styles/mainStyle.module.css:83
+.mb20 {
+  margin-bottom: 20px;
+}
+
+src/styles/mainStyle.module.css:87
+.mb25 {
+  margin-bottom: 25px;
+}
+
+src/styles/mainStyle.module.css:91
+.mt30 {
+  margin-top: 30px;
+}
+
+src/styles/mainStyle.module.css:95
+.mb30 {
+  margin-bottom: 30px;
+}
+
+src/styles/mainStyle.module.css:99
+.p20 {
+  padding: 20px;
+}
+
+src/styles/mainStyle.module.css:454
+.scrollContent {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+src/styles/mainStyle.module.css:461
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+src/styles/mainStyle.module.css:470
+.wrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+========================================================================
+Группа 35. Общие свойства — color: var(--color-blue-hover)
+========================================================================
+
+src/index.css:65
+a:hover,
+a:focus-visible {
+  color: var(--color-blue-hover);
+}
+
+src/styles/authStyle.module.css:63
+.eyeSign:hover {
+  color: var(--color-blue-hover);
+}
+
+src/styles/comingSoonStyle.module.css:280
+.signupArtwork:hover {
+  color: var(--color-blue-hover);
+}
+
+src/styles/contactsStyle.module.css:70
+.emailButton:hover {
+  color: var(--color-blue-hover);
+}
+
+src/styles/countriesStyle.module.css:62
+.countryCities a:hover,
+.countryCities a:focus-visible {
+  color: var(--color-blue-hover);
+}
+
+src/styles/footerStyle.module.css:69
+.cityList a:hover,
+.cityList a:focus-visible {
+  color: var(--color-blue-hover);
+}
+
+src/styles/footerStyle.module.css:85
+.footerLinks a:hover,
+.footerLinks a:focus-visible {
+  color: var(--color-blue-hover);
+}
+
+src/styles/gameStyle.module.css:197
+.answerBackButton:hover .gameLinkText,
+.answerBackButton:focus-visible .gameLinkText {
+  color: var(--color-blue-hover);
+}
+
+src/styles/headerStyle.module.css:30
+.logoLink:hover,
+.logoLink:focus-visible {
+  color: var(--color-blue-hover);
+}
+
+src/styles/headerStyle.module.css:167
+.headerNav a:hover,
+.headerNav a:focus-visible {
+  color: var(--color-blue-hover);
+}
+
+src/styles/headerStyle.module.css:190
+.headerLogin:hover {
+  color: var(--color-blue-hover);
+}
+
+src/styles/headerStyle.module.css:268
+.menuButtonPanel:hover .buttonText {
+  color: var(--color-blue-hover);
+}
+
+src/styles/legalStyle.module.css:47
+.content a:hover,
+.documentsNav a:hover {
+  color: var(--color-blue-hover);
+}
+
+src/styles/mainStyle.module.css:224
+.plainButton:hover .link,
+.plainButton:focus-visible .link,
+.secondButton:hover .secondButtonText,
+.secondButton:focus-visible .secondButtonText {
+  color: var(--color-blue-hover);
+}
+
+src/styles/mainStyle.module.css:869
+.breadcrumbs a:hover {
+  color: var(--color-blue-hover);
+}
+
+src/styles/mainStyle.module.css:1043
+.plainButton:hover:not(:disabled),
+.plainButton:hover:not(:disabled) .blue,
+.plainButton:hover:not(:disabled) .heading {
+  color: var(--color-blue-hover);
+}
+
+src/styles/profileStyle.module.css:133
+.questPanel a:hover {
+  color: var(--color-blue-hover);
+}
+
+src/styles/questsStyle.module.css:712
+.featuredCity:hover,
+.featuredCity:focus-visible,
+.featuredCard:hover .featuredArrow,
+.featuredCard:focus-within .featuredArrow {
+  color: var(--color-blue-hover);
+}
+
+src/styles/questsStyle.module.css:725
+.featuredCard:hover .featuredTitle,
+.featuredCard:focus-within .featuredTitle {
+  color: var(--color-blue-hover);
+}
+
+========================================================================
+Группа 36. Общие свойства — opacity: 0.7
+========================================================================
+
+src/styles/gameStyle.module.css:323
+.closeButton:active {
+  opacity: 0.7;
+}
+
+src/styles/gameStyle.module.css:345
+.gameCancelLink:active {
+  opacity: 0.7;
+}
+
+src/styles/gameStyle.module.css:357
+.answerBackButton:active {
+  opacity: 0.7;
+}
+
+src/styles/gameStyle.module.css:367
+button.barContainer:active {
+  opacity: 0.7;
+}
+
+src/styles/gameStyle.module.css:401
+button.formatPill:active {
+  opacity: 0.7;
+}
+
+src/styles/gameStyle.module.css:411
+button.pill:active:not(:disabled) {
+  opacity: 0.7;
+}
+
+src/styles/gameStyle.module.css:558
+button.progressMedal:active {
+  opacity: 0.7;
+}
+
+src/styles/headerStyle.module.css:54
+.menuButtonPanel:active {
+  opacity: 0.7;
+}
+
+src/styles/mainStyle.module.css:252
+.button:active {
+  opacity: 0.7;
+}
+
+src/styles/mainStyle.module.css:271
+.primaryButton:active {
+  opacity: 0.7;
+}
+
+src/styles/mainStyle.module.css:283
+.secondButton:active {
+  opacity: 0.7;
+}
+
+src/styles/mainStyle.module.css:303
+.dangerButton:active {
+  opacity: 0.7;
+}
+
+src/styles/mainStyle.module.css:320
+.backButton:active {
+  opacity: 0.7;
+}
+
+src/styles/mainStyle.module.css:359
+.plainButton:active {
+  opacity: 0.7;
+}
+
+src/styles/mainStyle.module.css:582
+.radioCard:active {
+  opacity: 0.7;
+}
+
+src/styles/modalStyle.module.css:185
+.countriesPremiumSelector:active,
+.countriesItemRow:active {
+  opacity: 0.7;
+}
+
+src/styles/questsStyle.module.css:44
+button.itemWrapper:active {
+  opacity: 0.7;
+}
+
+src/styles/questsStyle.module.css:361
+.filterPill:active {
+  opacity: 0.7;
+}
+
+========================================================================
+Группа 37. Общие свойства — color: var(--color-dark-blue); font-size: var(--font-size-24)
+========================================================================
+
+src/styles/legalStyle.module.css:19
+.content h2 {
+  margin: 0 0 14px;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.35;
+  font-size: var(--font-size-24);
+}
+
+src/styles/citiesStyle.module.css:40
+.cityTitle {
+  flex: 1;
+  min-width: 0;
+  margin-top: 20px;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  padding-right: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--font-size-24);
+}
+
+src/styles/mainStyle.module.css:115
+.titleMain {
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: var(--font-size-24);
+}
+
+src/styles/mainStyle.module.css:123
+.formTitle {
+  font-weight: 900;
+  color: var(--color-dark-blue);
+  font-size: var(--font-size-24);
+}
+
+src/styles/mainStyle.module.css:982
+.connectionErrorTitle {
+  margin: 0;
+  color: var(--color-dark-blue);
+  font-size: var(--font-size-24);
+  line-height: 1.3;
+}
+
+src/styles/modalStyle.module.css:107
+.countriesSheetTitle {
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: var(--font-size-24);
+}
+
+src/styles/modalStyle.module.css:236
+.resetModalTitle {
+  margin: 0 0 12px;
+  color: var(--color-dark-blue);
+  font-weight: 850;
+  line-height: 1.25;
+  font-size: var(--font-size-24);
+}
+
+src/styles/profileStyle.module.css:111
+.questPanel h2 {
+  margin: 0 0 24px;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.3;
+  font-size: var(--font-size-24);
+}
+
+src/styles/profileStyle.module.css:242
+.editTitle {
+  margin: 0;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.3;
+  font-size: var(--font-size-24);
+}
+
+src/styles/questsStyle.module.css:181
+.blockTitle {
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  margin-bottom: 20px;
+  font-size: var(--font-size-24);
+}
+
+src/styles/questsStyle.module.css:188
+.questTitle {
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  margin-bottom: 10px;
+  line-height: 28px;
+  min-height: 32px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  font-size: var(--font-size-24);
+}
+
+========================================================================
+Группа 38. Общие свойства — color: var(--color-gray); font-size: var(--font-size-14)
+========================================================================
+
+src/styles/comingSoonStyle.module.css:481
+.galleryCounter {
+  margin-right: 10px;
+  color: var(--color-gray);
+  white-space: nowrap;
+  font-size: var(--font-size-14);
+}
+
+src/styles/gameStyle.module.css:234
+.hintTextDisabled {
+  font-weight: 800;
+  color: var(--color-gray);
+  font-size: var(--font-size-14);
+}
+
+src/styles/questsStyle.module.css:452
+.featuredBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 10px;
+  color: var(--color-gray);
+  font-size: var(--font-size-14);
+}
+
+src/styles/contactsStyle.module.css:47
+.contactsEmailTitle {
+  margin: 0 0 10px;
+  color: var(--color-gray);
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: var(--font-size-14);
+}
+
+src/styles/legalStyle.module.css:1
+.revision {
+  margin: 0 0 32px;
+  color: var(--color-gray);
+  line-height: 1.5;
+  font-size: var(--font-size-14);
+}
+
+src/styles/mainStyle.module.css:144
+.formSubtitle {
+  color: var(--color-gray);
+  text-align: center;
+  line-height: 20px;
+  font-size: var(--font-size-14);
+}
+
+src/styles/mainStyle.module.css:337
+.secondButtonText {
+  transition: color 0.2s ease;
+  color: var(--color-gray);
+  font-weight: 600;
+  font-size: var(--font-size-14);
+}
+
+src/styles/mainStyle.module.css:854
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 11px;
+  margin: 0 0 70px;
+  color: var(--color-gray);
+  font-size: var(--font-size-14);
+}
+
+src/styles/questsStyle.module.css:605
+.questsListCount {
+  flex-shrink: 0;
+  color: var(--color-gray);
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: nowrap;
+  font-size: var(--font-size-14);
+}
+
+========================================================================
+Группа 39. Общие свойства — display: flex; justify-content: center; align-items: center
+========================================================================
+
+src/styles/gameStyle.module.css:43
+.playTemplateSignsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+src/styles/authStyle.module.css:30
+.secondaryAction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+========================================================================
+Группа 40. Общие свойства — color: var(--color-dark-blue); font-size: var(--font-size-18)
+========================================================================
+
+src/styles/gameStyle.module.css:154
+.questionText {
+  font-weight: 700;
+  color: var(--color-dark-blue);
+  text-align: center;
+  line-height: 24px;
+  font-size: var(--font-size-18);
+}
+
+src/styles/comingSoonStyle.module.css:187
+.stepTitle {
+  margin: 0 0 12px;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.35;
+  font-size: var(--font-size-18);
+}
+
+src/styles/countriesStyle.module.css:30
+.countryHeading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  font-size: var(--font-size-18);
+}
+
+src/styles/formsStyle.module.css:65
+.blockSuccess {
+  color: var(--color-dark-blue);
+  font-weight: 700;
+  font-size: var(--font-size-18);
+}
+
+src/styles/headerStyle.module.css:82
+.buttonText {
+  font-weight: 600;
+  color: var(--color-dark-blue);
+  font-size: var(--font-size-18);
+}
+
+src/styles/howPlayStyle.module.css:83
+.titleLight,
+.titleBlue {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  color: var(--color-dark-blue);
+  font-weight: 750;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  font-size: var(--font-size-18);
+}
+
+src/styles/mainStyle.module.css:129
+.subtitle {
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  margin-top: 16px;
+  margin-bottom: 12px;
+  font-size: var(--font-size-18);
+}
+
+src/styles/modalStyle.module.css:42
+.countryName {
+  font-weight: 700;
+  color: var(--color-dark-blue);
+  font-size: var(--font-size-18);
+}
+
+========================================================================
+Группа 41. Общие свойства — color: var(--color-dark-blue); line-height: 1.3
+========================================================================
+
+src/styles/profileStyle.module.css:28
+.accountName {
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  font-size: var(--font-size-32);
+}
+
+src/styles/profileStyle.module.css:339
+@media (max-width: 620px) {
+  .accountName {
+    font-size: var(--font-size-24);
+  }
+}
+
+src/styles/questDetailStyle.module.css:120
+.finalTitle {
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  font-size: var(--font-size-20);
+}
+
+src/styles/mainStyle.module.css:982
+.connectionErrorTitle {
+  margin: 0;
+  color: var(--color-dark-blue);
+  font-size: var(--font-size-24);
+  line-height: 1.3;
+}
+
+src/styles/profileStyle.module.css:111
+.questPanel h2 {
+  margin: 0 0 24px;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.3;
+  font-size: var(--font-size-24);
+}
+
+src/styles/profileStyle.module.css:242
+.editTitle {
+  margin: 0;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.3;
+  font-size: var(--font-size-24);
+}
+
+src/styles/questsStyle.module.css:443
+.featuredTitle {
+  margin: 0;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+  line-height: 1.3;
+  font-size: var(--font-size-20);
+  transition: color 0.2s ease;
+}
+
+========================================================================
+Группа 42. Общие свойства — min-width: 0
+========================================================================
+
+src/styles/comingSoonStyle.module.css:96
+.aboutContent {
+  min-width: 0;
+}
+
+src/styles/contactsStyle.module.css:168
+.blockIntro {
+  min-width: 0;
+}
+
+src/styles/footerStyle.module.css:144
+.footerInformation {
+  min-width: 0;
+}
+
+src/styles/footerStyle.module.css:148
+.footerNavigation > div {
+  min-width: 0;
+}
+
+src/styles/formsStyle.module.css:1
+.blockForm {
+  min-width: 0;
+}
+
+src/styles/mainStyle.module.css:755
+.heroContent {
+  min-width: 0;
+}
+
+src/styles/mainStyle.module.css:825
+.mainAboutContent {
+  min-width: 0;
+}
+
+src/styles/questsStyle.module.css:554
+.richText {
+  min-width: 0;
+}
+
+========================================================================
+Группа 43. Общие свойства — display: none
+========================================================================
+
+src/styles/comingSoonStyle.module.css:665
+@media (max-width: 620px) {
+  .signupArtwork {
+    display: none;
+  }
+}
+
+src/styles/headerStyle.module.css:172
+.headerMobileMenu {
+  display: none;
+}
+
+src/styles/headerStyle.module.css:279
+@media (max-width: 760px) {
+  .headerMobileMenu {
+    display: flex;
+    order: 2;
+    margin-left: 12px;
+  }
+}
+
+src/styles/headerStyle.module.css:275
+@media (max-width: 760px) {
+  .headerNav {
+    display: none;
+  }
+}
+
+src/styles/mainStyle.module.css:15
+.mainScreenScroll::-webkit-scrollbar {
+  display: none;
+}
+
+src/styles/mainStyle.module.css:1005
+.connectionErrorCompact .connectionErrorText {
+  display: none;
+}
+
+src/styles/modalStyle.module.css:121
+.countriesList::-webkit-scrollbar {
+  display: none;
+}
+
+src/styles/profileStyle.module.css:103
+.questPanel:empty {
+  display: none;
+}
+
+src/styles/questsStyle.module.css:357
+.filterScroll::-webkit-scrollbar {
+  display: none;
+}
+
+========================================================================
+Группа 44. Общие свойства — display: flex; flex-direction: column; justify-content: center
+========================================================================
+
+src/styles/gameStyle.module.css:131
+.modeTextContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+src/styles/gameStyle.module.css:124
+.modeRadioContainer {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+  justify-content: center;
+}
+
+src/styles/gameStyle.module.css:617
+.taskTextPreviewContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+src/styles/mainStyle.module.css:626
+.arrowContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 7px;
+}
+
+src/styles/questsStyle.module.css:304
+.questTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+src/styles/gameStyle.module.css:390
+.formatPill {
+  display: flex;
+  flex-direction: column;
+  width: 56px;
+  justify-content: center;
+}
+
+========================================================================
+Группа 45. Общие свойства — display: flex; align-items: center; gap: 10px
+========================================================================
+
+src/styles/headerStyle.module.css:13
+.headerActions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+src/styles/footerStyle.module.css:130
+.footerBottom .socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+src/styles/questDetailStyle.module.css:128
+.finalMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+src/styles/questDetailStyle.module.css:233
+@media (max-width: 620px) {
+  .finalMeta {
+    gap: 10px;
+  }
+}
+
+========================================================================
+Группа 46. Общие свойства — display: flex; flex-direction: row; align-items: center
+========================================================================
+
+src/styles/mainStyle.module.css:500
+.panelRowLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+src/styles/mainStyle.module.css:506
+.panelRowRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+src/styles/profileStyle.module.css:152
+.valueBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+src/styles/questsStyle.module.css:256
+.progressRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+src/styles/gameStyle.module.css:43
+.playTemplateSignsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+========================================================================
+Группа 47. Общие свойства — display: flex; flex-direction: column; align-items: center
+========================================================================
+
+src/styles/mainStyle.module.css:662
+.loaderOverlay {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+src/styles/mainStyle.module.css:494
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+========================================================================
+Группа 48. Общие свойства — text-transform: uppercase; color: var(--color-dark-blue); text-align: center
+========================================================================
+
+src/styles/gameStyle.module.css:147
+.answerTitle {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-dark-blue);
+  text-align: center;
+  font-size: var(--font-size-24);
+}
+
+src/styles/gameStyle.module.css:162
+.gameAnswerText {
+  font-weight: 900;
+  color: var(--color-dark-blue);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: var(--font-size-20);
+}
+
+========================================================================
+Группа 49. Общие свойства — color: var(--color-gray); font-size: var(--font-size-18)
+========================================================================
+
+src/styles/gameStyle.module.css:246
+.progressTextDisabled {
+  font-weight: 700;
+  color: var(--color-gray);
+  font-size: var(--font-size-18);
+}
+
+src/styles/modalStyle.module.css:149
+.countriesItemText {
+  color: var(--color-gray);
+  font-weight: 500;
+  font-size: var(--font-size-18);
+}
+
+src/styles/mainStyle.module.css:167
+.p {
+  margin-bottom: 5px;
+  line-height: 21px;
+  color: var(--color-gray);
+  font-weight: 300;
+  font-size: var(--font-size-18);
+}
+
+src/styles/mainStyle.module.css:181
+.description {
+  line-height: 20px;
+  color: var(--color-gray);
+  font-size: var(--font-size-18);
+}
+
+src/styles/mainStyle.module.css:187
+.textThin {
+  font-weight: 300;
+  line-height: 21px;
+  color: var(--color-gray);
+  font-size: var(--font-size-18);
+}
+
+src/styles/mainStyle.module.css:778
+.heroDescription {
+  max-width: 450px;
+  margin: 0 0 28px;
+  color: var(--color-gray);
+  line-height: 1.6;
+  font-size: var(--font-size-18);
+}
+
+========================================================================
+Группа 50. Общие свойства — color: var(--color-gray); line-height: 1.5
+========================================================================
+
+src/styles/footerStyle.module.css:118
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 48px;
+  padding-top: 22px;
+  border-top: 1px solid var(--color-gray);
+  color: var(--color-gray);
+  line-height: 1.5;
+}
+
+src/styles/footerStyle.module.css:204
+@media (max-width: 760px) {
+  .footerBottom {
+    margin-top: 36px;
+  }
+}
+
+src/styles/footerStyle.module.css:227
+@media (max-width: 480px) {
+  .footerBottom {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+src/styles/profileStyle.module.css:36
+.accountEmail {
+  margin-top: 6px;
+  color: var(--color-gray);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+src/styles/contactsStyle.module.css:47
+.contactsEmailTitle {
+  margin: 0 0 10px;
+  color: var(--color-gray);
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: var(--font-size-14);
+}
+
+src/styles/legalStyle.module.css:1
+.revision {
+  margin: 0 0 32px;
+  color: var(--color-gray);
+  line-height: 1.5;
+  font-size: var(--font-size-14);
+}
+
+src/styles/questsStyle.module.css:605
+.questsListCount {
+  flex-shrink: 0;
+  color: var(--color-gray);
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: nowrap;
+  font-size: var(--font-size-14);
+}
+
+========================================================================
+Группа 51. Общие свойства — background-color: var(--color-blue)
+========================================================================
+
+src/styles/gameStyle.module.css:539
+.progressMedalInProgress {
+  background-color: var(--color-blue);
+}
+
+src/styles/gameStyle.module.css:585
+.progressDone {
+  background-color: var(--color-blue);
+}
+
+src/styles/mainStyle.module.css:29
+.bgBlue {
+  background-color: var(--color-blue);
+}
+
+src/styles/contactsStyle.module.css:117
+.socialTelegram {
+  background-color: var(--color-blue);
+}
+
+src/styles/contactsStyle.module.css:125
+.socialFacebook {
+  background-color: var(--color-blue);
+}
+
+src/styles/contactsStyle.module.css:129
+.socialVk {
+  background-color: var(--color-blue);
+}
+
+========================================================================
+Группа 52. Общие свойства — display: flex; flex-direction: row; align-items: center
+========================================================================
+
+src/styles/questsStyle.module.css:285
+.questStatRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 6px;
+}
+
+src/styles/gameStyle.module.css:43
+.playTemplateSignsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+src/styles/headerStyle.module.css:13
+.headerActions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+src/styles/mainStyle.module.css:500
+.panelRowLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+src/styles/mainStyle.module.css:506
+.panelRowRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+src/styles/questsStyle.module.css:256
+.progressRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+========================================================================
+Группа 53. Общие свойства — grid-template-columns: 1fr
+========================================================================
+
+src/styles/formsStyle.module.css:85
+@media (max-width: 500px) {
+  .blockFields {
+    grid-template-columns: 1fr;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:711
+@media (max-width: 360px) {
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+src/styles/countriesStyle.module.css:91
+@media (max-width: 420px) {
+  .countryCities {
+    grid-template-columns: 1fr;
+  }
+}
+
+src/styles/footerStyle.module.css:189
+@media (max-width: 900px) {
+  .cityList {
+    grid-template-columns: 1fr;
+  }
+}
+
+========================================================================
+Группа 54. Общие свойства — color: var(--color-blue); font-size: var(--font-size-14)
+========================================================================
+
+src/styles/gameStyle.module.css:228
+.skipTextActive {
+  font-weight: 600;
+  color: var(--color-blue);
+  font-size: var(--font-size-14);
+}
+
+src/styles/mainStyle.module.css:670
+.loaderText {
+  margin-top: 20px;
+  color: var(--color-blue);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: var(--font-size-14);
+}
+
+src/styles/mainStyle.module.css:653
+.badgeText {
+  font-weight: 700;
+  color: var(--color-blue);
+  text-transform: uppercase;
+  font-size: var(--font-size-14);
+}
+
+src/styles/mainStyle.module.css:759
+.heroEyebrow {
+  margin-bottom: 20px;
+  color: var(--color-blue);
+  font-weight: 600;
+  font-size: var(--font-size-14);
+}
+
+src/styles/questsStyle.module.css:217
+.city {
+  color: var(--color-blue);
+  font-weight: 500;
+  margin-bottom: 6px;
+  font-size: var(--font-size-14);
+}
+
+========================================================================
+Группа 55. Общие свойства — background-color: var(--color-light-gray)
+========================================================================
+
+src/styles/gameStyle.module.css:535
+.progressMedalDone {
+  background-color: var(--color-light-gray);
+}
+
+src/styles/gameStyle.module.css:543
+.progressMedalFinish {
+  background-color: var(--color-light-gray);
+}
+
+src/styles/howPlayStyle.module.css:65
+.numberCircleLight {
+  background-color: var(--color-light-gray);
+}
+
+src/styles/howPlayStyle.module.css:69
+.numberCircleBlue {
+  background-color: var(--color-light-gray);
+}
+
+src/styles/modalStyle.module.css:145
+.countriesItemRowActive {
+  background-color: var(--color-light-gray);
+}
+
+========================================================================
+Группа 56. Общие свойства — border: none; padding: 0; cursor: pointer
+========================================================================
+
+src/styles/gameStyle.module.css:551
+button.progressMedal {
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+src/styles/gameStyle.module.css:361
+button.barContainer {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+src/styles/gameStyle.module.css:349
+.answerBackButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+========================================================================
+Группа 57. Общие свойства — outline: 2px solid var(--color-blue); outline-offset: 3px
+========================================================================
+
+src/styles/legalStyle.module.css:52
+.content a:focus-visible,
+.documentsNav a:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
+}
+
+src/styles/profileStyle.module.css:62
+.accountSettings a:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
+}
+
+src/styles/profileStyle.module.css:137
+.questPanel a:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
+}
+
+src/styles/questsStyle.module.css:696
+.questsListSection .filterPill:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
+}
+
+src/styles/questsStyle.module.css:730
+.featuredQuestLink:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
+}
+
+========================================================================
+Группа 58. Общие свойства — display: flex; flex-direction: column; flex: 1
+========================================================================
+
+src/styles/questsStyle.module.css:52
+.contentBlock {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+src/styles/gameStyle.module.css:131
+.modeTextContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+src/styles/gameStyle.module.css:617
+.taskTextPreviewContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+src/styles/mainStyle.module.css:662
+.loaderOverlay {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+src/styles/questsStyle.module.css:304
+.questTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+========================================================================
+Группа 59. Общие свойства — margin-bottom: 0
+========================================================================
+
+src/styles/aboutStyle.module.css:21
+.content > div > div:last-child {
+  margin-bottom: 0;
+}
+
+src/styles/comingSoonStyle.module.css:128
+.richText p:last-child {
+  margin-bottom: 0;
+}
+
+src/styles/howPlayStyle.module.css:130
+.rulesList > div {
+  margin-bottom: 0;
+}
+
+src/styles/mainStyle.module.css:936
+.listRow:last-child {
+  margin-bottom: 0;
+}
+
+========================================================================
+Группа 60. Общие свойства — transition: none
+========================================================================
+
+src/styles/comingSoonStyle.module.css:717
+@media (prefers-reduced-motion: reduce) {
+  .signupArtwork {
+    transition: none;
+  }
+}
+
+src/styles/contactsStyle.module.css:252
+@media (prefers-reduced-motion: reduce) {
+  .emailButton,
+  .socialIconBtn {
+    transition: none;
+  }
+}
+
+src/styles/profileStyle.module.css:345
+@media (prefers-reduced-motion: reduce) {
+  .accountSettings a,
+  .questPanel a {
+    transition: none;
+  }
+}
+
+src/styles/questsStyle.module.css:837
+@media (prefers-reduced-motion: reduce) {
+  .questsListSection .filterPill {
+    transition: none;
+  }
+}
+
+========================================================================
+Группа 61. Общие свойства — text-align: center
+========================================================================
+
+src/styles/footerStyle.module.css:164
+@media (max-width: 900px) {
+  .footerBrand {
+    text-align: center;
+  }
+}
+
+src/styles/gameStyle.module.css:296
+.formatIcon {
+  text-align: center;
+}
+
+src/styles/mainStyle.module.css:198
+.textCenter {
+  text-align: center;
+}
+
+src/styles/questDetailStyle.module.css:213
+@media (max-width: 620px) {
+  .purchasePanel > div > div:first-child {
+    text-align: center;
+  }
+}
+
+========================================================================
+Группа 62. Общие свойства — display: flex; flex-direction: column; align-items: center
+========================================================================
+
+src/styles/gameStyle.module.css:36
+.playTemplateProgressContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+src/styles/gameStyle.module.css:102
+.gameActions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+src/styles/mainStyle.module.css:494
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+========================================================================
+Группа 63. Общие свойства — margin-bottom: 10px
+========================================================================
+
+src/styles/gameStyle.module.css:98
+.sightTitle {
+  margin-bottom: 10px;
+}
+
+src/styles/mainStyle.module.css:1094
+@media (max-width: 620px) {
+  .listRow {
+    margin-bottom: 10px;
+  }
+}
+
+src/styles/questsStyle.module.css:48
+.countryBlock {
+  margin-bottom: 10px;
+}
+
+src/styles/mainStyle.module.css:67
+.mb10 {
+  margin-bottom: 10px;
+}
+
+========================================================================
+Группа 64. Общие свойства — flex: 1; font-weight: 500; line-height: 20px
+========================================================================
+
+src/styles/gameStyle.module.css:177
+.gameDetailValue {
+  flex: 1;
+  color: var(--color-gray);
+  font-weight: 500;
+  line-height: 20px;
+}
+
+src/styles/gameStyle.module.css:184
+.gameLink {
+  flex: 1;
+  color: var(--color-blue);
+  font-weight: 500;
+  line-height: 20px;
+}
+
+========================================================================
+Группа 65. Общие свойства — color: var(--color-blue)
+========================================================================
+
+src/styles/gameStyle.module.css:218
+.modeTitleActive {
+  color: var(--color-blue);
+}
+
+src/styles/headerStyle.module.css:251
+.headerNav a[aria-current="page"]:not(:hover):not(:focus-visible) {
+  color: var(--color-blue);
+}
+
+src/styles/mainStyle.module.css:21
+.blue {
+  color: var(--color-blue);
+}
+
+src/styles/mainStyle.module.css:774
+.heroTitle span {
+  color: var(--color-blue);
+}
+
+========================================================================
+Группа 66. Общие свойства — width: 100%
+========================================================================
+
+src/styles/gameStyle.module.css:371
+.sightTouchable {
+  width: 100%;
+}
+
+src/styles/profileStyle.module.css:326
+@media (max-width: 620px) {
+  .guestNotice a {
+    width: 100%;
+  }
+}
+
+src/styles/questDetailStyle.module.css:242
+@media (max-width: 620px) {
+  .finalButton button,
+  .finalButton a {
+    width: 100%;
+  }
+}
+
+src/styles/questsStyle.module.css:739
+@media (max-width: 920px) {
+  .stats {
+    width: 100%;
+  }
+}
+
+========================================================================
+Группа 67. Общие свойства — background-color: var(--color-orange)
+========================================================================
+
+src/styles/gameStyle.module.css:547
+.progressMedalFinishDone {
+  background-color: var(--color-orange);
+}
+
+src/styles/gameStyle.module.css:597
+.progressFinishDone {
+  background-color: var(--color-orange);
+}
+
+src/styles/gameStyle.module.css:605
+.progressPoint.progressCurrent.progressFinishDone {
+  background-color: var(--color-orange);
+}
+
+src/styles/mainStyle.module.css:33
+.bgOrange {
+  background-color: var(--color-orange);
+}
+
+========================================================================
+Группа 68. Общие свойства — transition: color 0.2s ease
+========================================================================
+
+src/styles/headerStyle.module.css:264
+.menuButtonPanel .buttonText {
+  transition: color 0.2s ease;
+}
+
+src/styles/mainStyle.module.css:1038
+.plainButton .blue,
+.plainButton .heading {
+  transition: color 0.2s ease;
+}
+
+src/styles/footerStyle.module.css:65
+.cityList a {
+  transition: color 0.2s ease;
+}
+
+src/styles/footerStyle.module.css:81
+.footerLinks a {
+  transition: color 0.2s ease;
+}
+
+========================================================================
+Группа 69. Общие свойства — margin-top: 0
+========================================================================
+
+src/styles/aboutStyle.module.css:17
+.content > div > div:first-child {
+  margin-top: 0;
+}
+
+src/styles/comingSoonStyle.module.css:506
+.additionalContent {
+  margin-top: 0;
+}
+
+src/styles/mainStyle.module.css:887
+.sitePage > .breadcrumbs + *,
+.sitePage > .breadcrumbs + article > :first-child {
+  margin-top: 0;
+}
+
+========================================================================
+Группа 70. Общие свойства — opacity: 0.8
+========================================================================
+
+src/styles/citiesStyle.module.css:17
+.cityCardWrapper:active {
+  opacity: 0.8;
+}
+
+src/styles/gameStyle.module.css:651
+button.taskCard:active {
+  opacity: 0.8;
+}
+
+src/styles/questsStyle.module.css:365
+.questCardWrapper:active {
+  opacity: 0.8;
+}
+
+========================================================================
+Группа 71. Общие свойства — color: var(--color-white)
+========================================================================
+
+src/styles/comingSoonStyle.module.css:246
+.signupDark .signupTitle {
+  color: var(--color-white);
+}
+
+src/styles/mainStyle.module.css:908
+.textWhite {
+  color: var(--color-white);
+}
+
+src/styles/questsStyle.module.css:353
+.filterTextActive {
+  color: var(--color-white);
+}
+
+========================================================================
+Группа 72. Общие свойства — min-width: 0; background-color: var(--color-white); border: 1px solid var(--color-light-gray)
+========================================================================
+
+src/styles/countriesStyle.module.css:22
+.countryCard {
+  min-width: 0;
+  padding: 24px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: 18px;
+}
+
+src/styles/countriesStyle.module.css:85
+@media (max-width: 600px) {
+  .countryCard {
+    padding: 20px;
+  }
+}
+
+src/styles/profileStyle.module.css:94
+.questPanel {
+  min-width: 0;
+  padding: 26px 26px 14px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 18px;
+  background-color: var(--color-white);
+  box-shadow: var(--card-shadow);
+}
+
+src/styles/profileStyle.module.css:186
+.settingsCard {
+  min-width: 0;
+  padding: 28px 32px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 18px;
+  background-color: var(--color-white);
+  box-shadow: var(--card-shadow);
+}
+
+========================================================================
+Группа 73. Общие свойства — overflow-wrap: anywhere
+========================================================================
+
+src/styles/footerStyle.module.css:152
+.footerNavigation a {
+  overflow-wrap: anywhere;
+}
+
+src/styles/footerStyle.module.css:238
+@media (max-width: 480px) {
+  .footerTitle {
+    overflow-wrap: anywhere;
+  }
+}
+
+src/styles/footerStyle.module.css:242
+@media (max-width: 480px) {
+  .footerLinks a {
+    overflow-wrap: anywhere;
+  }
+}
+
+========================================================================
+Группа 74. Общие свойства — display: flex; flex-direction: column; align-items: center
+========================================================================
+
+src/styles/gameStyle.module.css:116
+.hintContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+src/styles/gameStyle.module.css:36
+.playTemplateProgressContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+src/styles/mainStyle.module.css:494
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+========================================================================
+Группа 75. Общие свойства — background-color: var(--color-green)
+========================================================================
+
+src/styles/gameStyle.module.css:589
+.progressInProgress {
+  background-color: var(--color-green);
+}
+
+src/styles/mainStyle.module.css:41
+.bgGreen {
+  background-color: var(--color-green);
+}
+
+src/styles/questsStyle.module.css:128
+.badgeSuccess {
+  background-color: var(--color-green);
+}
+
+========================================================================
+Группа 76. Общие свойства — font: inherit; color: inherit; cursor: pointer
+========================================================================
+
+src/styles/gameStyle.module.css:643
+button.taskCard {
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+src/styles/questsStyle.module.css:36
+button.itemWrapper {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+src/styles/gameStyle.module.css:405
+button.pill {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+========================================================================
+Группа 77. Общие свойства — filter: brightness(0.85)
+========================================================================
+
+src/styles/gameStyle.module.css:744
+.closeButton:hover:not(:disabled),
+.gameCancelLink:hover:not(:disabled),
+button.barContainer:hover:not(:disabled),
+button.formatPill:hover:not(:disabled),
+button.pill:hover:not(:disabled),
+button.progressMedal:hover:not(:disabled),
+button.taskCard:hover:not(:disabled) {
+  filter: brightness(0.85);
+}
+
+src/styles/mainStyle.module.css:1033
+.plainButton:hover:not(:disabled) > img,
+.backButton:hover:not(:disabled) .backIcon {
+  filter: brightness(0.85);
+}
+
+src/styles/profileStyle.module.css:58
+.accountSettings a:hover .settingsIcon {
+  filter: brightness(0.85);
+}
+
+========================================================================
+Группа 78. Общие свойства — padding: 30px
+========================================================================
+
+src/styles/howPlayStyle.module.css:152
+@media (max-width: 800px) {
+  .rulesContainer {
+    padding: 30px;
+  }
+}
+
+src/styles/contactsStyle.module.css:212
+@media (max-width: 820px) {
+  .contactsCard {
+    padding: 30px;
+  }
+}
+
+src/styles/questsStyle.module.css:757
+@media (max-width: 800px) {
+  .facts {
+    padding: 30px;
+  }
+}
+
+========================================================================
+Группа 79. Общие свойства — color: var(--color-dark-blue); font-weight: 700
+========================================================================
+
+src/styles/legalStyle.module.css:70
+.details dt {
+  color: var(--color-dark-blue);
+  font-weight: 700;
+}
+
+src/styles/mainStyle.module.css:873
+.breadcrumbs [aria-current='page'] {
+  color: var(--color-dark-blue);
+  font-weight: 700;
+}
+
+src/styles/mainStyle.module.css:151
+.formThirdtitle {
+  font-weight: 700;
+  color: var(--color-dark-blue);
+}
+
+========================================================================
+Группа 80. Общие свойства — color: var(--color-gray)
+========================================================================
+
+src/styles/mainStyle.module.css:202
+.textDisabled {
+  color: var(--color-gray);
+}
+
+src/styles/mainStyle.module.css:920
+.textMuted {
+  color: var(--color-gray);
+}
+
+src/styles/modalStyle.module.css:277
+.resetModalInput::placeholder {
+  color: var(--color-gray);
+}
+
+========================================================================
+Группа 81. Общие свойства — color: var(--color-blue); line-height: 1
+========================================================================
+
+src/styles/notFoundStyle.module.css:16
+.code {
+  margin: 0;
+  color: var(--color-blue);
+  font-weight: 900;
+  line-height: 1;
+  font-size: var(--font-size-180);
+}
+
+src/styles/notFoundStyle.module.css:47
+@media (max-width: 620px) {
+  .code {
+    font-size: var(--font-size-112);
+  }
+}
+
+src/styles/comingSoonStyle.module.css:179
+.stepNumber {
+  margin-bottom: 25px;
+  color: var(--color-blue);
+  font-weight: 850;
+  line-height: 1;
+  font-size: var(--font-size-34);
+}
+
+src/styles/howPlayStyle.module.css:73
+.numberTextLight,
+.numberTextBlue {
+  color: var(--color-blue);
+  font-weight: 750;
+  line-height: 1;
+  font-size: var(--font-size-20);
+}
+
+========================================================================
+Группа 82. Общие свойства — font-family: var(--font-family-heading)
+========================================================================
+
+src/index.css:24
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+}
+
+src/styles/mainStyle.module.css:105
+.heading {
+  font-family: var(--font-family-heading);
+}
+
+========================================================================
+Группа 83. Общие свойства — margin: 0
+========================================================================
+
+src/index.css:39
+body {
+  margin: 0;
+}
+
+src/styles/legalStyle.module.css:58
+.details {
+  margin: 0;
+}
+
+========================================================================
+Группа 84. Общие свойства — min-height: 100dvh; display: flex; flex-direction: column
+========================================================================
+
+src/index.css:43
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+src/styles/mainStyle.module.css:720
+.siteLayout {
+  --card-shadow: 0 8px 24px #2C3E501A;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+========================================================================
+Группа 85. Общие свойства — display: flex; flex-direction: column; width: 100%
+========================================================================
+
+src/styles/authStyle.module.css:22
+.authStep {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+src/styles/gameStyle.module.css:102
+.gameActions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+========================================================================
+Группа 86. Общие свойства — display: flex; flex-direction: row; padding-bottom: 20px
+========================================================================
+
+src/styles/citiesStyle.module.css:21
+.cityInfoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+src/styles/questsStyle.module.css:271
+.questInfoContainer {
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+}
+
+========================================================================
+Группа 87. Общие свойства — color: var(--color-white); font-size: var(--font-size-18)
+========================================================================
+
+src/styles/comingSoonStyle.module.css:57
+.heroSubtitle {
+  max-width: 450px;
+  margin: 0;
+  color: var(--color-white);
+  font-weight: 500;
+  line-height: 1.6;
+  font-size: var(--font-size-18);
+}
+
+src/styles/comingSoonStyle.module.css:596
+@media (max-width: 620px) {
+  .heroSubtitle {
+    max-width: 310px;
+    font-size: var(--font-size-16);
+  }
+}
+
+src/styles/gameStyle.module.css:240
+.progressTextLight {
+  font-weight: 800;
+  color: var(--color-white);
+  font-size: var(--font-size-18);
+}
+
+========================================================================
+Группа 88. Общие свойства — color: var(--color-light-gray)
+========================================================================
+
+src/styles/comingSoonStyle.module.css:234
+.signupDark .signupEyebrow {
+  color: var(--color-light-gray);
+}
+
+src/styles/comingSoonStyle.module.css:257
+.signupDark .signupText {
+  color: var(--color-light-gray);
+}
+
+========================================================================
+Группа 89. Общие свойства — transform: scale(1.02)
+========================================================================
+
+src/styles/comingSoonStyle.module.css:374
+.galleryCard:hover .galleryImage {
+  transform: scale(1.02);
+}
+
+src/styles/questsStyle.module.css:421
+.featuredCard:hover .featuredImage,
+.featuredCard:focus-within .featuredImage {
+  transform: scale(1.02);
+}
+
+========================================================================
+Группа 90. Общие свойства — color: var(--color-dark-blue); font-weight: 750; overflow-wrap: anywhere
+========================================================================
+
+src/styles/comingSoonStyle.module.css:467
+.galleryDialogTitle {
+  min-width: 0;
+  color: var(--color-dark-blue);
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+src/styles/questsStyle.module.css:520
+.statValue {
+  margin-top: 4px;
+  color: var(--color-dark-blue);
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+========================================================================
+Группа 91. Общие свойства — display: flex; align-items: center; margin-left: auto
+========================================================================
+
+src/styles/comingSoonStyle.module.css:474
+.galleryDialogNav {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-left: auto;
+}
+
+src/styles/headerStyle.module.css:153
+.headerNav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-left: auto;
+}
+
+src/styles/headerStyle.module.css:275
+@media (max-width: 760px) {
+  .headerNav {
+    display: none;
+  }
+}
+
+========================================================================
+Группа 92. Общие свойства — color: var(--color-light-blue-hover); text-underline-offset: 4px
+========================================================================
+
+src/styles/comingSoonStyle.module.css:510
+.heroCity:hover,
+.heroCity:focus-visible {
+  color: var(--color-light-blue-hover);
+  text-underline-offset: 4px;
+}
+
+src/styles/questDetailStyle.module.css:171
+.cityText:hover,
+.cityText:focus-visible {
+  color: var(--color-light-blue-hover);
+  text-underline-offset: 4px;
+}
+
+========================================================================
+Группа 93. Общие свойства — max-width: 760px
+========================================================================
+
+src/styles/comingSoonStyle.module.css:532
+@media (max-width: 800px) {
+  .about {
+    max-width: 760px;
+  }
+}
+
+src/styles/aboutStyle.module.css:28
+@media (max-width: 800px) {
+  .article {
+    max-width: 760px;
+  }
+}
+
+========================================================================
+Группа 94. Общие свойства — display: flex; flex-wrap: wrap; gap: 10px
+========================================================================
+
+src/styles/contactsStyle.module.css:30
+.contactsInfo .contactsSocials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+src/styles/questDetailStyle.module.css:128
+.finalMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+========================================================================
+Группа 95. Общие свойства — padding: 44px 16px
+========================================================================
+
+src/styles/countriesStyle.module.css:76
+@media (max-width: 600px) {
+  .countriesSection {
+    padding: 44px 16px;
+  }
+}
+
+src/styles/mainStyle.module.css:1123
+@media (max-width: 420px) {
+  .mainAbout {
+    padding: 44px 16px;
+  }
+}
+
+========================================================================
+Группа 96. Общие свойства — padding: 20px
+========================================================================
+
+src/styles/countriesStyle.module.css:85
+@media (max-width: 600px) {
+  .countryCard {
+    padding: 20px;
+  }
+}
+
+src/styles/mainStyle.module.css:99
+.p20 {
+  padding: 20px;
+}
+
+========================================================================
+Группа 97. Общие свойства — grid-template-columns: minmax(0, 1fr); gap: 28px
+========================================================================
+
+src/styles/footerStyle.module.css:159
+@media (max-width: 900px) {
+  .footerColumns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+
+src/styles/questsStyle.module.css:751
+@media (max-width: 800px) {
+  .description,
+  .facts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+
+========================================================================
+Группа 98. Общие свойства — width: 100%; min-width: 0
+========================================================================
+
+src/styles/formsStyle.module.css:89
+@media (max-width: 500px) {
+  .blockButtonRow > button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+src/styles/mainStyle.module.css:1009
+.connectionErrorCompact .siteButton {
+  min-width: 0;
+  width: 100%;
+}
+
+========================================================================
+Группа 99. Общие свойства — width: 100%; margin-bottom: 5px
+========================================================================
+
+src/styles/gameStyle.module.css:61
+.modeListContainer {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+src/styles/gameStyle.module.css:111
+.inputWrapper {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+========================================================================
+Группа 100. Общие свойства — background-color: var(--color-light-gray); border-color: var(--color-blue)
+========================================================================
+
+src/styles/gameStyle.module.css:420
+.pillActive {
+  background-color: var(--color-light-gray);
+  border-color: var(--color-blue);
+}
+
+src/styles/mainStyle.module.css:586
+.radioCardActive {
+  border-color: var(--color-blue);
+  background-color: var(--color-light-gray);
+}
+
+========================================================================
+Группа 101. Общие свойства — background-color: var(--color-light-gray); border-color: var(--color-light-gray)
+========================================================================
+
+src/styles/gameStyle.module.css:435
+.pillDisabled {
+  background-color: var(--color-light-gray);
+  border-color: var(--color-light-gray);
+}
+
+src/styles/howPlayStyle.module.css:38
+.cardBlue {
+  background-color: var(--color-light-gray);
+  border-color: var(--color-light-gray);
+}
+
+========================================================================
+Группа 102. Общие свойства — background-color: var(--color-red)
+========================================================================
+
+src/styles/gameStyle.module.css:593
+.progressFinish {
+  background-color: var(--color-red);
+}
+
+src/styles/questsStyle.module.css:132
+.badgeLocked {
+  background-color: var(--color-red);
+}
+
+========================================================================
+Группа 103. Общие свойства — display: flex; flex-direction: row; justify-content: space-between
+========================================================================
+
+src/styles/gameStyle.module.css:610
+.taskGridWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+src/styles/questsStyle.module.css:256
+.progressRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+========================================================================
+Группа 104. Общие свойства — width: 24px; height: 24px; object-fit: contain
+========================================================================
+
+src/styles/headerStyle.module.css:98
+.icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+src/styles/mainStyle.module.css:363
+.backIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+========================================================================
+Группа 105. Общие свойства — color: var(--color-gray); font-size: var(--font-size-24)
+========================================================================
+
+src/styles/headerStyle.module.css:119
+.chevron {
+  color: var(--color-gray);
+  padding-bottom: 2px;
+  font-size: var(--font-size-24);
+}
+
+src/styles/modalStyle.module.css:48
+.countriesChevron {
+  color: var(--color-gray);
+  font-size: var(--font-size-24);
+}
+
+========================================================================
+Группа 106. Общие свойства — color: var(--color-blue); background: var(--color-light-gray)
+========================================================================
+
+src/styles/headerStyle.module.css:255
+.mobileDrawer a[aria-current='page']:not(:hover):not(:focus-visible) {
+  color: var(--color-blue);
+  background: var(--color-light-gray);
+}
+
+src/styles/questDetailStyle.module.css:157
+.finalStatusFinished {
+  background: var(--color-light-gray);
+  color: var(--color-blue);
+}
+
+========================================================================
+Группа 107. Общие свойства — background-color: var(--color-blue-hover)
+========================================================================
+
+src/styles/headerStyle.module.css:260
+.menuButton:hover .menuLine {
+  background-color: var(--color-blue-hover);
+}
+
+src/styles/mainStyle.module.css:1014
+.button:hover:not(:disabled),
+.primaryButton:hover:not(:disabled) {
+  background-color: var(--color-blue-hover);
+}
+
+========================================================================
+Группа 108. Общие свойства — gap: 10px
+========================================================================
+
+src/styles/howPlayStyle.module.css:162
+@media (max-width: 620px) {
+  .rulesList {
+    gap: 10px;
+  }
+}
+
+src/styles/questDetailStyle.module.css:233
+@media (max-width: 620px) {
+  .finalMeta {
+    gap: 10px;
+  }
+}
+
+========================================================================
+Группа 109. Общие свойства — min-height: 0; overflow-y: auto; scrollbar-width: none
+========================================================================
+
+src/styles/mainStyle.module.css:9
+.mainScreenScroll {
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+src/styles/modalStyle.module.css:115
+.countriesList {
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+========================================================================
+Группа 110. Общие свойства — background-color: var(--color-purple)
+========================================================================
+
+src/styles/mainStyle.module.css:37
+.bgPurple {
+  background-color: var(--color-purple);
+}
+
+src/styles/contactsStyle.module.css:121
+.socialInstagram {
+  background-color: var(--color-purple);
+}
+
+========================================================================
+Группа 111. Общие свойства — font-weight: 700; color: var(--color-blue)
+========================================================================
+
+src/styles/mainStyle.module.css:212
+.textBlue {
+  font-weight: 700;
+  color: var(--color-blue);
+}
+
+src/styles/modalStyle.module.css:155
+.countriesItemTextActive {
+  color: var(--color-blue);
+  font-weight: 700;
+}
+
+========================================================================
+Группа 112. Общие свойства — display: flex; flex-direction: row; justify-content: center
+========================================================================
+
+src/styles/mainStyle.module.css:485
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+src/styles/gameStyle.module.css:43
+.playTemplateSignsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+========================================================================
+Группа 113. Общие свойства — color: var(--color-dark-blue); font-weight: 600
+========================================================================
+
+src/styles/mainStyle.module.css:621
+.radioTextActive {
+  color: var(--color-dark-blue);
+  font-weight: 600;
+}
+
+src/styles/questsStyle.module.css:237
+.questValue {
+  color: var(--color-dark-blue);
+  font-weight: 600;
+}
+
+========================================================================
+Группа 114. Общие свойства — color: var(--color-green)
+========================================================================
+
+src/styles/mainStyle.module.css:912
+.green {
+  color: var(--color-green);
+}
+
+src/styles/mainStyle.module.css:916
+.greenDark {
+  color: var(--color-green);
+}
+
+========================================================================
+Группа 115. Общие свойства — font-size: var(--font-size-18)
+========================================================================
+
+src/styles/mainStyle.module.css:1001
+.connectionErrorCompact .connectionErrorTitle {
+  font-size: var(--font-size-18);
+}
+
+src/styles/modalStyle.module.css:53
+.countryFlag {
+  font-size: var(--font-size-18);
+}
+
+========================================================================
+Группа 116. Общие свойства — background-color: var(--color-gray-hover)
+========================================================================
+
+src/styles/mainStyle.module.css:1019
+.dangerButton:hover:not(:disabled) {
+  background-color: var(--color-gray-hover);
+}
+
+src/styles/modalStyle.module.css:352
+.countriesPremiumSelector:hover,
+.countriesItemRow:hover,
+.countriesCancelButton:hover {
+  background-color: var(--color-gray-hover);
+}
+
+========================================================================
+Группа 117. Общие свойства — padding: 32px
+========================================================================
+
+src/styles/modalStyle.module.css:218
+.resetModalWindow {
+  padding: 32px;
+}
+
+src/styles/modalStyle.module.css:361
+@media (max-width: 480px) {
+  .resetModalWindow {
+    padding: 25px 22px;
+  }
+}
+
+src/styles/questDetailStyle.module.css:180
+@media (max-width: 800px) {
+  .heroContent {
+    padding: 32px;
+  }
+}
+
+========================================================================
+Группа 118. Общие свойства — display: flex; align-items: center; flex-wrap: wrap
+========================================================================
+
+src/styles/modalStyle.module.css:295
+.resetModalActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+src/styles/questDetailStyle.module.css:128
+.finalMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+========================================================================
+Группа 119. Общие свойства — flex-shrink: 0
+========================================================================
+
+src/styles/profileStyle.module.css:43
+.accountSettings {
+  flex-shrink: 0;
+}
+
+src/styles/profileStyle.module.css:222
+.settingsCard .valueBlock>button {
+  flex-shrink: 0;
+}
+
+========================================================================
+Группа 120. Общие свойства — display: flex; flex-direction: column; gap: 10px
+========================================================================
+
+src/styles/profileStyle.module.css:250
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+src/styles/footerStyle.module.css:74
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+========================================================================
+Группа 121. Общие свойства — grid-column: auto
+========================================================================
+
+src/styles/profileStyle.module.css:265
+@media (max-width: 800px) {
+  .questPanelWide {
+    grid-column: auto;
+  }
+}
+
+src/styles/questDetailStyle.module.css:217
+@media (max-width: 620px) {
+  .purchasePanel > div > button:only-child {
+    grid-column: auto;
+  }
+}
+
+========================================================================
+Группа 122. Общие свойства — grid-template-columns: minmax(0, 1fr); gap: 18px
+========================================================================
+
+src/styles/questDetailStyle.module.css:208
+@media (max-width: 620px) {
+  .purchasePanel > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+src/styles/profileStyle.module.css:260
+@media (max-width: 800px) {
+  .questSections {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+========================================================================
+Группа 123. Общие свойства — gap: 12px
+========================================================================
+
+src/styles/questDetailStyle.module.css:229
+@media (max-width: 620px) {
+  .finalInfo {
+    gap: 12px;
+  }
+}
+
+src/styles/comingSoonStyle.module.css:545
+@media (max-width: 800px) {
+  .stepsGrid {
+    gap: 12px;
+  }
+}
+
+========================================================================
+Группа 124. Общие свойства — display: flex; position: absolute; top: 20px
+========================================================================
+
+src/styles/questsStyle.module.css:164
+.questBadgesTopLeft {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  flex-direction: row;
+}
+
+src/styles/questsStyle.module.css:172
+.questBadgesTopRight {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  flex-direction: row;
+}
+
+========================================================================
+Группа 125. Общие свойства — display: flex; flex-direction: row; align-items: center
+========================================================================
+
+src/styles/questsStyle.module.css:263
+.countryHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-left: 5px;
+}
+
+src/styles/mainStyle.module.css:500
+.panelRowLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+Проверенные CSS-файлы:
+src/index.css
+src/styles/aboutStyle.module.css
+src/styles/authStyle.module.css
+src/styles/citiesStyle.module.css
+src/styles/comingSoonStyle.module.css
+src/styles/contactsStyle.module.css
+src/styles/countriesStyle.module.css
+src/styles/fonts.css
+src/styles/footerStyle.module.css
+src/styles/formsStyle.module.css
+src/styles/gameStyle.module.css
+src/styles/headerStyle.module.css
+src/styles/howPlayStyle.module.css
+src/styles/legalStyle.module.css
+src/styles/mainStyle.module.css
+src/styles/modalStyle.module.css
+src/styles/notFoundStyle.module.css
+src/styles/profileStyle.module.css
+src/styles/questDetailStyle.module.css
+src/styles/questsStyle.module.css
+src/styles/variables.css
+
+fonts.css содержит подключения шрифтов; variables.css — общие значения. Эти определения не являются похожими классами интерфейса.

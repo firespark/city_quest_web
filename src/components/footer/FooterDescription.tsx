@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import { Logo } from '../common/Logo'
 
@@ -8,7 +9,7 @@ export const FooterDescription = () => {
         <div className={footerStyle.footerBrand}>
             <Logo />
 
-            <p className={footerStyle.description}>
+            <p className={`${mainStyle.bodyText} ${footerStyle.footerDescription}`}>
                 Городские квесты и необычные маршруты.
                 Открывайте знакомые улицы заново.
             </p>

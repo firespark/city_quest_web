@@ -2,6 +2,7 @@
 import type { ComponentProps } from 'react'
 
 import questDetailStyle from '../../../styles/questDetailStyle.module.css'
+import mainStyle from '../../../styles/mainStyle.module.css'
 
 import { StartButton } from '../StartButton'
 import { ResetButton } from '../ResetButton'
@@ -54,7 +55,7 @@ export const QuestDetailButton = ({
 
             <div className={questDetailStyle.finalInfo}>
 
-                <strong className={questDetailStyle.finalTitle}>
+                <strong className={`${questDetailStyle.finalTitle} ${mainStyle.heading}`}>
                     {title}
                 </strong>
 

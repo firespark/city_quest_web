@@ -1,4 +1,3 @@
-
 .countriesWrapper {
     padding: 10px;
     padding-top: 20px;
@@ -9,11 +8,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
     padding: 12px;
     padding-right: 20px;
     border-radius: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--card-shadow);
 
     width: 100%;
     border: none;
@@ -22,43 +21,24 @@
     cursor: pointer;
 }
 
-.countriesSelectorLeft {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 .countriesIconCircle {
     display: flex;
     width: 44px;
     height: 44px;
     border-radius: 22px;
-    background-color: #F1F5F9;
+    background-color: var(--color-light-gray);
     justify-content: center;
     align-items: center;
     margin-right: 12px;
 }
 
-.countriesIconText {
-    font-size: 20px;
-}
-
-.countriesLabel {
-    font-size: 12px;
-    color: #BDC3C7;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.countryName {
-    font-size: 18px;
-    font-weight: 700;
-    color: #2C3E50;
-}
-
 .countriesChevron {
-    font-size: 24px;
-    color: #BDC3C7;
+    color: var(--color-gray);
+    font-size: var(--font-size-24);
+}
+
+.countryFlag {
+    font-size: var(--font-size-18);
 }
 
 .countriesDialog {
@@ -83,7 +63,7 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #00000080;
     justify-content: flex-end;
     animation: countriesFadeIn 200ms ease-out;
 }
@@ -91,7 +71,7 @@
 .countriesBottomSheet {
     display: flex;
     flex-direction: column;
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     padding-left: 20px;
@@ -104,29 +84,11 @@
 .countriesDragIndicator {
     width: 40px;
     height: 5px;
-    background-color: #F1F5F9;
+    background-color: var(--color-light-gray);
     border-radius: 3px;
     align-self: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     flex-shrink: 0;
-}
-
-.countriesSheetTitle {
-    font-size: 22px;
-    font-weight: 800;
-    color: #2C3E50;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.countriesList {
-    min-height: 0;
-    overflow-y: auto;
-    scrollbar-width: none;
-}
-
-.countriesList::-webkit-scrollbar {
-    display: none;
 }
 
 .countriesItemRow {
@@ -139,42 +101,26 @@
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 
     width: 100%;
     border: none;
-    background: transparent;
     font: inherit;
     text-align: left;
     cursor: pointer;
 }
 
-.countriesItemRowActive {
-    background-color: #F1F5F9;
-}
-
-.countriesItemText {
-    font-size: 18px;
-    color: #5A6A7A;
-    font-weight: 500;
-}
-
-.countriesItemTextActive {
-    color: #17A2B8;
-    font-weight: 700;
-}
-
 .countriesCheckMark {
-    font-size: 18px;
-    color: #17A2B8;
-    font-weight: bold;
+    color: var(--color-blue);
+    font-weight: 700;
+    font-size: var(--font-size-18);
 }
 
 .countriesCancelButton {
     display: flex;
-    margin-top: 15px;
+    margin-top: 16px;
     padding: 15px;
-    background-color: #F1F5F9;
+    background-color: var(--color-light-gray);
     border-radius: 14px;
     align-items: center;
     justify-content: center;
@@ -185,8 +131,7 @@
 }
 
 .countriesCancelText {
-    font-size: 16px;
-    color: #E74C3C;
+    color: var(--color-red);
     font-weight: 600;
 }
 
@@ -204,7 +149,6 @@
     }
 }
 
-
 .resetDialog {
     position: fixed;
     inset: 0;
@@ -215,13 +159,13 @@
     padding: 0;
     border: none;
     border-radius: 20px;
-    background: #ffffff;
-    box-shadow: 0 24px 70px rgba(12, 41, 60, 0.22);
+    background: var(--color-white);
+    box-shadow: var(--card-shadow);
     overflow-y: auto;
 }
 
 .resetDialog::backdrop {
-    background: rgba(12, 41, 60, 0.55);
+    background: #2C3E5099;
 }
 
 .resetModalWindow {
@@ -234,35 +178,20 @@
     justify-content: center;
     width: 46px;
     height: 46px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     border-radius: 12px;
-    background: #fff0f0;
-    color: #e74c3c;
-    font-size: 25px;
+    background: var(--color-light-gray);
+    color: var(--color-red);
     font-weight: 800;
-}
-
-.resetModalTitle {
-    margin: 0 0 12px;
-    color: #0c293c;
-    font-size: 24px;
-    font-weight: 850;
-    line-height: 1.25;
-}
-
-.resetModalDescription {
-    margin: 0 0 25px;
-    color: #5a6a7a;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: var(--font-size-26);
 }
 
 .resetModalLabel {
     display: block;
-    margin-bottom: 10px;
-    color: #2c3e50;
-    font-size: 14px;
-    line-height: 1.5;
+    margin-bottom: 12px;
+    color: var(--color-dark-blue);
+    line-height: 1.6;
+    font-size: var(--font-size-14);
 }
 
 .resetModalLabel strong {
@@ -274,30 +203,32 @@
     width: 100%;
     height: 48px;
     padding: 0 15px;
-    border: 1px solid #dae5e9;
+    border: 1px solid var(--color-light-gray);
     border-radius: 10px;
-    background: #f8fafb;
-    color: #2c3e50;
+    background: var(--color-light-gray);
+    color: var(--color-dark-blue);
     font: inherit;
-    font-size: 15px;
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--card-shadow);
 }
 
 .resetModalInput::placeholder {
-    color: #b0bcc5;
+    color: var(--color-gray);
 }
 
 .resetModalInput:focus {
-    border-color: #17a2b8;
-    box-shadow: 0 0 0 3px rgba(23, 162, 184, 0.12);
+    border-color: var(--color-blue);
+    box-shadow: var(--card-shadow);
+    outline: 3px solid #17A2B81A;
+    outline-offset: 0;
 }
 
 .resetModalError {
-    margin: 10px 0 0;
-    color: #e74c3c;
-    font-size: 13px;
-    line-height: 1.5;
+    margin: 12px 0 0;
+    color: var(--color-red);
+    line-height: 1.6;
+    font-size: var(--font-size-14);
 }
 
 .resetModalActions {
@@ -320,29 +251,29 @@
     border: none;
     border-radius: 9px;
     font: inherit;
-    font-size: 13px;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.4;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    font-size: var(--font-size-14);
 }
 
 .resetModalCancel {
-    background: #f1f5f9;
-    color: #5a6a7a;
+    background: var(--color-light-gray);
+    color: var(--color-gray);
 }
 
 .resetModalCancel:hover:not(:disabled) {
-    background: #e5ebef;
+    background: var(--color-gray-hover);
 }
 
 .resetModalConfirm {
-    background: #e74c3c;
-    color: #ffffff;
+    background: var(--color-red);
+    color: var(--color-white);
 }
 
 .resetModalConfirm:hover:not(:disabled) {
-    background: #cf3f30;
+    background: var(--color-red-hover);
 }
 
 .resetModalConfirm:disabled,
@@ -353,20 +284,20 @@
 
 .resetModalConfirm:focus-visible,
 .resetModalCancel:focus-visible {
-    outline: 3px solid rgba(23, 162, 184, 0.4);
+    outline: 3px solid #17A2B866;
     outline-offset: 3px;
 }
+
+.countriesPremiumSelector:hover,
+.countriesItemRow:hover,
+.countriesCancelButton:hover {
+    background-color: var(--color-gray-hover);
+}
+
+/* Responsive overrides */
 
 @media (max-width: 480px) {
     .resetModalWindow {
         padding: 25px 22px;
-    }
-
-    .resetModalTitle {
-        font-size: 22px;
-    }
-
-    .resetModalDescription {
-        font-size: 14px;
     }
 }

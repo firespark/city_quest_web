@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import questsStyle from '../../styles/questsStyle.module.css'
 
@@ -15,15 +16,15 @@ export const QuestsListHeader = ({
         <div className={questsStyle.questsListHeader}>
 
             <div>
-                <div className={questsStyle.questsListEyebrow}>
+                <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                     Маршруты и приключения
                 </div>
 
-                <h1 className={questsStyle.questsListTitle}>
+                <h1 className={mainStyle.sectionHeading}>
                     Квесты в городе {cityTitle}
                 </h1>
 
-                <p className={questsStyle.questsListDescription}>
+                <p className={mainStyle.bodyText}>
                     Каждый маршрут открывает город с новой стороны.
                 </p>
             </div>

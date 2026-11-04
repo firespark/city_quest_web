@@ -1,61 +1,6 @@
-
 /* How to play page */
 
-.page {
-    width: calc(100% - 40px);
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 24px 0 80px;
-}
-
-.article {
-    width: 100%;
-    max-width: 950px;
-    margin: 34px auto 0;
-}
-
-.title {
-    margin: 0 0 36px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #e1edf0;
-    color: #0c293c;
-    font-size: clamp(34px, 4vw, 46px);
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-}
-
 /* Steps */
-
-.stepsGrid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 18px;
-    width: 100%;
-}
-
-.card {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    height: 100%;
-    margin: 0;
-    padding: 24px 22px;
-    border: 1px solid #e1edf0;
-    border-radius: 16px;
-    box-shadow: 0 5px 18px rgba(12, 41, 60, 0.045);
-}
-
-.cardLight {
-    background-color: #ffffff;
-}
-
-.cardBlue {
-    background-color: #f2fafb;
-    border-color: #d6edf1;
-}
 
 /* Step header */
 
@@ -64,197 +9,79 @@
     align-items: center;
     gap: 12px;
     min-width: 0;
-    margin-bottom: 16px;
 }
 
 /* Step numbers */
 
-.numberCircleLight,
-.numberCircleBlue {
+.stepNumberCircle {
     display: grid;
     place-items: center;
     flex: 0 0 44px;
     width: 44px;
     height: 44px;
     border-radius: 50%;
+    background-color: var(--color-light-gray);
 }
 
-.numberCircleLight {
-    background-color: #eaf7f9;
+.stepNumberCircle.stepNumberCircleContrast {
+    background-color: var(--color-white);
 }
 
-.numberCircleBlue {
-    background-color: #d9f1f4;
-}
-
-.numberTextLight,
-.numberTextBlue {
-    color: #1297ac;
-    font-size: 20px;
-    font-weight: 750;
+.stepNumberText {
+    color: var(--color-blue);
+    font-weight: 700;
     line-height: 1;
+    font-size: var(--font-size-20);
 }
 
 /* Step titles */
 
-.titleLight,
-.titleBlue {
+.stepHeading {
     flex: 1;
     min-width: 0;
     margin: 0;
-    color: #0c293c;
-    font-size: 17px;
-    font-weight: 750;
-    line-height: 1.35;
+    color: var(--color-dark-blue);
+    font-weight: 700;
+    line-height: 1.4;
     overflow-wrap: anywhere;
+    font-size: var(--font-size-18);
 }
 
 /* Step descriptions */
-
-.descLight,
-.descBlue {
-    margin: 0;
-    color: #536f80;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.65;
-}
-
-/* Information block */
-
-.infoBlock {
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-    margin: 10px 0 40px;
-    border: 1px solid #e1edf0;
-    border-radius: 18px;
-    background-color: #f1f5f9;
-}
 
 /* Rules */
 
 .rulesContainer {
     margin-top: 48px;
     padding: 34px 38px;
-    border: 1px solid #dcebf0;
+    border: 1px solid var(--color-light-gray);
     border-radius: 18px;
-    background-color: #eaf7f9;
-}
-
-.rulesMainTitle {
-    margin: 0 0 24px;
-    color: #0c293c;
-    font-size: 26px;
-    font-weight: 800;
-    line-height: 1.25;
+    background-color: var(--color-light-gray);
+    --list-bullet-background: var(--color-white);
 }
 
 .rulesList {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 12px;
 }
 
-.ruleRow {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 16px;
-}
-
-.rulesList .ruleRow {
+.rulesList > div {
     margin-bottom: 0;
 }
 
-.ruleRow:last-child {
-    margin-bottom: 0;
-}
-
-.ruleBullet {
-    display: grid;
-    place-items: center;
-    flex: 0 0 26px;
-    width: 26px;
-    height: 26px;
-    margin-top: 1px;
-    border-radius: 50%;
-    background-color: #ffffff;
-}
-
-.ruleBulletInner {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #17a2b8;
-}
-
-.ruleText {
-    flex: 1;
-    min-width: 0;
-    color: #425568;
-    font-size: 16px;
-    line-height: 1.65;
-    overflow-wrap: anywhere;
-}
-
-/* Tablet */
+/* Responsive overrides */
 
 @media (max-width: 800px) {
-    .article {
-        margin-top: 28px;
-    }
-
-    .stepsGrid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-    }
-
-    .card {
-        padding: 22px;
-    }
-
-    .titleLight,
-    .titleBlue {
-        font-size: 17px;
-    }
-
-    .descLight,
-    .descBlue {
-        font-size: 15px;
-    }
 
     .rulesContainer {
         padding: 30px;
     }
 }
 
-/* Mobile */
-
 @media (max-width: 620px) {
-    .page {
-        width: calc(100% - 28px);
-        padding: 16px 0 48px;
-    }
-
-    .article {
-        margin-top: 22px;
-    }
-
-    .title {
-        margin-bottom: 24px;
-        padding-bottom: 20px;
-        font-size: 32px;
-    }
-
-    .stepsGrid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 12px;
-    }
-
-    .card {
-        padding: 20px;
-        border-radius: 14px;
+    .rulesList {
+        gap: 10px;
     }
 
     .headerRow {
@@ -262,66 +89,15 @@
         margin-bottom: 12px;
     }
 
-    .numberCircleLight,
-    .numberCircleBlue {
+    .stepNumberCircle {
         flex-basis: 42px;
         width: 42px;
         height: 42px;
     }
 
-    .numberTextLight,
-    .numberTextBlue {
-        font-size: 19px;
-    }
-
-    .titleLight,
-    .titleBlue {
-        font-size: 17px;
-    }
-
-    .descLight,
-    .descBlue {
-        font-size: 15px;
-    }
-
     .rulesContainer {
-        margin-top: 36px;
-        padding: 26px 22px;
+        margin-top: 40px;
         border-radius: 16px;
-    }
-
-    .rulesMainTitle {
-        margin-bottom: 20px;
-        font-size: 24px;
-    }
-
-    .ruleText {
-        font-size: 15px;
-    }
-}
-
-.stepsGrid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 18px;
-}
-
-.stepsGrid > .card {
-    flex: 0 0 calc((100% - 36px) / 3);
-    width: auto;
-    height: auto;
-}
-
-@media (max-width: 800px) {
-    .stepsGrid > .card {
-        flex-basis: calc((100% - 16px) / 2);
-    }
-}
-
-@media (max-width: 620px) {
-    .stepsGrid > .card {
-        flex-basis: 100%;
+        padding: 20px 16px;
     }
 }

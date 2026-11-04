@@ -19,25 +19,25 @@ const socials = [
         name: 'Telegram',
         url: 'https://t.me/fireleit',
         icon: FaTelegramPlane,
-        className: contactsStyle.socialTelegram
+        className: mainStyle.bgBlue
     },
     {
         name: 'Instagram',
         url: 'https://instagram.com/elena_fireleit',
         icon: FaInstagram,
-        className: contactsStyle.socialInstagram
+        className: mainStyle.bgPurple
     },
     {
         name: 'Facebook',
         url: 'https://www.facebook.com/fireleit',
         icon: FaFacebookF,
-        className: contactsStyle.socialFacebook
+        className: mainStyle.bgBlue
     },
     {
         name: 'ВКонтакте',
         url: 'https://vk.com/fireleit',
         icon: FaVk,
-        className: contactsStyle.socialVk
+        className: mainStyle.bgBlue
     }
 ]
 

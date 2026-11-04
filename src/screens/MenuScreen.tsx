@@ -13,7 +13,7 @@ export const MenuScreen = () => {
                 <Close />
             </header>
 
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
                 <div className={mainStyle.container}>
                     <MenuItems />
                 </div>

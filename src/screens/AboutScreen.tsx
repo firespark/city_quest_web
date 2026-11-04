@@ -8,7 +8,7 @@ import { Error } from '../components/common/Error'
 import { ConnectionError } from '../components/common/ConnectionError'
 
 import mainStyle from '../styles/mainStyle.module.css'
-import aboutStyle from '../styles/aboutStyle.module.css'
+
 
 import { Http } from '../scripts/http'
 import { ROUTES } from '../routes'
@@ -65,36 +65,34 @@ export const AboutScreen = () => {
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
 
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
-                <div className={mainStyle.scrollContent}>
-                    <div className={aboutStyle.page}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
+                <div className={mainStyle.sitePage}>
 
-                        <Breadcrumbs
-                            items={[
-                                { label: 'Главная', to: ROUTES.HOME },
-                                { label: data.title ?? '' }
-                            ]}
-                        />
+                    <Breadcrumbs
+                        items={[
+                            { label: 'Главная', to: ROUTES.HOME },
+                            { label: data.title ?? '' }
+                        ]}
+                    />
 
-                        {error === 'connection_error' ? (
-                            <ConnectionError onRetry={fetchData} />
-                        ) : error ? (
-                            <Error text={error} />
-                        ) : (
-                            <article className={aboutStyle.article}>
+                    {error === 'connection_error' ? (
+                        <ConnectionError onRetry={fetchData} />
+                    ) : error ? (
+                        <Error text={error} />
+                    ) : (
+                        <article className={mainStyle.articleBlock}>
 
-                                <h1 className={aboutStyle.title}>
-                                    {data.title}
-                                </h1>
+                            <h1 className={mainStyle.pageTitle}>
+                                {data.title}
+                            </h1>
 
-                                <div className={aboutStyle.content}>
-                                    <FormattedContent text={data.content} />
-                                </div>
+                            <div className={`${mainStyle.articleContent} ${mainStyle.bodyText} ${mainStyle.formattedContent}`}>
+                                <FormattedContent text={data.content} />
+                            </div>
 
-                            </article>
-                        )}
+                        </article>
+                    )}
 
-                    </div>
                 </div>
             </main>
 

@@ -20,10 +20,10 @@ export const TaskSign = ({ number, setModal, disabled }: TaskSignProps) => {
                 <div className={`${gameStyle.pill} ${gameStyle.pillDisabled}`}>
                     <img
                         src={questionDisabledImage}
-                        className={gameStyle.taskImage}
+                        className={gameStyle.pillIcon}
                         alt=""
                     />
-                    <span className={`${mainStyle.textBlue} ${mainStyle.textDisabled}`}>
+                    <span className={`${mainStyle.textBlue} ${mainStyle.textMuted}`}>
                         Задание {number}
                     </span>
                 </div>
@@ -35,10 +35,10 @@ export const TaskSign = ({ number, setModal, disabled }: TaskSignProps) => {
                         setModal?.(`task${number}`)
                     }}
                 >
-                    <div className={`${gameStyle.pill} ${gameStyle.pillActive}`}>
+                    <div className={`${gameStyle.pill} ${mainStyle.radioCardActive}`}>
                         <img
                             src={questionImage}
-                            className={gameStyle.taskImage}
+                            className={gameStyle.pillIcon}
                             alt=""
                         />
                         <span className={mainStyle.textBlue}>

@@ -94,9 +94,9 @@ export const ProfileScreen = () => {
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
 
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
 
-                <div className={profileStyle.page}>
+                <div className={mainStyle.sitePage}>
 
                     <Breadcrumbs
                         items={[
@@ -105,7 +105,7 @@ export const ProfileScreen = () => {
                         ]}
                     />
 
-                    <h1 className={profileStyle.pageTitle}>
+                    <h1 className={mainStyle.pageTitle}>
                         Профиль
                     </h1>
 
@@ -117,7 +117,7 @@ export const ProfileScreen = () => {
 
                         <div className={profileStyle.accountDetails}>
 
-                            <div className={profileStyle.accountName}>
+                            <div className={`${profileStyle.accountName} ${mainStyle.heading}`}>
                                 {user.name}
                             </div>
 

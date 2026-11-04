@@ -7,7 +7,7 @@ type ProfileEmailProps = {
 
 export const ProfileEmail = ({ email }: ProfileEmailProps) => {
     return (
-        <div className={profileStyle.row}>
+        <div className={profileStyle.settingsRow}>
             <span className={profileStyle.label}>Email</span>
 
             <div className={profileStyle.valueBlock}>

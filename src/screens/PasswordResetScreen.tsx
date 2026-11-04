@@ -69,9 +69,9 @@ export const PasswordResetScreen = () => {
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
 
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
 
-                <div className={authStyle.page}>
+                <div className={mainStyle.sitePage}>
 
                     <Breadcrumbs
                         items={[
@@ -81,7 +81,7 @@ export const PasswordResetScreen = () => {
                         ]}
                     />
 
-                    <h1 className={authStyle.pageTitle}>
+                    <h1 className={mainStyle.pageTitle}>
                         Восстановление пароля
                     </h1>
 
@@ -89,7 +89,7 @@ export const PasswordResetScreen = () => {
 
                         {error && (
                             <div
-                                className={mainStyle.mb20}
+                                className={mainStyle.mb24}
                                 role="alert"
                             >
                                 <Error text={error} />

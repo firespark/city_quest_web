@@ -21,7 +21,7 @@ export const Back = () => {
         >
             <img
                 src={backImage}
-                className={mainStyle.backIcon}
+                className={mainStyle.controlIcon}
                 alt=""
             />
         </button>

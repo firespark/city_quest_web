@@ -1,3 +1,5 @@
+import questsStyle from '../../../styles/questsStyle.module.css'
+import mainStyle from '../../../styles/mainStyle.module.css'
 
 import { useEffect, useRef, useState } from 'react'
 import {
@@ -59,25 +61,25 @@ export const ComingSoonGallery = ({
     return (
         <section className={comingSoonStyle.supportSection}>
 
-            <div className={comingSoonStyle.eyebrow}>
+            <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                 Котики, которые ищут семью
             </div>
 
-            <h2 className={comingSoonStyle.supportTitle}>
+            <h2 className={mainStyle.sectionHeading}>
                 При поддержке
             </h2>
 
             <div
                 className={`
-                    ${comingSoonStyle.galleryGrid}
-                    ${photos.length === 1 ? comingSoonStyle.galleryGridSingle : ''}
+                    ${mainStyle.cardGrid} ${mainStyle.galleryGrid}
+                    ${photos.length === 1 ? mainStyle.galleryGridSingle : ''}
                 `}
             >
                 {photos.map((photo, index) => (
                     <button
                         key={`${photo.src}-${index}`}
                         type="button"
-                        className={comingSoonStyle.galleryCard}
+                        className={`${comingSoonStyle.galleryCard} ${mainStyle.imageHover}`}
                         onClick={() => setActiveIndex(index)}
                         aria-label={photo.title
                             ? `Открыть: ${photo.title}`
@@ -89,7 +91,7 @@ export const ComingSoonGallery = ({
                             <img
                                 src={photo.src}
                                 alt={photo.alt ?? photo.title ?? ''}
-                                className={comingSoonStyle.galleryImage}
+                                className={mainStyle.interactiveImage}
                                 loading="lazy"
                             />
 
@@ -133,16 +135,7 @@ export const ComingSoonGallery = ({
                 onClick={event => {
                     if (event.target !== event.currentTarget) return
 
-                    const rect = event.currentTarget.getBoundingClientRect()
-
-                    if (
-                        event.clientX < rect.left ||
-                        event.clientX > rect.right ||
-                        event.clientY < rect.top ||
-                        event.clientY > rect.bottom
-                    ) {
-                        setActiveIndex(null)
-                    }
+                    setActiveIndex(null)
                 }}
             >
                 {activePhoto && (

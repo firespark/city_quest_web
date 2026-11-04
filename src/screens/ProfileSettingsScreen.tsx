@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect, useCallback } from 'react'
 
 import mainStyle from '../styles/mainStyle.module.css'
-import profileStyle from '../styles/profileStyle.module.css'
+
 
 import { ROUTES } from '../routes'
 import { MainContext } from '../context/mainContext'
@@ -87,9 +87,9 @@ export const ProfileSettingsScreen = () => {
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
 
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
 
-                <div className={profileStyle.page}>
+                <div className={mainStyle.sitePage}>
 
                     <Breadcrumbs
                         items={[
@@ -99,7 +99,7 @@ export const ProfileSettingsScreen = () => {
                         ]}
                     />
 
-                    <h1 className={profileStyle.pageTitle}>
+                    <h1 className={mainStyle.pageTitle}>
                         Настройки профиля
                     </h1>
 

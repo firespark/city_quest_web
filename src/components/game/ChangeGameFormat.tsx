@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import type { Dispatch, SetStateAction } from 'react'
 import { IoFootstepsOutline, IoExtensionPuzzleOutline } from 'react-icons/io5'
@@ -25,8 +26,8 @@ export const ChangeGameFormat = ({ formatId, setModal }: ChangeGameFormatProps) 
             >
                 <TargetIcon
                     size={22}
-                    color="#027900"
-                    className={gameStyle.formatIcon}
+
+                    className={`${mainStyle.textCenter} ${mainStyle.green}`}
                 />
             </button>
         </div>

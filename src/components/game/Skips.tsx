@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import type { Dispatch, SetStateAction, ReactNode } from 'react'
 import { IoDiamondOutline } from 'react-icons/io5'
@@ -27,12 +28,12 @@ export const Skips = ({ skips, showSkip, setModal }: SkipsProps) => {
             {showSkip ? (
                 <button
                     type="button"
-                    className={`${gameStyle.pill} ${gameStyle.pillActive}`}
+                    className={`${gameStyle.pill} ${mainStyle.radioCardActive}`}
                     onClick={() => setModal('skip')}
                 >
                     <img
                         src={skipImage}
-                        className={gameStyle.hintIcon}
+                        className={gameStyle.pillIcon}
                         alt=""
                     />
                     <span className={gameStyle.skipTextActive}>
@@ -48,16 +49,16 @@ export const Skips = ({ skips, showSkip, setModal }: SkipsProps) => {
                 >
                     <img
                         src={skipDisabledImage}
-                        className={gameStyle.hintIcon}
+                        className={gameStyle.pillIcon}
                         alt=""
                     />
-                    <span className={gameStyle.textDisabled}>
+                    <span>
                         {skips as ReactNode}
                     </span>
 
                     {skips === 0 && (
                         <span className={gameStyle.pillPremiumSign}>
-                            <IoDiamondOutline size={10} color="#FFFFFF" />
+                            <IoDiamondOutline size={10} className={mainStyle.textWhite} />
                         </span>
                     )}
                 </button>

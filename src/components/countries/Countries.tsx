@@ -78,7 +78,7 @@ export const Countries = () => {
 
     return (
         <section className={countriesStyle.countriesSection}>
-            <div className={countriesStyle.countriesInner}>
+            <div className={mainStyle.contentContainer}>
                 <h2 className={mainStyle.welcomeTitle}>
                     Доступные города
                 </h2>
@@ -90,13 +90,18 @@ export const Countries = () => {
                 {loader ? (
                     <Loader />
                 ) : error === 'connection_error' ? (
-                    <ConnectionError onRetry={fetchData} />
+                    <ConnectionError onRetry={async () => {
+                        await Promise.all([
+                            fetchData(),
+                            ...(countries.length === 0 ? [getCountries()] : [])
+                        ])
+                    }} />
                 ) : error ? (
                     <div className={mainStyle.errorText}>{error}</div>
                 ) : countries.length === 0 ? (
                     <ConnectionError onRetry={getCountries} />
                 ) : (
-                    <div className={countriesStyle.countriesGrid}>
+                    <div className={`${mainStyle.cardGrid} ${mainStyle.countryGrid}`}>
                         {countriesWithCities.map(({ country, cities }) => (
                             <div key={country.id} className={countriesStyle.countryCard}>
                                 <h3 className={countriesStyle.countryHeading}>

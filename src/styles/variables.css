@@ -1,0 +1,40 @@
+:root {
+  --font-family-main: "Noto Sans", "Segoe UI", Arial, sans-serif;
+  --font-family-heading: "Noto Serif", Georgia, "Times New Roman", serif;
+ 
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-blue: #17A2B8;
+  --color-dark-blue: #2C3E50;
+  --color-gray: #7F8C8D;
+  --color-light-gray: #F1F5F9;
+  --color-red: #E74C3C;
+  --color-orange: #E67E22;
+  --color-green: #4CAF50;
+  --color-purple: #8E44AD;
+
+  --color-blue-hover: #12879A;
+  --color-light-blue-hover: #8ED6E0;
+  --color-gray-hover: #E5EBEF;
+  --color-red-hover: #CF3F30;
+  --color-orange-hover: #D46F18;
+
+  --font-size-10: 10px;
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-26: 26px;
+  --font-size-32: 32px;
+  --font-size-34: 34px;
+  --font-size-36: 36px;
+  --font-size-40: 40px;
+  --font-size-46: 46px;
+  --font-size-52: 52px;
+  --font-size-62: 62px;
+  --font-size-112: 112px;
+  --font-size-180: 180px;
+}
+

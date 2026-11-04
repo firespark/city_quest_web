@@ -1,3 +1,4 @@
+import mainStyle from '../../styles/mainStyle.module.css'
 
 import questsStyle from '../../styles/questsStyle.module.css'
 
@@ -13,7 +14,7 @@ export const QuestContent2 = ({ content }: QuestContent2Props) => {
     return (
         <section className={questsStyle.facts}>
             <div>
-                <div className={questsStyle.eyebrow}>
+                <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                     Дополнительная информация
                 </div>
 
@@ -22,7 +23,7 @@ export const QuestContent2 = ({ content }: QuestContent2Props) => {
                 </h2>
             </div>
 
-            <div className={questsStyle.richText}>
+            <div className={`${mainStyle.articleContent} ${mainStyle.bodyText} ${mainStyle.formattedContent}`}>
                 <FormattedContent text={content} />
             </div>
         </section>

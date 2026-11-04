@@ -4,7 +4,6 @@ import { Http } from '../scripts/http'
 import { slugUrl } from '../routes'
 
 import mainStyle from '../styles/mainStyle.module.css'
-import questDetailStyle from '../styles/questDetailStyle.module.css'
 
 import { Breadcrumbs } from '../components/common/Breadcrumbs'
 import { QuestImageDetail } from '../components/quests/quest_detail/QuestImageDetail'
@@ -109,9 +108,9 @@ export const QuestScreen = () => {
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
 
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
 
-                <div className={questDetailStyle.page}>
+                <div className={mainStyle.sitePage}>
 
                     <Breadcrumbs
                         items={[
@@ -124,6 +123,7 @@ export const QuestScreen = () => {
                     <QuestImageDetail
                         image={data.image}
                         city={data.city}
+                        citySlug={data.city_slug}
                         title={data.title}
                         paid={data.paid}
                         available={data.available}

@@ -57,9 +57,9 @@ export const ComingSoonScreen = ({
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
 
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
 
-                <div className={comingSoonStyle.page}>
+                <div className={mainStyle.sitePage}>
 
                     <Breadcrumbs
                         items={[
@@ -75,6 +75,7 @@ export const ComingSoonScreen = ({
                     <ComingSoonHero
                         title={quest.title}
                         city={quest.city}
+                        citySlug={quest.city_slug}
                         image={quest.image}
                         bannerIcon={quest.coming_soon_banner_icon}
                     />

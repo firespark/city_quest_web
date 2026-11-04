@@ -37,11 +37,11 @@ export const FormattedContent = ({ text }: { text: unknown }) => {
                 if (/^[-—–]\s*/.test(trimmed)) {
                     const cleanText = trimmed.replace(/^[-—–]\s*/, '')
                     return (
-                        <div key={index} className={mainStyle.bulletRow}>
-                            <div className={mainStyle.bulletIconWrapper}>
-                                <div className={mainStyle.bulletDot} />
+                        <div key={index} className={mainStyle.listRow}>
+                            <div className={mainStyle.listBullet}>
+                                <div className={mainStyle.listDot} />
                             </div>
-                            <div className={mainStyle.bulletText}>
+                            <div className={`${mainStyle.bodyText} ${mainStyle.flex}`}>
                                 {parseInlineTags(cleanText, index)}
                             </div>
                         </div>
@@ -51,7 +51,7 @@ export const FormattedContent = ({ text }: { text: unknown }) => {
                 if (trimmed.startsWith('<h2>') || trimmed.endsWith('</h2>')) {
                     const cleanText = trimmed.replace(/<\/?h2>/g, '')
                     return (
-                        <div key={index} className={mainStyle.subtitle}>
+                        <div key={index} className={`${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.mb16} ${mainStyle.heading}`}>
                             {parseInlineTags(cleanText, index)}
                         </div>
                     )
@@ -60,7 +60,7 @@ export const FormattedContent = ({ text }: { text: unknown }) => {
                 if (trimmed.startsWith('<h3>') || trimmed.endsWith('</h3>')) {
                     const cleanText = trimmed.replace(/<\/?h3>/g, '')
                     return (
-                        <div key={index} className={mainStyle.thirdTitle}>
+                        <div key={index} className={`${mainStyle.thirdTitle} ${mainStyle.heading}`}>
                             {parseInlineTags(cleanText, index)}
                         </div>
                     )

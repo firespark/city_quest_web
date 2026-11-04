@@ -1,11 +1,17 @@
+import mainStyle from "../../../styles/mainStyle.module.css"
+import questDetailStyle from '../../../styles/questDetailStyle.module.css'
 
 import comingSoonStyle from '../../../styles/comingSoonStyle.module.css'
+import { Link } from 'react-router-dom'
+import { slugUrl } from '../../../routes'
 
 import { TelegramButton } from '../TelegramButton'
+import { ComingSoonBadge } from '../QuestBadges'
 
 type ComingSoonHeroProps = {
     title: string
     city: string
+    citySlug: string
     image: string
     bannerIcon?: string | null
 }
@@ -13,37 +19,36 @@ type ComingSoonHeroProps = {
 export const ComingSoonHero = ({
     title,
     city,
+    citySlug,
     image,
     bannerIcon
 }: ComingSoonHeroProps) => {
 
     return (
         <section
-            className={comingSoonStyle.hero}
+            className={questDetailStyle.questHero}
             aria-label={title}
         >
             <img
                 src={image}
                 alt=""
-                className={comingSoonStyle.heroImage}
+                className={`${mainStyle.coverImage} ${questDetailStyle.questHeroImage}`}
             />
 
             <div
-                className={comingSoonStyle.heroShade}
+                className={questDetailStyle.questHeroShade}
                 aria-hidden="true"
             />
 
-            <div className={comingSoonStyle.heroContent}>
+            <div className={questDetailStyle.questHeroContent}>
 
-                <span className={comingSoonStyle.badge}>
-                    Скоро
-                </span>
+                <ComingSoonBadge />
 
-                <div className={comingSoonStyle.heroCity}>
+                <Link to={slugUrl(citySlug)} className={questDetailStyle.questHeroCity}>
                     {city}
-                </div>
+                </Link>
 
-                <h1 className={comingSoonStyle.heroTitle}>
+                <h1 className={questDetailStyle.heroTitle}>
                     {title}
                 </h1>
 
@@ -52,7 +57,7 @@ export const ComingSoonHero = ({
                 </p>
 
                 {import.meta.env.VITE_TELEGRAM_BOT_URL?.trim() && (
-                    <div className={comingSoonStyle.heroAction}>
+                    <div className={questDetailStyle.questHeroAction}>
                         <TelegramButton>
                             Записаться через Telegram
                         </TelegramButton>

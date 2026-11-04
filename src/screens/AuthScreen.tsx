@@ -181,9 +181,9 @@ export const AuthScreen = () => {
     return (
         <div className={`${mainStyle.pageBackground} ${mainStyle.mainScreen}`}>
 
-            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll}`}>
+            <main className={`${mainStyle.pageBackground} ${mainStyle.mainScreenScroll} ${mainStyle.scrollArea}`}>
 
-                <div className={authStyle.page}>
+                <div className={mainStyle.sitePage}>
 
                     <Breadcrumbs
                         items={[
@@ -192,14 +192,14 @@ export const AuthScreen = () => {
                         ]}
                     />
 
-                    <h1 className={authStyle.pageTitle}>
+                    <h1 className={mainStyle.pageTitle}>
                         Вход и регистрация
                     </h1>
 
                     <div className={authStyle.authScrollContent}>
 
                         {error && (
-                            <div className={mainStyle.mb20}>
+                            <div className={mainStyle.mb24}>
                                 <Error text={error} />
                             </div>
                         )}

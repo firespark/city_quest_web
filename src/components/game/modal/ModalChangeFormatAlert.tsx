@@ -67,16 +67,16 @@ export const ModalChangeFormatAlert = ({ game, setModal, setGame }: ModalChangeF
 
     return (
         <div className={`${mainStyle.container} ${mainStyle.center}`}>
-            <div className={mainStyle.titleMain}>
+            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
                 Переключиться на формат {newFormatName}?
             </div>
 
-            <div className={`${mainStyle.formSubtitle} ${mainStyle.mb20}`}>
+            <div className={`${mainStyle.formSubtitle} ${mainStyle.mb24}`}>
                 Вы уверены, что хотите сменить формат? Текущий прогресс будет сброшен.
             </div>
 
             {error && (
-                <div className={mainStyle.mb20}>
+                <div className={mainStyle.mb24}>
                     <Error text={error} />
                 </div>
             )}

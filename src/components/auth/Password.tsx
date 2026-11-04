@@ -68,11 +68,11 @@ export const Password = ({
     return (
         <div className={authStyle.authStep}>
 
-            <div className={`${mainStyle.formTitle} ${mainStyle.mb10} ${mainStyle.textCenter}`}>
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb12} ${mainStyle.textCenter} ${mainStyle.heading}`}>
                 С возвращением!
             </div>
 
-            <div className={`${mainStyle.formSubtitle} ${mainStyle.mb25}`}>
+            <div className={`${mainStyle.formSubtitle} ${mainStyle.mb32}`}>
                 Введи пароль для {email}:
             </div>
 

@@ -25,12 +25,12 @@ export const GameFormat = ({ selectedId, setSelectedId }: GameFormatProps) => {
     ]
 
     return (
-        <div className={gameStyle.modeListContainer}>
+        <div className={mainStyle.formGroup}>
             {formats.map((format) => {
                 const isSelected = selectedId === format.id
 
                 return (
-                    <div className={mainStyle.mb5} key={format.id}>
+                    <div className={mainStyle.mb8} key={format.id}>
                         <button
                             type="button"
                             className={`${mainStyle.radioCard} ${isSelected ? mainStyle.radioCardActive : ''}`}
@@ -44,19 +44,20 @@ export const GameFormat = ({ selectedId, setSelectedId }: GameFormatProps) => {
                                 </div>
                             </div>
 
-                            <div className={gameStyle.modeTextContainer}>
+                            <div className={mainStyle.textColumn}>
                                 <div
                                     className={[
-                                        mainStyle.subtitle,
-                                        mainStyle.mt5,
-                                        mainStyle.mb5,
-                                        isSelected ? gameStyle.modeTitleActive : ''
+                                        `${mainStyle.formTitle} ${mainStyle.mt16} ${mainStyle.mb16}`,
+                                        mainStyle.heading,
+                                        mainStyle.mt8,
+                                        mainStyle.mb8,
+                                        isSelected ? mainStyle.blue : ''
                                     ].filter(Boolean).join(' ')}
                                 >
                                     {format.title}
                                 </div>
 
-                                <div className={`${mainStyle.description} ${mainStyle.mb10}`}>
+                                <div className={`${mainStyle.description} ${mainStyle.mb12}`}>
                                     {format.description}
                                 </div>
                             </div>

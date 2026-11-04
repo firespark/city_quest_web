@@ -1,3 +1,5 @@
+import questsStyle from '../../styles/questsStyle.module.css'
+import questDetailStyle from '../../styles/questDetailStyle.module.css'
 
 import { Link } from 'react-router-dom'
 
@@ -6,16 +8,16 @@ import mainStyle from '../../styles/mainStyle.module.css'
 
 export const Hero = () => {
     return (
-        <section className={mainStyle.hero}>
-            <div className={mainStyle.heroContent}>
+        <section className={mainStyle.landingHero}>
+            <div className={mainStyle.landingHeroContent}>
 
-                <div className={mainStyle.heroEyebrow}>
+                <div className={`${questsStyle.eyebrow} ${mainStyle.blue}`}>
                     ГАГАРА ТУР · СКОРО НОВЫЙ КВЕСТ
                 </div>
 
-                <h1 className={mainStyle.heroTitle}>
+                <h1 className={questDetailStyle.heroTitle}>
                     Городской квест
-                    <span> Котики в Тбилиси</span>
+                    <span className={mainStyle.blue}> Котики в Тбилиси</span>
                 </h1>
 
                 <p className={mainStyle.heroDescription}>
@@ -37,7 +39,7 @@ export const Hero = () => {
                 <img
                     src="/cats.webp"
                     alt="Городской квест Котики в Тбилиси"
-                    className={mainStyle.heroImage}
+                    className={mainStyle.coverImage}
                 />
             </div>
         </section>

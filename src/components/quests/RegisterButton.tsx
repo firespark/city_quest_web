@@ -9,7 +9,7 @@ export const RegisterButton = () => {
 
     return (
         <div className={mainStyle.center}>
-            <div className={`${mainStyle.textCenter} ${mainStyle.mb20} ${mainStyle.textRed}`}>
+            <div className={`${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.description} ${mainStyle.red}`}>
                 Чтобы приобрести этот квест-тур, необходимо авторизоваться.
                 Иначе мы не сможем сохранить вашу покупку.
             </div>

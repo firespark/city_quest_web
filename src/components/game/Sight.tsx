@@ -31,11 +31,9 @@ export const Sight = ({ setModal, title, image }: SightProps) => {
                 {title ? (
                     <div
                         className={gameStyle.sightTitleWrapper}
-                        style={{ marginTop: 25 }}
                     >
                         <div
-                            className={mainStyle.titleMain}
-                            style={{ marginBottom: 10 }}
+                            className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}
                         >
                             {title as ReactNode}
                         </div>

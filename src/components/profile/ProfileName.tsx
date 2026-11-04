@@ -12,7 +12,7 @@ type ProfileNameProps = {
 
 export const ProfileName = ({ name, setTemplate, setSuccess }: ProfileNameProps) => {
     return (
-        <div className={profileStyle.row}>
+        <div className={profileStyle.settingsRow}>
             <span className={profileStyle.label}>Имя</span>
 
             <div className={profileStyle.valueBlock}>

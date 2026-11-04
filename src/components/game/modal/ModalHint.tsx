@@ -29,13 +29,12 @@ export const ModalHint = ({ game, task }: ModalHintProps) => {
 
     return (
         <div className={mainStyle.container}>
-            <div className={mainStyle.titleMain}>
+            <div className={`${mainStyle.formTitle} ${mainStyle.textCenter} ${mainStyle.mb24} ${mainStyle.heading}`}>
                 Подсказка
             </div>
 
             {hint.image ? (
                 <FullWidthImage
-                    style={gameStyle.gameImage}
                     source={{
                         uri: hint.image + '?time=' + new Date().getTime()
                     }}

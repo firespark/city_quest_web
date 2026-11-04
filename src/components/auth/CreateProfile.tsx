@@ -3,7 +3,7 @@ import type { Dispatch, SetStateAction } from 'react'
 
 import mainStyle from '../../styles/mainStyle.module.css'
 import authStyle from '../../styles/authStyle.module.css'
-import formsStyle from '../../styles/formsStyle.module.css'
+
 
 import { Http } from '../../scripts/http'
 
@@ -47,15 +47,15 @@ export const CreateProfile = ({
     return (
         <div className={authStyle.authStep}>
 
-            <div className={`${mainStyle.formTitle} ${mainStyle.mb10} ${mainStyle.textCenter}`}>
+            <div className={`${mainStyle.formTitle} ${mainStyle.mb12} ${mainStyle.textCenter} ${mainStyle.heading}`}>
                 Новый аккаунт?
             </div>
 
-            <div className={`${mainStyle.formSubtitle} ${mainStyle.mb25}`}>
+            <div className={`${mainStyle.formSubtitle} ${mainStyle.mb32}`}>
                 Email <span className={mainStyle.formThirdtitle}>{email}</span> еще не зарегистрирован. Создать учетную запись?
             </div>
 
-            <div className={`${mainStyle.center} ${mainStyle.mt20}`}>
+            <div className={`${mainStyle.center} ${mainStyle.mt24}`}>
 
                 <button
                     type="button"
@@ -67,7 +67,7 @@ export const CreateProfile = ({
 
                 <button
                     type="button"
-                    className={`${mainStyle.secondButton} ${mainStyle.mt10}`}
+                    className={`${mainStyle.secondButton} ${mainStyle.mt12}`}
                     onClick={() => setTemplate(null)}
                 >
                     <span className={mainStyle.secondButtonText}>

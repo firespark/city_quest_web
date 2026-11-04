@@ -11,7 +11,7 @@ type ProfilePasswordProps = {
 
 export const ProfilePassword = ({ setTemplate, setSuccess }: ProfilePasswordProps) => {
     return (
-        <div className={profileStyle.row}>
+        <div className={profileStyle.settingsRow}>
             <span className={profileStyle.label}>Пароль</span>
 
             <div className={profileStyle.valueBlock}>
