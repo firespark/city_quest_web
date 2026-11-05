@@ -6,7 +6,7 @@ import type { Dispatch, SetStateAction } from 'react'
 import mainStyle from '../../styles/mainStyle.module.css'
 import gameStyle from '../../styles/gameStyle.module.css'
 
-import loupeImage from '../../../assets/img/loupe.png'
+import loupeImage from '../../assets/img/loupe.png'
 
 type GameData = {
     is_level: unknown

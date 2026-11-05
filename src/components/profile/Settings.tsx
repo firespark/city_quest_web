@@ -6,7 +6,7 @@ import profileStyle from '../../styles/profileStyle.module.css'
 
 import { ROUTES } from '../../routes'
 
-import settingsImage from '../../../assets/img/settings.png'
+import settingsImage from '../../assets/img/settings.png'
 
 export const Settings = () => {
 

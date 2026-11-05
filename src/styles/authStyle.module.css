@@ -69,6 +69,73 @@
     outline-offset: -3px;
 }
 
+.socialLogin {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.socialLabel {
+    color: var(--color-gray);
+}
+
+.socialIcons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.socialButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--color-dark-blue);
+    font: inherit;
+    cursor: pointer;
+}
+
+.socialButton:hover:not(:disabled) {
+    filter: brightness(0.9);
+}
+
+.socialButton:focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 3px;
+}
+
+.socialButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.socialButton img {
+    display: block;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.socialButton .googleLogo {
+    width: 34px;
+    height: 34px;
+}
+
+/* Официальный PNG VK содержит белые поля; размер самого знака — около 34 px. */
+.socialButton .vkLogo {
+    width: 44px;
+    height: 44px;
+}
+
 /* Responsive overrides */
 
 @media (max-width: 800px) {

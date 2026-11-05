@@ -24,7 +24,6 @@
   color: var(--color-gray);
   text-align: center;
   line-height: 1.4;
-  font-size: var(--font-size-14);
 }
 
 .metaLabel {
@@ -524,7 +523,8 @@
 
 .divider {
   height: 1px;
-  background-color: var(--color-light-gray);
+  background-color: var(--color-gray-hover);
+  box-shadow: var(--card-shadow);
   width: 100%;
   align-self: center;
   margin: 8px auto;

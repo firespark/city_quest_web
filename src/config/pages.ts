@@ -46,7 +46,7 @@ export const OPEN_GRAPH: OpenGraphMeta = {
     siteName: 'Гагара Тур',
     locale: 'ru_RU',
     image: {
-        url: '/about-city.png',
+        url: '/img/about-city.png',
         alt: 'Изображение блока «О проекте»: путешественница с картой на фоне исторического города',
         type: 'image/png',
         width: 1619,
@@ -64,7 +64,7 @@ export const PAGES = {
             robots: 'index, follow',
             openGraph: {
                 image: {
-                    url: '/cats.webp',
+                    url: '/img/cats.webp',
                     alt: 'Изображение квеста «Котики в Тбилиси»',
                     width: 900,
                     height: 673,

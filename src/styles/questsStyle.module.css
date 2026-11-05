@@ -685,14 +685,9 @@ button.itemWrapper:active {
 
 .storeIcon img {
     display: block;
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-}
-
-.storeIcon .googlePlayIcon {
     width: 24px;
     height: 24px;
+    object-fit: contain;
 }
 
 .downloadHint {

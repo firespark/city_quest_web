@@ -4,7 +4,7 @@ import { useState, useContext, type Dispatch, type SetStateAction, type ReactNod
 import mainStyle from '../../../styles/mainStyle.module.css'
 import gameStyle from '../../../styles/gameStyle.module.css'
 
-import finishImage from '../../../../assets/img/finish.png'
+import finishImage from '../../../assets/img/finish.png'
 
 import { Loader } from '../../common/Loader'
 import { Error } from '../../common/Error'

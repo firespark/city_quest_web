@@ -9,9 +9,9 @@ import { ROUTES } from '../../routes'
 import { CONTACTS_SCREEN } from '../../context/types'
 import { MainContext } from '../../context/mainContext'
 
-import infoImage from '../../../assets/img/info.png'
-import questionImage from '../../../assets/img/question.png'
-import envelopeImage from '../../../assets/img/envelope.png'
+import infoImage from '../../assets/img/info.png'
+import questionImage from '../../assets/img/question.png'
+import envelopeImage from '../../assets/img/envelope.png'
 
 export const MenuItems = () => {
 

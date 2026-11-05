@@ -5,7 +5,7 @@ import mainStyle from '../../styles/mainStyle.module.css'
 
 import { MainContext } from '../../context/mainContext'
 
-import backImage from '../../../assets/img/back.png'
+import backImage from '../../assets/img/back.png'
 
 export const Back = () => {
     const { previousScreen } = useContext(MainContext)

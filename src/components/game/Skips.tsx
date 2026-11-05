@@ -5,8 +5,8 @@ import { IoDiamondOutline } from 'react-icons/io5'
 
 import gameStyle from '../../styles/gameStyle.module.css'
 
-import skipImage from '../../../assets/img/skip.png'
-import skipDisabledImage from '../../../assets/img/skip-disabled.png'
+import skipImage from '../../assets/img/skip.png'
+import skipDisabledImage from '../../assets/img/skip-disabled.png'
 
 type GameData = {
     is_level: unknown

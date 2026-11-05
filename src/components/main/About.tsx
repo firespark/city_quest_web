@@ -19,7 +19,7 @@ export const About = () => {
 
                 <div className={mainStyle.mainAboutVisual}>
                     <img
-                        src="/about-city.png"
+                        src="/img/about-city.png"
                         alt="Изображение блока «О проекте»: путешественница с картой на фоне исторического города"
                         className={mainStyle.coverImage}
                         loading="lazy"

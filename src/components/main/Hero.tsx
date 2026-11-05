@@ -30,7 +30,7 @@ export const Hero = () => {
 
             <div className={mainStyle.heroVisual}>
                 <img
-                    src="/cats.webp"
+                    src="/img/cats.webp"
                     alt="Изображение квеста «Котики в Тбилиси»"
                     className={mainStyle.coverImage}
                 />

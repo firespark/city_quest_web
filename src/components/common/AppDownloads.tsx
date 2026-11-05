@@ -1,6 +1,6 @@
 import { APP_STORES } from '../../config/app'
-import rustoreIcon from '../../assets/rustore.svg'
-import googlePlayIcon from '../../assets/google-play.png'
+import rustoreIcon from '../../assets/img/rustore.png'
+import googlePlayIcon from '../../assets/img/google-play.png'
 import mainStyle from '../../styles/mainStyle.module.css'
 import questsStyle from '../../styles/questsStyle.module.css'
 
@@ -34,7 +34,7 @@ export const AppDownloads = ({ store, showPaymentHint = false }: AppDownloadsPro
                     const content = (
                         <>
                             <span className={questsStyle.storeIcon} aria-hidden="true">
-                                <img src={item.icon} alt={`Изображение логотипа ${item.name}`} className={item.key === 'googlePlay' ? questsStyle.googlePlayIcon : undefined} />
+                                <img src={item.icon} alt={`Изображение логотипа ${item.name}`} />
                             </span>
                             <span>{item.label}</span>
                         </>

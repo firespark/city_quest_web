@@ -4,6 +4,7 @@ import {
     useContext,
     useEffect,
     useCallback,
+    useRef,
     type ReactNode
 } from 'react'
 
@@ -25,6 +26,10 @@ import { Code } from '../components/auth/Code'
 import { Password } from '../components/auth/Password'
 import { CreateProfile } from '../components/auth/CreateProfile'
 import { NewPassword } from '../components/auth/NewPassword'
+import { AuthGoogle } from '../components/auth/AuthGoogle'
+import { AuthVK } from '../components/auth/AuthVK'
+import { AuthYandex } from '../components/auth/AuthYandex'
+import type { SocialCredential } from '../scripts/socialAuth'
 
 import { PROFILE_SCREEN } from '../context/types'
 import { MainContext } from '../context/mainContext'
@@ -65,6 +70,27 @@ export const AuthScreen = () => {
     const [template, setTemplate] = useState<string | null>(null)
     const [email, setEmail] = useState<string | null>(null)
     const [code, setCode] = useState<string | null>(null)
+    const mounted = useRef(false)
+    useEffect(() => {
+        mounted.current = true
+        return () => { mounted.current = false }
+    }, [])
+
+    const loginSocial = async (credential: SocialCredential) => {
+        if (!mounted.current) return
+        setError(null)
+        setLoader(true)
+        const { provider, ...data } = credential
+        const endpoint = { google: 'loginGoogle', vk: 'loginVk', yandex: 'loginYandex' }[provider]
+        try {
+            const output = await Http.post(`${import.meta.env.VITE_API_URL}/auth/${endpoint}`, data, token)
+            if (!mounted.current) return
+            if (output.success === 1) completeAuth(PROFILE_SCREEN)
+            else setError(output.error || 'Не удалось выполнить вход. Попробуй снова.')
+        } finally {
+            if (mounted.current) setLoader(false)
+        }
+    }
 
 
     // Проверяем, авторизован ли пользователь
@@ -213,6 +239,20 @@ export const AuthScreen = () => {
                         )}
 
                         <div className={authStyle.authCardContent}>
+                            {!template && (
+                                <>
+                                    <div className={`${mainStyle.formTitle} ${mainStyle.mb24} ${mainStyle.textCenter}`}>Добро пожаловать!</div>
+                                    <div className={authStyle.socialLogin}>
+                                        <div className={authStyle.socialLabel}>Войди через:</div>
+                                        <div className={authStyle.socialIcons} role="group" aria-label="Вход через социальные сети">
+                                            <AuthGoogle onCredential={loginSocial} onError={setError} />
+                                            <AuthVK onCredential={loginSocial} onError={setError} />
+                                            <AuthYandex onCredential={loginSocial} onError={setError} />
+                                        </div>
+                                    </div>
+                                    <div className={`${mainStyle.divider} ${mainStyle.mt24} ${mainStyle.mb24}`} aria-hidden="true" />
+                                </>
+                            )}
                             {content}
                         </div>
 

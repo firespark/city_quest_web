@@ -4,7 +4,7 @@ import type { Dispatch, SetStateAction } from 'react'
 import mainStyle from '../../styles/mainStyle.module.css'
 import headerStyle from '../../styles/headerStyle.module.css'
 
-import closeImage from '../../../assets/img/close.png'
+import closeImage from '../../assets/img/close.png'
 
 type TemplateCloseProps = {
     setTemplate: Dispatch<SetStateAction<string | null>>

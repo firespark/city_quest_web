@@ -4,8 +4,8 @@ import type { Dispatch, SetStateAction } from 'react'
 import mainStyle from '../../styles/mainStyle.module.css'
 import gameStyle from '../../styles/gameStyle.module.css'
 
-import questionImage from '../../../assets/img/question2.png'
-import questionDisabledImage from '../../../assets/img/question2-disabled.png'
+import questionImage from '../../assets/img/question2.png'
+import questionDisabledImage from '../../assets/img/question2-disabled.png'
 
 type TaskSignProps = {
     number: string

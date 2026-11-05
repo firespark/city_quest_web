@@ -6,7 +6,7 @@ import headerStyle from '../../styles/headerStyle.module.css'
 
 import { MainContext } from '../../context/mainContext'
 
-import closeImage from '../../../assets/img/close.png'
+import closeImage from '../../assets/img/close.png'
 
 export const Close = () => {
 

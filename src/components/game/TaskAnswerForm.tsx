@@ -5,7 +5,7 @@ import mainStyle from '../../styles/mainStyle.module.css'
 import gameStyle from '../../styles/gameStyle.module.css'
 import formsStyle from '../../styles/formsStyle.module.css'
 
-import hintImage from '../../../assets/img/hint.png'
+import hintImage from '../../assets/img/hint.png'
 
 import { MainContext } from '../../context/mainContext'
 import { Loader } from '../common/Loader'

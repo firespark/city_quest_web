@@ -4,7 +4,7 @@ import type { Dispatch, SetStateAction } from 'react'
 import mainStyle from '../../styles/mainStyle.module.css'
 import gameStyle from '../../styles/gameStyle.module.css'
 
-import backImage from '../../../assets/img/back.png'
+import backImage from '../../assets/img/back.png'
 
 type BackQuestProps = {
     setModal: Dispatch<SetStateAction<string | null>>

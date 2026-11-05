@@ -5,8 +5,8 @@ import { IoDiamondOutline } from 'react-icons/io5'
 
 import gameStyle from '../../styles/gameStyle.module.css'
 
-import hintImage from '../../../assets/img/hint.png'
-import hintDisabledImage from '../../../assets/img/hint-disabled.png'
+import hintImage from '../../assets/img/hint.png'
+import hintDisabledImage from '../../assets/img/hint-disabled.png'
 
 type GameData = {
     is_level: unknown

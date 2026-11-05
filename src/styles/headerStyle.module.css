@@ -96,7 +96,7 @@
   height: 36px;
   margin-right: 12px;
   background-color: currentColor;
-  mask-image: url('../../assets/img/logo-fun-black.png');
+  mask-image: url('../assets/img/logo-fun-black.png');
   mask-position: center;
   mask-size: contain;
   mask-repeat: no-repeat;

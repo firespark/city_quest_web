@@ -1,7 +1,7 @@
 
 import gameStyle from '../../../styles/gameStyle.module.css'
 
-import closeImage from '../../../../assets/img/close.png'
+import closeImage from '../../../assets/img/close.png'
 
 type ModalCloseProps = {
     setModal: (value: null) => void
